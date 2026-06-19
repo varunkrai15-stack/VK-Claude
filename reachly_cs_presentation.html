@@ -1732,49 +1732,6 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
-<!-- ── S18 · APPENDIX ── -->
-<div class="slide" id="s18">
-<div class="slide-header">
-  <h1>Appendix &#8212; Key Assumptions</h1>
-  <span class="sub">Model assumptions underlying all calculations and projections</span>
-</div>
-<div class="slide-body">
-  <div class="appendix-note">All financial projections, headcount models, and GRR scenarios in this deck are derived from the assumptions below. Assumptions are based on SaaS CS benchmarks (Gainsight, McKinsey, KeyBanc), public SaaS Labs / JustCall product information, and standard India-based CS cost structures.</div>
-  <table>
-    <thead>
-      <tr><th style="width:45%">Assumption</th><th>Value / Basis</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Total ARR</td><td>$100M</td></tr>
-      <tr><td>Total accounts</td><td>25,000</td></tr>
-      <tr><td>Monthly renewals</td><td>70% of base ($70M ARR re-earned every 30 days)</td></tr>
-      <tr><td>MM segment ARR</td><td>~$57M (57% of total)</td></tr>
-      <tr><td>SMB T1 ARR</td><td>~$22M</td></tr>
-      <tr><td>SMB T2 ARR</td><td>~$12.6M</td></tr>
-      <tr><td>SMB T3 ARR</td><td>~$8.4M</td></tr>
-      <tr><td>Baseline GRR (blended)</td><td>~77% (inferred from segment mix)</td></tr>
-      <tr><td>Base case GRR improvement</td><td>+3pp (McKinsey benchmark, year 1)</td></tr>
-      <tr><td>Best case GRR improvement</td><td>+7pp (McKinsey best-in-class)</td></tr>
-      <tr><td>CS team size</td><td>43 FTE (India-based)</td></tr>
-      <tr><td>CSM salary range</td><td>INR 18-25L base (fully loaded 1.35x = INR 24-34L)</td></tr>
-      <tr><td>People cost</td><td>~$1.51M / year (INR exchange: 83 = $1)</td></tr>
-      <tr><td>Tooling cost</td><td>$189k / year</td></tr>
-      <tr><td>Total Year 1 CS investment</td><td>~$1.68M</td></tr>
-      <tr><td>Pre-90-day churn (SMB)</td><td>43% of total SMB churn</td></tr>
-      <tr><td>CS attribution &#8212; MM</td><td>55-60% of prevented churn attributable to CS</td></tr>
-      <tr><td>CS attribution &#8212; SMB T1</td><td>43-45%</td></tr>
-      <tr><td>CS attribution &#8212; SMB T2+3</td><td>18-20%</td></tr>
-      <tr><td>Intercom Fin benefit</td><td>L1 deflection only &middot; 3 digital specialists &middot; company-level headcount saving ($115-161k) accrues to support budget, not CS P&amp;L</td></tr>
-      <tr><td>Userpilot vs Pendo</td><td>Userpilot: $15k/yr, 1-7 day deploy. Pendo: $48k/yr, 8-12 weeks. Savings: $33k/yr. Pendo to be re-evaluated in Year 2.</td></tr>
-      <tr><td>RudderStack</td><td>Engineering critical path &#8212; must start 6-8 weeks before CS team launch. Health scoring is blind without it.</td></tr>
-      <tr><td>ChurnZero</td><td>CS orchestration platform &#8212; not a new tool, re-adoption with proper configuration from Day 1.</td></tr>
-      <tr><td>Hysteresis band (account movement)</td><td>&#177;15% ARR buffer to prevent thrashing between segments</td></tr>
-      <tr><td>Voluntary vs involuntary churn</td><td>Involuntary (payment failure) ~15% of total churn &#8212; addressed via Stripe Smart Retries</td></tr>
-    </tbody>
-  </table>
-</div>
-</div>
-
 <!-- ── S19 · GRR IMPACT BY SEGMENT ── -->
 <div class="slide" id="s19">
 <div class="slide-header"><h1>GRR Impact by Segment — Where CS Moves the Needle</h1><span class="sub">~+4pp base / ~+7pp best blended · $3.9M–$6.6M ARR protected · ties to the Commercial ROI model (S9)</span></div>
@@ -1924,11 +1881,290 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
+<!-- ── S20 · RISK MITIGATION ── -->
+<div class="slide" id="s20">
+<div class="slide-header"><h1>Risk Mitigation Plan</h1><span class="sub">The six risks that could break this model — and how we prevent or contain each</span></div>
+<div class="slide-body">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:16%">Risk</th>
+        <th style="width:9%">Severity</th>
+        <th>How we prevent / mitigate</th>
+        <th style="width:18%">Early-warning signal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong style="color:var(--navy)">AI model accuracy is low</strong><br><span style="font-size:10px;color:var(--gray)">Health/churn scores misfire</span></td>
+        <td><span class="tag tag-amber">High · early</span></td>
+        <td><strong>Phase the intelligence.</strong> Day 1 = rules-based health score on CRM + payment + login data (blunt but reliable). Layer ML only after ~6 months of clean RudderStack product events. Human-in-the-loop review of every MM high-risk flag. Require <strong>≥70% precision</strong> before Fin/playbooks auto-fire on T3. Champion/challenger testing. Never auto-fire an irreversible action (discount, downgrade) on a low-confidence score.</td>
+        <td style="font-size:10.5px">Model precision / recall (weekly); false-positive rate on at-risk flags</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--navy)">PLG / in-app motion underperforms</strong><br><span style="font-size:10px;color:var(--gray)">Nudges ignored, adoption flat</span></td>
+        <td><span class="tag tag-amber">Med–High</span></td>
+        <td><strong>Test, multi-channel, and gate.</strong> A/B test every Userpilot flow and kill losers. Never depend on one channel — in-app + Customer.io email + Fin proactive run in parallel. A <strong>Day-30 activation gate</strong> escalates any account &lt;70% activated to a human. Set a realistic ramp (activation 55% → 80% over two quarters, not overnight).</td>
+        <td style="font-size:10.5px">Flow-completion %, activation-rate trend, nudge → action conversion</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--navy)">Pre-90 onboarding doesn't move retention</strong><br><span style="font-size:10px;color:var(--gray)">The core thesis fails</span></td>
+        <td><span class="tag tag-amber">High</span></td>
+        <td><strong>Instrument it so nothing slips.</strong> Automated Day-30 activation gate → "At-Risk Pre-90" cohort; every account gets a human or digital owner. D7 / D14 / D30 milestones tracked per account. Weekly pre-90 cohort review on the floor. Monthly activation → retention correlation check — if the link weakens, re-cut the playbook fast.</td>
+        <td style="font-size:10.5px">Activation rate, % hitting D14 milestone, pre-90 churn rate</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--navy)">CSM / specialist attrition</strong><br><span style="font-size:10px;color:var(--gray)">Hot India CS market, poaching</span></td>
+        <td><span class="tag tag-amber">Med–High</span></td>
+        <td><strong>De-risk the people, not just hire.</strong> Pooled model + cross-training removes key-person risk. Playbooks keep knowledge in the system, not in heads — a departing CSM's book is recoverable in days. Career ladder (CSM → Sr → Lead), comp benchmarked annually, retention-linked variable. Stagger hiring so the team doesn't all ramp at once. Target regrettable attrition <strong>&lt;12%</strong>.</td>
+        <td style="font-size:10.5px">Regrettable attrition %, eNPS, time-to-backfill</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--navy)">Tooling deployment delay</strong><br><span style="font-size:10px;color:var(--gray)">RudderStack = critical path</span></td>
+        <td><span class="tag tag-amber">High</span></td>
+        <td><strong>Start early, sequence, keep a fallback.</strong> RudderStack kicks off <strong>6–8 weeks before</strong> CS launch with a named engineering owner + weekly check-in. Fallback: CRM-only health scores work from Day 1 — degraded, not blind. Userpilot (1–7 day deploy) removes the Pendo activation-gap risk entirely. Phased rollout means no single tool blocks go-live.</td>
+        <td style="font-size:10.5px">Implementation milestone tracker, data-pipeline uptime</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--navy)">Over-automation degrades CX</strong><br><span style="font-size:10px;color:var(--gray)">Customers feel handled by bots</span></td>
+        <td><span class="tag tag-navy">Med</span></td>
+        <td><strong>Automation with a human seam.</strong> Clear escalation: Fin → support → digital specialist, each with full context. Humans available at high-value moments (renewal, expansion, churn signal). CSAT tracked on every digital interaction — if it drops below <strong>4.2</strong>, route more volume to humans. Gen-AI message tone reviewed before launch and sampled monthly.</td>
+        <td style="font-size:10.5px">Digital-interaction CSAT, escalation rate, complaint volume</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin-top:11px;background:var(--navy);border-radius:8px;padding:11px 16px;font-size:11.5px;color:rgba(255,255,255,0.88);line-height:1.55">
+    <strong style="color:var(--green)">The through-line:</strong> every risk is met with a <strong style="color:#fff">leading indicator</strong> and a <strong style="color:#fff">fallback that keeps the business running</strong> if the bet underperforms. Nothing in this model is "all-or-nothing" — the machine degrades gracefully (rules before ML, human gate behind every automation, CRM data before product data) so a single failure never stops the floor.
+  </div>
+</div>
+</div>
+
+<!-- ── S21 · TRADE-OFFS & BETS ── -->
+<div class="slide" id="s21">
+<div class="slide-header"><h1>Trade-offs &amp; Big Bets</h1><span class="sub">What we deliberately gave up — and where we're placing the chips, with reasoning</span></div>
+<div class="slide-body">
+  <div class="sc-section-lbl">Trade-offs we made on purpose</div>
+  <table style="margin-bottom:14px">
+    <thead>
+      <tr><th style="width:14%">Decision</th><th style="width:20%">We chose</th><th style="width:22%">We traded away</th><th>Why it's the right call</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Coverage</strong></td><td>ARR-first concentration</td><td>Human touch on the 16,000-account tail</td><td>Revenue is concentrated — 7% of accounts = 52% of ARR. Bots cover the tail at near-zero marginal cost; humans go where the dollars are.</td></tr>
+      <tr><td><strong>Team size</strong></td><td>Lean 43 FTE</td><td>Slack capacity / white-glove on SMB</td><td>People cost 1.51% of ARR vs 8–10% benchmark. A lean team forces tooling discipline — automation becomes mandatory, not optional.</td></tr>
+      <tr><td><strong>Location</strong></td><td>India-based team</td><td>Full US-hours live coverage</td><td>~¼ the loaded cost — that efficiency funds more heads <em>and</em> the full tooling stack. Partial follow-the-sun + async digital covers the gap.</td></tr>
+      <tr><td><strong>Activation tool</strong></td><td>Userpilot (Year 1)</td><td>Pendo's deeper product analytics</td><td>1–7 day deploy vs 8–12 weeks, $33k cheaper, zero activation gap at launch. Re-evaluate Pendo in Year 2 once RudderStack analytics mature.</td></tr>
+      <tr><td><strong>ROI stance</strong></td><td>Count expansion / NRR as $0</td><td>A rosier headline ROI number</td><td>A conservative, defensible base case survives scrutiny. Expansion is real upside we'll capture — but we don't promise it to justify the investment.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sc-section-lbl">The big bets — and what makes them pay</div>
+  <table>
+    <thead>
+      <tr><th style="width:22%">The bet</th><th style="width:26%">Reasoning</th><th>What makes it pay off</th><th style="width:20%">What we're watching</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong style="color:var(--green2)">Pre-90 onboarding is the #1 churn lever</strong></td><td>43% of SMB churn lands before Day 90 — activation failure, before first value.</td><td>Activation 55% → 80% recovers <strong>$0.87M+ (base)</strong> on the SMB tail and lifts every downstream cohort.</td><td>Activation → retention correlation; pre-90 churn rate</td></tr>
+      <tr><td><strong style="color:var(--green2)">AI can carry the SMB tail</strong></td><td>20,000 small accounts can't be staffed with humans economically.</td><td>Fin + Userpilot + Customer.io run the full detect → resolve → educate loop. <strong>+3–5pp tail GRR for ~$81k</strong> of tooling.</td><td>Deflection rate, digital activation, CSAT</td></tr>
+      <tr><td><strong style="color:var(--green2)">Signal-based proactive beats reactive</strong></td><td>Product behavior predicts churn 90–120 days out — long before a renewal call.</td><td>CSMs act on signal, not the calendar → higher save rate and expansion capture (NRR).</td><td>Signal precision, % of churn caught early</td></tr>
+      <tr><td><strong style="color:var(--green2)">Lean + tooling beats big headcount</strong></td><td>Automation leverages 43 FTE across 25,000 accounts.</td><td>Best-in-class GRR at a <strong>1.51% people-cost ratio</strong> — a structural margin advantage in a low-margin category.</td><td>Book sizes, CSM burnout, attrition</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ── S22 · KPIs & OKRs ── -->
+<div class="slide" id="s22">
+<div class="slide-header"><h1>KPIs &amp; OKRs — How We Measure and Pay</h1><span class="sub">L0 outcomes the org owns · L1 drivers the CSM and the AI control · variable comp tied to both · split by segment</span></div>
+<div class="slide-body">
+
+  <!-- L0 -->
+  <div class="sc-section-lbl">L0 OKRs — the two outcomes the whole CS org is accountable for (lagging)</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:13px">
+    <div class="card green">
+      <div class="card-label">L0 · North Star</div>
+      <div style="font-size:17px;font-weight:800;color:var(--navy)">GRR — Gross Revenue Retention</div>
+      <div style="font-size:11.5px;color:var(--gray);margin:5px 0 7px">Churn reduction is the outcome. Blended <strong>~69% → ~73% (base) / ~76% (best)</strong>.</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span class="tag tag-navy">MM 75 → 79%</span>
+        <span class="tag tag-navy">T1 65 → 70%</span>
+        <span class="tag tag-navy">T2–T3 ~62 → 65%</span>
+      </div>
+    </div>
+    <div class="card green">
+      <div class="card-label">L0 · Growth</div>
+      <div style="font-size:17px;font-weight:800;color:var(--navy)">NRR — Net Revenue Retention</div>
+      <div style="font-size:11.5px;color:var(--gray);margin:5px 0 7px">Retention + expansion. Adoption improvement is the leading driver that powers both L0s.</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span class="tag tag-green">MM 100 → 108%</span>
+        <span class="tag tag-green">T1 ~95 → 100%</span>
+        <span class="tag tag-green">T2–T3 ~90 → 93%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- L1 -->
+  <div class="sc-section-lbl">L1 metrics — the leading, controllable drivers (what each owner is measured on weekly)</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:25%">MM CSM <span style="font-weight:400;text-transform:none">(dedicated)</span></th>
+        <th style="width:25%">SMB T1 CSM <span style="font-weight:400;text-transform:none">(pooled)</span></th>
+        <th>SMB T2–T3 + Agentic AI <span style="font-weight:400;text-transform:none">(digital specialists run the system)</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Adoption depth</strong> — active sessions / feature breadth per account (≥ target adoption score)</td>
+        <td><strong>Activation rate</strong> — % new accounts activated by Day 30 (target 80%)</td>
+        <td><strong>Deflection rate</strong> — Intercom Fin L1 auto-resolution (target ≥55%)</td>
+      </tr>
+      <tr>
+        <td><strong>Book coverage</strong> — % of book with QBR + monthly health touch (target 100%)</td>
+        <td><strong>Pool coverage / SLA</strong> — % of at-risk pool contacted within SLA</td>
+        <td><strong>Digital activation</strong> — % T2–T3 activated by Day 30 via Userpilot (target 80%)</td>
+      </tr>
+      <tr>
+        <td><strong>Health movement</strong> — % book green; # at-risk accounts recovered</td>
+        <td><strong>Connectivity</strong> — % accounts with healthy usage (CRM connected, calls live)</td>
+        <td><strong>Nudge → action conversion</strong> — % of Customer.io / Userpilot nudges that drive the target action</td>
+      </tr>
+      <tr>
+        <td><strong>Expansion signals actioned</strong> — # qualified / pipeline to AE (SPIFF)</td>
+        <td><strong>Save rate</strong> — % of at-risk accounts retained</td>
+        <td><strong>Auto-resolution rate</strong> — % at-risk recovered with no human touch</td>
+      </tr>
+      <tr>
+        <td><strong>Onboarding</strong> — activation milestone hit by Day 30 (new logos)</td>
+        <td><strong>Adoption trend</strong> — % accounts with rising usage period-over-period</td>
+        <td><strong>Model precision + CSAT</strong> — churn-prediction precision/recall; digital CSAT ≥ 4.2 <span style="font-size:10px;color:var(--gray)">(the AI's own KPIs)</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Variable comp -->
+  <div class="sc-section-lbl" style="margin-top:13px">Variable payout — retention-weighted, scaled to control level (CS benchmark: 10–25% of OTE, not sales-style 40–50%)</div>
+  <table>
+    <thead>
+      <tr><th style="width:20%">Role</th><th style="width:14%">Base : Variable</th><th>Variable weighting</th><th style="width:24%">Rationale</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>MM CSM</strong></td><td>80 : 20</td><td><span class="tag tag-navy">60% GRR of book</span> <span class="tag tag-green">25% NRR / expansion</span> <span class="tag tag-amber">15% adoption + coverage</span></td><td>Highest expansion motion → meaningful NRR weight; still retention-led.</td></tr>
+      <tr><td><strong>SMB T1 CSM (pooled)</strong></td><td>85 : 15</td><td><span class="tag tag-navy">70% pool retention / save rate</span> <span class="tag tag-green">20% activation rate</span> <span class="tag tag-amber">10% coverage</span></td><td>Volume retention role; activation is the controllable lever that drives GRR.</td></tr>
+      <tr><td><strong>Digital specialists (T2–T3)</strong></td><td>90 : 10</td><td><span class="tag tag-navy">60% tail GRR</span> <span class="tag tag-green">25% deflection + digital activation</span> <span class="tag tag-amber">15% CSAT</span></td><td>Outcome is system performance, not individual heroics → lower variable, paid on the machine working.</td></tr>
+    </tbody>
+  </table>
+  <div style="margin-top:11px;background:var(--green-light);border-left:4px solid var(--green);border-radius:7px;padding:10px 15px;font-size:11.5px;color:#005C3F;line-height:1.5">
+    <strong>Industry alignment:</strong> GRR + NRR are the standard CS L0 North Stars (Gainsight / Bessemer). Best-in-class: MM GRR &gt;90% &amp; NRR &gt;110%; SMB GRR 75–85% &amp; NRR 95–105%. L1 leading indicators — adoption, time-to-value / activation, health score, coverage, CSAT — are the recognised drivers. Agentic AI carries its own L1s (deflection, precision, auto-resolution) so the system is held to a measurable bar, exactly like a human pod.
+  </div>
+</div>
+</div>
+
+<!-- ── S23 · 30-60-90 PLAN ── -->
+<div class="slide" id="s23">
+<div class="slide-header"><h1>My First 90 Days</h1><span class="sub">Two tracks at once — run the floor (performance) and build the machine (transformation)</span></div>
+<div class="slide-body">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:13%"></th>
+        <th style="width:19%">Day 1</th>
+        <th style="width:22%">Days 1–30 · Listen &amp; stabilize</th>
+        <th style="width:23%">Days 31–60 · Build the machine</th>
+        <th>Days 61–90 · Prove &amp; scale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong style="color:var(--navy)">Theme</strong></td>
+        <td>Trust + baseline truth</td>
+        <td>Know the book, stop the bleeding</td>
+        <td>New model live end-to-end</td>
+        <td>Evidence + lock Year-1 plan</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--green2)">Run the floor</strong><br><span style="font-size:10px;color:var(--gray)">performance mgmt</span></td>
+        <td>1:1s with team leads · sit in on MM &amp; SMB calls · read the renewal/churn dashboard</td>
+        <td>Ride-alongs across segments · identify every renewal in next 60 days &amp; assign an owner · triage active fires · stand up <strong>weekly renewal-cohort review</strong></td>
+        <td>Per-CSM scorecards live · coach the top-20 at-risk accounts · manage underperformers (PIP if needed), recognise top performers · interim KPIs in force</td>
+        <td>Full KPI dashboard + QBRs for MM · first GRR / leading-indicator readout · tighten the coaching loop · confirm staffing &amp; backfill plan</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--green2)">Transform</strong><br><span style="font-size:10px;color:var(--gray)">build the model</span></td>
+        <td>Audit current state — ChurnZero config, data, books, churn reasons · establish baseline GRR / NRR</td>
+        <td>Validate segmentation · <strong>kick off RudderStack (critical path) with named eng owner</strong> · start Userpilot + Fin pre-launch · draft ARR-first book redistribution &amp; movement rules</td>
+        <td>Health scoring live (CRM-data first) · launch pre-90 onboarding program · redistribute books ARR-first · publish L0/L1 OKRs + variable comp</td>
+        <td>RudderStack product data online → upgrade health scores · predictive model v1 in test · expansion-signal playbook with AE · enforce movement rules · review first cohort results</td>
+      </tr>
+      <tr style="background:var(--navy)">
+        <td style="background:var(--navy);color:#fff;border-bottom:none"><strong>Goal</strong></td>
+        <td style="background:var(--navy);color:var(--green);border-bottom:none;font-weight:700">Baseline + team trust</td>
+        <td style="background:var(--navy);color:var(--green);border-bottom:none;font-weight:700">Operating rhythm + near-term renewals secured</td>
+        <td style="background:var(--navy);color:var(--green);border-bottom:none;font-weight:700">Segmentation, health scores &amp; pre-90 program running</td>
+        <td style="background:var(--navy);color:var(--green);border-bottom:none;font-weight:700">Machine proven; first lift visible</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sc-section-lbl" style="margin-top:13px">Day-90 success criteria — what "done" looks like</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div class="card green" style="padding:10px 14px"><div style="font-size:11.5px;color:var(--text2)"><strong style="color:var(--navy)">100% coverage</strong> — every account in a segment with a human or digital owner</div></div>
+    <div class="card green" style="padding:10px 14px"><div style="font-size:11.5px;color:var(--text2)"><strong style="color:var(--navy)">Health scores live</strong> on 100% of accounts; weekly risk + renewal cadence running</div></div>
+    <div class="card green" style="padding:10px 14px"><div style="font-size:11.5px;color:var(--text2)"><strong style="color:var(--navy)">Pre-90 program live</strong> — activation rate trending toward 80%</div></div>
+    <div class="card green" style="padding:10px 14px"><div style="font-size:11.5px;color:var(--text2)"><strong style="color:var(--navy)">OKRs + comp live</strong> — L0/L1 published, variable payout in force</div></div>
+    <div class="card green" style="padding:10px 14px"><div style="font-size:11.5px;color:var(--text2)"><strong style="color:var(--navy)">Tooling operational</strong> — RudderStack online, Userpilot + Fin live, ChurnZero configured</div></div>
+    <div class="card green" style="padding:10px 14px"><div style="font-size:11.5px;color:var(--text2)"><strong style="color:var(--navy)">Baseline measured</strong> — GRR/NRR established; first leading indicators moving</div></div>
+  </div>
+</div>
+</div>
+
+<!-- ── S24 · APPENDIX ── -->
+<div class="slide" id="s18">
+<div class="slide-header">
+  <h1>Appendix &#8212; Key Assumptions</h1>
+  <span class="sub">Model assumptions underlying all calculations and projections</span>
+</div>
+<div class="slide-body">
+  <div class="appendix-note">All financial projections, headcount models, and GRR scenarios in this deck are derived from the assumptions below. Assumptions are based on SaaS CS benchmarks (Gainsight, McKinsey, KeyBanc), public SaaS Labs / JustCall product information, and standard India-based CS cost structures.</div>
+  <table>
+    <thead>
+      <tr><th style="width:45%">Assumption</th><th>Value / Basis</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Total ARR</td><td>$100M</td></tr>
+      <tr><td>Total accounts</td><td>25,000</td></tr>
+      <tr><td>Monthly renewals</td><td>70% of base ($70M ARR re-earned every 30 days)</td></tr>
+      <tr><td>MM segment ARR</td><td>$52M (52% of total · 1,750 accounts)</td></tr>
+      <tr><td>SMB T1 ARR</td><td>$19M (3,250 accounts)</td></tr>
+      <tr><td>SMB T2 ARR</td><td>$12M (4,000 accounts)</td></tr>
+      <tr><td>SMB T3 ARR</td><td>$17M (16,000 accounts)</td></tr>
+      <tr><td>Baseline GRR (blended)</td><td>~69% (MM 75% · T1 65% · T2 64% · T3 60%, ARR-weighted)</td></tr>
+      <tr><td>Base case GRR improvement</td><td>~+4pp blended (MM +4 · T1 +5 · T2/T3 +3) → $3.9M retained</td></tr>
+      <tr><td>Best case GRR improvement</td><td>~+7pp blended (MM +7 · T1 +8 · T2/T3 +5) → $6.6M retained · McKinsey best-in-class anchor</td></tr>
+      <tr><td>CS team size</td><td>43 FTE (India-based)</td></tr>
+      <tr><td>CSM salary range</td><td>INR 18-25L base (fully loaded 1.35x = INR 24-34L)</td></tr>
+      <tr><td>People cost</td><td>~$1.51M / year (INR exchange: 83 = $1)</td></tr>
+      <tr><td>Tooling cost</td><td>$189k / year</td></tr>
+      <tr><td>Total Year 1 CS investment</td><td>~$1.68M</td></tr>
+      <tr><td>Pre-90-day churn (SMB)</td><td>43% of total SMB churn</td></tr>
+      <tr><td>CS attribution &#8212; MM</td><td>55-60% of prevented churn attributable to CS</td></tr>
+      <tr><td>CS attribution &#8212; SMB T1</td><td>43-45%</td></tr>
+      <tr><td>CS attribution &#8212; SMB T2+3</td><td>18-20%</td></tr>
+      <tr><td>Intercom Fin benefit</td><td>L1 deflection only &middot; 3 digital specialists &middot; company-level headcount saving ($115-161k) accrues to support budget, not CS P&amp;L</td></tr>
+      <tr><td>Userpilot vs Pendo</td><td>Userpilot: $15k/yr, 1-7 day deploy. Pendo: $48k/yr, 8-12 weeks. Savings: $33k/yr. Pendo to be re-evaluated in Year 2.</td></tr>
+      <tr><td>RudderStack</td><td>Engineering critical path &#8212; must start 6-8 weeks before CS team launch. Health scoring is blind without it.</td></tr>
+      <tr><td>ChurnZero</td><td>CS orchestration platform &#8212; not a new tool, re-adoption with proper configuration from Day 1.</td></tr>
+      <tr><td>Hysteresis band (account movement)</td><td>&#177;15% ARR buffer to prevent thrashing between segments</td></tr>
+      <tr><td>Voluntary vs involuntary churn</td><td>Involuntary (payment failure) ~15% of total churn &#8212; addressed via Stripe Smart Retries</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
 <!-- ── NAV ── -->
 <nav class="nav-bar">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
   <div class="slide-dots" id="dotsContainer"></div>
-  <span class="slide-counter" id="counter">1 / 19</span>
+  <span class="slide-counter" id="counter">1 / 23</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
 </nav>
 
