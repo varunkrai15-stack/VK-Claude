@@ -306,6 +306,116 @@ tr:last-child td{border-bottom:none}
 .cell-quote.green{color:#065F46;border-left:3px solid var(--green);background:var(--green-light)}
 .cell-quote.red{color:#991B1B;border-left:3px solid #EF4444;background:#FEF2F2}
 .cell-tools{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px}
+
+/* ── S13-S18 SLIDES ── */
+/* Health score two-column layout */
+.hs-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.hs-col{background:#fff;border-radius:9px;border:1px solid var(--border);overflow:hidden}
+.hs-col-hdr{padding:9px 14px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.hs-col-hdr.green{background:var(--green2)}
+.hs-param{display:flex;justify-content:space-between;align-items:center;padding:6px 12px;border-bottom:1px solid var(--border);font-size:11.5px}
+.hs-param:last-child{border-bottom:none}
+.hs-param-name{color:var(--text2)}
+.hs-param-wt{background:var(--navy);color:#fff;border-radius:8px;padding:2px 7px;font-size:10px;font-weight:700}
+.hs-param-wt.high{background:var(--green2)}
+.hs-param-wt.mid{background:#1E4D7B}
+.hs-param-wt.low{background:var(--gray)}
+
+/* Signal priority table P-badges */
+.p1{background:#FEE2E2;color:#991B1B;border-radius:6px;padding:2px 7px;font-size:10px;font-weight:700}
+.p2{background:#FEF3C7;color:#92400E;border-radius:6px;padding:2px 7px;font-size:10px;font-weight:700}
+.p3{background:#EFF6FF;color:#1E40AF;border-radius:6px;padding:2px 7px;font-size:10px;font-weight:700}
+
+/* Why monthly metrics fail callout */
+.why-box{background:var(--navy);border-radius:9px;padding:12px 18px;margin-bottom:12px}
+.why-box h3{color:var(--green);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px}
+.why-list{display:flex;flex-direction:column;gap:5px}
+.why-item{display:flex;align-items:flex-start;gap:9px;color:rgba(255,255,255,0.85);font-size:12px;line-height:1.4}
+.why-icon{background:var(--red);color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px}
+.why-icon.green{background:var(--green)}
+
+/* Cohort cards */
+.cohort-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.cohort-card{background:#fff;border-radius:9px;border:2px solid var(--border);overflow:hidden}
+.cohort-card.red-border{border-color:var(--red)}
+.cohort-card.green-border{border-color:var(--green)}
+.cohort-card-hdr{padding:10px 14px}
+.cohort-card-hdr.red-hdr{background:#FEF2F2}
+.cohort-card-hdr.green-hdr{background:var(--green-light)}
+.cohort-card-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}
+.cohort-card-title.red{color:#991B1B}
+.cohort-card-title.green-t{color:#005C3F}
+.cohort-card-stat{font-size:22px;font-weight:800;margin:4px 0 2px}
+.cohort-card-stat.red{color:var(--red)}
+.cohort-card-stat.green-s{color:var(--green2)}
+.cohort-card-desc{font-size:11px;color:var(--gray)}
+.cohort-card-body{padding:10px 14px;display:flex;flex-direction:column;gap:4px}
+.cohort-program{font-size:11.5px;color:var(--text2);padding:4px 8px;background:var(--gray-light);border-radius:4px;display:flex;align-items:flex-start;gap:5px}
+.cohort-program::before{content:"\2192";color:var(--green);font-weight:700;flex-shrink:0}
+
+/* Downgrade callout amber */
+.downgrade-box{background:#FEF3C7;border-left:4px solid var(--amber);border-radius:8px;padding:11px 15px;font-size:12.5px;color:#78350F;line-height:1.5;margin-top:12px}
+.downgrade-box strong{color:#92400E}
+
+/* Playbook how-it-works two columns */
+.pb-how{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.pb-how-col{background:#fff;border-radius:9px;border:1px solid var(--border);overflow:hidden}
+.pb-how-hdr{padding:9px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.pb-how-hdr.navy-hdr{background:var(--navy);color:#fff}
+.pb-how-hdr.green-hdr{background:var(--green2);color:#fff}
+.pb-how-body{padding:11px 14px;display:flex;flex-direction:column;gap:6px}
+.pb-how-item{font-size:11.5px;color:var(--text2);line-height:1.4;padding:5px 8px;background:var(--gray-light);border-radius:5px;border-left:3px solid var(--navy)}
+.pb-how-item.green-left{border-left-color:var(--green)}
+.pb-how-item em{color:var(--green2);font-style:italic}
+
+/* Onboarding timeline */
+.ob-timeline{margin:10px 0 14px}
+.ob-stage{background:#fff;border-radius:8px;border:1px solid var(--border);margin-bottom:7px;overflow:hidden}
+.ob-stage-hdr{display:flex;align-items:center;gap:10px;padding:8px 14px;background:var(--navy)}
+.ob-stage-day{background:var(--green);color:#fff;border-radius:6px;padding:2px 9px;font-size:11px;font-weight:700;white-space:nowrap}
+.ob-stage-name{color:#fff;font-size:12px;font-weight:700}
+.ob-stage-items{padding:8px 14px;display:flex;flex-direction:column;gap:4px}
+.ob-item{font-size:11.5px;color:var(--text2);padding:3px 8px;display:flex;align-items:flex-start;gap:6px}
+.ob-item::before{content:"\2022";color:var(--green);font-weight:700;flex-shrink:0}
+.ob-techtouch{background:#fff;border-radius:8px;border:1px solid var(--border);overflow:hidden;margin-bottom:7px}
+.ob-techtouch-hdr{padding:8px 14px;background:#1E4D7B;color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.ob-techtouch-body{padding:8px 14px;display:flex;flex-direction:column;gap:3px}
+.ob-tt-item{font-size:11.5px;color:var(--text2);padding:3px 0;border-bottom:1px solid var(--border);display:flex;gap:8px}
+.ob-tt-item:last-child{border-bottom:none}
+.ob-tt-day{font-weight:700;color:var(--navy);min-width:50px;flex-shrink:0}
+
+/* Stat bar (pre-90 hero) */
+.stat-bar{background:var(--navy);border-radius:9px;padding:14px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:14px}
+.stat-bar-item{text-align:center;border-right:1px solid rgba(255,255,255,0.15)}
+.stat-bar-item:last-child{border-right:none}
+.stat-bar-n{font-size:34px;font-weight:800;color:var(--green)}
+.stat-bar-l{font-size:11.5px;color:rgba(255,255,255,0.65);margin-top:4px;line-height:1.3}
+
+/* Ownership matrix 3-col */
+.own-matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.own-col{background:#fff;border-radius:9px;border:1px solid var(--border);overflow:hidden}
+.own-col-hdr{padding:10px 14px}
+.own-col-hdr.owns{background:var(--navy)}
+.own-col-hdr.shares{background:#1E4D7B}
+.own-col-hdr.supports{background:var(--gray)}
+.own-col-title{color:#fff;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}
+.own-col-sub{color:rgba(255,255,255,0.6);font-size:10px;margin-top:2px}
+.own-col-body{padding:10px 14px;display:flex;flex-direction:column;gap:5px}
+.own-item{font-size:11.5px;color:var(--text2);padding:4px 8px;border-radius:5px;background:var(--gray-light);line-height:1.3}
+.own-item.primary{background:var(--green-light);color:#005C3F;font-weight:600}
+.own-item strong{color:var(--navy)}
+.own-section-label{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--gray);margin:6px 0 2px;letter-spacing:.4px}
+
+/* CS Scope principle callout */
+.principle-box{background:var(--navy);border-radius:9px;padding:12px 18px;margin-bottom:14px;font-size:12.5px;color:rgba(255,255,255,0.85);line-height:1.55}
+.principle-box strong{color:var(--green)}
+
+/* SPIFF callout */
+.spiff-box{background:var(--green-light);border-left:4px solid var(--green);border-radius:8px;padding:11px 15px;font-size:12.5px;color:#005C3F;line-height:1.5;margin-top:12px}
+.spiff-box strong{color:var(--green2)}
+
+/* Appendix table */
+.appendix-note{background:var(--green-light);border-left:4px solid var(--green);border-radius:7px;padding:9px 13px;font-size:11.5px;color:#005C3F;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -1237,11 +1347,439 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
+
+<!-- ── S13 · CHURN PREDICTION ── -->
+<div class="slide" id="s13">
+<div class="slide-header">
+  <h1>Attacking Churn &#8212; Predictive AI Signal Engine</h1>
+  <span class="sub">50+ parameter health score &middot; 90-120 day lead time &middot; daily signal vs monthly metric &middot; segment-specific cohort prioritisation</span>
+</div>
+<div class="slide-body">
+
+  <!-- Section 1: Why Monthly Metrics Fail -->
+  <div class="why-box">
+    <h3>Why Monthly Metrics Fail</h3>
+    <div class="why-list">
+      <div class="why-item"><div class="why-icon">!</div>Monthly review catches churn intent <strong>30-45 days after it formed</strong> &#8212; by the time NPS drops or a ticket is filed, the customer has already decided.</div>
+      <div class="why-item"><div class="why-icon">!</div>Waiting for a metric to move is watching the past. We need to catch the decision <em>before</em> it becomes intent.</div>
+      <div class="why-item"><div class="why-icon green">&#10003;</div>We track <strong>DAILY changes in 50+ parameters</strong> &#8212; the signal leads the conversation by 90-120 days, not chases it.</div>
+    </div>
+  </div>
+
+  <!-- Section 2: Health Score -->
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray);margin-bottom:7px">The 50-Parameter Health Score</div>
+  <div class="hs-cols">
+    <div class="hs-col">
+      <div class="hs-col-hdr">Product Signals (weighted)</div>
+      <div class="hs-param"><span class="hs-param-name">Daily call volume trend</span><span class="hs-param-wt high">15%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Feature depth &#8212; calls + SMS + WhatsApp vs just calls</span><span class="hs-param-wt high">12%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Integration health &#8212; HubSpot/Salesforce sync events</span><span class="hs-param-wt high">12%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Seat utilisation &#8212; active/licensed ratio</span><span class="hs-param-wt mid">10%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Login frequency per user</span><span class="hs-param-wt mid">8%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Power Dialer usage</span><span class="hs-param-wt low">6%</span></div>
+      <div class="hs-param"><span class="hs-param-name">AI call scoring engagement</span><span class="hs-param-wt low">5%</span></div>
+    </div>
+    <div class="hs-col">
+      <div class="hs-col-hdr green">Business Signals (weighted)</div>
+      <div class="hs-param"><span class="hs-param-name">Payment history &#8212; failed charges, retries</span><span class="hs-param-wt high">12%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Renewal timeline proximity</span><span class="hs-param-wt mid">10%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Support ticket volume + severity</span><span class="hs-param-wt mid">8%</span></div>
+      <div class="hs-param"><span class="hs-param-name">NPS / CSAT score</span><span class="hs-param-wt low">6%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Contract type: monthly vs annual</span><span class="hs-param-wt low">6%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Competitor mention in tickets</span><span class="hs-param-wt low">3%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Champion change / new admin detected</span><span class="hs-param-wt low">3%</span></div>
+    </div>
+  </div>
+
+  <!-- Section 3: Signal Table -->
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray);margin-bottom:7px">Signal Types and Priority Queue</div>
+  <table style="margin-bottom:12px">
+    <thead>
+      <tr><th>Signal</th><th>Trigger</th><th>Lead Time</th><th>Priority</th><th>Owner</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Usage cliff</strong></td><td>Call vol drops 40%+ in 7 days</td><td>90-120 days</td><td><span class="p1">P1</span></td><td>CSM / Digital</td></tr>
+      <tr><td><strong>Integration silence</strong></td><td>Sync events = 0 for 5+ days</td><td>60-90 days</td><td><span class="p1">P1</span></td><td>CSM</td></tr>
+      <tr><td><strong>Payment failure</strong></td><td>Stripe retry triggered</td><td>30 days</td><td><span class="p1">P1</span></td><td>CS Ops</td></tr>
+      <tr><td><strong>Seat decay</strong></td><td>Active/licensed ratio &lt; 60%</td><td>60 days</td><td><span class="p2">P2</span></td><td>CSM</td></tr>
+      <tr><td><strong>Feature regression</strong></td><td>Drops to single feature use</td><td>45 days</td><td><span class="p2">P2</span></td><td>CSM / Digital</td></tr>
+      <tr><td><strong>Low NPS post-onboarding</strong></td><td>Score &le; 6 at Day 30</td><td>45 days</td><td><span class="p2">P2</span></td><td>CSM</td></tr>
+      <tr><td><strong>No login 21+ days (T3)</strong></td><td>Zero login streak</td><td>21 days</td><td><span class="p3">P3</span></td><td>Digital / Fin</td></tr>
+      <tr><td><strong>Champion change</strong></td><td>New admin detected</td><td>30 days</td><td><span class="p2">P2</span></td><td>CSM (MM)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Section 4: Monthly Cohort Prioritisation -->
+  <div class="callout green">
+    <strong>Monthly Renewal Cohort Prioritisation:</strong> 70% of renewals are monthly &#8212; CSM and digital agents work a rolling 30-day cohort. Every Monday: ChurnZero auto-generates &#8220;this week&#8217;s renewal cohort&#8221; ranked by <strong>health score &#215; ARR &#215; days-to-renewal</strong>. CSM knows: which accounts to call this week, in what order, and with what talking point.
+  </div>
+
+</div>
+</div>
+
+<!-- ── S14 · RETENTION PROGRAMS ── -->
+<div class="slide" id="s14">
+<div class="slide-header">
+  <h1>Retention Programs &#8212; Designed Against the Lifecycle</h1>
+  <span class="sub">Pre-90 and post-90 cohorts &middot; deletion and downgrade prevention &middot; MM 1:1, SMB scale, tech-touch PLG</span>
+</div>
+<div class="slide-body">
+
+  <!-- Section 1: Two Cohort Frames -->
+  <div class="cohort-cards">
+    <div class="cohort-card red-border">
+      <div class="cohort-card-hdr red-hdr">
+        <div class="cohort-card-title red">Pre-90 Day Cohort &#8212; The Leaky Bucket</div>
+        <div class="cohort-card-stat red">43%</div>
+        <div class="cohort-card-desc">of SMB churn lands before Day 90 &#8212; activation failures, not usage failures</div>
+      </div>
+      <div class="cohort-card-body">
+        <div class="cohort-program">Day 2 retention call (MM)</div>
+        <div class="cohort-program">Onboarding milestone check-ins (Days 7, 14, 30)</div>
+        <div class="cohort-program">Integration setup sprint</div>
+        <div class="cohort-program">First-value proof email (T1+2)</div>
+        <div class="cohort-program">In-app guided activation (T3)</div>
+      </div>
+    </div>
+    <div class="cohort-card green-border">
+      <div class="cohort-card-hdr green-hdr">
+        <div class="cohort-card-title green-t">Post-90 Day Cohort &#8212; Value Erosion</div>
+        <div class="cohort-card-stat green-s">Activated</div>
+        <div class="cohort-card-desc">but value is fading &#8212; requires ongoing proof, expansion, and habit reinforcement</div>
+      </div>
+      <div class="cohort-card-body">
+        <div class="cohort-program">Quarterly Business Reviews (MM)</div>
+        <div class="cohort-program">Monthly health-based touchpoints (T1)</div>
+        <div class="cohort-program">Automated value nudges (T2+3)</div>
+        <div class="cohort-program">Annual contract conversion program</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Retention Program Matrix -->
+  <table style="margin-bottom:10px">
+    <thead>
+      <tr><th>Program</th><th>Segment</th><th>Format</th><th>Trigger</th><th>Owner</th><th>Goal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Day 2 Retention Call</strong></td><td>MM + T1</td><td>1:1 video/call</td><td>Auto-scheduled at signup</td><td>CSM</td><td>Surface early friction before it becomes intent</td></tr>
+      <tr><td><strong>Onboarding Milestone Check-ins</strong> (D7, D14, D30)</td><td>MM + T1</td><td>1:1 + in-app</td><td>Milestone not hit</td><td>CSM + Userpilot</td><td>Drive activation to 80% by Day 30</td></tr>
+      <tr><td><strong>Integration Setup Sprint</strong></td><td>MM + T1</td><td>Guided call</td><td>HubSpot/SF not connected Day 7</td><td>CSM</td><td>Remove #1 activation blocker</td></tr>
+      <tr><td><strong>First Value Proof Email</strong></td><td>T1 + T2</td><td>Automated email</td><td>30 calls made milestone</td><td>Customer.io</td><td>Prove ROI early &#8212; &#8220;you made 30 calls, here&#8217;s what that means&#8221;</td></tr>
+      <tr><td><strong>In-App Guided Activation</strong></td><td>T3 (20k accts)</td><td>PLG / in-app</td><td>Day 1 product trigger</td><td>Userpilot</td><td>Scale onboarding without headcount</td></tr>
+      <tr><td><strong>Monthly Health Touchpoint</strong></td><td>T1</td><td>1:many email/webinar</td><td>Health score amber</td><td>Customer.io + CSM pool</td><td>Prevent silent churn</td></tr>
+      <tr><td><strong>Quarterly Business Review</strong></td><td>MM Strategic</td><td>1:1 exec call</td><td>Quarterly auto-scheduled</td><td>CSM + CS Ops</td><td>Value proof + expansion signal</td></tr>
+      <tr><td><strong>Annual Contract Conversion</strong></td><td>T1 + T2</td><td>Targeted outreach</td><td>Month 8-10 of tenure</td><td>CS Ops + CSM</td><td>Convert M-t-M to annual &#8212; lock GRR</td></tr>
+      <tr><td><strong>Win-Back Campaign</strong></td><td>Churned &lt;90 days</td><td>Automated sequence</td><td>Post-churn day 7</td><td>Customer.io</td><td>Recover involuntary + regretted churn</td></tr>
+      <tr><td><strong>Pricing Rescue Program</strong></td><td>Downgrade intent</td><td>1:1 call</td><td>Pricing objection in ticket or call</td><td>CSM + AE</td><td>Right-size plan vs lose account</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Section 3: Downgrade Prevention -->
+  <div class="downgrade-box">
+    <strong>Downgrade is the silent GRR killer</strong> &#8212; harder to see than deletion. Monitor: seat reduction requests, plan downgrade attempts, usage below plan threshold for 30 days. Playbook fires before customer asks: proactively right-size or add value rather than react after the request.
+  </div>
+
+</div>
+</div>
+
+<!-- ── S15 · PLAYBOOK SYSTEM ── -->
+<div class="slide" id="s15">
+<div class="slide-header">
+  <h1>Retention Playbook System &#8212; Signal to Response</h1>
+  <span class="sub">Every churn reason has a playbook &middot; CSM-ready or auto-fired &middot; ready-reply scripts for MM &middot; nudges/prompts for tech-touch</span>
+</div>
+<div class="slide-body">
+
+  <!-- Section 1: How Playbooks Work -->
+  <div class="pb-how">
+    <div class="pb-how-col">
+      <div class="pb-how-hdr navy-hdr">For MM / High-Touch</div>
+      <div class="pb-how-body">
+        <div class="pb-how-item">ChurnZero detects signal &#8594; fires playbook &#8594; CSM gets task with: <strong>ready-reply script, account context, recommended action, urgency tier</strong></div>
+        <div class="pb-how-item">CSM adapts and executes &#8212; AI did the prep, human owns the outcome</div>
+        <div class="pb-how-item"><em>Example: &#8220;Pricing objection detected in support ticket &#8594; Playbook: Pricing Rescue &#8594; Script: Acknowledge the concern, quantify ROI, offer annual contract with 15% discount&#8221;</em></div>
+      </div>
+    </div>
+    <div class="pb-how-col">
+      <div class="pb-how-hdr green-hdr">For SMB Tech-Touch</div>
+      <div class="pb-how-body">
+        <div class="pb-how-item green-left">ChurnZero detects signal &#8594; fires automated sequence via Customer.io + Intercom Fin &#8212; no human in the loop for T2 + T3 unless escalated</div>
+        <div class="pb-how-item green-left">Nudges, in-app prompts, email sequences personalised by usage profile</div>
+        <div class="pb-how-item green-left">Escalates to digital specialist only if <strong>3 automated touches fail</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Playbook Library -->
+  <table>
+    <thead>
+      <tr><th>Churn Reason</th><th>Segment</th><th>Playbook Name</th><th>Response</th><th>Channel</th><th>Owner</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Pricing / ROI not clear</strong></td><td>MM + T1</td><td>Pricing Rescue</td><td>ROI calculation + annual offer (15% discount)</td><td>1:1 call</td><td>CSM + AE</td></tr>
+      <tr><td><strong>Low adoption / not using</strong></td><td>MM + T1</td><td>Activation Recovery</td><td>Usage audit + guided setup call + Userpilot flow</td><td>1:1 + in-app</td><td>CSM</td></tr>
+      <tr><td><strong>Low adoption / not using</strong></td><td>T2 + T3</td><td>Re-engagement Nudge</td><td>&#8220;Here&#8217;s what you&#8217;re missing&#8221; email sequence + Fin prompt</td><td>Email + in-app</td><td>Customer.io + Fin</td></tr>
+      <tr><td><strong>Integration failure</strong></td><td>All</td><td>Integration Fix Sprint</td><td>Proactive outreach + live reconnection</td><td>1:1 call (MM) / Email (SMB)</td><td>CSM / Auto</td></tr>
+      <tr><td><strong>Business slowdown</strong></td><td>MM + T1</td><td>Helping Hand</td><td>Offer 1-month free pause + resume commitment</td><td>1:1 call</td><td>CSM</td></tr>
+      <tr><td><strong>Business slowdown</strong></td><td>T2 + T3</td><td>Pause &amp; Resume</td><td>Automated: &#8220;Pause your plan, resume when ready&#8221;</td><td>Email</td><td>Customer.io</td></tr>
+      <tr><td><strong>Competitor mention</strong></td><td>MM</td><td>Competitive Shield</td><td>Win/loss analysis + differentiation call</td><td>1:1 call</td><td>CSM + Product</td></tr>
+      <tr><td><strong>Champion change</strong></td><td>MM + T1</td><td>New Champion Onboarding</td><td>Personalised intro + value replay</td><td>1:1 call</td><td>CSM</td></tr>
+      <tr><td><strong>No usage / zombie account</strong></td><td>T2 + T3</td><td>Last-Mile Rescue</td><td>3-touch sequence: email &#8594; Fin &#8594; specialist</td><td>Email + in-app</td><td>Auto &#8594; Digital</td></tr>
+      <tr><td><strong>Surprise cancellation</strong></td><td>All</td><td>Save Attempt</td><td>Understand reason &#8594; match to playbook &#8594; escalate to CSM lead</td><td>Call</td><td>CS Lead</td></tr>
+      <tr><td><strong>Annual-to-monthly intent</strong></td><td>MM + T1</td><td>Lock-In Offer</td><td>Annual contract at 10-15% savings, EBR commitment</td><td>1:1 call</td><td>CSM + AE</td></tr>
+      <tr><td><strong>Non-usage downgrade request</strong></td><td>T1 + T2</td><td>Right-Size &amp; Retain</td><td>Right-size plan + add value (training, integration help)</td><td>Email + call</td><td>CS Pool</td></tr>
+    </tbody>
+  </table>
+
+</div>
+</div>
+
+<!-- ── S16 · ONBOARDING FLOW ── -->
+<div class="slide" id="s16">
+<div class="slide-header">
+  <h1>Onboarding &#8212; Designed to Fix the Pre-90 Leakage</h1>
+  <span class="sub">43% of SMB churn happens before Day 90 &middot; onboarding is a retention strategy, not a setup exercise</span>
+</div>
+<div class="slide-body">
+
+  <!-- Stat Bar -->
+  <div class="stat-bar">
+    <div class="stat-bar-item">
+      <div class="stat-bar-n">43%</div>
+      <div class="stat-bar-l">of all SMB churn lands before Day 90</div>
+    </div>
+    <div class="stat-bar-item">
+      <div class="stat-bar-n">Day 2</div>
+      <div class="stat-bar-l">when friction first forms &#8212; most customers don&#8217;t tell you</div>
+    </div>
+    <div class="stat-bar-item">
+      <div class="stat-bar-n">80%</div>
+      <div class="stat-bar-l">target activation rate by Day 30 (current: ~55%)</div>
+    </div>
+  </div>
+
+  <!-- MM + T1 Onboarding -->
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff;margin-bottom:7px;padding:6px 12px;background:var(--navy);border-radius:6px">MM + T1 Onboarding &#8212; High-Touch Offline</div>
+  <div class="ob-timeline">
+    <div class="ob-stage">
+      <div class="ob-stage-hdr">
+        <div class="ob-stage-day">Day 0-2</div>
+        <div class="ob-stage-name">Welcome &amp; Setup</div>
+      </div>
+      <div class="ob-stage-items">
+        <div class="ob-item">CSM intro call (30 min): goals, team structure, JustCall use cases for their industry</div>
+        <div class="ob-item">Admin setup: numbers ported, users added, caller ID verified</div>
+        <div class="ob-item">First call made: CSM stays on until team makes first call together</div>
+      </div>
+    </div>
+    <div class="ob-stage">
+      <div class="ob-stage-hdr">
+        <div class="ob-stage-day">Day 3-7</div>
+        <div class="ob-stage-name">Integration Sprint</div>
+      </div>
+      <div class="ob-stage-items">
+        <div class="ob-item">HubSpot / Salesforce / Pipedrive connection: CSM-led live session</div>
+        <div class="ob-item">Call logging verified in CRM: team sees auto-logged notes</div>
+        <div class="ob-item">Power Dialer setup for outbound teams</div>
+      </div>
+    </div>
+    <div class="ob-stage">
+      <div class="ob-stage-hdr">
+        <div class="ob-stage-day">Day 8-14</div>
+        <div class="ob-stage-name">Feature Activation</div>
+      </div>
+      <div class="ob-stage-items">
+        <div class="ob-item">AI call scoring enabled, first scores reviewed together</div>
+        <div class="ob-item">SMS campaign setup (if applicable)</div>
+        <div class="ob-item">First milestone reached: 50 calls &#8594; &#8220;First Value Email&#8221; triggered by Customer.io</div>
+      </div>
+    </div>
+    <div class="ob-stage">
+      <div class="ob-stage-hdr">
+        <div class="ob-stage-day">Day 15-30</div>
+        <div class="ob-stage-name">Momentum &amp; Habit</div>
+      </div>
+      <div class="ob-stage-items">
+        <div class="ob-item">Health score checked by CSM: target 75+</div>
+        <div class="ob-item">Any amber signals &#8594; immediate outreach</div>
+        <div class="ob-item">Day 30 check-in: review usage, answer questions, set Month 2 goals</div>
+      </div>
+    </div>
+    <div class="ob-stage">
+      <div class="ob-stage-hdr">
+        <div class="ob-stage-day">Day 31-90</div>
+        <div class="ob-stage-name">Adoption &amp; Proof</div>
+      </div>
+      <div class="ob-stage-items">
+        <div class="ob-item">Monthly health review (CSM-led for MM, pooled for T1)</div>
+        <div class="ob-item">QBR prep begins: build value story from usage data</div>
+        <div class="ob-item">Expansion signal monitoring begins: seat additions, API growth</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- T2 + T3 Tech-Touch -->
+  <div class="ob-techtouch">
+    <div class="ob-techtouch-hdr">SMB T2 + T3 Onboarding &#8212; Tech-Touch In-Product</div>
+    <div class="ob-techtouch-body">
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 0</span>Welcome email (Customer.io) + in-app checklist launched (Userpilot): 5 steps to first call</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 1</span>First call prompt: Userpilot tooltip on making first call</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 3</span>&#8220;You haven&#8217;t connected your CRM yet&#8221; &#8212; in-app nudge + email</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 7</span>Integration not done &#8594; Customer.io email: &#8220;3 things stopping you from getting 10x value&#8221;</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 14</span>Activation check: if &lt;3 calls made &#8594; Intercom Fin proactive: &#8220;need help getting started?&#8221;</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 30</span>First Value Email (Customer.io): &#8220;Here&#8217;s what 30 calls a month does for a team like yours&#8221;</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Ongoing</span>Userpilot tips triggered by product behavior. ChurnZero health score monitoring begins.</div>
+    </div>
+  </div>
+
+  <!-- Onboarding + Pre-90 Handoff -->
+  <div class="callout green" style="margin-top:10px">
+    <strong>How Onboarding + Pre-90 Programs Work Together:</strong> Onboarding ends at Day 30. Pre-90 program runs Day 30-90. The handoff is automated: if activation score &ge; 70 at Day 30, account enters standard lifecycle. If score &lt; 70, account enters <strong>&#8220;At-Risk Pre-90&#8221; cohort</strong> &#8212; CSM (MM/T1) or digital specialist (T2) personally reviews and intervenes. No account falls through the crack unnoticed.
+  </div>
+
+</div>
+</div>
+
+<!-- ── S17 · CS SCOPE ── -->
+<div class="slide" id="s17">
+<div class="slide-header">
+  <h1>CS Scope &amp; Accountability &#8212; Where We Draw the Line</h1>
+  <span class="sub">What CS owns outright &middot; what we share with partners &middot; what we only influence &middot; cross-functional governance</span>
+</div>
+<div class="slide-body">
+
+  <!-- The Principle -->
+  <div class="principle-box">
+    CS owns <strong>customer outcomes, adoption, health, and Gross Revenue Retention.</strong> We own the relationship and the proactive retention strategy. We partner with Sales by identifying expansion opportunities, but Sales owns the commercial motion. We partner with Product by providing structured feedback, but Product owns the roadmap. We partner with Support by managing business impact during incidents, but Support owns technical resolution. <strong>Accountability without confusion.</strong>
+  </div>
+
+  <!-- Ownership Matrix -->
+  <div class="own-matrix">
+    <div class="own-col">
+      <div class="own-col-hdr owns">
+        <div class="own-col-title">CS Owns</div>
+        <div class="own-col-sub">Primary &#8212; L0 Goals</div>
+      </div>
+      <div class="own-col-body">
+        <div class="own-item primary">Gross Revenue Retention (GRR) &#8212; the primary metric</div>
+        <div class="own-item">Customer health score and adoption rate</div>
+        <div class="own-item">Proactive retention strategy and execution</div>
+        <div class="own-item">Churn risk identification and escalation</div>
+        <div class="own-item">Customer lifecycle management end-to-end</div>
+        <div class="own-item">Playbook design and execution</div>
+        <div class="own-item">Onboarding completion rate</div>
+        <div class="own-item">NPS / CSAT for CS-managed accounts</div>
+        <div class="own-item primary">Lead-gen SPIFF program (expansion signals &#8594; AE pipeline)</div>
+      </div>
+    </div>
+    <div class="own-col">
+      <div class="own-col-hdr shares">
+        <div class="own-col-title">CS Shares</div>
+        <div class="own-col-sub">Joint Accountability</div>
+      </div>
+      <div class="own-col-body">
+        <div class="own-section-label">With Sales (AE)</div>
+        <div class="own-item"><strong>Expansion revenue</strong> identification &#8212; CS finds, AE closes</div>
+        <div class="own-item"><strong>NRR</strong> &#8212; CS and AE jointly accountable</div>
+        <div class="own-item">Account health briefing before renewals</div>
+        <div class="own-section-label">With Product</div>
+        <div class="own-item">Customer feedback loops &#8212; structured, quarterly Product Feedback Council</div>
+        <div class="own-item">Feature gap prioritization &#8212; CS surfaces, Product decides</div>
+        <div class="own-item">Customer co-creation program &#8212; select customers build with us</div>
+        <div class="own-section-label">With Support</div>
+        <div class="own-item">Churn risk signals from tickets &#8212; Support flags to CS</div>
+        <div class="own-item">Business impact management during incidents (CS owns comms, Support owns resolution)</div>
+        <div class="own-item">SLA breach communication</div>
+      </div>
+    </div>
+    <div class="own-col">
+      <div class="own-col-hdr supports">
+        <div class="own-col-title">CS Supports</div>
+        <div class="own-col-sub">Influences, not accountable</div>
+      </div>
+      <div class="own-col-body">
+        <div class="own-item">Product roadmap (input provider, not decision maker)</div>
+        <div class="own-item">Bug fixes and engineering prioritization</div>
+        <div class="own-item">Pricing and packaging decisions</div>
+        <div class="own-item">Contract terms and legal</div>
+        <div class="own-item">Billing disputes and adjustments</div>
+        <div class="own-item">Expansion quota attainment (AE owns, CS enables)</div>
+        <div class="own-item">New customer acquisition</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Governance Table -->
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray);margin-bottom:7px">Cross-Functional Governance Rhythms</div>
+  <table style="margin-bottom:10px">
+    <thead>
+      <tr><th>Cadence</th><th>Participants</th><th>Agenda</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Weekly Customer Risk Review</strong></td><td>CS + Support + Product</td><td>At-risk accounts, signal review, escalations</td></tr>
+      <tr><td><strong>Monthly Churn Review</strong></td><td>CS + Sales + Product + Finance</td><td>Churn reasons, GRR bridge, playbook performance</td></tr>
+      <tr><td><strong>Quarterly Product Feedback Council</strong></td><td>CS + Product</td><td>Structured customer feedback, feature gap prioritization</td></tr>
+      <tr><td><strong>Executive Escalation Review</strong></td><td>CS Lead + Leadership</td><td>High-ARR at-risk accounts (&gt;$10k MRR)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- SPIFF Box -->
+  <div class="spiff-box">
+    <strong>SPIFF Model &#8212; CS as a Lead Source:</strong> CS identifies expansion signals from usage data. Every qualified expansion opportunity passed to AE = SPIFF credit for CSM. Target: <strong>20% of AE pipeline sourced from CS expansion signals.</strong> Aligns CS incentive with revenue growth, not just retention.
+  </div>
+
+</div>
+</div>
+
+<!-- ── S18 · APPENDIX ── -->
+<div class="slide" id="s18">
+<div class="slide-header">
+  <h1>Appendix &#8212; Key Assumptions</h1>
+  <span class="sub">Model assumptions underlying all calculations and projections</span>
+</div>
+<div class="slide-body">
+  <div class="appendix-note">All financial projections, headcount models, and GRR scenarios in this deck are derived from the assumptions below. Assumptions are based on SaaS CS benchmarks (Gainsight, McKinsey, KeyBanc), public SaaS Labs / JustCall product information, and standard India-based CS cost structures.</div>
+  <table>
+    <thead>
+      <tr><th style="width:45%">Assumption</th><th>Value / Basis</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Total ARR</td><td>$100M</td></tr>
+      <tr><td>Total accounts</td><td>25,000</td></tr>
+      <tr><td>Monthly renewals</td><td>70% of base ($70M ARR re-earned every 30 days)</td></tr>
+      <tr><td>MM segment ARR</td><td>~$57M (57% of total)</td></tr>
+      <tr><td>SMB T1 ARR</td><td>~$22M</td></tr>
+      <tr><td>SMB T2 ARR</td><td>~$12.6M</td></tr>
+      <tr><td>SMB T3 ARR</td><td>~$8.4M</td></tr>
+      <tr><td>Baseline GRR (blended)</td><td>~77% (inferred from segment mix)</td></tr>
+      <tr><td>Base case GRR improvement</td><td>+3pp (McKinsey benchmark, year 1)</td></tr>
+      <tr><td>Best case GRR improvement</td><td>+7pp (McKinsey best-in-class)</td></tr>
+      <tr><td>CS team size</td><td>43 FTE (India-based)</td></tr>
+      <tr><td>CSM salary range</td><td>INR 18-25L base (fully loaded 1.35x = INR 24-34L)</td></tr>
+      <tr><td>People cost</td><td>~$1.51M / year (INR exchange: 83 = $1)</td></tr>
+      <tr><td>Tooling cost</td><td>$189k / year</td></tr>
+      <tr><td>Total Year 1 CS investment</td><td>~$1.68M</td></tr>
+      <tr><td>Pre-90-day churn (SMB)</td><td>43% of total SMB churn</td></tr>
+      <tr><td>CS attribution &#8212; MM</td><td>55-60% of prevented churn attributable to CS</td></tr>
+      <tr><td>CS attribution &#8212; SMB T1</td><td>43-45%</td></tr>
+      <tr><td>CS attribution &#8212; SMB T2+3</td><td>18-20%</td></tr>
+      <tr><td>Intercom Fin benefit</td><td>L1 deflection only &middot; 3 digital specialists &middot; company-level headcount saving ($115-161k) accrues to support budget, not CS P&amp;L</td></tr>
+      <tr><td>Userpilot vs Pendo</td><td>Userpilot: $15k/yr, 1-7 day deploy. Pendo: $48k/yr, 8-12 weeks. Savings: $33k/yr. Pendo to be re-evaluated in Year 2.</td></tr>
+      <tr><td>RudderStack</td><td>Engineering critical path &#8212; must start 6-8 weeks before CS team launch. Health scoring is blind without it.</td></tr>
+      <tr><td>ChurnZero</td><td>CS orchestration platform &#8212; not a new tool, re-adoption with proper configuration from Day 1.</td></tr>
+      <tr><td>Hysteresis band (account movement)</td><td>&#177;15% ARR buffer to prevent thrashing between segments</td></tr>
+      <tr><td>Voluntary vs involuntary churn</td><td>Involuntary (payment failure) ~15% of total churn &#8212; addressed via Stripe Smart Retries</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
 <!-- ── NAV ── -->
 <nav class="nav-bar">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
   <div class="slide-dots" id="dotsContainer"></div>
-  <span class="slide-counter" id="counter">1 / 12</span>
+  <span class="slide-counter" id="counter">1 / 18</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
 </nav>
 
