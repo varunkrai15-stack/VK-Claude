@@ -260,6 +260,52 @@ tr:last-child td{border-bottom:none}
 .loop-arrow{width:22px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--green);font-weight:700;flex-shrink:0}
 .zero-human{background:var(--navy);color:#fff;border-radius:7px;padding:7px 14px;font-size:11.5px;font-weight:700;text-align:center;margin-top:10px;letter-spacing:.3px}
 .zero-human span{color:var(--green)}
+
+/* ── DUAL-LANE (S11) ── */
+.sc-lifecycle{display:flex;align-items:stretch;gap:0;margin-bottom:10px;background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.lc-stage{flex:1;padding:8px 10px;text-align:center;border-right:1px solid var(--border)}
+.lc-stage:last-child{border-right:none}
+.lcs-n{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px}
+.lcs-s{font-size:9.5px;color:var(--gray)}
+.lc-stage.past .lcs-n{color:var(--gray)}
+.lc-stage.lc-active{background:#FEF2F2}
+.lc-stage.lc-active .lcs-n{color:#DC2626}
+.lc-stage.lc-recover{background:#F0FDF4}
+.lc-stage.lc-recover .lcs-n{color:var(--green2)}
+.lc-stage.lc-future .lcs-n{color:var(--navy)}
+.score-bar{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.score-pill{background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px 14px;display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.score-pill.dip{border-color:#EF4444;background:#FEF2F2}
+.score-pill.rec{border-color:var(--green);background:#F0FDF4}
+.sp-val{font-size:24px;font-weight:800;line-height:1}
+.sp-label{font-size:9px;color:var(--gray);margin-top:3px;text-align:center;line-height:1.3}
+.score-arrow{font-size:18px;color:var(--gray);font-weight:700;flex-shrink:0}
+.dual-wrap{width:100%;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.dual-header{display:grid;grid-template-columns:88px 1fr 1fr;gap:0}
+.dual-header .dh-phase{background:var(--navy);color:#fff;padding:8px 11px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+.dual-header .dh-ai{background:#1E3A5F;color:#93C5FD;padding:8px 11px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+.dual-header .dh-human{background:#064E3B;color:#6EE7B7;padding:8px 11px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+.dual-row{display:grid;grid-template-columns:88px 1fr 1fr;gap:0;border-top:2px solid var(--border)}
+.dual-phase-cell{background:#F3F4F6;padding:10px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:2px solid var(--border)}
+.dpc-num{font-size:20px;font-weight:800;color:var(--navy)}
+.dpc-name{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:2px;text-align:center}
+.dpc-name.detect{color:#DC2626}
+.dpc-name.diagnose{color:#7C3AED}
+.dpc-name.reach{color:#0284C7}
+.dpc-name.fix{color:var(--green2)}
+.dpc-name.recover{color:var(--green2)}
+.dpc-name.expand{color:var(--green2)}
+.ai-cell{background:#EFF6FF;padding:10px 12px;border-right:1px solid #DBEAFE;vertical-align:top}
+.human-cell{background:#ECFDF5;padding:10px 12px;vertical-align:top}
+.cell-actor{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.cell-actor.ai-a{color:#1D4ED8}
+.cell-actor.hm-a{color:#065F46}
+.cell-line{font-size:11px;color:var(--text2);line-height:1.45;margin-bottom:4px}
+.cell-line strong{color:var(--navy)}
+.cell-quote{font-size:10.5px;font-style:italic;border-radius:0 5px 5px 0;padding:5px 9px;margin:5px 0;line-height:1.4;display:block}
+.cell-quote.green{color:#065F46;border-left:3px solid var(--green);background:var(--green-light)}
+.cell-quote.red{color:#991B1B;border-left:3px solid #EF4444;background:#FEF2F2}
+.cell-tools{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px}
 </style>
 </head>
 <body>
@@ -886,110 +932,165 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
-<!-- ── S11 · MM PLR SCENARIO ── -->
+<!-- ── S11 · MM AI-ASSISTED HUMAN-LED ── -->
 <div class="slide" id="s11">
-<div class="slide-header"><h1>Mid-Market in Practice — PLR Scenario</h1><span class="sub">How the system and CSM work together · JustCall customer · Pre-90-day retention window</span></div>
+<div class="slide-header"><h1>Mid-Market — AI-Assisted, Human-Led Retention</h1><span class="sub">Adoption score dip → root cause → fix → recovery → expansion · JustCall Growth tier · How AI and CSM operate together</span></div>
 <div class="slide-body">
 
   <!-- Account context -->
   <div class="sc-ctx">
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Account</div><div class="sc-ctx-val">SalesFlow Inc</div><div class="sc-ctx-sub">15-seat outbound B2B sales team</div></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Account</div><div class="sc-ctx-val">TechScale Ventures</div><div class="sc-ctx-sub">22-seat B2B outbound sales team</div></div>
     <div class="sc-ctx-divider"></div>
     <div class="sc-ctx-item"><div class="sc-ctx-lbl">Tier</div><div class="sc-ctx-val">Growth (MM)</div><div class="sc-ctx-sub">Dedicated CSM · 85-account book</div></div>
     <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">MRR</div><div class="sc-ctx-val">$720 / mo</div><div class="sc-ctx-sub">$8,640 ARR</div></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">MRR</div><div class="sc-ctx-val">$950 / mo</div><div class="sc-ctx-sub">$11,400 ARR · Month 3</div></div>
     <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Use case</div><div class="sc-ctx-val">Outbound calling + HubSpot CRM</div><div class="sc-ctx-sub">Power Dialer · AI call scoring</div></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Stack</div><div class="sc-ctx-val">JustCall + HubSpot CRM</div><div class="sc-ctx-sub">Power Dialer · AI call scoring · 22 seats</div></div>
     <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Risk</div><div class="sc-ctx-val">No HubSpot sync · AI scoring off</div><div class="sc-ctx-sub">Activation gap → churn risk</div></div>
-    <div class="sc-ctx-tag">1 Human Touch · 90-Day Lifecycle</div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Trigger</div><div class="sc-ctx-val" style="color:#EF4444">Adoption score: 82 → 54</div><div class="sc-ctx-sub">HubSpot sync silent failure · 9 days</div></div>
+    <div class="sc-ctx-tag">AI detects · Human resolves · AI monitors</div>
   </div>
 
-  <!-- Legend -->
-  <div class="sc-legend">
-    <span style="font-size:11px;font-weight:700;color:var(--navy)">Actor key:</span>
-    <span class="sc-legend-item"><span class="badge badge-ai">Predictive AI</span> Reads signals, scores risk</span>
-    <span class="sc-legend-item"><span class="badge badge-gen">Gen AI</span> Creates nudges, briefs, guides</span>
-    <span class="sc-legend-item"><span class="badge badge-human">CSM</span> Signal-triggered human action</span>
-    <span class="sc-legend-item"><span class="badge badge-signal">Alert</span> Internal escalation</span>
+  <!-- Lifecycle position bar -->
+  <div class="sc-lifecycle">
+    <div class="lc-stage past"><div class="lcs-n">✓ Onboarding</div><div class="lcs-s">Complete · Day 1–30</div></div>
+    <div class="lc-stage past"><div class="lcs-n">✓ Activation</div><div class="lcs-s">Score 82 · Day 45</div></div>
+    <div class="lc-stage lc-active"><div class="lcs-n">⚠ Adoption Dip</div><div class="lcs-s">Score 82→54 · Month 3</div></div>
+    <div class="lc-stage lc-recover"><div class="lcs-n">→ Recovery</div><div class="lcs-s">Score 79 · +14 days</div></div>
+    <div class="lc-stage lc-recover"><div class="lcs-n">→ Expansion</div><div class="lcs-s">22→28 seats · Month 5</div></div>
+    <div class="lc-stage lc-future"><div class="lcs-n">Renewal</div><div class="lcs-s">Month 12 · NRR 145%</div></div>
   </div>
 
-  <table class="sc-table">
-    <thead><tr><th style="width:72px">Day</th><th style="width:105px">Actor</th><th>What happens</th><th style="width:130px">Tool</th></tr></thead>
-    <tbody>
-      <tr>
-        <td class="sc-day">Day 1</td>
-        <td><span class="badge badge-ai">Predictive AI</span></td>
-        <td class="sc-action-main">RudderStack captures baseline: <strong>10/15 seats active</strong>, 38 calls made, HubSpot not connected, AI call scoring not enabled. Health score initialised at 72.</td>
-        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
-      </tr>
-      <tr>
-        <td class="sc-day">Day 7</td>
-        <td><span class="badge badge-gen">Gen AI</span></td>
-        <td class="sc-action-main">Userpilot detects HubSpot not connected → fires in-app checklist: <strong>"3 steps to unlock JustCall's power"</strong> — Connect HubSpot · Enable AI scoring · Set up Power Dialer. Personalised to admin user's role.</td>
-        <td><span class="sc-tool-tag">Userpilot</span></td>
-      </tr>
-      <tr class="risk-row">
-        <td class="sc-day">Day 14</td>
-        <td><span class="badge badge-signal">Alert</span></td>
-        <td class="sc-action-main">Calls drop: <strong>38/day → 12/day (−68%).</strong> HubSpot still disconnected. RudderStack feeds pattern to ChurnZero — health score falls to <strong>59</strong>. Matches historical churn signature: "integration gap + usage cliff before day 21."</td>
-        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
-      </tr>
-      <tr class="risk-row">
-        <td class="sc-day">Day 14</td>
-        <td><span class="badge badge-gen">Gen AI</span></td>
-        <td class="sc-action-main">ChurnZero auto-generates CSM task + outreach brief: <em>"SalesFlow at risk. Usage −68%. HubSpot unconnected. Accounts without CRM sync in first 14 days churn at 2.3× rate. Recommended: 30-min live setup call. Talking point: bi-directional call log sync."</em> CSM opens brief — no research needed.</td>
-        <td><span class="sc-tool-tag">ChurnZero AI</span></td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="sc-day">Day 15</td>
-        <td><span class="badge badge-human">CSM</span></td>
-        <td class="sc-action-main"><strong>CSM calls SalesFlow admin — the only human touch in this lifecycle.</strong> Finds the real reason: team didn't know JustCall auto-logs call outcomes to HubSpot (no manual data entry needed). Runs 15-min live screen-share. HubSpot connected. AI scoring enabled. Admin demos it to the team on the spot.
-          <div class="sc-action-quote">← This is PLR: the product read the signal. The CSM arrived with the answer.</div>
-        </td>
-        <td><span class="sc-tool-tag">CSM + JustCall product</span></td>
-      </tr>
-      <tr>
-        <td class="sc-day">Day 16</td>
-        <td><span class="badge badge-ai">Predictive AI</span></td>
-        <td class="sc-action-main">RudderStack: <strong>calls jump to 52/day (+37% above original baseline).</strong> HubSpot bi-sync active — 340 call logs pushed automatically. Health score recovers to <strong>84</strong>. ChurnZero closes at-risk flag automatically.</td>
-        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
-      </tr>
-      <tr>
-        <td class="sc-day">Day 30</td>
-        <td><span class="badge badge-gen">Gen AI</span></td>
-        <td class="sc-action-main">Userpilot detects AI scoring active but coaching dashboard not opened → fires contextual in-app tip: <strong>"Your AI call scores are live — open the coaching dashboard to see which reps need support and lift connect rates by 20%."</strong></td>
-        <td><span class="sc-tool-tag">Userpilot</span></td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="sc-day">Day 45</td>
-        <td><span class="badge badge-signal">Alert</span></td>
-        <td class="sc-action-main">RudderStack: <strong>3 new users added, API calls up 3×.</strong> ChurnZero flags <strong>expansion signal</strong>. Auto-task to CSM: "SalesFlow — expansion ready. Usage at 140% of baseline. Recommend: upsell to 20 seats + Power Dialer."</td>
-        <td><span class="sc-tool-tag">ChurnZero</span></td>
-      </tr>
-      <tr>
-        <td class="sc-day">Day 60</td>
-        <td><span class="badge badge-gen">Gen AI</span></td>
-        <td class="sc-action-main">ChurnZero generates value review brief for CSM: <em>"SalesFlow — 847 calls made, connect rate +34% vs. Day 1, 1,200 HubSpot contacts enriched with call data, 0 missed follow-ups."</em> CSM uses this as QBR deck. No manual data pull.</td>
-        <td><span class="sc-tool-tag">ChurnZero AI</span></td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="sc-day">Day 90</td>
-        <td><span class="badge badge-human">CSM</span></td>
-        <td class="sc-action-main">Expansion call — SalesFlow upgrades to <strong>20 seats + Power Dialer.</strong> MRR: $720 → $960. Account health score: 89. No renewal surprise. CSM spent &lt;2 hours total on this account over 90 days.
-          <div class="sc-action-quote">← System handled everything else.</div>
-        </td>
-        <td><span class="sc-tool-tag">CSM</span></td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Score trajectory + root cause -->
+  <div class="score-bar">
+    <div class="score-pill"><div class="sp-val" style="color:var(--green2)">82</div><div class="sp-label">Month 2<br>baseline</div></div>
+    <div class="score-arrow">→</div>
+    <div class="score-pill dip"><div class="sp-val" style="color:#EF4444">54</div><div class="sp-label">9-day dip<br>silent failure</div></div>
+    <div class="score-arrow">→</div>
+    <div class="score-pill rec"><div class="sp-val" style="color:var(--green2)">79</div><div class="sp-label">Day 14<br>post-fix</div></div>
+    <div class="score-arrow">→</div>
+    <div class="score-pill rec"><div class="sp-val" style="color:var(--green2)">84</div><div class="sp-label">Month 5<br>expansion</div></div>
+    <div style="flex:1;background:var(--navy);border-radius:8px;padding:9px 14px">
+      <div style="font-size:9px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:4px">Root cause identified by AI before CSM looked</div>
+      <div style="font-size:11.5px;color:#fff;font-weight:600;line-height:1.5">HubSpot API v3 deprecated → OAuth tokens expired → call logs stopped syncing to CRM. 22 reps manually copying notes for 9 days. Trust eroding silently. Customer was discussing alternatives.</div>
+    </div>
+  </div>
+
+  <!-- Dual-lane swimlane -->
+  <div class="dual-wrap">
+    <div class="dual-header">
+      <div class="dh-phase">Phase</div>
+      <div class="dh-ai">🤖 AI / System — autonomous actions</div>
+      <div class="dh-human">👤 CSM / Human — signal-triggered actions</div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">1</div><div class="dpc-name detect">DETECT</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Predictive AI — fully automated, no human triggered this</div>
+        <div class="cell-line"><strong>RudderStack</strong> logs drop over 9 days: HubSpot sync events → 0. Calls/day: 45 → 19 (−58%). Login sessions: −40% across 22 seats.</div>
+        <div class="cell-line"><strong>ChurnZero</strong> re-scores: adoption 82 → 54. Primary driver: integration health = RED (weight 0.45). Churn risk elevated to HIGH. Automated playbook fires. CSM task auto-created: <em>"TechScale — Priority HIGH. Act within 24 hrs."</em></div>
+        <div class="cell-tools"><span class="sc-tool-tag">RudderStack</span><span class="sc-tool-tag">ChurnZero health score</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — receives signal, does not hunt</div>
+        <div class="cell-line">CSM opens morning task queue. TechScale is top priority. <strong>No manual monitoring. No spreadsheet. The signal came to them.</strong></div>
+        <div class="cell-line">Time from anomaly to CSM awareness: <strong>under 2 hours</strong> (overnight batch).</div>
+      </div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">2</div><div class="dpc-name diagnose">DIAGNOSE</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Gen AI — root cause brief auto-generated in 90 seconds</div>
+        <div class="cell-line"><strong>ChurnZero AI</strong> generates diagnostic brief:</div>
+        <span class="cell-quote red">"Score driver: HubSpot sync = 0 since Day 9 (weight 0.45 — primary). Login −40%. Call vol −58%. Zero support tickets filed — customer has not identified the issue. Pattern: integration failure, NOT disengagement. Risk: HIGH. Proactive outreach within 24 hrs."</span>
+        <div class="cell-line">Cross-references product changelog: HubSpot API v3 deprecated 10 days ago — known to invalidate OAuth tokens on older integrations.</div>
+        <div class="cell-tools"><span class="sc-tool-tag">ChurnZero AI brief</span><span class="sc-tool-tag">Product changelog feed</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — validates, adds institutional context</div>
+        <div class="cell-line">Reads brief (90 sec). Hypothesis: HubSpot integration broken, not intent to leave.</div>
+        <div class="cell-line">Validates on product team Slack — <strong>confirms HubSpot API v3 break affects ~12% of accounts. Fix: re-authenticate OAuth. Takes 5 minutes on a live call.</strong></div>
+        <div class="cell-line">Full picture before picking up the phone. <strong>AI diagnosed. Human confirmed.</strong></div>
+      </div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">3</div><div class="dpc-name reach">REACH OUT</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Gen AI — drafts outreach, CSM edits and sends</div>
+        <div class="cell-line"><strong>ChurnZero AI</strong> drafts email:</div>
+        <span class="cell-quote green">"Hi Sarah, our system flagged a drop in TechScale's activity. We're checking in proactively — have you noticed any issues with your HubSpot sync? We may have identified the cause."</span>
+        <div class="cell-tools"><span class="sc-tool-tag">ChurnZero AI draft</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — personalises, sends, handles real response</div>
+        <div class="cell-line">CSM edits draft: adds <em>"We believe it's related to HubSpot's API v3 change on [date]. We can fix in 5 minutes on a call."</em> Sends with calendar link.</div>
+        <div class="cell-line">Sarah (VP Sales) replies in 90 minutes:</div>
+        <span class="cell-quote red">"Yes!! Our reps have been manually copying call notes for over a week. The team is extremely frustrated — we were literally discussing alternatives last night."</span>
+        <div class="cell-line"><strong>Account was 1 night away from a cancel discussion.</strong></div>
+      </div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">4</div><div class="dpc-name fix">FIX</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Gen AI — supports fix live, confirms restoration</div>
+        <div class="cell-line">CSM triggers <strong>Userpilot in-app banner</strong> to all 22 seats during call: <em>"HubSpot sync fully restored ✓ — your call logs are back. No manual entry needed."</em></div>
+        <div class="cell-line"><strong>ChurnZero</strong> detects sync events resume → auto-logs restoration. CSM sees live confirmation on screen during the call.</div>
+        <div class="cell-line"><strong>Customer.io</strong>: "Sync restored" email to all 22 users within 1 hour of re-auth.</div>
+        <div class="cell-tools"><span class="sc-tool-tag">Userpilot</span><span class="sc-tool-tag">ChurnZero confirm</span><span class="sc-tool-tag">Customer.io</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — leads the call, owns the relationship moment</div>
+        <div class="cell-line"><strong>30-min call with Sarah.</strong> Explains root cause (HubSpot's API change, not JustCall). Walks through re-auth live: Settings → Integrations → HubSpot → Reconnect → OAuth. <strong>Fixed in 5 minutes.</strong></div>
+        <div class="cell-line">Offers 2-week credit as goodwill.</div>
+        <span class="cell-quote green">"I really appreciate you catching this before I had to file a complaint. The team had no idea the integration was broken."</span>
+        <div class="cell-line">Positions proactive monitoring: <em>"We saw this before your team did — that's the model."</em></div>
+      </div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">5</div><div class="dpc-name recover">RECOVER</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Predictive AI — monitors recovery, alerts on milestone</div>
+        <div class="cell-line"><strong>RudderStack</strong>: Day 3 → 38 calls/day. Day 7 → 44. Day 14 → 47 (above pre-incident baseline).</div>
+        <div class="cell-line"><strong>ChurnZero</strong> score: 54 → 67 → 79. Auto-alert to CSM: <em>"TechScale recovering — score 79. Integration green. Calls/day +4% above pre-incident."</em></div>
+        <div class="cell-line"><strong>Delighted</strong> NPS pulse at recovery milestone: 9/10 from Sarah.</div>
+        <div class="cell-tools"><span class="sc-tool-tag">RudderStack → ChurnZero</span><span class="sc-tool-tag">Delighted NPS</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — closes loop, converts incident into trust capital</div>
+        <div class="cell-line"><strong>Day 14 follow-up call.</strong> Presents recovery data from ChurnZero brief: <em>"You went from 19 calls/day at the dip to 47 today — 4% above where you were before."</em></div>
+        <div class="cell-line">Converts incident into proof of value: <em>"We caught this on day 2. You were 9 days in and hadn't noticed yet."</em></div>
+        <span class="cell-quote green">"Our CEO said — this is what a real vendor relationship looks like."</span>
+      </div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">6</div><div class="dpc-name expand">EXPAND</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Predictive AI — flags expansion, surfaces NPS proof</div>
+        <div class="cell-line"><strong>ChurnZero</strong> (Month 5): 4 new users, API calls +60%, Power Dialer ×3. Expansion signal auto-flagged. CSM task: <em>"TechScale — upsell ready. Recommend: 6 seats + SMS campaigns."</em></div>
+        <div class="cell-line"><strong>Delighted</strong> quarterly NPS 9/10: <em>"JustCall caught an issue before we knew about it. That's why we stay."</em></div>
+        <div class="cell-tools"><span class="sc-tool-tag">ChurnZero expansion signal</span><span class="sc-tool-tag">Delighted</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — converts signal into contracted revenue</div>
+        <div class="cell-line">ChurnZero brief: 847 calls, connect rate +34%, 2,100 HubSpot contacts enriched. CSM presents SMS campaigns for lead follow-up.</div>
+        <div class="cell-line"><strong>Close: 22 → 28 seats. SMS campaigns live. MRR $950 → $1,380.</strong></div>
+        <div class="cell-line">The account discussing alternatives at Month 3 is now the team's highest NPS account at Month 5.</div>
+      </div>
+    </div>
+  </div>
 
   <div class="sc-outcome">
-    <div class="sc-out-item"><div class="sc-out-val">1</div><div class="sc-out-label">Human touch (Day 15 only)</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">133%</div><div class="sc-out-label">NRR on this account</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">+37%</div><div class="sc-out-label">Usage above baseline at Day 90</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">&lt;2 hrs</div><div class="sc-out-label">Total CSM time across 90 days</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">$960</div><div class="sc-out-label">MRR · up from $720</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">9 days</div><div class="sc-out-label">Issue undetected before AI flagged it</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">&lt;24 hrs</div><div class="sc-out-label">Anomaly → CSM outreach</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">82 → 84</div><div class="sc-out-label">Score · above pre-dip baseline</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">145%</div><div class="sc-out-label">NRR · $950 → $1,380 MRR</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">9/10</div><div class="sc-out-label">NPS · "caught it before we did"</div></div>
   </div>
 
 </div>
