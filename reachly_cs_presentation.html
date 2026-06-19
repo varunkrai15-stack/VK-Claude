@@ -7,1415 +7,868 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0A2540;
-  --navy2:#0D3060;
-  --green:#00B27A;
-  --green-light:#E6F7F1;
-  --green2:#009966;
-  --gray:#6B7280;
-  --gray-light:#F3F4F6;
-  --text:#111827;
-  --text2:#374151;
-  --white:#FFFFFF;
-  --border:#E5E7EB;
-  --amber:#F59E0B;
-  --red:#EF4444;
+  --navy:#0A2540;--green:#00B27A;--green-light:#E6F7F1;--green2:#009966;
+  --gray:#6B7280;--gray-light:#F3F4F6;--text:#111827;--text2:#374151;
+  --border:#E5E7EB;--amber:#F59E0B;--red:#EF4444;
 }
-body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  background:#0A2540;
-  overflow:hidden;
-  height:100vh;
-  width:100vw;
-}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0A2540;overflow:hidden;height:100vh;width:100vw}
 .presentation{position:relative;width:100vw;height:100vh}
-.slide{
-  display:none;
-  position:absolute;
-  inset:0;
-  flex-direction:column;
-  overflow:hidden;
-}
+.slide{display:none;position:absolute;inset:0;flex-direction:column;overflow:hidden}
 .slide.active{display:flex}
-
-/* ── NAV ── */
-.nav-bar{
-  position:fixed;
-  bottom:0;left:0;right:0;
-  height:44px;
-  background:rgba(10,37,64,0.95);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:20px;
-  z-index:999;
-  border-top:1px solid rgba(255,255,255,0.1);
-}
-.nav-btn{
-  background:rgba(0,178,122,0.2);
-  border:1px solid rgba(0,178,122,0.4);
-  color:#fff;
-  padding:5px 18px;
-  border-radius:16px;
-  cursor:pointer;
-  font-size:13px;
-  transition:all .2s;
-}
+.nav-bar{position:fixed;bottom:0;left:0;right:0;height:44px;background:rgba(10,37,64,0.95);display:flex;align-items:center;justify-content:center;gap:20px;z-index:999;border-top:1px solid rgba(255,255,255,0.1)}
+.nav-btn{background:rgba(0,178,122,0.2);border:1px solid rgba(0,178,122,0.4);color:#fff;padding:5px 18px;border-radius:16px;cursor:pointer;font-size:13px;transition:all .2s}
 .nav-btn:hover{background:rgba(0,178,122,0.4)}
 .nav-btn:disabled{opacity:0.3;cursor:default}
 .slide-counter{color:rgba(255,255,255,0.7);font-size:13px;min-width:50px;text-align:center}
 .slide-dots{display:flex;gap:6px}
-.dot{
-  width:7px;height:7px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.25);
-  cursor:pointer;
-  transition:background .2s;
-}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;transition:background .2s}
 .dot.active{background:#00B27A}
-
-/* ── COMMON LAYOUT ── */
-.slide-header{
-  background:var(--navy);
-  padding:18px 48px 14px;
-  border-bottom:3px solid var(--green);
-  display:flex;
-  align-items:baseline;
-  gap:16px;
-}
-.slide-header h1{color:#fff;font-size:22px;font-weight:700;letter-spacing:-0.3px}
-.slide-header .sub{color:rgba(255,255,255,0.5);font-size:13px}
-.slide-body{
-  flex:1;
-  background:var(--gray-light);
-  padding:28px 48px 52px;
-  overflow-y:auto;
-}
-.slide-body.dark{background:var(--navy);color:#fff}
+.slide-header{background:var(--navy);padding:14px 44px 12px;border-bottom:3px solid var(--green);display:flex;align-items:baseline;gap:14px;flex-shrink:0}
+.slide-header h1{color:#fff;font-size:20px;font-weight:700;letter-spacing:-0.3px}
+.slide-header .sub{color:rgba(255,255,255,0.5);font-size:12.5px}
+.slide-body{flex:1;background:var(--gray-light);padding:20px 44px 52px;overflow-y:auto}
 .slide-body.white{background:#fff}
-
-/* ── TABLES ── */
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{
-  background:var(--navy);
-  color:#fff;
-  padding:9px 12px;
-  text-align:left;
-  font-weight:600;
-  font-size:12px;
-  letter-spacing:.4px;
-  text-transform:uppercase;
-}
-td{
-  padding:8px 12px;
-  border-bottom:1px solid var(--border);
-  color:var(--text2);
-  vertical-align:top;
-}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{background:var(--navy);color:#fff;padding:8px 11px;text-align:left;font-weight:600;font-size:11.5px;letter-spacing:.4px;text-transform:uppercase}
+td{padding:7px 11px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top}
 tr:nth-child(even) td{background:#fff}
 tr:nth-child(odd) td{background:#F9FAFB}
 tr:last-child td{border-bottom:none}
-.tfoot td{
-  background:var(--navy) !important;
-  color:#fff;
-  font-weight:700;
-  border-bottom:none;
-}
-
-/* ── CARDS ── */
-.card-grid{display:grid;gap:16px}
-.card-grid-2{grid-template-columns:1fr 1fr}
-.card-grid-3{grid-template-columns:1fr 1fr 1fr}
-.card-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
-.card{
-  background:#fff;
-  border-radius:10px;
-  padding:18px 20px;
-  border:1px solid var(--border);
-  box-shadow:0 1px 3px rgba(0,0,0,0.06);
-}
+.tfoot td{background:var(--navy)!important;color:#fff;font-weight:700;border-bottom:none}
+.card{background:#fff;border-radius:9px;padding:14px 16px;border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,0.05)}
 .card.green{border-left:4px solid var(--green)}
 .card.navy{border-left:4px solid var(--navy)}
 .card.amber{border-left:4px solid var(--amber)}
-.card.red{border-left:4px solid var(--red)}
-.card-label{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--gray);margin-bottom:6px}
-.card-value{font-size:28px;font-weight:800;color:var(--navy)}
-.card-sub{font-size:12px;color:var(--gray);margin-top:4px}
-.card-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px}
-.card-text{font-size:12.5px;color:var(--text2);line-height:1.55}
-
-/* ── TAGS ── */
-.tag{
-  display:inline-block;
-  padding:2px 8px;
-  border-radius:10px;
-  font-size:11px;
-  font-weight:600;
-}
+.card-label{font-size:10.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--gray);margin-bottom:5px}
+.card-value{font-size:26px;font-weight:800;color:var(--navy)}
+.card-sub{font-size:11.5px;color:var(--gray);margin-top:3px}
+.tag{display:inline-block;padding:2px 7px;border-radius:9px;font-size:11px;font-weight:600}
 .tag-green{background:var(--green-light);color:#005C3F}
 .tag-navy{background:#EFF6FF;color:var(--navy)}
 .tag-amber{background:#FEF3C7;color:#92400E}
-.tag-red{background:#FEE2E2;color:#991B1B}
 
-/* ── SECTION LABEL ── */
-.section-label{
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.8px;
-  text-transform:uppercase;
-  color:var(--green);
-  margin-bottom:14px;
-}
-
-/* ── DIVIDER ── */
-.divider{height:1px;background:var(--border);margin:16px 0}
-
-/* ── PILL ── */
-.pill{
-  display:inline-flex;align-items:center;gap:4px;
-  background:var(--green-light);
-  color:#005C3F;
-  border-radius:12px;
-  padding:3px 10px;
-  font-size:11.5px;
-  font-weight:600;
-}
-
-/* ────────────────────────────────────────────────
-   SLIDE 1 · COVER
-──────────────────────────────────────────────── */
+/* ── COVER ── */
 #s1{flex-direction:row}
-.cover-left{
-  width:55%;
-  background:var(--navy);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:60px 56px;
-}
-.cover-right{
-  width:45%;
-  background:linear-gradient(135deg,#009966,#00B27A,#00D4A0);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:flex-start;
-  padding:60px 48px;
-}
-.cover-eyebrow{
-  font-size:12px;font-weight:700;letter-spacing:1.5px;
-  text-transform:uppercase;color:var(--green);margin-bottom:16px;
-}
-.cover-title{
-  font-size:42px;font-weight:800;color:#fff;
-  line-height:1.15;letter-spacing:-1px;margin-bottom:10px;
-}
-.cover-company{
-  font-size:20px;font-weight:500;color:rgba(255,255,255,0.55);
-  margin-bottom:40px;
-}
-.cover-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.cover-stat .num{font-size:32px;font-weight:800;color:#fff}
-.cover-stat .lbl{font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px}
-.cover-tagline{
-  font-size:22px;font-weight:700;color:#fff;line-height:1.3;
-  margin-bottom:28px;
-}
+.cover-left{width:55%;background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:56px 52px}
+.cover-right{width:45%;background:linear-gradient(135deg,#009966,#00B27A,#00D4A0);display:flex;flex-direction:column;justify-content:center;padding:56px 44px}
+.cover-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.cover-title{font-size:40px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:8px}
+.cover-company{font-size:18px;font-weight:400;color:rgba(255,255,255,0.5);margin-bottom:36px}
+.cover-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cover-stat .num{font-size:30px;font-weight:800;color:#fff}
+.cover-stat .lbl{font-size:11.5px;color:rgba(255,255,255,0.5);margin-top:2px}
+.cover-tagline{font-size:20px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:24px}
 .cover-bullets{list-style:none}
-.cover-bullets li{
-  color:rgba(255,255,255,0.9);
-  font-size:14px;
-  padding:7px 0;
-  border-bottom:1px solid rgba(255,255,255,0.15);
-  display:flex;align-items:center;gap:10px;
-}
-.cover-bullets li::before{
-  content:"";width:6px;height:6px;
-  border-radius:50%;background:#fff;flex-shrink:0;
-}
+.cover-bullets li{color:rgba(255,255,255,0.9);font-size:13.5px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;gap:9px}
+.cover-bullets li::before{content:"";width:5px;height:5px;border-radius:50%;background:#fff;flex-shrink:0}
 
-/* ────────────────────────────────────────────────
-   SLIDE 2 · BUSINESS CONTEXT
-──────────────────────────────────────────────── */
-.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
-.insight-box{
-  background:#fff;
-  border-radius:10px;
-  padding:20px;
-  border:1px solid var(--border);
-}
-.insight-box h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:10px}
-.big-stat{
-  font-size:40px;font-weight:800;color:var(--navy);
-  line-height:1;margin-bottom:4px;
-}
-.big-stat.green{color:var(--green2)}
-.big-stat.red{color:var(--red)}
-.stat-row{display:flex;gap:24px;flex-wrap:wrap}
-.s-stat .n{font-size:26px;font-weight:800;color:var(--navy)}
-.s-stat .l{font-size:11px;color:var(--gray);margin-top:2px}
-.pareto-bar{
-  background:var(--gray-light);
-  border-radius:6px;
-  height:28px;
-  position:relative;
-  overflow:hidden;
-  margin:10px 0;
-}
-.pareto-fill{
-  position:absolute;left:0;top:0;bottom:0;
-  display:flex;align-items:center;padding-left:10px;
-  color:#fff;font-size:12px;font-weight:700;border-radius:6px;
-}
-.pareto-label{font-size:11px;color:var(--gray);margin-top:4px}
-.motion-split{display:flex;gap:12px;margin-top:8px}
-.motion-card{
-  flex:1;background:var(--navy);color:#fff;
-  border-radius:8px;padding:14px;
-}
-.motion-card h4{font-size:13px;font-weight:700;margin-bottom:6px;color:var(--green)}
-.motion-card p{font-size:11.5px;color:rgba(255,255,255,0.7);line-height:1.4}
+/* ── COMBINED SLIDE 2 ── */
+.biz-top{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.biz-chip{background:#fff;border-radius:8px;padding:10px 14px;border:1px solid var(--border);text-align:center}
+.biz-chip .n{font-size:22px;font-weight:800;color:var(--navy)}
+.biz-chip .l{font-size:10.5px;color:var(--gray);margin-top:2px}
+.biz-main{display:grid;grid-template-columns:42% 58%;gap:14px}
+.biz-left{display:flex;flex-direction:column;gap:10px}
+.pareto-wrap{background:#fff;border-radius:8px;padding:14px 16px;border:1px solid var(--border)}
+.pareto-wrap h3{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.p-bar{background:var(--gray-light);border-radius:5px;height:22px;position:relative;overflow:hidden;margin-bottom:4px}
+.p-fill{position:absolute;left:0;top:0;bottom:0;display:flex;align-items:center;padding-left:8px;color:#fff;font-size:11px;font-weight:700;border-radius:5px}
+.p-label{font-size:11px;color:var(--gray)}
+.callout{border-radius:8px;padding:10px 14px;font-size:12px;line-height:1.45}
+.callout.red{background:#FEF2F2;border-left:3px solid var(--red);color:#991B1B}
+.callout.green{background:var(--green-light);border-left:3px solid var(--green);color:#005C3F}
+.callout.amber{background:#FEF3C7;border-left:3px solid var(--amber);color:#78350F}
+.biz-right{display:flex;flex-direction:column;gap:10px}
+.seg-box{background:#fff;border-radius:8px;border:1px solid var(--border);overflow:hidden}
+.seg-box-hdr{padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+.seg-box-hdr.mm{background:var(--navy)}
+.seg-box-hdr.smb{background:#1E4D7B}
+.seg-box-hdr h3{color:#fff;font-size:13px;font-weight:700}
+.seg-box-hdr .b{background:rgba(255,255,255,0.18);color:#fff;border-radius:10px;padding:2px 9px;font-size:11px;font-weight:600}
+.seg-stats-row{display:flex;gap:14px;padding:8px 14px;background:#F8FAFC;border-bottom:1px solid var(--border)}
+.seg-kv .k{font-size:10px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}
+.seg-kv .v{font-size:13px;font-weight:700;color:var(--navy)}
+.seg-tiers{padding:8px 14px;display:flex;flex-direction:column;gap:5px}
+.seg-tier{border-radius:6px;padding:7px 10px;display:flex;gap:16px;align-items:center}
+.seg-tier.t1{background:var(--green-light)}
+.seg-tier.t2{background:#EFF6FF}
+.seg-tier.t3{background:#F5F3FF}
+.seg-tier-name{font-size:11.5px;font-weight:700;color:var(--navy);min-width:130px}
+.seg-tier-vals{display:flex;gap:14px;flex-wrap:wrap}
+.stv .k{font-size:9.5px;color:var(--gray);text-transform:uppercase}
+.stv .v{font-size:11.5px;font-weight:700;color:var(--navy)}
 
-/* ────────────────────────────────────────────────
-   SLIDE 3 · SEGMENTATION
-──────────────────────────────────────────────── */
-.seg-split{display:grid;grid-template-columns:1fr 1fr;gap:20px;height:calc(100% - 100px)}
-.seg-team{
-  background:#fff;
-  border-radius:10px;
-  border:2px solid var(--border);
-  overflow:hidden;
-  display:flex;flex-direction:column;
-}
-.seg-team-header{
-  padding:16px 20px;
-  display:flex;justify-content:space-between;align-items:center;
-}
-.seg-team-header.mm{background:var(--navy)}
-.seg-team-header.smb{background:#1E4D7B}
-.seg-team-header h2{color:#fff;font-size:18px;font-weight:700}
-.seg-team-header .badge{
-  background:rgba(255,255,255,0.2);
-  color:#fff;border-radius:12px;
-  padding:4px 12px;font-size:12px;font-weight:600;
-}
-.seg-stats{display:flex;gap:16px;padding:16px 20px;background:var(--gray-light);border-bottom:1px solid var(--border)}
-.seg-stat .n{font-size:22px;font-weight:800;color:var(--navy)}
-.seg-stat .l{font-size:11px;color:var(--gray)}
-.tier-stack{flex:1;padding:12px 16px;display:flex;flex-direction:column;gap:10px}
-.tier-item{
-  border-radius:8px;padding:12px 14px;border:1px solid var(--border);
-}
-.tier-item.t1{background:var(--green-light);border-color:#86EFC9}
-.tier-item.t2{background:#EFF6FF;border-color:#BFDBFE}
-.tier-item.t3{background:#F5F3FF;border-color:#DDD6FE}
-.tier-item h4{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}
-.tier-row{display:flex;gap:16px;flex-wrap:wrap}
-.tier-kv .k{font-size:10px;color:var(--gray);text-transform:uppercase;letter-spacing:.4px}
-.tier-kv .v{font-size:13px;font-weight:700;color:var(--navy)}
-
-/* ────────────────────────────────────────────────
-   SLIDE 4 · COVERAGE MODEL
-──────────────────────────────────────────────── */
-.coverage-intro{
-  background:#fff;border-radius:10px;padding:16px 20px;
-  border-left:4px solid var(--green);margin-bottom:20px;
-  font-size:13.5px;color:var(--text2);line-height:1.5;
-}
-.coverage-intro strong{color:var(--navy)}
-.inverse-visual{
-  display:flex;align-items:center;justify-content:center;
-  gap:40px;padding:20px;
-  background:#fff;border-radius:10px;border:1px solid var(--border);
-  margin-bottom:20px;
-}
+/* ── COVERAGE ── */
+.cov-intro{background:#fff;border-radius:8px;padding:13px 16px;border-left:4px solid var(--green);margin-bottom:14px;font-size:13px;color:var(--text2);line-height:1.5}
+.inv-row{display:flex;align-items:flex-end;gap:24px;background:#fff;border-radius:8px;padding:16px 24px;border:1px solid var(--border);margin-bottom:14px;justify-content:center}
 .inv-item{text-align:center}
-.inv-bar{
-  width:60px;margin:0 auto 8px;
-  background:var(--navy);border-radius:4px;
-}
+.inv-bar{width:56px;margin:0 auto 7px;background:var(--navy);border-radius:4px}
 .inv-label{font-size:11px;color:var(--gray);font-weight:600}
-.inv-value{font-size:13px;font-weight:700;color:var(--navy)}
-.inv-arrow{font-size:24px;color:var(--gray)}
+.inv-value{font-size:12px;font-weight:700;color:var(--navy)}
+.inv-sub{font-size:10.5px;color:var(--green2);margin-top:2px;font-weight:700}
+.inv-arrow{font-size:20px;color:var(--gray);margin-bottom:20px}
 
-/* ────────────────────────────────────────────────
-   SLIDE 5 · TEAM STRUCTURE
-──────────────────────────────────────────────── */
-.org-tree{display:flex;flex-direction:column;align-items:center;gap:0}
-.org-level{display:flex;gap:12px;justify-content:center;position:relative}
-.org-box{
-  background:#fff;
-  border-radius:8px;padding:10px 14px;
-  border:1px solid var(--border);
-  text-align:center;min-width:130px;
-  box-shadow:0 1px 3px rgba(0,0,0,0.06);
-  position:relative;
-}
-.org-box.hoc{background:var(--navy);color:#fff;border-color:var(--navy);min-width:160px}
-.org-box.hoc span{color:rgba(255,255,255,0.6)}
-.org-box.dir{background:#1E4D7B;color:#fff;border-color:#1E4D7B}
-.org-box.dir span{color:rgba(255,255,255,0.6)}
-.org-box.lead{background:var(--green);color:#fff;border-color:var(--green)}
-.org-box.lead span{color:rgba(255,255,255,0.7)}
-.org-box.ops{background:#F0FDF4;border-color:#86EFAC}
-.org-box h4{font-size:12px;font-weight:700}
-.org-box span{font-size:10.5px;display:block;margin-top:2px}
-.org-connector{
-  width:2px;background:var(--border);
-  height:20px;margin:0 auto;
-}
-.org-hline{
-  height:2px;background:var(--border);
-  position:absolute;top:0;
-}
-.cost-summary{
-  display:grid;grid-template-columns:repeat(5,1fr);
-  gap:10px;margin-top:16px;
-}
-.cs-item{
-  background:#fff;border-radius:8px;padding:12px;
-  border:1px solid var(--border);text-align:center;
-}
-.cs-item .n{font-size:24px;font-weight:800;color:var(--navy)}
-.cs-item .l{font-size:11px;color:var(--gray);margin-top:2px}
+/* ── TEAM ── */
+/* ── MOVEMENT ── */
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.mv-card{background:#fff;border-radius:9px;border:1px solid var(--border);padding:13px 15px}
+.mv-card h3{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.mv-card ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+.mv-card ul li{font-size:11.5px;color:var(--text2);padding:4px 8px;background:var(--gray-light);border-radius:4px;display:flex;align-items:flex-start;gap:5px}
+.mv-card ul li::before{content:"→";color:var(--green);font-weight:700;flex-shrink:0}
+.guardrails{background:var(--navy);border-radius:9px;padding:13px 18px}
+.guardrails h3{color:var(--green);font-size:12px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.6px}
+.gr-list{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.gr-item{background:rgba(255,255,255,0.07);border-radius:7px;padding:8px 11px;display:flex;align-items:flex-start;gap:7px}
+.gr-num{width:18px;height:18px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px}
+.gr-text{font-size:11.5px;color:rgba(255,255,255,0.85);line-height:1.4}
+.gr-text strong{color:var(--green)}
 
-/* ────────────────────────────────────────────────
-   SLIDE 6 · ACCOUNT MOVEMENT
-──────────────────────────────────────────────── */
-.movement-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
-.movement-card{
-  background:#fff;border-radius:10px;
-  border:1px solid var(--border);padding:16px 18px;
-}
-.movement-card h3{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.movement-card ul{list-style:none;display:flex;flex-direction:column;gap:6px}
-.movement-card ul li{
-  font-size:12px;color:var(--text2);
-  padding:5px 8px;
-  background:var(--gray-light);border-radius:5px;
-  display:flex;align-items:flex-start;gap:6px;
-}
-.movement-card ul li::before{content:"→";color:var(--green);font-weight:700;flex-shrink:0}
-.guardrails{
-  background:var(--navy);border-radius:10px;padding:16px 20px;
-}
-.guardrails h3{color:var(--green);font-size:13px;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:.6px}
-.guardrail-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.guardrail-item{
-  background:rgba(255,255,255,0.08);
-  border-radius:8px;padding:10px 12px;
-  display:flex;align-items:flex-start;gap:8px;
-}
-.gr-num{
-  width:20px;height:20px;border-radius:50%;
-  background:var(--green);color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;
-}
-.gr-text{font-size:12px;color:rgba(255,255,255,0.85);line-height:1.4}
-.gr-text strong{color:var(--green);font-weight:700}
+/* ── ROADMAP ── */
+.phase{background:#fff;border-radius:9px;border:1px solid var(--border);overflow:hidden;margin-bottom:10px}
+.phase-hdr{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border)}
+.pbadge{padding:3px 10px;border-radius:10px;font-size:11px;font-weight:700;white-space:nowrap}
+.pbadge.pre{background:#FEF3C7;color:#92400E}
+.pbadge.run{background:var(--green-light);color:#005C3F}
+.pbadge.scale{background:#EFF6FF;color:#1E40AF}
+.pbadge.opt{background:#F5F3FF;color:#6D28D9}
+.phase-title{font-size:12.5px;font-weight:700;color:var(--navy)}
+.phase-date{font-size:11.5px;color:var(--gray);margin-left:auto}
+.phase-items{display:flex;gap:9px;padding:10px 16px;flex-wrap:wrap}
+.pi{background:var(--gray-light);border-radius:6px;padding:7px 11px;font-size:11.5px;color:var(--text2);border-left:3px solid transparent;flex:1;min-width:150px}
+.pi.critical{border-left-color:var(--red);background:#FEF2F2}
+.pi.key{border-left-color:var(--green);background:var(--green-light)}
+.pi.normal{border-left-color:var(--navy)}
+.pi.good{border-left-color:var(--green);background:#F0FDF4}
+.pi strong{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
+.pi.critical strong{color:var(--red)}
+.pi.key strong,.pi.good strong{color:#005C3F}
+.pi.normal strong{color:var(--navy)}
+.gap-fixed{background:#F0FDF4;border-radius:7px;padding:9px 14px;margin:0 16px 12px;font-size:12px;color:#005C3F;border:1px solid #86EFAC;display:flex;align-items:flex-start;gap:7px}
+.gap-fixed::before{content:"✓";width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px}
 
-/* ────────────────────────────────────────────────
-   SLIDE 7 · ROADMAP
-──────────────────────────────────────────────── */
-.roadmap-phases{display:flex;flex-direction:column;gap:12px}
-.phase{
-  background:#fff;border-radius:10px;
-  border:1px solid var(--border);overflow:hidden;
-}
-.phase-header{
-  display:flex;align-items:center;gap:14px;
-  padding:12px 18px;border-bottom:1px solid var(--border);
-}
-.phase-badge{
-  padding:4px 12px;border-radius:12px;
-  font-size:11.5px;font-weight:700;white-space:nowrap;
-}
-.phase-badge.pre{background:#FEF3C7;color:#92400E}
-.phase-badge.run{background:var(--green-light);color:#005C3F}
-.phase-badge.scale{background:#EFF6FF;color:#1E40AF}
-.phase-badge.opt{background:#F5F3FF;color:#6D28D9}
-.phase-title{font-size:13px;font-weight:700;color:var(--navy)}
-.phase-date{font-size:12px;color:var(--gray);margin-left:auto}
-.phase-items{
-  display:flex;gap:10px;padding:12px 18px;flex-wrap:wrap;
-}
-.phase-item{
-  background:var(--gray-light);
-  border-radius:7px;padding:8px 12px;
-  font-size:12px;color:var(--text2);
-  border-left:3px solid transparent;
-  flex:1;min-width:160px;
-}
-.phase-item.critical{border-left-color:var(--red);background:#FEF2F2}
-.phase-item.key{border-left-color:var(--green);background:var(--green-light)}
-.phase-item.normal{border-left-color:var(--navy)}
-.phase-item strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
-.phase-item.critical strong{color:var(--red)}
-.phase-item.key strong{color:#005C3F}
-.phase-item.normal strong{color:var(--navy)}
-.phase-gap{
-  background:#FEF2F2;border-radius:8px;padding:10px 16px;
-  margin-top:10px;font-size:12.5px;color:#991B1B;
-  border:1px solid #FECACA;display:flex;align-items:flex-start;gap:8px;
-}
-.phase-gap::before{content:"!";width:18px;height:18px;border-radius:50%;background:#EF4444;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;margin-top:1px}
+/* ── TOOLING ── */
+.stack-layer{margin-bottom:12px}
+.sl-label{font-size:10.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--gray);margin-bottom:7px;padding-left:3px}
+.stack-tools{display:flex;gap:9px;flex-wrap:wrap}
+.tool-card{background:#fff;border-radius:8px;border:1px solid var(--border);padding:11px 13px;flex:1;min-width:140px}
+.tool-card.backbone{background:var(--navy);border-color:var(--navy);display:flex;align-items:center;gap:10px;padding:10px 18px}
+.tool-card.backbone .tool-name{color:#fff;font-size:13.5px}
+.tool-card.backbone .tool-desc{color:rgba(255,255,255,0.6);font-size:11px}
+.tool-name{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.tool-desc{font-size:10.5px;color:var(--gray);margin-bottom:7px;line-height:1.3}
+.tool-meta{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.tool-cost{background:#FEF3C7;color:#92400E;border-radius:9px;padding:2px 7px;font-size:10.5px;font-weight:700}
+.tool-integ{background:#EFF6FF;color:#1E40AF;border-radius:9px;padding:2px 7px;font-size:10px}
+.tool-roi{background:var(--green-light);color:#005C3F;border-radius:9px;padding:2px 7px;font-size:10px;font-weight:600}
+.tool-note{background:#FEF3C7;color:#78350F;border-radius:9px;padding:2px 7px;font-size:10px;font-weight:600}
+.deflect-box{margin-top:7px;border-top:1px solid var(--border);padding-top:7px}
+.deflect-box .dbl{font-size:10px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}
+.deflect-row{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px}
+.dtag{border-radius:4px;padding:2px 6px;font-size:9.5px;font-weight:600}
+.dtag.yes{background:#DCFCE7;color:#166534}
+.dtag.partial{background:#FEF3C7;color:#92400E}
+.dtag.no{background:#FEE2E2;color:#991B1B}
 
-/* ────────────────────────────────────────────────
-   SLIDE 8 · TOOLING LANDSCAPE
-──────────────────────────────────────────────── */
-.stack-layer{margin-bottom:14px}
-.stack-layer-label{
-  font-size:11px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;
-  color:var(--gray);margin-bottom:8px;padding-left:4px;
-}
-.stack-tools{display:flex;gap:10px;flex-wrap:wrap}
-.tool-card{
-  background:#fff;border-radius:9px;
-  border:1px solid var(--border);
-  padding:13px 15px;flex:1;min-width:150px;
-  box-shadow:0 1px 3px rgba(0,0,0,0.05);
-}
-.tool-card.backbone{
-  background:var(--navy);border-color:var(--navy);
-  display:flex;align-items:center;gap:12px;
-  padding:12px 20px;
-}
-.tool-card.backbone .tool-name{color:#fff;font-size:14px}
-.tool-card.backbone .tool-desc{color:rgba(255,255,255,0.6);font-size:11.5px}
-.tool-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px}
-.tool-desc{font-size:11px;color:var(--gray);margin-bottom:8px;line-height:1.35}
-.tool-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.tool-cost{
-  background:#FEF3C7;color:#92400E;
-  border-radius:10px;padding:2px 8px;font-size:11px;font-weight:700;
-}
-.tool-integ{
-  background:#EFF6FF;color:#1E40AF;
-  border-radius:10px;padding:2px 8px;font-size:10.5px;
-}
-.tool-roi{
-  background:var(--green-light);color:#005C3F;
-  border-radius:10px;padding:2px 8px;font-size:10.5px;font-weight:600;
-}
-
-/* ────────────────────────────────────────────────
-   SLIDE 9 · TOOLING ROI
-──────────────────────────────────────────────── */
-.troi-header{
-  display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px;
-}
-.troi-stat{
-  background:#fff;border-radius:9px;padding:16px 20px;
-  border:1px solid var(--border);text-align:center;
-}
-.troi-stat .n{font-size:34px;font-weight:800;color:var(--navy)}
-.troi-stat .l{font-size:12px;color:var(--gray);margin-top:4px}
-
-/* ────────────────────────────────────────────────
-   SLIDE 10 · COMMERCIAL ROI
-──────────────────────────────────────────────── */
-.roi-split{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
-.roi-case{
-  background:#fff;border-radius:10px;padding:20px;
-  border:2px solid var(--border);
-}
+/* ── ROI ── */
+.roi-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
+.roi-case{background:#fff;border-radius:9px;padding:16px;border:2px solid var(--border)}
 .roi-case.best{border-color:var(--green)}
-.roi-case-header{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
-.roi-case.best .roi-case-header{color:var(--green2)}
-.roi-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--gray-light)}
+.roi-case-hdr{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px;padding-bottom:9px;border-bottom:1px solid var(--border)}
+.roi-case.best .roi-case-hdr{color:var(--green2)}
+.roi-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--gray-light)}
 .roi-row:last-child{border-bottom:none}
-.roi-key{font-size:12.5px;color:var(--gray)}
-.roi-val{font-size:14px;font-weight:700;color:var(--navy)}
-.roi-val.green{color:var(--green2)}
-.roi-val.amber{color:var(--amber)}
-.roi-highlight{
-  background:var(--navy);border-radius:10px;padding:16px 20px;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
-}
-.roi-hl-item .n{font-size:28px;font-weight:800;color:#fff}
-.roi-hl-item .l{font-size:11px;color:rgba(255,255,255,0.55);margin-top:2px}
-.year2-note{
-  margin-top:16px;background:var(--green-light);border-radius:8px;
-  padding:12px 16px;font-size:12.5px;color:#005C3F;line-height:1.5;
-  border-left:4px solid var(--green);
-}
+.roi-key{font-size:12px;color:var(--gray)}
+.roi-val{font-size:13px;font-weight:700;color:var(--navy)}
+.roi-hl{background:var(--navy);border-radius:9px;padding:14px 18px;display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.roi-hl-item .n{font-size:26px;font-weight:800;color:#fff}
+.roi-hl-item .l{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px}
+.y2{background:var(--green-light);border-radius:8px;padding:11px 15px;font-size:12px;color:#005C3F;line-height:1.5;border-left:4px solid var(--green)}
 
-/* ────────────────────────────────────────────────
-   SLIDE 11 · CX IMPACT
-──────────────────────────────────────────────── */
-.cx-split{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
-.cx-side{background:#fff;border-radius:10px;border:1px solid var(--border);overflow:hidden}
-.cx-side-header{
-  padding:14px 18px;
-  display:flex;align-items:center;gap:10px;
-}
-.cx-side-header.commercial{background:var(--navy)}
-.cx-side-header.experience{background:var(--green2)}
-.cx-side-header h2{color:#fff;font-size:15px;font-weight:700}
-.cx-side-body{padding:14px 18px}
-.cx-metric{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--gray-light)}
-.cx-metric:last-child{border-bottom:none}
-.cx-metric-label{font-size:12.5px;color:var(--text2)}
-.cx-metric-val{font-size:13px;font-weight:700}
-.cx-journey{margin-top:16px}
-.cx-journey h3{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px}
-.journey-steps{display:flex;gap:0;align-items:stretch}
-.j-step{
-  flex:1;text-align:center;
-  position:relative;
-}
-.j-step::after{
-  content:"→";
-  position:absolute;right:-8px;top:50%;transform:translateY(-50%);
-  color:var(--gray);font-size:16px;z-index:1;
-}
+/* ── CX ── */
+.cx-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
+.cx-side{background:#fff;border-radius:9px;border:1px solid var(--border);overflow:hidden}
+.cx-sh{padding:12px 16px}
+.cx-sh.comm{background:var(--navy)}
+.cx-sh.exp{background:var(--green2)}
+.cx-sh h2{color:#fff;font-size:14px;font-weight:700}
+.cx-sb{padding:12px 16px}
+.cx-m{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--gray-light)}
+.cx-m:last-child{border-bottom:none}
+.cx-ml{font-size:12px;color:var(--text2)}
+.cx-mv{font-size:12.5px;font-weight:700}
+.j-steps{display:flex;gap:0;align-items:stretch;margin-top:8px}
+.j-step{flex:1;text-align:center;position:relative}
+.j-step::after{content:"→";position:absolute;right:-8px;top:35%;color:var(--gray);font-size:14px;z-index:1}
 .j-step:last-child::after{display:none}
-.j-dot{
-  width:36px;height:36px;border-radius:50%;
-  background:var(--navy);color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:700;margin:0 auto 6px;
-}
-.j-day{font-size:10.5px;font-weight:700;color:var(--green2);margin-bottom:3px}
-.j-text{font-size:10.5px;color:var(--gray);line-height:1.3}
-.flywheel{
-  background:var(--navy);border-radius:10px;
-  padding:14px 20px;margin-top:16px;
-  display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:10px;
-}
+.j-dot{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin:0 auto 5px}
+.j-day{font-size:10px;font-weight:700;color:var(--green2);margin-bottom:2px}
+.j-text{font-size:10px;color:var(--gray);line-height:1.3}
+.flywheel{background:var(--navy);border-radius:9px;padding:12px 18px;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:8px}
 .fw-item{text-align:center;color:#fff}
-.fw-item .label{font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:2px}
-.fw-item .value{font-size:16px;font-weight:700}
-.fw-arrow{font-size:20px;color:var(--green)}
+.fw-item .lbl{font-size:10px;color:rgba(255,255,255,0.55);margin-bottom:2px}
+.fw-item .val{font-size:14px;font-weight:700}
+.fw-arrow{font-size:18px;color:var(--green)}
+
+/* troi */
+.troi-hdr{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px}
+.troi-stat{background:#fff;border-radius:8px;padding:14px 18px;border:1px solid var(--border);text-align:center}
+.troi-stat .n{font-size:30px;font-weight:800;color:var(--navy)}
+.troi-stat .l{font-size:11.5px;color:var(--gray);margin-top:3px}
 </style>
 </head>
 <body>
 <div class="presentation">
 
-<!-- ────── SLIDE 1 · COVER ────── -->
+<!-- ── S1 · COVER ── -->
 <div class="slide active" id="s1">
-  <div class="cover-left">
-    <div class="cover-eyebrow">Strategic Operating Model</div>
-    <div class="cover-title">Head of<br>Customer<br>Success</div>
-    <div class="cover-company">Reachly · Business Communications Platform</div>
-    <div class="cover-stats">
-      <div class="cover-stat"><div class="num">$100M</div><div class="lbl">Annual Recurring Revenue</div></div>
-      <div class="cover-stat"><div class="num">25,000</div><div class="lbl">Total Accounts</div></div>
-      <div class="cover-stat"><div class="num">44 FTE</div><div class="lbl">CS Team (India-based)</div></div>
-      <div class="cover-stat"><div class="num">$1.79M</div><div class="lbl">Total CS Investment / yr</div></div>
-    </div>
-  </div>
-  <div class="cover-right">
-    <div class="cover-tagline">Designed around one truth: retention is re-earned every 30 days.</div>
-    <ul class="cover-bullets">
-      <li>2-team structure · Mid Market + SMB (3 tiers)</li>
-      <li>ARR-first book of business, account-capped coverage</li>
-      <li>44 FTE · ~$1.79M · 1.6% of ARR</li>
-      <li>8-tool stack · $222k · 9.5x standalone ROI</li>
-      <li>Base payback: ~11.6 months · Best: ~6.8 months</li>
-      <li>GRR target: 70% → 75–78% in 18 months</li>
-    </ul>
+<div class="cover-left">
+  <div class="cover-eyebrow">Strategic Operating Model</div>
+  <div class="cover-title">Head of<br>Customer<br>Success</div>
+  <div class="cover-company">Reachly · Business Communications Platform</div>
+  <div class="cover-stats">
+    <div class="cover-stat"><div class="num">$100M</div><div class="lbl">Annual Recurring Revenue</div></div>
+    <div class="cover-stat"><div class="num">25,000</div><div class="lbl">Total Accounts</div></div>
+    <div class="cover-stat"><div class="num">43 FTE</div><div class="lbl">CS Team · India-based</div></div>
+    <div class="cover-stat"><div class="num">~$1.68M</div><div class="lbl">Total CS Investment / yr</div></div>
   </div>
 </div>
+<div class="cover-right">
+  <div class="cover-tagline">Retention is re-earned every 30 days.<br>Build for that reality.</div>
+  <ul class="cover-bullets">
+    <li>2-team structure · Mid Market + SMB (3 tiers)</li>
+    <li>ARR-first book of business · account-capped coverage</li>
+    <li>43 FTE · $1.51M people · 1.51% of ARR</li>
+    <li>8-tool stack · $189k · 10.5x standalone ROI</li>
+    <li>Base payback ~12 months · Best ~6.5 months</li>
+    <li>GRR target: 70% → 75–78% in 18 months</li>
+  </ul>
+</div>
+</div>
 
-<!-- ────── SLIDE 2 · BUSINESS CONTEXT ────── -->
+<!-- ── S2 · COMBINED: BUSINESS REALITY + SEGMENTATION ── -->
 <div class="slide" id="s2">
-  <div class="slide-header">
-    <h1>The Business We Are Running</h1>
-    <span class="sub">Why two fundamentally different motions are required</span>
+<div class="slide-header">
+  <h1>The Business + Segmentation</h1>
+  <span class="sub">Two fundamentally different problems that require two different motions</span>
+</div>
+<div class="slide-body">
+  <div class="biz-top">
+    <div class="biz-chip"><div class="n">$100M</div><div class="l">Annual ARR</div></div>
+    <div class="biz-chip"><div class="n">25,000</div><div class="l">Total Accounts</div></div>
+    <div class="biz-chip"><div class="n" style="color:var(--red)">6% / mo</div><div class="l">Long tail logo churn</div></div>
+    <div class="biz-chip"><div class="n" style="color:var(--red)">70%</div><div class="l">Annual GRR (overall)</div></div>
   </div>
-  <div class="slide-body">
-    <div class="context-grid">
-      <div class="insight-box">
+  <div class="biz-main">
+    <div class="biz-left">
+      <div class="pareto-wrap">
         <h3>The Pareto Problem</h3>
-        <div class="big-stat">7%</div>
-        <div style="font-size:13px;color:var(--gray);margin-bottom:12px">of accounts carry 52% of ARR</div>
-        <div class="pareto-bar">
-          <div class="pareto-fill" style="width:7%;background:var(--navy)">7%</div>
-        </div>
-        <div class="pareto-label">1,750 accounts → $52M ARR · Avg ACV $30k</div>
-        <div class="pareto-bar" style="margin-top:8px">
-          <div class="pareto-fill" style="width:93%;background:var(--gray)">93%</div>
-        </div>
-        <div class="pareto-label">23,250 accounts → $48M ARR · Avg ACV $2.1k</div>
+        <div class="p-bar"><div class="p-fill" style="width:7%;background:var(--navy)">7%</div></div>
+        <div class="p-label">1,750 accounts → $52M ARR · avg $30k ACV</div>
+        <div class="p-bar" style="margin-top:7px"><div class="p-fill" style="width:93%;background:var(--gray)">93%</div></div>
+        <div class="p-label">23,250 accounts → $48M ARR · avg $2.1k ACV</div>
       </div>
-      <div class="insight-box">
-        <h3>The Retention Reality</h3>
-        <div class="stat-row" style="margin-bottom:14px">
-          <div class="s-stat"><div class="n" style="color:var(--red)">6%</div><div class="l">Monthly logo churn (long tail)</div></div>
-          <div class="s-stat"><div class="n" style="color:var(--red)">70%</div><div class="l">Annual GRR (overall)</div></div>
-          <div class="s-stat"><div class="n" style="color:var(--amber)">90%</div><div class="l">Annual NRR</div></div>
-        </div>
-        <div style="background:#FEF2F2;border-radius:8px;padding:10px 12px;font-size:12.5px;color:#991B1B;margin-bottom:10px">
-          <strong>The 3-month problem:</strong> 43% of SMB churn lands before day 90 — before customers reach first value.
-        </div>
-        <div style="background:var(--green-light);border-radius:8px;padding:10px 12px;font-size:12.5px;color:#005C3F">
-          <strong>70% of renewals are monthly</strong> — $70M ARR re-earned every 30 days, not locked by annual contracts.
-        </div>
-      </div>
+      <div class="callout green"><strong>70% of renewals are monthly</strong> — $70M ARR re-earned every 30 days, not locked by annual contracts. Intervention must happen inside the billing cycle.</div>
+      <div class="callout red"><strong>The 3-month problem:</strong> 43% of SMB churn lands before day 90, before customers reach first value. Onboarding is the highest-leverage intervention.</div>
+      <div class="callout amber"><strong>A small share of accounts carries most revenue.</strong> Top 5% (1,250 accounts) = 45% of ARR. Human coverage must concentrate here; everything else scales on automation.</div>
     </div>
-    <div class="motion-split">
-      <div class="motion-card">
-        <h4>Motion 1 · Mid Market (≥$12k ACV)</h4>
-        <p>Named CSMs · proactive · EBRs · ROI conversations · annual contracts with monthly billing. Human relationship is the retention mechanism. Managed GRR: 75% — real, but with a $13M leak.</p>
+    <div class="biz-right">
+      <div class="seg-box">
+        <div class="seg-box-hdr mm"><h3>Mid Market Team</h3><div class="b">≥ $12k ACV</div></div>
+        <div class="seg-stats-row">
+          <div class="seg-kv"><div class="k">Accounts</div><div class="v">1,750</div></div>
+          <div class="seg-kv"><div class="k">ARR</div><div class="v">$52M</div></div>
+          <div class="seg-kv"><div class="k">Avg ACV</div><div class="v">~$30k</div></div>
+          <div class="seg-kv"><div class="k">Current GRR</div><div class="v">75%</div></div>
+          <div class="seg-kv"><div class="k">Motion</div><div class="v">Named CSMs · QBRs</div></div>
+        </div>
+        <div class="seg-tiers">
+          <div class="seg-tier t1">
+            <div class="seg-tier-name">Strategic · ≥ $24k ACV</div>
+            <div class="seg-tier-vals">
+              <div class="stv"><div class="k">Accounts</div><div class="v">750</div></div>
+              <div class="stv"><div class="k">ARR</div><div class="v">$37M</div></div>
+              <div class="stv"><div class="k">Ratio</div><div class="v">1:58</div></div>
+              <div class="stv"><div class="k">ARR/CSM</div><div class="v">$2.85M</div></div>
+            </div>
+          </div>
+          <div class="seg-tier t2">
+            <div class="seg-tier-name">Core · $12k–$24k ACV</div>
+            <div class="seg-tier-vals">
+              <div class="stv"><div class="k">Accounts</div><div class="v">1,000</div></div>
+              <div class="stv"><div class="k">ARR</div><div class="v">$15M</div></div>
+              <div class="stv"><div class="k">Ratio</div><div class="v">1:143</div></div>
+              <div class="stv"><div class="k">ARR/CSM</div><div class="v">$2.14M</div></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="motion-card">
-        <h4>Motion 2 · SMB (&#60;$12k ACV) — 3 tiers</h4>
-        <p>Pooled CSMs for top SMB · pure automation for the tail. 23,250 accounts at avg $2.1k ACV — no CSM can math out. Digital-first model with triggered human escalation.</p>
-      </div>
-      <div class="motion-card">
-        <h4>The Structural Truth</h4>
-        <p>These are not the same problem. The same motion applied to both produces: over-service at the bottom (uneconomic), under-service at the top (churn). Two teams, two operating models.</p>
+      <div class="seg-box">
+        <div class="seg-box-hdr smb"><h3>SMB Team</h3><div class="b">&lt; $12k ACV · 3 Tiers</div></div>
+        <div class="seg-stats-row">
+          <div class="seg-kv"><div class="k">Accounts</div><div class="v">23,250</div></div>
+          <div class="seg-kv"><div class="k">ARR</div><div class="v">$48M</div></div>
+          <div class="seg-kv"><div class="k">Avg ACV</div><div class="v">~$2.1k</div></div>
+          <div class="seg-kv"><div class="k">Current GRR</div><div class="v">62%</div></div>
+        </div>
+        <div class="seg-tiers">
+          <div class="seg-tier t1">
+            <div class="seg-tier-name">Tier 1 · High $4.6k–$12k</div>
+            <div class="seg-tier-vals">
+              <div class="stv"><div class="k">Accounts</div><div class="v">3,250</div></div>
+              <div class="stv"><div class="k">ARR</div><div class="v">$19M</div></div>
+              <div class="stv"><div class="k">Coverage</div><div class="v">Pooled 1:325</div></div>
+            </div>
+          </div>
+          <div class="seg-tier t2">
+            <div class="seg-tier-name">Tier 2 · Mid $2k–$4.6k</div>
+            <div class="seg-tier-vals">
+              <div class="stv"><div class="k">Accounts</div><div class="v">4,000</div></div>
+              <div class="stv"><div class="k">ARR</div><div class="v">$12M</div></div>
+              <div class="stv"><div class="k">Coverage</div><div class="v">Digital + escalation</div></div>
+            </div>
+          </div>
+          <div class="seg-tier t3">
+            <div class="seg-tier-name">Tier 3 · Digital &lt; $2k</div>
+            <div class="seg-tier-vals">
+              <div class="stv"><div class="k">Accounts</div><div class="v">16,000</div></div>
+              <div class="stv"><div class="k">ARR</div><div class="v">$17M</div></div>
+              <div class="stv"><div class="k">Coverage</div><div class="v">Full automation</div></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+</div>
 
-<!-- ────── SLIDE 3 · SEGMENTATION MODEL ────── -->
+<!-- ── S3 · COVERAGE MODEL ── -->
 <div class="slide" id="s3">
-  <div class="slide-header">
-    <h1>Segmentation Model</h1>
-    <span class="sub">2 teams · 4 tiers · ARR-first design</span>
+<div class="slide-header">
+  <h1>Coverage Model — ARR-First, Account-Capped</h1>
+  <span class="sub">High-value accounts carry fewer relationships · the inverse rule</span>
+</div>
+<div class="slide-body">
+  <div class="cov-intro">
+    <strong>ARR is the primary workload proxy</strong> (Gainsight benchmark: ARR/CSM is the most accurate capacity predictor). Relationship capacity then caps account count. The model: <strong>set ARR target first, check account count doesn't breach the relationship ceiling.</strong> As ACV falls, accounts/CSM rises — and the human line is set where the economics break, not where it feels right.
   </div>
-  <div class="slide-body white">
-    <div class="seg-split">
-      <div class="seg-team">
-        <div class="seg-team-header mm">
-          <h2>Mid Market Team</h2>
-          <div class="badge">≥ $12k ACV</div>
-        </div>
-        <div class="seg-stats">
-          <div class="seg-stat"><div class="n">1,750</div><div class="l">Accounts</div></div>
-          <div class="seg-stat"><div class="n">$52M</div><div class="l">ARR</div></div>
-          <div class="seg-stat"><div class="n">~$30k</div><div class="l">Avg ACV</div></div>
-          <div class="seg-stat"><div class="n">75%</div><div class="l">Current GRR</div></div>
-        </div>
-        <div class="tier-stack">
-          <div class="tier-item t1">
-            <h4>Strategic Band · ≥ $24k ACV</h4>
-            <div class="tier-row">
-              <div class="tier-kv"><div class="k">Accounts</div><div class="v">~750</div></div>
-              <div class="tier-kv"><div class="k">ARR</div><div class="v">$37M</div></div>
-              <div class="tier-kv"><div class="k">Avg ACV</div><div class="v">~$49k</div></div>
-              <div class="tier-kv"><div class="k">Coverage</div><div class="v">1:58 Named</div></div>
-              <div class="tier-kv"><div class="k">ARR/CSM</div><div class="v">$2.85M</div></div>
-            </div>
-          </div>
-          <div class="tier-item t2">
-            <h4>Core Band · $12k–$24k ACV</h4>
-            <div class="tier-row">
-              <div class="tier-kv"><div class="k">Accounts</div><div class="v">~1,000</div></div>
-              <div class="tier-kv"><div class="k">ARR</div><div class="v">$15M</div></div>
-              <div class="tier-kv"><div class="k">Avg ACV</div><div class="v">~$15k</div></div>
-              <div class="tier-kv"><div class="k">Coverage</div><div class="v">1:143 Named</div></div>
-              <div class="tier-kv"><div class="k">ARR/CSM</div><div class="v">$2.14M</div></div>
-            </div>
-          </div>
-          <div style="background:#F0FDF4;border-radius:8px;padding:10px 12px;font-size:12px;color:#005C3F;margin-top:4px">
-            <strong>Motion:</strong> Named CSMs · 30-60-90 success plans · QBRs · multi-threaded relationships · expansion signals to AE
-          </div>
-        </div>
-      </div>
-      <div class="seg-team">
-        <div class="seg-team-header smb">
-          <h2>SMB Team</h2>
-          <div class="badge">&#60; $12k ACV · 3 Tiers</div>
-        </div>
-        <div class="seg-stats">
-          <div class="seg-stat"><div class="n">23,250</div><div class="l">Accounts</div></div>
-          <div class="seg-stat"><div class="n">$48M</div><div class="l">ARR</div></div>
-          <div class="seg-stat"><div class="n">~$2.1k</div><div class="l">Avg ACV</div></div>
-          <div class="seg-stat"><div class="n">62%</div><div class="l">Current GRR</div></div>
-        </div>
-        <div class="tier-stack">
-          <div class="tier-item t1">
-            <h4>Tier 1 — High · $4.6k–$12k ACV</h4>
-            <div class="tier-row">
-              <div class="tier-kv"><div class="k">Accounts</div><div class="v">~3,250</div></div>
-              <div class="tier-kv"><div class="k">ARR</div><div class="v">$19M</div></div>
-              <div class="tier-kv"><div class="k">Coverage</div><div class="v">1:325 Pooled</div></div>
-              <div class="tier-kv"><div class="k">ARR/CSM</div><div class="v">$1.9M</div></div>
-              <div class="tier-kv"><div class="k">Human?</div><div class="v">Yes — triggered</div></div>
-            </div>
-          </div>
-          <div class="tier-item t2">
-            <h4>Tier 2 — Mid · $2k–$4.6k ACV</h4>
-            <div class="tier-row">
-              <div class="tier-kv"><div class="k">Accounts</div><div class="v">~4,000</div></div>
-              <div class="tier-kv"><div class="k">ARR</div><div class="v">$12M</div></div>
-              <div class="tier-kv"><div class="k">Coverage</div><div class="v">Digital + escalation</div></div>
-              <div class="tier-kv"><div class="k">Human?</div><div class="v">Health-score trigger only</div></div>
-            </div>
-          </div>
-          <div class="tier-item t3">
-            <h4>Tier 3 — Digital · &#60; $2k ACV</h4>
-            <div class="tier-row">
-              <div class="tier-kv"><div class="k">Accounts</div><div class="v">~16,000</div></div>
-              <div class="tier-kv"><div class="k">ARR</div><div class="v">$17M</div></div>
-              <div class="tier-kv"><div class="k">Coverage</div><div class="v">Fully automated</div></div>
-              <div class="tier-kv"><div class="k">Human?</div><div class="v">No — pure automation</div></div>
-            </div>
-          </div>
-          <div style="background:#F0FDF4;border-radius:8px;padding:10px 12px;font-size:12px;color:#005C3F;margin-top:4px">
-            <strong>Motion:</strong> Pendo in-app · Customer.io behavioural email · Intercom Fin AI · Churnkey dunning · health-score triggered escalation
-          </div>
-        </div>
-      </div>
+  <table style="margin-bottom:16px">
+    <thead>
+      <tr><th>Tier</th><th>Accounts</th><th>ARR</th><th>Avg ACV</th><th>Coverage type</th><th>Accts / CSM</th><th>ARR / CSM</th><th>CSMs needed</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>MM · Strategic</strong></td><td>750</td><td>$37M</td><td>~$49k</td><td><span class="tag tag-navy">Named · Deep</span></td><td><strong>58</strong></td><td><strong>$2.85M</strong></td><td>13</td></tr>
+      <tr><td><strong>MM · Core</strong></td><td>1,000</td><td>$15M</td><td>~$15k</td><td><span class="tag tag-navy">Named · Light</span></td><td><strong>143</strong></td><td><strong>$2.14M</strong></td><td>7</td></tr>
+      <tr><td><strong>SMB Tier 1</strong></td><td>3,250</td><td>$19M</td><td>~$5.8k</td><td><span class="tag tag-green">Pooled · Triggered</span></td><td><strong>325</strong></td><td><strong>$1.9M</strong></td><td>10</td></tr>
+      <tr><td><strong>SMB Tier 2</strong></td><td>4,000</td><td>$12M</td><td>~$3k</td><td><span class="tag tag-amber">Digital + Escalation</span></td><td>—</td><td>—</td><td>—</td></tr>
+      <tr><td><strong>SMB Tier 3</strong></td><td>16,000</td><td>$17M</td><td>~$1.1k</td><td><span class="tag tag-amber">Full Automation</span></td><td>—</td><td>—</td><td>—</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="2"><strong>30 front-line CSMs</strong></td><td colspan="3"><strong>$100M ARR</strong></td><td>—</td><td><strong>~$3.3M blended</strong></td><td><strong>30</strong></td></tr>
+    </tfoot>
+  </table>
+  <div class="inv-row">
+    <div class="inv-item">
+      <div class="inv-bar" style="height:80px"></div>
+      <div class="inv-label">MM Strategic</div>
+      <div class="inv-value">$49k ACV</div>
+      <div class="inv-sub">58 accts / CSM</div>
+    </div>
+    <div class="inv-arrow">→</div>
+    <div class="inv-item">
+      <div class="inv-bar" style="height:55px;background:#1E4D7B"></div>
+      <div class="inv-label">MM Core</div>
+      <div class="inv-value">$15k ACV</div>
+      <div class="inv-sub">143 accts / CSM</div>
+    </div>
+    <div class="inv-arrow">→</div>
+    <div class="inv-item">
+      <div class="inv-bar" style="height:30px;background:#6B7280"></div>
+      <div class="inv-label">SMB Tier 1</div>
+      <div class="inv-value">$5.8k ACV</div>
+      <div class="inv-sub">325 accts / CSM</div>
+    </div>
+    <div class="inv-arrow">→</div>
+    <div class="inv-item">
+      <div class="inv-bar" style="height:12px;background:#D1D5DB"></div>
+      <div class="inv-label">Tier 2 + 3</div>
+      <div class="inv-value">&lt;$3k ACV</div>
+      <div class="inv-sub" style="color:var(--amber)">No CSM · automation</div>
     </div>
   </div>
+  <div style="background:#fff;border-radius:8px;padding:12px 15px;border-left:4px solid var(--green);font-size:12.5px;color:var(--text2)">
+    <strong>The human line at ~$4.6k ACV (top 20%):</strong> below this, a pooled CSM would need to manage ~950 accounts — beyond any relationship ceiling, and the ARR math breaks: CS cost exceeds CS-attributable retention value. The line is set by economics, not preference.
+  </div>
+</div>
 </div>
 
-<!-- ────── SLIDE 4 · COVERAGE MODEL ────── -->
+<!-- ── S4 · TEAM STRUCTURE ── -->
 <div class="slide" id="s4">
-  <div class="slide-header">
-    <h1>Coverage Model — ARR-First, Account-Capped</h1>
-    <span class="sub">High-value accounts carry fewer relationships · the inverse rule</span>
-  </div>
-  <div class="slide-body">
-    <div class="coverage-intro">
-      <strong>ARR is the primary workload proxy</strong> (Gainsight benchmark: ARR/CSM is the most accurate predictor of CS capacity). But relationship capacity caps account count — a single CSM cannot maintain a genuine relationship above ~325 accounts regardless of ACV. So the model is: <strong>set the ARR target first, then check account count doesn't breach the relationship ceiling</strong>.
-    </div>
-    <table style="margin-bottom:18px">
-      <thead>
-        <tr>
-          <th>Tier</th><th>Accounts</th><th>ARR</th><th>Avg ACV</th>
-          <th>Coverage Type</th><th>Accts / CSM</th><th>ARR / CSM</th>
-          <th>CSMs Needed</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>MM · Strategic</strong></td><td>750</td><td>$37M</td><td>~$49k</td>
-          <td><span class="tag tag-navy">Named · Deep</span></td>
-          <td><strong>58</strong></td><td><strong>$2.85M</strong></td><td>13</td>
-        </tr>
-        <tr>
-          <td><strong>MM · Core</strong></td><td>1,000</td><td>$15M</td><td>~$15k</td>
-          <td><span class="tag tag-navy">Named · Light</span></td>
-          <td><strong>143</strong></td><td><strong>$2.14M</strong></td><td>7</td>
-        </tr>
-        <tr>
-          <td><strong>SMB Tier 1</strong></td><td>3,250</td><td>$19M</td><td>~$5.8k</td>
-          <td><span class="tag tag-green">Pooled · Triggered</span></td>
-          <td><strong>325</strong></td><td><strong>$1.9M</strong></td><td>10</td>
-        </tr>
-        <tr>
-          <td><strong>SMB Tier 2</strong></td><td>4,000</td><td>$12M</td><td>~$3k</td>
-          <td><span class="tag tag-amber">Digital + Escalation</span></td>
-          <td>—</td><td>—</td><td>—</td>
-        </tr>
-        <tr>
-          <td><strong>SMB Tier 3</strong></td><td>16,000</td><td>$17M</td><td>~$1.1k</td>
-          <td><span class="tag tag-amber">Full Automation</span></td>
-          <td>—</td><td>—</td><td>—</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="2"><strong>Total: 30 front-line CSMs</strong></td>
-          <td colspan="3"><strong>$100M ARR covered</strong></td>
-          <td>—</td><td><strong>~$3.3M blended</strong></td>
-          <td><strong>30</strong></td>
-        </tr>
-      </tfoot>
-    </table>
-    <div class="inverse-visual">
-      <div class="inv-item">
-        <div class="inv-bar" style="height:80px"></div>
-        <div class="inv-label">Strategic</div>
-        <div class="inv-value">$49k ACV</div>
-        <div style="font-size:11px;color:var(--green2);margin-top:2px;font-weight:700">58 accts/CSM</div>
-      </div>
-      <div class="inv-arrow">→</div>
-      <div class="inv-item">
-        <div class="inv-bar" style="height:55px;background:#1E4D7B"></div>
-        <div class="inv-label">MM Core</div>
-        <div class="inv-value">$15k ACV</div>
-        <div style="font-size:11px;color:var(--green2);margin-top:2px;font-weight:700">143 accts/CSM</div>
-      </div>
-      <div class="inv-arrow">→</div>
-      <div class="inv-item">
-        <div class="inv-bar" style="height:30px;background:#6B7280"></div>
-        <div class="inv-label">SMB Tier 1</div>
-        <div class="inv-value">$5.8k ACV</div>
-        <div style="font-size:11px;color:var(--green2);margin-top:2px;font-weight:700">325 accts/CSM</div>
-      </div>
-      <div class="inv-arrow">→</div>
-      <div class="inv-item">
-        <div class="inv-bar" style="height:12px;background:#D1D5DB"></div>
-        <div class="inv-label">Tier 2+3</div>
-        <div class="inv-value">&#60;$3k ACV</div>
-        <div style="font-size:11px;color:var(--amber);margin-top:2px;font-weight:700">No CSM — automation</div>
-      </div>
-    </div>
-    <div style="background:#fff;border-radius:8px;padding:12px 16px;border-left:4px solid var(--green);font-size:12.5px;color:var(--text2)">
-      <strong>Where the human line is drawn and why:</strong> At SMB Tier 1 bottom (~$4.6k ACV, top 20% of accounts). Below this, a pooled CSM managing $1.9M ARR of $2k accounts carries ~950 accounts — beyond any relationship ceiling. The economics also break: CS cost exceeds CS-attributable retention value. The line is not a judgment call; the ARR math sets it.
-    </div>
+<div class="slide-header">
+  <h1>Team Structure · 43 FTE</h1>
+  <span class="sub">India-based · $1.51M people cost · 1.51% of ARR</span>
+</div>
+<div class="slide-body white">
+  <table style="margin-bottom:16px">
+    <thead>
+      <tr><th>Role</th><th>Count</th><th>Team</th><th>Base INR (L)</th><th>Loaded ×1.35 (L)</th><th>Total INR (L)</th><th>Total USD</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>MM Strategic CSMs</strong></td><td>13</td><td>Mid Market</td><td>25</td><td>34</td><td>442</td><td>$533k</td></tr>
+      <tr><td><strong>MM Core CSMs</strong></td><td>7</td><td>Mid Market</td><td>22</td><td>30</td><td>210</td><td>$253k</td></tr>
+      <tr><td>MM Team Lead</td><td>1</td><td>Mid Market</td><td>40</td><td>54</td><td>54</td><td>$65k</td></tr>
+      <tr><td><strong>SMB Tier 1 CSMs (pooled)</strong></td><td>10</td><td>SMB</td><td>18</td><td>24</td><td>240</td><td>$289k</td></tr>
+      <tr><td>Digital CS Specialists</td><td>3</td><td>SMB</td><td>16</td><td>22</td><td>66</td><td>$80k</td></tr>
+      <tr><td>SMB Team Lead</td><td>1</td><td>SMB</td><td>33</td><td>45</td><td>45</td><td>$54k</td></tr>
+      <tr><td>Onboarding Specialists</td><td>4</td><td>Central</td><td>16</td><td>22</td><td>88</td><td>$106k</td></tr>
+      <tr><td>Revenue / Retention Analyst</td><td>1</td><td>CS Ops</td><td>24</td><td>32</td><td>32</td><td>$39k</td></tr>
+      <tr><td>CS Systems / RevOps</td><td>1</td><td>CS Ops</td><td>20</td><td>27</td><td>27</td><td>$33k</td></tr>
+      <tr><td>CS Data / BI Analyst</td><td>1</td><td>CS Ops</td><td>18</td><td>24</td><td>24</td><td>$29k</td></tr>
+      <tr><td>KB &amp; Customer Education Mgr</td><td>1</td><td>Central</td><td>20</td><td>27</td><td>27</td><td>$33k</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td><strong>Total</strong></td><td><strong>43</strong></td><td>—</td><td>—</td><td>—</td><td><strong>~1,255 L</strong></td><td><strong>~$1.51M</strong></td></tr>
+    </tfoot>
+  </table>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+    <div class="card green"><div class="card-label">Mid Market FTE</div><div class="card-value">21</div><div class="card-sub">13 Strategic + 7 Core + 1 Lead</div></div>
+    <div class="card navy"><div class="card-label">SMB FTE</div><div class="card-value">14</div><div class="card-sub">10 pooled CSMs + 3 Digital + 1 Lead</div></div>
+    <div class="card amber"><div class="card-label">CS Ops + Central</div><div class="card-value">8</div><div class="card-sub">CS Ops (3) · Onboarding (4) · KB (1)</div></div>
+    <div class="card green"><div class="card-label">People cost vs ARR</div><div class="card-value">1.51%</div><div class="card-sub">Benchmark: 8–10%. India base = 6–7× cost advantage.</div></div>
   </div>
 </div>
+</div>
 
-<!-- ────── SLIDE 5 · TEAM STRUCTURE ────── -->
+<!-- ── S5 · ACCOUNT MOVEMENT ── -->
 <div class="slide" id="s5">
-  <div class="slide-header">
-    <h1>Team Structure · 44 FTE</h1>
-    <span class="sub">India-based · $1.57M people cost · 1.57% of ARR</span>
+<div class="slide-header">
+  <h1>Account Movement — Scenarios &amp; Guardrails</h1>
+  <span class="sub">How accounts re-tier as ARR grows or contracts · and how we prevent thrashing</span>
+</div>
+<div class="slide-body">
+  <div class="mv-grid">
+    <div class="mv-card">
+      <h3><span style="background:var(--green-light);color:#005C3F;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 1</span> Growth: SMB → Mid Market</h3>
+      <ul>
+        <li>Trailing 3-month average crosses $12k + 15% buffer ($13.8k), held 2 months</li>
+        <li>CSM assigned within 2 weeks of confirmation</li>
+        <li>Warm handoff from digital → named CSM with full account notes</li>
+        <li>Treated as buying signal — CSM scoped for expansion with AE immediately</li>
+      </ul>
+    </div>
+    <div class="mv-card">
+      <h3><span style="background:#FEE2E2;color:#991B1B;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 2</span> Contraction: MM → SMB</h3>
+      <ul>
+        <li>Trailing average below $12k (must breach $10.2k, i.e. −15% buffer)</li>
+        <li>2-quarter (6-month) hold before demotion — this is a save window, not a waiting period</li>
+        <li>CSM actively works to recover seats during the hold</li>
+        <li>Warm handoff to pooled SMB only after hold expires and account hasn't recovered</li>
+      </ul>
+    </div>
+    <div class="mv-card">
+      <h3><span style="background:#EFF6FF;color:#1E40AF;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 3</span> Signal-Based Pre-Promotion</h3>
+      <ul>
+        <li>Below $12k but 3+ months of consecutive seat adds, new team activating, or inbound to AE</li>
+        <li>CSM assigned proactively before threshold crossed — this is the NRR engine</li>
+        <li>When account crosses $12k: CSM already owns the relationship, no disruption</li>
+        <li>Pre-promotion tracked via ChurnZero usage velocity score</li>
+      </ul>
+    </div>
+    <div class="mv-card">
+      <h3><span style="background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 4</span> Payment Failure Path</h3>
+      <ul>
+        <li>Day 1: Stripe Smart Retries automated (3 attempts)</li>
+        <li>Day 3: Churnkey retry logic + save-offer email</li>
+        <li>Day 7: Human call for accounts &gt;$500 MRR (CSM or CS Ops)</li>
+        <li>Day 14: "Delinquent at-risk" flag in ChurnZero. Day 30: treated as churned. Target recovery: 33%</li>
+      </ul>
+    </div>
   </div>
-  <div class="slide-body white">
-    <table style="margin-bottom:18px;font-size:12.5px">
-      <thead>
-        <tr><th>Role</th><th>Count</th><th>Team</th><th>Base INR (L)</th><th>Loaded INR (L)</th><th>Total INR (L)</th><th>Total USD</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>MM Strategic CSMs</strong></td><td>13</td><td>Mid Market</td><td>25</td><td>34</td><td>442</td><td>$533k</td></tr>
-        <tr><td><strong>MM Core CSMs</strong></td><td>7</td><td>Mid Market</td><td>22</td><td>30</td><td>210</td><td>$253k</td></tr>
-        <tr><td>MM Team Lead</td><td>1</td><td>Mid Market</td><td>40</td><td>54</td><td>54</td><td>$65k</td></tr>
-        <tr><td><strong>SMB Tier 1 CSMs (pooled)</strong></td><td>10</td><td>SMB</td><td>18</td><td>24</td><td>240</td><td>$289k</td></tr>
-        <tr><td>Digital CS Specialists</td><td>3</td><td>SMB</td><td>16</td><td>22</td><td>66</td><td>$80k</td></tr>
-        <tr><td>SMB Team Lead</td><td>1</td><td>SMB</td><td>33</td><td>45</td><td>45</td><td>$54k</td></tr>
-        <tr><td>Onboarding Specialists</td><td>4</td><td>Central</td><td>16</td><td>22</td><td>88</td><td>$106k</td></tr>
-        <tr><td>Revenue / Retention Analyst</td><td>1</td><td>CS Ops</td><td>24</td><td>32</td><td>32</td><td>$39k</td></tr>
-        <tr><td>CS Systems / RevOps</td><td>1</td><td>CS Ops</td><td>20</td><td>27</td><td>27</td><td>$33k</td></tr>
-        <tr><td>CS Data / BI Analyst</td><td>1</td><td>CS Ops</td><td>18</td><td>24</td><td>24</td><td>$29k</td></tr>
-        <tr><td>KB &amp; Customer Education Mgr</td><td>1</td><td>Central</td><td>20</td><td>27</td><td>27</td><td>$33k</td></tr>
-        <tr><td>CS Director</td><td>1</td><td>Leadership</td><td>45</td><td>61</td><td>61</td><td>$73k</td></tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td><strong>Total</strong></td>
-          <td><strong>44</strong></td>
-          <td>—</td><td>—</td><td>—</td>
-          <td><strong>~1,316 L</strong></td>
-          <td><strong>~$1.57M</strong></td>
-        </tr>
-      </tfoot>
-    </table>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
-      <div class="card green"><div class="card-label">Mid Market FTE</div><div class="card-value">21</div><div class="card-sub">13 Strategic + 7 Core + 1 Lead</div></div>
-      <div class="card navy"><div class="card-label">SMB FTE</div><div class="card-value">14</div><div class="card-sub">10 pooled CSMs + 3 Digital + 1 Lead</div></div>
-      <div class="card amber"><div class="card-label">CS Ops + KB</div><div class="card-value">4</div><div class="card-sub">Revenue Analyst · Systems · BI · KB</div></div>
-      <div class="card green"><div class="card-label">Fully loaded cost</div><div class="card-value">1.57%</div><div class="card-sub">of ARR · vs 8–10% global benchmark</div></div>
+  <div class="guardrails">
+    <h3>The 5 Non-Negotiable Guardrails</h3>
+    <div class="gr-list">
+      <div class="gr-item"><div class="gr-num">1</div><div class="gr-text"><strong>Trailing 3-month average only.</strong> No spot-rate re-tiering. A one-month spike or dip changes nothing.</div></div>
+      <div class="gr-item"><div class="gr-num">2</div><div class="gr-text"><strong>±15% hysteresis band.</strong> Must clear threshold by 15% before review triggers. Prevents boundary thrashing.</div></div>
+      <div class="gr-item"><div class="gr-num">3</div><div class="gr-text"><strong>Promote in 2 weeks. Demote in 2 quarters.</strong> Growth is a buying signal. Contraction is a save opportunity.</div></div>
+      <div class="gr-item"><div class="gr-num">4</div><div class="gr-text"><strong>No cold handoffs.</strong> Warm intro + 30-day overlap. Outgoing owner holds until new owner confirms in HubSpot.</div></div>
+      <div class="gr-item"><div class="gr-num">5</div><div class="gr-text"><strong>Account is always owned.</strong> Every account has a tier, motion, and coverage owner — even if that owner is an automated sequence.</div></div>
     </div>
   </div>
 </div>
+</div>
 
-<!-- ────── SLIDE 6 · ACCOUNT MOVEMENT ────── -->
+<!-- ── S6 · ROADMAP ── -->
 <div class="slide" id="s6">
-  <div class="slide-header">
-    <h1>Account Movement — Scenarios &amp; Guardrails</h1>
-    <span class="sub">How accounts re-tier as ARR grows or contracts — and how we prevent thrashing</span>
-  </div>
-  <div class="slide-body">
-    <div class="movement-grid">
-      <div class="movement-card">
-        <h3><span style="background:#E6F7F1;color:#005C3F;padding:2px 8px;border-radius:6px;font-size:11px">SCENARIO 1</span> Growth: SMB → Mid Market</h3>
-        <ul>
-          <li>Trailing 3-month average ARR crosses $12k threshold (+15% buffer = $13.8k)</li>
-          <li>Holds for 2 consecutive months at confirmed level</li>
-          <li>CSM assigned within 2 weeks of confirmation</li>
-          <li>Warm handoff: digital specialist → named CSM with full account notes</li>
-          <li>Treated as buying signal — CSM scoped for expansion opportunity with AE</li>
-        </ul>
-      </div>
-      <div class="movement-card">
-        <h3><span style="background:#FEE2E2;color:#991B1B;padding:2px 8px;border-radius:6px;font-size:11px">SCENARIO 2</span> Contraction: MM → SMB</h3>
-        <ul>
-          <li>Trailing average drops below $12k (buffer: must be below $10.2k)</li>
-          <li>CSM does NOT leave immediately — 2-quarter (6-month) hold before demotion</li>
-          <li>6-month window is a save play: CSM actively works to recover seats</li>
-          <li>If account recovers: stays with CSM, no disruption to relationship</li>
-          <li>If still below at month 6: warm handoff to pooled SMB with full context</li>
-        </ul>
-      </div>
-      <div class="movement-card">
-        <h3><span style="background:#EFF6FF;color:#1E40AF;padding:2px 8px;border-radius:6px;font-size:11px">SCENARIO 3</span> Signal-Based Pre-Promotion</h3>
-        <ul>
-          <li>Account below $12k but shows leading signals: 3+ consecutive months of seat adds, new team activating, inbound to AE</li>
-          <li>CSM assigned proactively before threshold is crossed</li>
-          <li>CS surfaces expansion opportunity to AE — this is the NRR engine</li>
-          <li>When account crosses $12k: CSM already owns the relationship (no disruption)</li>
-          <li>Pre-promotion tracked via ChurnZero usage velocity score</li>
-        </ul>
-      </div>
-      <div class="movement-card">
-        <h3><span style="background:#FEF3C7;color:#92400E;padding:2px 8px;border-radius:6px;font-size:11px">SCENARIO 4</span> Payment Failure Path</h3>
-        <ul>
-          <li>Day 1: Stripe Smart Retries (automated, 3 attempts)</li>
-          <li>Day 3: Churnkey retry logic + save-offer email sequence</li>
-          <li>Day 7: Human call for accounts &gt;$500 MRR — not automated</li>
-          <li>Day 14: Unresolved → "Delinquent at-risk" flag in ChurnZero</li>
-          <li>Day 30: Still unresolved → treated as churned. Target recovery: 33%</li>
-        </ul>
-      </div>
+<div class="slide-header">
+  <h1>Month-by-Month Implementation Roadmap</h1>
+  <span class="sub">RudderStack is the critical path · Userpilot closes the activation gap from day 1</span>
+</div>
+<div class="slide-body">
+  <div class="phase">
+    <div class="phase-hdr">
+      <div class="pbadge pre">PRE-LAUNCH</div>
+      <div class="phase-title">Tooling must be ready before CS team goes live</div>
+      <div class="phase-date">Weeks −8 to 0</div>
     </div>
-    <div class="guardrails">
-      <h3>The 5 Non-Negotiable Guardrails</h3>
-      <div class="guardrail-list">
-        <div class="guardrail-item"><div class="gr-num">1</div><div class="gr-text"><strong>Trailing 3-month average only.</strong> No spot-rate re-tiering. A one-month seat spike or dip changes nothing.</div></div>
-        <div class="guardrail-item"><div class="gr-num">2</div><div class="gr-text"><strong>±15% hysteresis band.</strong> Account must clear the threshold by 15% before review is triggered. Prevents boundary thrashing.</div></div>
-        <div class="guardrail-item"><div class="gr-num">3</div><div class="gr-text"><strong>Promote in 2 weeks. Demote in 2 quarters.</strong> Asymmetric: growth is a buying signal, contraction is a save opportunity.</div></div>
-        <div class="guardrail-item"><div class="gr-num">4</div><div class="gr-text"><strong>No cold handoffs.</strong> Every transition has a warm intro and 30-day overlap. Outgoing owner holds until new owner confirms pickup in HubSpot.</div></div>
-        <div class="guardrail-item"><div class="gr-num">5</div><div class="gr-text"><strong>Account is always owned.</strong> No account exists without a tier assignment, a motion, and a coverage owner — even if that owner is an automated sequence.</div></div>
-      </div>
+    <div class="phase-items">
+      <div class="pi critical"><strong>Critical · Week −8</strong>RudderStack kickoff — engineering engaged. 4–8 week implementation. Health scoring is blind without this.</div>
+      <div class="pi critical"><strong>Critical · Week −6</strong>Intercom Fin live — trains on existing KB in 2–3 weeks. 20,000 tail accounts generate support volume from day 1; Fin routes to support team, not digital specialists.</div>
+      <div class="pi key"><strong>Key · Week −6</strong>Userpilot live — deploys in 1–7 days. Replaces Pendo entirely for year 1. In-app onboarding flows active from day 1 with no activation gap.</div>
+      <div class="pi normal"><strong>Week −6</strong>ChurnZero configured + HubSpot integration. CRM-data health scores active — will upgrade to product-data when RudderStack is live.</div>
+      <div class="pi normal"><strong>Week −4</strong>Delighted NPS live. Stripe Smart Retries confirmed active. CS team begins onboarding.</div>
+    </div>
+    <div class="gap-fixed">Activation gap: eliminated. Userpilot deploys in 1–7 days (vs Pendo's 8–12 weeks) and costs $33k less annually. Intercom Tours acts as a same-day supplement for Tier 3. No bridge needed.</div>
+  </div>
+  <div class="phase">
+    <div class="phase-hdr">
+      <div class="pbadge run">RUNNING THE SHOW</div>
+      <div class="phase-title">Tooling upgrades · team ramping · first 90-day cohort tracked</div>
+      <div class="phase-date">Months 1–3</div>
+    </div>
+    <div class="phase-items">
+      <div class="pi key"><strong>Month 1</strong>RudderStack live — health scores upgrade from CRM-only to product-usage-based. CSMs now have real signals.</div>
+      <div class="pi normal"><strong>Month 2</strong>Userpilot advanced flows built (feature depth, integration prompts). Customer.io behavioural sequences constructed.</div>
+      <div class="pi normal"><strong>Month 3</strong>Customer.io live — at-risk triggers running. Metabase dashboards built. Revenue Analyst runs first 90-day cohort analysis.</div>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-hdr">
+      <div class="pbadge scale">SCALE</div>
+      <div class="phase-title">Advanced dunning · full playbooks · attribution validated</div>
+      <div class="phase-date">Months 4–6</div>
+    </div>
+    <div class="phase-items">
+      <div class="pi normal"><strong>Month 4</strong>Churnkey live — advanced dunning + cancel-flow save offers. Stripe-only retries upgraded. Payment recovery rate tracked.</div>
+      <div class="pi normal"><strong>Month 4–5</strong>Full ChurnZero playbook library. Renewal calendars automated. MM accounts on monthly health review cadence.</div>
+      <div class="pi key"><strong>Month 6</strong>First attribution audit by Revenue Analyst. CS ROI actuals vs. model. Book rebalanced by CS Ops. Pendo (year 2 analytics upgrade) evaluated.</div>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-hdr">
+      <div class="pbadge opt">OPTIMISE</div>
+      <div class="phase-title">Model matures · compounding begins · year 2 planning</div>
+      <div class="phase-date">Months 7–12</div>
+    </div>
+    <div class="phase-items">
+      <div class="pi normal"><strong>Months 7–9</strong>Predictive churn model v1 (logistic regression on usage + tenure + payment history) — productionised into ChurnZero health score.</div>
+      <div class="pi normal"><strong>Months 10–12</strong>KB deflection rate audit (target: maintain ≥55%). Expansion signal playbook refined with AE team. NRR bridge reviewed quarterly.</div>
+      <div class="pi key"><strong>Month 12</strong>Year 2 plan. Tooling fully live, CSMs fully ramped. Base ROI of 1.0x in year 1 compounds to 1.8–2.5x in year 2.</div>
     </div>
   </div>
 </div>
+</div>
 
-<!-- ────── SLIDE 7 · ROADMAP ────── -->
+<!-- ── S7 · TOOLING LANDSCAPE ── -->
 <div class="slide" id="s7">
-  <div class="slide-header">
-    <h1>Month-by-Month Implementation Roadmap</h1>
-    <span class="sub">Engineering dependencies drive sequencing — RudderStack is the critical path</span>
+<div class="slide-header">
+  <h1>Tooling Landscape</h1>
+  <span class="sub">$189k / yr · each tool owns a churn bucket · HubSpot is the backbone</span>
+</div>
+<div class="slide-body white">
+  <div class="stack-layer">
+    <div class="sl-label">Backbone CRM</div>
+    <div class="tool-card backbone">
+      <div><div class="tool-name">HubSpot CRM</div><div class="tool-desc">Single source of truth. All account data, ARR, contacts, health scores, and CSM activity. Every tool integrates into HubSpot.</div></div>
+      <div style="margin-left:auto"><span class="tool-cost">Existing</span></div>
+    </div>
   </div>
-  <div class="slide-body">
-    <div class="roadmap-phases">
-      <div class="phase">
-        <div class="phase-header">
-          <div class="phase-badge pre">PRE-LAUNCH</div>
-          <div class="phase-title">Before CS team goes live — tooling must be ready first</div>
-          <div class="phase-date">Weeks −8 to 0</div>
-        </div>
-        <div class="phase-items">
-          <div class="phase-item critical"><strong>Critical · Week −8</strong>RudderStack kickoff — engineering team engaged. 4–8 week implementation. Nothing downstream works without this.</div>
-          <div class="phase-item critical"><strong>Critical · Week −6</strong>Intercom Fin live — train on existing KB articles. 2–3 weeks to deploy. 20,000 tail accounts generate support volume from day 1.</div>
-          <div class="phase-item normal"><strong>Week −6</strong>ChurnZero configured + HubSpot integration. CRM-data-only health scores initially — will upgrade when RudderStack is live.</div>
-          <div class="phase-item normal"><strong>Week −4</strong>Delighted NPS live. Pendo procurement begins (heavy instrumentation — 8–12 weeks to full value).</div>
-          <div class="phase-item key"><strong>Week −2</strong>CS team onboards. ChurnZero ready · Intercom Fin deflecting · Stripe Smart Retries confirmed active.</div>
-        </div>
+  <div class="stack-layer">
+    <div class="sl-label">Data Layer — must go live first (engineering dependency)</div>
+    <div class="stack-tools">
+      <div class="tool-card">
+        <div class="tool-name">RudderStack</div>
+        <div class="tool-desc">CDP — pipes product usage events into health scoring. Without this, health scores run on CRM data only = blind. 4–8 week engineering implementation.</div>
+        <div class="tool-meta"><span class="tool-cost">$40k / yr</span><span class="tool-integ">→ ChurnZero · Userpilot · Metabase</span><span class="tool-roi">Metric: % accounts with full usage data; health score accuracy</span></div>
       </div>
-      <div class="phase">
-        <div class="phase-header">
-          <div class="phase-badge run">RUNNING THE SHOW</div>
-          <div class="phase-title">Tooling upgrades live · team ramping · first cohort tracked</div>
-          <div class="phase-date">Months 1–3</div>
-        </div>
-        <div class="phase-items">
-          <div class="phase-item key"><strong>Month 1 · Key</strong>RudderStack LIVE. Health scores upgrade from CRM-only to product-usage-based. CSMs now have real signals.</div>
-          <div class="phase-item key"><strong>Month 2 · Key</strong>Pendo LIVE — first onboarding flows deployed. Activation gap begins to close. Customer.io behavioural sequences built.</div>
-          <div class="phase-item normal"><strong>Month 3</strong>Customer.io live · at-risk triggers running. Metabase dashboards built. First 90-day cohort analysed by Revenue Analyst.</div>
-        </div>
-        <div class="phase-gap">Known gap: Days 1–60 without Pendo live. Interim bridge = Intercom product tours (already deployed) + manual sequences from Onboarding Specialists. Activation rates lower in month 1; plan for improvement in month 2.</div>
+      <div class="tool-card">
+        <div class="tool-name">Stripe Smart Retries</div>
+        <div class="tool-desc">First line of involuntary churn defence. Automated retry on payment failures. Verify active on day 1 — should already be on.</div>
+        <div class="tool-meta"><span class="tool-cost">Included in Stripe</span><span class="tool-integ">→ HubSpot · Churnkey</span><span class="tool-roi">Metric: Payment recovery rate (target ≥30%)</span></div>
       </div>
-      <div class="phase">
-        <div class="phase-header">
-          <div class="phase-badge scale">SCALE</div>
-          <div class="phase-title">Advanced dunning · full playbooks · attribution validated</div>
-          <div class="phase-date">Months 4–6</div>
-        </div>
-        <div class="phase-items">
-          <div class="phase-item normal"><strong>Month 4</strong>Churnkey live — advanced dunning + cancel-flow save offers replace Stripe-only retries. Payment recovery rate tracked.</div>
-          <div class="phase-item normal"><strong>Month 4–5</strong>Full ChurnZero playbook library built. Renewal calendars automated. MM account health reviews monthly cadence.</div>
-          <div class="phase-item key"><strong>Month 6</strong>First semi-annual attribution audit by Revenue Analyst. CS ROI actuals vs. model. Book rebalancing run by CS Ops.</div>
-        </div>
+    </div>
+  </div>
+  <div class="stack-layer">
+    <div class="sl-label">CS Orchestration</div>
+    <div class="stack-tools">
+      <div class="tool-card" style="flex:2">
+        <div class="tool-name">ChurnZero</div>
+        <div class="tool-desc">Core CS platform. Health scoring, playbook automation, renewal calendars, at-risk alerts, CSM task management. Properly configured with RudderStack data, not just CRM.</div>
+        <div class="tool-meta"><span class="tool-cost">$30k / yr</span><span class="tool-integ">→ HubSpot · RudderStack · Delighted · Userpilot</span><span class="tool-roi">Metric: GRR improvement; playbook completion rate; at-risk accounts rescued</span></div>
       </div>
-      <div class="phase">
-        <div class="phase-header">
-          <div class="phase-badge opt">OPTIMISE</div>
-          <div class="phase-title">Model matures · year 2 planning · ROI compounding</div>
-          <div class="phase-date">Months 7–12</div>
+    </div>
+  </div>
+  <div class="stack-layer">
+    <div class="sl-label">Digital CS — Onboarding + Engagement + Dunning</div>
+    <div class="stack-tools">
+      <div class="tool-card">
+        <div class="tool-name">Userpilot <span style="font-size:10px;background:var(--green-light);color:#005C3F;padding:1px 5px;border-radius:5px;margin-left:4px">Replaces Pendo</span></div>
+        <div class="tool-desc">In-app onboarding guides — deploys in 1–7 days vs Pendo's 8–12 weeks. 60–80% cheaper. Covers all year-1 onboarding needs. RudderStack handles analytics.</div>
+        <div class="tool-meta"><span class="tool-cost">$15k / yr</span><span class="tool-integ">→ RudderStack · ChurnZero · HubSpot</span><span class="tool-roi">Metric: Activation rate in 14 days; feature adoption depth</span></div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Customer.io</div>
+        <div class="tool-desc">Behavioural lifecycle email — triggered by usage events. Sends the right message when an account goes dark, not 30 days later on a calendar schedule.</div>
+        <div class="tool-meta"><span class="tool-cost">$36k / yr</span><span class="tool-integ">→ RudderStack · HubSpot</span><span class="tool-roi">Metric: Email → activation rate; at-risk re-engagement %</span></div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Churnkey</div>
+        <div class="tool-desc">Advanced dunning + cancel-flow save offers. Catches payment failures Stripe misses; shows save offer at cancellation intent. Recovers 30–35% of involuntary churners.</div>
+        <div class="tool-meta"><span class="tool-cost">$24k / yr</span><span class="tool-integ">→ Stripe · HubSpot · ChurnZero</span><span class="tool-roi">Metric: Payment recovery rate; cancel-flow save conversion %</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="stack-layer">
+    <div class="sl-label">Support Deflection + Sentiment + BI</div>
+    <div class="stack-tools">
+      <div class="tool-card" style="flex:1.4">
+        <div class="tool-name">Intercom Fin AI</div>
+        <div class="tool-desc">AI agent for tail-account support. Resolves 50–70% of <strong>L1 tickets</strong> autonomously (setup, FAQ, integrations) — unresolved L2+ tickets route to the <em>support team</em>. Benefit scoped to <strong>3 digital specialists</strong>: frees them from L1 triage so they can run proactive programs across 20,000 accounts.</div>
+        <div class="deflect-box">
+          <div class="dbl">What Fin deflects (informational, not transactional)</div>
+          <div class="deflect-row">
+            <span class="dtag yes">Setup &amp; first call (40%)</span>
+            <span class="dtag yes">CRM integrations (20%)</span>
+            <span class="dtag partial">Basic billing FAQ (partial)</span>
+            <span class="dtag partial">First-level troubleshoot (partial)</span>
+            <span class="dtag no">Disputes / porting / bugs — human</span>
+          </div>
         </div>
-        <div class="phase-items">
-          <div class="phase-item normal"><strong>Months 7–9</strong>Predictive churn model v1 (logistic regression on usage + tenure + payment history) — productionised into ChurnZero health score.</div>
-          <div class="phase-item normal"><strong>Months 10–12</strong>KB deflection rate audit (target: maintain ≥55%). Expansion signal playbook refined with AE team. NRR bridge reviewed quarterly.</div>
-          <div class="phase-item key"><strong>Month 12</strong>Year 2 plan: tooling fully live, CSMs fully ramped. Base-case ROI of 1.03x in year 1 compounds to 1.8–2.5x in year 2 as the model matures.</div>
-        </div>
+        <div class="tool-meta" style="margin-top:7px"><span class="tool-cost">$30k / yr</span><span class="tool-integ">→ HubSpot · Support KB</span><span class="tool-roi">Metric: Deflection rate (target ≥55%); support CSAT; cost per ticket (support budget)</span><span class="tool-note">Headcount saving accrues to support budget, not CS P&amp;L</span></div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Delighted</div>
+        <div class="tool-desc">NPS + CSAT at key moments. Detractor flag in ChurnZero triggers CSM outreach 30–60 days earlier than health score alone. Cheap, high-signal.</div>
+        <div class="tool-meta"><span class="tool-cost">$8k / yr</span><span class="tool-integ">→ HubSpot · ChurnZero</span><span class="tool-roi">Metric: NPS trend; detractor → churn correlation</span></div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-name">Metabase</div>
+        <div class="tool-desc">BI layer. GRR waterfall, cohort curves, health distributions, CSM book performance. Revenue Analyst's primary tool — the P&amp;L story lives here.</div>
+        <div class="tool-meta"><span class="tool-cost">$6k / yr</span><span class="tool-integ">→ All tools above</span><span class="tool-roi">Table stakes — enables measurement of everything else</span></div>
       </div>
     </div>
   </div>
 </div>
+</div>
 
-<!-- ────── SLIDE 8 · TOOLING LANDSCAPE ────── -->
+<!-- ── S8 · TOOLING ROI ── -->
 <div class="slide" id="s8">
-  <div class="slide-header">
-    <h1>Tooling Landscape</h1>
-    <span class="sub">$222k / yr · each tool owns a churn bucket · HubSpot is the backbone everything integrates with</span>
+<div class="slide-header">
+  <h1>Tooling ROI — Each Tool Justifies Itself</h1>
+  <span class="sub">$189k stack · $2.0M CS value · 10.5x blended ROI · independent of headcount</span>
+</div>
+<div class="slide-body">
+  <div class="troi-hdr">
+    <div class="troi-stat"><div class="n">$189k</div><div class="l">Total annual tooling (with Userpilot)</div></div>
+    <div class="troi-stat"><div class="n" style="color:var(--green2)">$2.0M</div><div class="l">CS-attributable value from tooling</div></div>
+    <div class="troi-stat"><div class="n" style="color:var(--green2)">10.5x</div><div class="l">Standalone tooling ROI</div></div>
   </div>
-  <div class="slide-body white">
-    <div class="stack-layer">
-      <div class="stack-layer-label">Backbone CRM</div>
-      <div class="tool-card backbone">
-        <div>
-          <div class="tool-name">HubSpot CRM</div>
-          <div class="tool-desc">Single source of truth for all account data, contacts, ARR, health scores, and CSM activity. All tools integrate into HubSpot.</div>
-        </div>
-        <div style="margin-left:auto"><span class="tool-cost">Existing</span></div>
-      </div>
-    </div>
-    <div class="stack-layer">
-      <div class="stack-layer-label">Data Layer (must go live first)</div>
-      <div class="stack-tools">
-        <div class="tool-card">
-          <div class="tool-name">RudderStack</div>
-          <div class="tool-desc">CDP — pipes product usage events (logins, features used, integrations activated) into health scoring layer. Without this, health scores run on CRM data only = blind.</div>
-          <div class="tool-meta">
-            <span class="tool-cost">$40k / yr</span>
-            <span class="tool-integ">→ ChurnZero · Pendo · Metabase</span>
-            <span class="tool-roi">ROI metric: % accounts with full usage data; health score accuracy vs. actual churn</span>
-          </div>
-        </div>
-        <div class="tool-card">
-          <div class="tool-name">Stripe Smart Retries</div>
-          <div class="tool-desc">First line of involuntary churn defence. Automated retry logic on payment failures. Should already be active — verify on day 1.</div>
-          <div class="tool-meta">
-            <span class="tool-cost">Included in Stripe</span>
-            <span class="tool-integ">→ HubSpot · Churnkey</span>
-            <span class="tool-roi">ROI metric: Payment recovery rate (target ≥30%)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="stack-layer">
-      <div class="stack-layer-label">CS Orchestration Platform</div>
-      <div class="stack-tools">
-        <div class="tool-card" style="flex:2">
-          <div class="tool-name">ChurnZero</div>
-          <div class="tool-desc">Core CS platform. Health scoring, playbook automation, renewal calendars, at-risk alerts, CSM task management. Replaces the ChurnZero migration — rebuild it properly, not just migrate.</div>
-          <div class="tool-meta">
-            <span class="tool-cost">$30k / yr</span>
-            <span class="tool-integ">→ HubSpot · RudderStack · Delighted · Pendo</span>
-            <span class="tool-roi">ROI metric: GRR improvement; playbook completion rate; at-risk accounts rescued / churned</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="stack-layer">
-      <div class="stack-layer-label">Digital CS · Onboarding + Engagement + Dunning</div>
-      <div class="stack-tools">
-        <div class="tool-card">
-          <div class="tool-name">Pendo</div>
-          <div class="tool-desc">In-app onboarding guides + product analytics. Primary weapon against the 90-day activation gap. Instrumentation takes 8–12 weeks.</div>
-          <div class="tool-meta">
-            <span class="tool-cost">$48k / yr</span>
-            <span class="tool-integ">→ RudderStack · ChurnZero</span>
-            <span class="tool-roi">ROI metric: Activation rate (% completing in 14 days); feature adoption depth</span>
-          </div>
-        </div>
-        <div class="tool-card">
-          <div class="tool-name">Customer.io</div>
-          <div class="tool-desc">Behavioural lifecycle email — triggered by usage events, not calendars. Sends the right message when an account goes dark, not 30 days later.</div>
-          <div class="tool-meta">
-            <span class="tool-cost">$36k / yr</span>
-            <span class="tool-integ">→ RudderStack · HubSpot</span>
-            <span class="tool-roi">ROI metric: Email → activation rate; re-engagement conversion % of at-risk accounts</span>
-          </div>
-        </div>
-        <div class="tool-card">
-          <div class="tool-name">Churnkey</div>
-          <div class="tool-desc">Advanced dunning + cancel-flow save offers. Catches payment failures that Stripe misses, shows save offer at cancellation intent. Recovers 30–35% of involuntary churners.</div>
-          <div class="tool-meta">
-            <span class="tool-cost">$24k / yr</span>
-            <span class="tool-integ">→ Stripe · HubSpot · ChurnZero</span>
-            <span class="tool-roi">ROI metric: Payment recovery rate; cancel-flow save conversion %</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="stack-layer">
-      <div class="stack-layer-label">Support Deflection + Sentiment + BI</div>
-      <div class="stack-tools">
-        <div class="tool-card">
-          <div class="tool-name">Intercom Fin AI</div>
-          <div class="tool-desc">AI agent resolves 50–70% of tail-account support tickets autonomously. Critical from day 1 — without it, 3 digital specialists are immediately overwhelmed by 20,000 accounts.</div>
-          <div class="tool-meta">
-            <span class="tool-cost">$30k / yr</span>
-            <span class="tool-integ">→ HubSpot · ChurnZero · KB</span>
-            <span class="tool-roi">ROI metric: Deflection rate (target ≥55%); support CSAT; cost per ticket resolved</span>
-          </div>
-        </div>
-        <div class="tool-card">
-          <div class="tool-name">Delighted</div>
-          <div class="tool-desc">NPS + CSAT at key moments (post-onboarding, pre-renewal, post-support). Detractor flag in ChurnZero triggers CSM outreach 30–60 days earlier than health score alone.</div>
-          <div class="tool-meta">
-            <span class="tool-cost">$8k / yr</span>
-            <span class="tool-integ">→ HubSpot · ChurnZero</span>
-            <span class="tool-roi">ROI metric: NPS trend by segment; detractor → churn correlation; CSAT by tier</span>
-          </div>
-        </div>
-        <div class="tool-card">
-          <div class="tool-name">Metabase</div>
-          <div class="tool-desc">BI layer for CS reporting. GRR waterfall, cohort curves, health score distributions, CSM book performance. Owned by Revenue/Retention Analyst — the P&amp;L story lives here.</div>
-          <div class="tool-meta">
-            <span class="tool-cost">$6k / yr</span>
-            <span class="tool-integ">→ All tools above</span>
-            <span class="tool-roi">ROI metric: Table stakes — enables measurement of everything else</span>
-          </div>
-        </div>
-      </div>
-    </div>
+  <table>
+    <thead>
+      <tr><th>Tool</th><th>Cost</th><th>Churn bucket owned</th><th>ARR at risk</th><th>Recovery</th><th>CS attribution</th><th>CS value</th><th>ROI</th><th>Payback</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Churnkey</strong></td><td>$24k</td>
+        <td>Involuntary / payment failure — 20% of SMB churn</td>
+        <td>$3.36M / yr</td><td>33% recovered</td><td>40%</td>
+        <td style="color:var(--green2);font-weight:700">$443k</td>
+        <td><strong style="color:var(--green2)">18.5x</strong></td><td>~3 weeks</td>
+      </tr>
+      <tr>
+        <td><strong>Userpilot</strong></td><td>$15k</td>
+        <td>Never activated / 90-day problem — 35% of SMB T1 churn</td>
+        <td>$2.33M / yr</td><td>25% saved via activation</td><td>45%</td>
+        <td style="color:var(--green2);font-weight:700">$261k</td>
+        <td><strong style="color:var(--green2)">17.4x</strong></td><td>&lt;1 month</td>
+      </tr>
+      <tr>
+        <td><strong>RudderStack + ChurnZero</strong></td><td>$70k</td>
+        <td>Expectations not met / MM health decline — 35% of MM churn</td>
+        <td>$4.55M / yr</td><td>25% saved via early intervention</td><td>60%</td>
+        <td style="color:var(--green2);font-weight:700">$683k</td>
+        <td><strong style="color:var(--green2)">9.8x</strong></td><td>~1.2 months</td>
+      </tr>
+      <tr>
+        <td><strong>Intercom Fin</strong></td><td>$30k</td>
+        <td>Tail-account support volume (routes to support team, not CS)</td>
+        <td>—</td>
+        <td>50–70% L1 deflection. Frees <strong>3 digital specialists</strong> from L1 triage only — L2+ (porting, bugs, disputes) still routes to support regardless</td><td>20%</td>
+        <td style="color:var(--green2);font-weight:700">$34k <span style="font-size:10px;color:var(--gray)">(CS retention only)</span></td>
+        <td><strong>1.1x (CS)</strong><br><span style="font-size:10px;color:var(--green2)">5.5x company (support headcount)</span></td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>Customer.io</strong></td><td>$36k</td>
+        <td>Disengaged / at-risk SMB T1+2 accounts (no login 21+ days)</td>
+        <td>$6.2M at-risk</td><td>12% of at-risk saved</td><td>40%</td>
+        <td style="color:var(--green2);font-weight:700">$298k</td>
+        <td><strong style="color:var(--green2)">8.3x</strong></td><td>~1.5 months</td>
+      </tr>
+      <tr>
+        <td><strong>Delighted</strong></td><td>$8k</td>
+        <td>MM detractors — signals 30–60 days before cancellation</td>
+        <td>$1.3M early-identified</td><td>15% caught early; 25% saved</td><td>55%</td>
+        <td style="color:var(--green2);font-weight:700">$269k</td>
+        <td><strong style="color:var(--green2)">33.6x</strong></td><td>&lt;1 month</td>
+      </tr>
+      <tr>
+        <td><strong>Metabase</strong></td><td>$6k</td>
+        <td colspan="5">Reporting infrastructure — table stakes, enables measurement of all other tools</td>
+        <td>—</td><td>—</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr><td><strong>Total (Userpilot)</strong></td><td><strong>$189k</strong></td><td colspan="4">—</td><td><strong>$2.0M</strong></td><td><strong>10.5x</strong></td><td><strong>&lt;1 month blended</strong></td></tr>
+    </tfoot>
+  </table>
+  <div style="margin-top:12px;background:var(--navy);border-radius:8px;padding:11px 16px;font-size:12px;color:rgba(255,255,255,0.85)">
+    <strong style="color:var(--green)">Intercom Fin framing:</strong> Fin deflects <strong style="color:#fff">L1 tickets only</strong> (setup, FAQ, basic integrations). L2+ tickets — porting, disputes, billing escalations, bugs — still route to the support team regardless. The CS capacity benefit is narrow but meaningful: <strong style="color:#fff">3 digital specialists</strong> are freed from L1 triage, giving them time to run proactive lifecycle programs across 20,000 accounts. Headcount saving of ~$115–161k / yr accrues to the support team's P&amp;L, not CS — those are two separate budget conversations.
   </div>
 </div>
+</div>
 
-<!-- ────── SLIDE 9 · TOOLING ROI ────── -->
+<!-- ── S9 · COMMERCIAL ROI ── -->
 <div class="slide" id="s9">
-  <div class="slide-header">
-    <h1>Tooling ROI — Each Tool Justifies Itself</h1>
-    <span class="sub">$222k annual stack · $2.11M CS value created · 9.5x blended ROI independent of headcount</span>
+<div class="slide-header">
+  <h1>The Commercial ROI Story</h1>
+  <span class="sub">Year 1 buys the machine · Year 2 is when it prints · expansion / NRR counted as zero</span>
+</div>
+<div class="slide-body">
+  <div class="roi-split">
+    <div class="roi-case">
+      <div class="roi-case-hdr">Base Case — Conservative (year 1 ramp, tooling deploying)</div>
+      <table style="font-size:12px;margin-bottom:12px">
+        <thead><tr><th>Segment</th><th>ARR</th><th>GRR Lift</th><th>ARR Retained</th><th>CS Attribution</th><th>CS Value</th></tr></thead>
+        <tbody>
+          <tr><td>Mid Market</td><td>$52M</td><td>+4pp → 79%</td><td>$2.08M</td><td>55%</td><td>$1.14M</td></tr>
+          <tr><td>SMB Tier 1</td><td>$19M</td><td>+5pp → 70%</td><td>$0.95M</td><td>43%</td><td>$0.41M</td></tr>
+          <tr><td>SMB T2+3</td><td>$29M</td><td>+3pp → 65%</td><td>$0.87M</td><td>18%</td><td>$0.16M</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="5"><strong>Total CS value</strong></td><td><strong>$1.71M</strong></td></tr></tfoot>
+      </table>
+      <div class="roi-row"><span class="roi-key">Total CS investment</span><span class="roi-val">$1.68M</span></div>
+      <div class="roi-row"><span class="roi-key">Net value created</span><span class="roi-val" style="color:var(--amber)">+$30k</span></div>
+      <div class="roi-row"><span class="roi-key">ROI</span><span class="roi-val">~1.02x</span></div>
+      <div class="roi-row"><span class="roi-key">Payback</span><span class="roi-val">~12 months</span></div>
+    </div>
+    <div class="roi-case best">
+      <div class="roi-case-hdr">Best Case — Strong execution, tooling live by month 3</div>
+      <table style="font-size:12px;margin-bottom:12px">
+        <thead><tr><th>Segment</th><th>ARR</th><th>GRR Lift</th><th>ARR Retained</th><th>CS Attribution</th><th>CS Value</th></tr></thead>
+        <tbody>
+          <tr><td>Mid Market</td><td>$52M</td><td>+7pp → 82%</td><td>$3.64M</td><td>60%</td><td>$2.18M</td></tr>
+          <tr><td>SMB Tier 1</td><td>$19M</td><td>+8pp → 73%</td><td>$1.52M</td><td>45%</td><td>$0.68M</td></tr>
+          <tr><td>SMB T2+3</td><td>$29M</td><td>+5pp → 67%</td><td>$1.45M</td><td>20%</td><td>$0.29M</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="5"><strong>Total CS value</strong></td><td><strong>$3.15M</strong></td></tr></tfoot>
+      </table>
+      <div class="roi-row"><span class="roi-key">Total CS investment</span><span class="roi-val">$1.68M</span></div>
+      <div class="roi-row"><span class="roi-key">Net value created</span><span class="roi-val" style="color:var(--green2)">+$1.47M</span></div>
+      <div class="roi-row"><span class="roi-key">ROI</span><span class="roi-val" style="color:var(--green2)">1.88x</span></div>
+      <div class="roi-row"><span class="roi-key">Payback</span><span class="roi-val" style="color:var(--green2)">~6.4 months</span></div>
+    </div>
   </div>
-  <div class="slide-body">
-    <div class="troi-header">
-      <div class="troi-stat"><div class="n">$222k</div><div class="l">Total annual tooling cost</div></div>
-      <div class="troi-stat"><div class="n" style="color:var(--green2)">$2.11M</div><div class="l">CS value independently created by tooling</div></div>
-      <div class="troi-stat"><div class="n" style="color:var(--green2)">9.5x</div><div class="l">Standalone tooling ROI (before headcount)</div></div>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Tool</th><th>Annual Cost</th><th>Churn bucket owned</th>
-          <th>ARR at risk</th><th>Recovery rate</th><th>CS attribution</th>
-          <th>CS Value</th><th>ROI</th><th>Payback</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Churnkey</strong></td><td>$24k</td>
-          <td>Involuntary / payment failure (20% of SMB churn)</td>
-          <td>$3.36M / yr</td><td>33% recovered</td><td>40%</td>
-          <td style="color:var(--green2);font-weight:700">$443k</td>
-          <td><strong style="color:var(--green2)">18.5x</strong></td><td>~3 weeks</td>
-        </tr>
-        <tr>
-          <td><strong>Pendo</strong></td><td>$48k</td>
-          <td>Never activated / 90-day problem (35% of SMB T1 churn)</td>
-          <td>$2.33M / yr</td><td>25% of churners saved via activation</td><td>45%</td>
-          <td style="color:var(--green2);font-weight:700">$261k</td>
-          <td><strong style="color:var(--green2)">5.4x</strong></td><td>~2.2 months</td>
-        </tr>
-        <tr>
-          <td><strong>RudderStack + ChurnZero</strong></td><td>$70k</td>
-          <td>Expectations not met / health decline in MM (35% of MM churn)</td>
-          <td>$4.55M / yr</td><td>25% saved via early intervention</td><td>60%</td>
-          <td style="color:var(--green2);font-weight:700">$683k</td>
-          <td><strong style="color:var(--green2)">9.8x</strong></td><td>~1.2 months</td>
-        </tr>
-        <tr>
-          <td><strong>Intercom Fin</strong></td><td>$30k</td>
-          <td>Support volume from 20,000 tail accounts + CSAT → retention</td>
-          <td>$106k headcount avoided + 1pp T3 churn</td><td>50–70% ticket deflection</td><td>20%</td>
-          <td style="color:var(--green2);font-weight:700">$152k</td>
-          <td><strong style="color:var(--green2)">5.1x</strong></td><td>~2.4 months</td>
-        </tr>
-        <tr>
-          <td><strong>Customer.io</strong></td><td>$36k</td>
-          <td>Disengaged / at-risk accounts in SMB T1+2 (no login 21+ days)</td>
-          <td>$6.2M at-risk ARR</td><td>12% of at-risk saved</td><td>40%</td>
-          <td style="color:var(--green2);font-weight:700">$298k</td>
-          <td><strong style="color:var(--green2)">8.3x</strong></td><td>~1.5 months</td>
-        </tr>
-        <tr>
-          <td><strong>Delighted</strong></td><td>$8k</td>
-          <td>MM detractors — signals 30–60 days before cancellation</td>
-          <td>$1.3M early-identified ARR</td><td>15% caught early; 25% of those saved</td><td>55%</td>
-          <td style="color:var(--green2);font-weight:700">$269k</td>
-          <td><strong style="color:var(--green2)">33.6x</strong></td><td>&lt;1 month</td>
-        </tr>
-        <tr>
-          <td><strong>Metabase</strong></td><td>$6k</td>
-          <td>Reporting infrastructure — enables measurement of all the above</td>
-          <td>—</td><td>—</td><td>—</td>
-          <td>Table stakes</td><td>—</td><td>—</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td><strong>Total Stack</strong></td><td><strong>$222k</strong></td>
-          <td colspan="4">—</td>
-          <td><strong>$2.11M</strong></td>
-          <td><strong>9.5x</strong></td>
-          <td><strong>&lt;1 month blended</strong></td>
-        </tr>
-      </tfoot>
-    </table>
-    <div style="margin-top:14px;background:var(--navy);border-radius:9px;padding:12px 18px;font-size:12.5px;color:rgba(255,255,255,0.85)">
-      <strong style="color:var(--green)">The critical point:</strong> Tools are priced in USD; people are priced in INR. The India cost arbitrage does not apply to software. In this model, tooling is ~12% of total CS cost — proportionally higher than a US team. <strong style="color:#fff">This makes tool discipline more important, not less</strong>. Every tool must replace either headcount or churn — Pendo and RudderStack earn their place by being the only reason 3 people can run programs over 20,000 accounts.
-    </div>
+  <div class="roi-hl">
+    <div class="roi-hl-item"><div class="n">1.51%</div><div class="l">CS people cost as % ARR (bench: 8–10%)</div></div>
+    <div class="roi-hl-item"><div class="n">$0</div><div class="l">Expansion / NRR upside counted</div></div>
+    <div class="roi-hl-item"><div class="n">10.5x</div><div class="l">Standalone tooling ROI ($189k stack)</div></div>
+    <div class="roi-hl-item"><div class="n">70% → 77%</div><div class="l">GRR target · 18-month horizon</div></div>
+  </div>
+  <div class="y2">
+    <strong>The Year 2 argument:</strong> Year 1 base is near-breakeven by design — slow ramp, conservative attribution, and <strong>zero expansion counted.</strong> Year 2: tooling fully live (Pendo upgrade evaluated), CSMs fully ramped, KB mature, first 90-day cohort improvements visible in actuals. The model compounds. A 3x year-1 ROI would be the slide to distrust.
   </div>
 </div>
+</div>
 
-<!-- ────── SLIDE 10 · COMMERCIAL ROI ────── -->
+<!-- ── S10 · CX IMPACT ── -->
 <div class="slide" id="s10">
-  <div class="slide-header">
-    <h1>The Commercial ROI Story</h1>
-    <span class="sub">Base + best case · Year 1 buys the machine · Year 2 is when it prints</span>
+<div class="slide-header">
+  <h1>The Two Sides of the ROI Story</h1>
+  <span class="sub">Commercial impact is the output · Customer experience is the mechanism</span>
+</div>
+<div class="slide-body">
+  <div class="cx-split">
+    <div class="cx-side">
+      <div class="cx-sh comm"><h2>Commercial Impact</h2></div>
+      <div class="cx-sb">
+        <div class="cx-m"><span class="cx-ml">GRR · Long Tail</span><span class="cx-mv" style="color:var(--green2)">62% → 67–70%</span></div>
+        <div class="cx-m"><span class="cx-ml">GRR · Mid Market</span><span class="cx-mv" style="color:var(--green2)">75% → 79–82%</span></div>
+        <div class="cx-m"><span class="cx-ml">Overall GRR target</span><span class="cx-mv" style="color:var(--green2)">70% → 75–78%</span></div>
+        <div class="cx-m"><span class="cx-ml">Monthly logo churn (long tail)</span><span class="cx-mv" style="color:var(--green2)">6% → 4.5%</span></div>
+        <div class="cx-m"><span class="cx-ml">Payment recovery rate</span><span class="cx-mv" style="color:var(--green2)">~5% → 33%</span></div>
+        <div class="cx-m"><span class="cx-ml">NRR (shared with AE)</span><span class="cx-mv" style="color:var(--green2)">90% → 100%+</span></div>
+        <div class="cx-m"><span class="cx-ml">ARR protected (base / best)</span><span class="cx-mv" style="color:var(--green2)">$1.71M / $3.15M</span></div>
+        <div class="cx-m"><span class="cx-ml">CS team cost as % ARR</span><span class="cx-mv">1.51% (bench: 8–10%)</span></div>
+      </div>
+    </div>
+    <div class="cx-side">
+      <div class="cx-sh exp"><h2>Customer Experience Impact</h2></div>
+      <div class="cx-sb">
+        <div class="cx-m"><span class="cx-ml">Time to First Value (self-serve)</span><span class="cx-mv" style="color:var(--green2)">Unknown → &lt;14 days</span></div>
+        <div class="cx-m"><span class="cx-ml">Activation rate (30-day)</span><span class="cx-mv" style="color:var(--green2)">~55% → 80%</span></div>
+        <div class="cx-m"><span class="cx-ml">Support ticket deflection</span><span class="cx-mv" style="color:var(--green2)">~0% → 55–70%</span></div>
+        <div class="cx-m"><span class="cx-ml">Health score coverage</span><span class="cx-mv" style="color:var(--green2)">None → 100%</span></div>
+        <div class="cx-m"><span class="cx-ml">CSAT target</span><span class="cx-mv" style="color:var(--green2)">&gt; 4.2 / 5</span></div>
+        <div class="cx-m"><span class="cx-ml">Surprise at renewal</span><span class="cx-mv" style="color:var(--green2)">Common → Eliminated</span></div>
+        <div class="cx-m"><span class="cx-ml">Cold account handoffs</span><span class="cx-mv" style="color:var(--green2)">Frequent → Zero</span></div>
+        <div class="cx-m"><span class="cx-ml">Accounts without an owner</span><span class="cx-mv" style="color:var(--green2)">Many → None</span></div>
+      </div>
+    </div>
   </div>
-  <div class="slide-body">
-    <div class="roi-split">
-      <div class="roi-case">
-        <div class="roi-case-header">Base Case — Conservative (Year 1 ramp, Pendo gap months 1–2)</div>
-        <table style="font-size:12.5px">
-          <thead><tr><th>Segment</th><th>ARR</th><th>GRR Lift</th><th>ARR Retained</th><th>CS Attribution</th><th>CS Value</th></tr></thead>
-          <tbody>
-            <tr><td>Mid Market</td><td>$52M</td><td>+4pp → 79%</td><td>$2.08M</td><td>55%</td><td>$1.14M</td></tr>
-            <tr><td>SMB Tier 1</td><td>$19M</td><td>+5pp → 70%</td><td>$0.95M</td><td>43%</td><td>$0.41M</td></tr>
-            <tr><td>SMB T2+3</td><td>$29M</td><td>+3pp → 65%</td><td>$0.87M</td><td>18%</td><td>$0.16M</td></tr>
-          </tbody>
-          <tfoot><tr><td colspan="5"><strong>Total CS value</strong></td><td><strong>$1.71M</strong></td></tr></tfoot>
-        </table>
-        <div style="margin-top:12px">
-          <div class="roi-row"><span class="roi-key">Total CS investment</span><span class="roi-val">$1.79M</span></div>
-          <div class="roi-row"><span class="roi-key">Net value created</span><span class="roi-val" style="color:var(--amber)">−$0.08M</span></div>
-          <div class="roi-row"><span class="roi-key">ROI</span><span class="roi-val">~0.96x</span></div>
-          <div class="roi-row"><span class="roi-key">Payback</span><span class="roi-val">~12 months</span></div>
-        </div>
-      </div>
-      <div class="roi-case best">
-        <div class="roi-case-header">Best Case — Strong execution, tooling fully live by month 4</div>
-        <table style="font-size:12.5px">
-          <thead><tr><th>Segment</th><th>ARR</th><th>GRR Lift</th><th>ARR Retained</th><th>CS Attribution</th><th>CS Value</th></tr></thead>
-          <tbody>
-            <tr><td>Mid Market</td><td>$52M</td><td>+7pp → 82%</td><td>$3.64M</td><td>60%</td><td>$2.18M</td></tr>
-            <tr><td>SMB Tier 1</td><td>$19M</td><td>+8pp → 73%</td><td>$1.52M</td><td>45%</td><td>$0.68M</td></tr>
-            <tr><td>SMB T2+3</td><td>$29M</td><td>+5pp → 67%</td><td>$1.45M</td><td>20%</td><td>$0.29M</td></tr>
-          </tbody>
-          <tfoot><tr><td colspan="5"><strong>Total CS value</strong></td><td><strong>$3.15M</strong></td></tr></tfoot>
-        </table>
-        <div style="margin-top:12px">
-          <div class="roi-row"><span class="roi-key">Total CS investment</span><span class="roi-val">$1.79M</span></div>
-          <div class="roi-row"><span class="roi-key">Net value created</span><span class="roi-val green">+$1.36M</span></div>
-          <div class="roi-row"><span class="roi-key">ROI</span><span class="roi-val green">1.76x</span></div>
-          <div class="roi-row"><span class="roi-key">Payback</span><span class="roi-val green">~6.8 months</span></div>
-        </div>
-      </div>
+  <div style="margin-bottom:12px">
+    <div style="font-size:12px;color:var(--red);background:#FEF2F2;border-radius:7px;padding:9px 13px;margin-bottom:8px"><strong>Before:</strong> Signs up → confused → no in-app guidance → never activates → churns before day 90 → nobody noticed.</div>
+    <div class="j-steps">
+      <div class="j-step"><div class="j-dot">D1</div><div class="j-day">Day 1</div><div class="j-text">Userpilot in-app guide + welcome email triggered</div></div>
+      <div class="j-step"><div class="j-dot" style="background:var(--green)">14</div><div class="j-day">Day 14</div><div class="j-text">Activation milestone confirmed · Green health score</div></div>
+      <div class="j-step"><div class="j-dot">21</div><div class="j-day">Day 21</div><div class="j-text">Feature depth nudge · CRM integration prompt</div></div>
+      <div class="j-step"><div class="j-dot">30</div><div class="j-day">Day 30</div><div class="j-text">Health review · Yellow → pooled CSM outreach</div></div>
+      <div class="j-step"><div class="j-dot" style="background:var(--green)">90</div><div class="j-day">Day 90</div><div class="j-text">NPS survey · EBR for MM · renewal confirmed</div></div>
+      <div class="j-step"><div class="j-dot">∞</div><div class="j-day">Ongoing</div><div class="j-text">Monthly health · no renewal surprise</div></div>
     </div>
-    <div class="roi-highlight">
-      <div class="roi-hl-item"><div class="n">1.6%</div><div class="l">CS cost as % of ARR (benchmark: 8–10%)</div></div>
-      <div class="roi-hl-item"><div class="n">$0</div><div class="l">Expansion / NRR counted in this model</div></div>
-      <div class="roi-hl-item"><div class="n">9.5x</div><div class="l">Standalone tooling ROI</div></div>
-      <div class="roi-hl-item"><div class="n">70% → 77%</div><div class="l">GRR target · 18-month horizon</div></div>
-    </div>
-    <div class="year2-note">
-      <strong>The Year 2 argument:</strong> Year 1 base case is near-breakeven by design — slow ramp, Pendo gap in months 1–2, conservative attribution, and zero expansion counted. Year 2: tooling fully live, CSMs fully ramped, KB mature (deflection rate stable), first 90-day cohort improvements visible in GRR. The model compounds. A presentation showing 3x ROI in year 1 would be the one to distrust.
-    </div>
+  </div>
+  <div class="flywheel">
+    <div class="fw-item"><div class="lbl">Faster activation</div><div class="val">↑ Retention</div></div>
+    <div class="fw-arrow">→</div>
+    <div class="fw-item"><div class="lbl">Better retention</div><div class="val">↑ GRR</div></div>
+    <div class="fw-arrow">→</div>
+    <div class="fw-item"><div class="lbl">Healthier accounts</div><div class="val">↑ Expansion signals</div></div>
+    <div class="fw-arrow">→</div>
+    <div class="fw-item"><div class="lbl">CS → AE handoff</div><div class="val">↑ NRR</div></div>
+    <div class="fw-arrow">→</div>
+    <div class="fw-item"><div class="lbl">NRR &gt; 100%</div><div class="val">Net growth</div></div>
   </div>
 </div>
-
-<!-- ────── SLIDE 11 · CX IMPACT ────── -->
-<div class="slide" id="s11">
-  <div class="slide-header">
-    <h1>The Two Sides of the ROI Story</h1>
-    <span class="sub">Commercial impact is the output · Customer experience is the mechanism that produces it</span>
-  </div>
-  <div class="slide-body">
-    <div class="cx-split">
-      <div class="cx-side">
-        <div class="cx-side-header commercial">
-          <h2>Commercial Impact</h2>
-        </div>
-        <div class="cx-side-body">
-          <div class="cx-metric"><span class="cx-metric-label">GRR: Long Tail</span><span class="cx-metric-val" style="color:var(--green2)">62% → 67–70%</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">GRR: Mid Market</span><span class="cx-metric-val" style="color:var(--green2)">75% → 79–82%</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">Overall GRR (target)</span><span class="cx-metric-val" style="color:var(--green2)">70% → 75–78%</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">Monthly logo churn (long tail)</span><span class="cx-metric-val" style="color:var(--green2)">6% → 4.5%</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">Payment recovery rate</span><span class="cx-metric-val" style="color:var(--green2)">~5% → 33%</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">NRR (shared with AE)</span><span class="cx-metric-val" style="color:var(--green2)">90% → 100%+</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">ARR protected (base/best)</span><span class="cx-metric-val" style="color:var(--green2)">$1.71M / $3.15M</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">Team cost as % ARR</span><span class="cx-metric-val" style="color:var(--navy)">1.6% (bench: 8–10%)</span></div>
-        </div>
-      </div>
-      <div class="cx-side">
-        <div class="cx-side-header experience">
-          <h2>Customer Experience Impact</h2>
-        </div>
-        <div class="cx-side-body">
-          <div class="cx-metric"><span class="cx-metric-label">Time to First Value (self-serve)</span><span class="cx-metric-val" style="color:var(--green2)">Unknown → &lt;14 days</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">Activation rate (30-day)</span><span class="cx-metric-val" style="color:var(--green2)">~55% → 80%</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">Support ticket deflection</span><span class="cx-metric-val" style="color:var(--green2)">~0% → 50–70%</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">Health score coverage</span><span class="cx-metric-val" style="color:var(--green2)">None → 100%</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">CSAT target</span><span class="cx-metric-val" style="color:var(--green2)">&gt; 4.2 / 5</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">Surprise at renewal</span><span class="cx-metric-val" style="color:var(--green2)">Common → Eliminated</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">Cold account handoffs</span><span class="cx-metric-val" style="color:var(--green2)">Frequent → Zero</span></div>
-          <div class="cx-metric"><span class="cx-metric-label">Accounts without an owner</span><span class="cx-metric-val" style="color:var(--green2)">Many → None</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="cx-journey">
-      <h3 style="margin-bottom:14px">The Journey Transformation — Self-Serve Customer (Before vs. After)</h3>
-      <div style="font-size:12px;color:var(--red);background:#FEF2F2;border-radius:8px;padding:10px 14px;margin-bottom:10px">
-        <strong>Before:</strong> Signs up → confused by product → no in-app guidance → never activates → churns before day 90 → nobody noticed.
-      </div>
-      <div class="journey-steps">
-        <div class="j-step">
-          <div class="j-dot">D1</div>
-          <div class="j-day">Day 1</div>
-          <div class="j-text">Pendo in-app guide · welcome sequence triggered</div>
-        </div>
-        <div class="j-step">
-          <div class="j-dot" style="background:var(--green)">14</div>
-          <div class="j-day">Day 14</div>
-          <div class="j-text">Activation milestone confirmed · health score assigned Green</div>
-        </div>
-        <div class="j-step">
-          <div class="j-dot">21</div>
-          <div class="j-day">Day 21</div>
-          <div class="j-text">Feature depth nudge via Customer.io · integration prompt</div>
-        </div>
-        <div class="j-step">
-          <div class="j-dot">30</div>
-          <div class="j-day">Day 30</div>
-          <div class="j-text">Health review · Yellow flag → pooled CSM outreach</div>
-        </div>
-        <div class="j-step">
-          <div class="j-dot" style="background:var(--green)">90</div>
-          <div class="j-day">Day 90</div>
-          <div class="j-text">NPS survey · EBR for MM accounts · renewal confirmed</div>
-        </div>
-        <div class="j-step">
-          <div class="j-dot">∞</div>
-          <div class="j-day">Ongoing</div>
-          <div class="j-text">Monthly health check · no renewal surprise · value visible</div>
-        </div>
-      </div>
-    </div>
-    <div class="flywheel">
-      <div class="fw-item"><div class="label">Faster activation</div><div class="value">↑ Retention</div></div>
-      <div class="fw-arrow">→</div>
-      <div class="fw-item"><div class="label">Better retention</div><div class="value">↑ GRR</div></div>
-      <div class="fw-arrow">→</div>
-      <div class="fw-item"><div class="label">Healthier accounts</div><div class="value">↑ Expansion signals</div></div>
-      <div class="fw-arrow">→</div>
-      <div class="fw-item"><div class="label">CS → AE handoff</div><div class="value">↑ NRR</div></div>
-      <div class="fw-arrow">→</div>
-      <div class="fw-item"><div class="label">NRR &gt; 100%</div><div class="value">↑ Net growth</div></div>
-    </div>
-  </div>
 </div>
 
-<!-- ────── NAVIGATION ────── -->
+<!-- ── NAV ── -->
 <nav class="nav-bar">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
   <div class="slide-dots" id="dotsContainer"></div>
-  <span class="slide-counter" id="counter">1 / 11</span>
+  <span class="slide-counter" id="counter">1 / 10</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
 </nav>
 
 <script>
-const slides = document.querySelectorAll('.slide');
-const total = slides.length;
-let current = 0;
-
-const dotsContainer = document.getElementById('dotsContainer');
-slides.forEach((_, i) => {
-  const dot = document.createElement('div');
-  dot.className = 'dot' + (i === 0 ? ' active' : '');
-  dot.onclick = () => goTo(i);
-  dotsContainer.appendChild(dot);
-});
-
-function goTo(n) {
+const slides=document.querySelectorAll('.slide');
+const total=slides.length;
+let current=0;
+const dc=document.getElementById('dotsContainer');
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>goTo(i);dc.appendChild(d)});
+function goTo(n){
   slides[current].classList.remove('active');
-  dotsContainer.children[current].classList.remove('active');
-  current = Math.max(0, Math.min(n, total - 1));
+  dc.children[current].classList.remove('active');
+  current=Math.max(0,Math.min(n,total-1));
   slides[current].classList.add('active');
-  dotsContainer.children[current].classList.add('active');
-  document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
-  document.getElementById('prevBtn').disabled = current === 0;
-  document.getElementById('nextBtn').disabled = current === total - 1;
+  dc.children[current].classList.add('active');
+  document.getElementById('counter').textContent=(current+1)+' / '+total;
+  document.getElementById('prevBtn').disabled=current===0;
+  document.getElementById('nextBtn').disabled=current===total-1;
 }
-
-function changeSlide(dir) { goTo(current + dir); }
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
-  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') changeSlide(-1);
+function changeSlide(dir){goTo(current+dir)}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown')changeSlide(1);
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp')changeSlide(-1);
 });
 </script>
 </body>
