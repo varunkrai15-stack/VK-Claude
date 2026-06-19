@@ -215,6 +215,51 @@ tr:last-child td{border-bottom:none}
 .troi-stat{background:#fff;border-radius:8px;padding:14px 18px;border:1px solid var(--border);text-align:center}
 .troi-stat .n{font-size:30px;font-weight:800;color:var(--navy)}
 .troi-stat .l{font-size:11.5px;color:var(--gray);margin-top:3px}
+
+/* ── SCENARIO SLIDES ── */
+.sc-ctx{background:var(--navy);border-radius:9px;padding:11px 16px;display:flex;gap:24px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+.sc-ctx-item .sc-ctx-lbl{font-size:9.5px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.sc-ctx-item .sc-ctx-val{font-size:13px;font-weight:700;color:#fff}
+.sc-ctx-item .sc-ctx-sub{font-size:10px;color:rgba(255,255,255,0.55)}
+.sc-ctx-divider{width:1px;background:rgba(255,255,255,0.15);align-self:stretch;flex-shrink:0}
+.sc-ctx-tag{background:rgba(0,178,122,0.25);color:#6EE7B7;border-radius:6px;padding:3px 9px;font-size:10.5px;font-weight:700;margin-left:auto}
+.sc-table{width:100%;border-collapse:collapse;font-size:11.5px}
+.sc-table th{background:var(--navy);color:#fff;padding:7px 10px;text-align:left;font-size:10.5px;font-weight:600;letter-spacing:.3px;text-transform:uppercase}
+.sc-table td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+.sc-table tr:nth-child(even) td{background:#fff}
+.sc-table tr:nth-child(odd) td{background:#F9FAFB}
+.sc-table tr:last-child td{border-bottom:none}
+.sc-day{font-weight:700;color:var(--navy);white-space:nowrap;font-size:11px}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:9.5px;font-weight:700;white-space:nowrap}
+.badge-ai{background:#EFF6FF;color:#1D4ED8}
+.badge-gen{background:#F3E8FF;color:#6D28D9}
+.badge-agent{background:#FEF3C7;color:#92400E}
+.badge-human{background:var(--green-light);color:#065F46}
+.badge-signal{background:#FEF2F2;color:#991B1B}
+.sc-action-main{font-size:11.5px;color:var(--text2);margin-bottom:2px}
+.sc-action-main strong{color:var(--navy)}
+.sc-action-quote{font-size:10.5px;color:var(--green2);font-style:italic;margin-top:2px}
+.sc-tool-tag{display:inline-block;background:#F3F4F6;border:1px solid var(--border);border-radius:5px;padding:1px 7px;font-size:10px;color:var(--gray);white-space:nowrap}
+.sc-outcome{display:flex;gap:0;background:var(--navy);border-radius:9px;overflow:hidden;margin-top:12px}
+.sc-out-item{flex:1;padding:12px 16px;text-align:center;border-right:1px solid rgba(255,255,255,0.1)}
+.sc-out-item:last-child{border-right:none}
+.sc-out-val{font-size:22px;font-weight:800;color:var(--green)}
+.sc-out-label{font-size:10px;color:rgba(255,255,255,0.55);margin-top:2px}
+.sc-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
+.sc-legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--gray)}
+.sc-section-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray);margin:10px 0 5px;padding-left:2px}
+.highlight-row td{background:#F0FDF4!important;border-left:3px solid var(--green)}
+.risk-row td{background:#FEF2F2!important;border-left:3px solid var(--red)}
+.auto-loop{display:flex;align-items:stretch;gap:0;margin:10px 0;background:#fff;border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.loop-step{flex:1;padding:10px 11px;border-right:1px solid var(--border);position:relative;text-align:center}
+.loop-step:last-child{border-right:none}
+.loop-step-type{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.loop-step-name{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.loop-step-desc{font-size:10px;color:var(--gray);line-height:1.3}
+.loop-step-tool{font-size:9.5px;color:var(--green2);font-weight:600;margin-top:5px}
+.loop-arrow{width:22px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--green);font-weight:700;flex-shrink:0}
+.zero-human{background:var(--navy);color:#fff;border-radius:7px;padding:7px 14px;font-size:11.5px;font-weight:700;text-align:center;margin-top:10px;letter-spacing:.3px}
+.zero-human span{color:var(--green)}
 </style>
 </head>
 <body>
@@ -841,11 +886,261 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
+<!-- ── S11 · MM PLR SCENARIO ── -->
+<div class="slide" id="s11">
+<div class="slide-header"><h1>Mid-Market in Practice — PLR Scenario</h1><span class="sub">How the system and CSM work together · JustCall customer · Pre-90-day retention window</span></div>
+<div class="slide-body">
+
+  <!-- Account context -->
+  <div class="sc-ctx">
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Account</div><div class="sc-ctx-val">SalesFlow Inc</div><div class="sc-ctx-sub">15-seat outbound B2B sales team</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Tier</div><div class="sc-ctx-val">Growth (MM)</div><div class="sc-ctx-sub">Dedicated CSM · 85-account book</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">MRR</div><div class="sc-ctx-val">$720 / mo</div><div class="sc-ctx-sub">$8,640 ARR</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Use case</div><div class="sc-ctx-val">Outbound calling + HubSpot CRM</div><div class="sc-ctx-sub">Power Dialer · AI call scoring</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Risk</div><div class="sc-ctx-val">No HubSpot sync · AI scoring off</div><div class="sc-ctx-sub">Activation gap → churn risk</div></div>
+    <div class="sc-ctx-tag">1 Human Touch · 90-Day Lifecycle</div>
+  </div>
+
+  <!-- Legend -->
+  <div class="sc-legend">
+    <span style="font-size:11px;font-weight:700;color:var(--navy)">Actor key:</span>
+    <span class="sc-legend-item"><span class="badge badge-ai">Predictive AI</span> Reads signals, scores risk</span>
+    <span class="sc-legend-item"><span class="badge badge-gen">Gen AI</span> Creates nudges, briefs, guides</span>
+    <span class="sc-legend-item"><span class="badge badge-human">CSM</span> Signal-triggered human action</span>
+    <span class="sc-legend-item"><span class="badge badge-signal">Alert</span> Internal escalation</span>
+  </div>
+
+  <table class="sc-table">
+    <thead><tr><th style="width:72px">Day</th><th style="width:105px">Actor</th><th>What happens</th><th style="width:130px">Tool</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="sc-day">Day 1</td>
+        <td><span class="badge badge-ai">Predictive AI</span></td>
+        <td class="sc-action-main">RudderStack captures baseline: <strong>10/15 seats active</strong>, 38 calls made, HubSpot not connected, AI call scoring not enabled. Health score initialised at 72.</td>
+        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 7</td>
+        <td><span class="badge badge-gen">Gen AI</span></td>
+        <td class="sc-action-main">Userpilot detects HubSpot not connected → fires in-app checklist: <strong>"3 steps to unlock JustCall's power"</strong> — Connect HubSpot · Enable AI scoring · Set up Power Dialer. Personalised to admin user's role.</td>
+        <td><span class="sc-tool-tag">Userpilot</span></td>
+      </tr>
+      <tr class="risk-row">
+        <td class="sc-day">Day 14</td>
+        <td><span class="badge badge-signal">Alert</span></td>
+        <td class="sc-action-main">Calls drop: <strong>38/day → 12/day (−68%).</strong> HubSpot still disconnected. RudderStack feeds pattern to ChurnZero — health score falls to <strong>59</strong>. Matches historical churn signature: "integration gap + usage cliff before day 21."</td>
+        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
+      </tr>
+      <tr class="risk-row">
+        <td class="sc-day">Day 14</td>
+        <td><span class="badge badge-gen">Gen AI</span></td>
+        <td class="sc-action-main">ChurnZero auto-generates CSM task + outreach brief: <em>"SalesFlow at risk. Usage −68%. HubSpot unconnected. Accounts without CRM sync in first 14 days churn at 2.3× rate. Recommended: 30-min live setup call. Talking point: bi-directional call log sync."</em> CSM opens brief — no research needed.</td>
+        <td><span class="sc-tool-tag">ChurnZero AI</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td class="sc-day">Day 15</td>
+        <td><span class="badge badge-human">CSM</span></td>
+        <td class="sc-action-main"><strong>CSM calls SalesFlow admin — the only human touch in this lifecycle.</strong> Finds the real reason: team didn't know JustCall auto-logs call outcomes to HubSpot (no manual data entry needed). Runs 15-min live screen-share. HubSpot connected. AI scoring enabled. Admin demos it to the team on the spot.
+          <div class="sc-action-quote">← This is PLR: the product read the signal. The CSM arrived with the answer.</div>
+        </td>
+        <td><span class="sc-tool-tag">CSM + JustCall product</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 16</td>
+        <td><span class="badge badge-ai">Predictive AI</span></td>
+        <td class="sc-action-main">RudderStack: <strong>calls jump to 52/day (+37% above original baseline).</strong> HubSpot bi-sync active — 340 call logs pushed automatically. Health score recovers to <strong>84</strong>. ChurnZero closes at-risk flag automatically.</td>
+        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 30</td>
+        <td><span class="badge badge-gen">Gen AI</span></td>
+        <td class="sc-action-main">Userpilot detects AI scoring active but coaching dashboard not opened → fires contextual in-app tip: <strong>"Your AI call scores are live — open the coaching dashboard to see which reps need support and lift connect rates by 20%."</strong></td>
+        <td><span class="sc-tool-tag">Userpilot</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td class="sc-day">Day 45</td>
+        <td><span class="badge badge-signal">Alert</span></td>
+        <td class="sc-action-main">RudderStack: <strong>3 new users added, API calls up 3×.</strong> ChurnZero flags <strong>expansion signal</strong>. Auto-task to CSM: "SalesFlow — expansion ready. Usage at 140% of baseline. Recommend: upsell to 20 seats + Power Dialer."</td>
+        <td><span class="sc-tool-tag">ChurnZero</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 60</td>
+        <td><span class="badge badge-gen">Gen AI</span></td>
+        <td class="sc-action-main">ChurnZero generates value review brief for CSM: <em>"SalesFlow — 847 calls made, connect rate +34% vs. Day 1, 1,200 HubSpot contacts enriched with call data, 0 missed follow-ups."</em> CSM uses this as QBR deck. No manual data pull.</td>
+        <td><span class="sc-tool-tag">ChurnZero AI</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td class="sc-day">Day 90</td>
+        <td><span class="badge badge-human">CSM</span></td>
+        <td class="sc-action-main">Expansion call — SalesFlow upgrades to <strong>20 seats + Power Dialer.</strong> MRR: $720 → $960. Account health score: 89. No renewal surprise. CSM spent &lt;2 hours total on this account over 90 days.
+          <div class="sc-action-quote">← System handled everything else.</div>
+        </td>
+        <td><span class="sc-tool-tag">CSM</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sc-outcome">
+    <div class="sc-out-item"><div class="sc-out-val">1</div><div class="sc-out-label">Human touch (Day 15 only)</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">133%</div><div class="sc-out-label">NRR on this account</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">+37%</div><div class="sc-out-label">Usage above baseline at Day 90</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">&lt;2 hrs</div><div class="sc-out-label">Total CSM time across 90 days</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">$960</div><div class="sc-out-label">MRR · up from $720</div></div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── S12 · SMB DIGITAL SCENARIO ── -->
+<div class="slide" id="s12">
+<div class="slide-header"><h1>Digital Scale in Practice — Autonomous Loop Scenario</h1><span class="sub">Tech-touch bottom funnel · Zero CSM involvement · JustCall customer · End-to-end agentic motion</span></div>
+<div class="slide-body">
+
+  <!-- Account context -->
+  <div class="sc-ctx">
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Account</div><div class="sc-ctx-val">QuickConnect Realty</div><div class="sc-ctx-sub">3-person real estate agency</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Tier</div><div class="sc-ctx-val">SMB Tier 3 (Digital)</div><div class="sc-ctx-sub">Pooled · no dedicated CSM</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">MRR</div><div class="sc-ctx-val">$120 / mo</div><div class="sc-ctx-sub">$1,440 ARR</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Use case</div><div class="sc-ctx-val">Outbound calls to property leads</div><div class="sc-ctx-sub">2 agents · local number · no CRM</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Issue</div><div class="sc-ctx-val">Caller ID not verified → zero calls</div><div class="sc-ctx-sub">Usage cliff on Day 31</div></div>
+    <div class="sc-ctx-tag">0 Human Touches · Fully Autonomous</div>
+  </div>
+
+  <!-- Autonomous loop diagram -->
+  <div class="sc-section-lbl">The agentic loop — how the system runs the full lifecycle</div>
+  <div class="auto-loop">
+    <div class="loop-step">
+      <div class="loop-step-type" style="color:#1D4ED8">Predictive AI</div>
+      <div class="loop-step-name">Detect Anomaly</div>
+      <div class="loop-step-desc">Usage cliff — 30 calls/day → 0. Pattern matches pre-churn signature.</div>
+      <div class="loop-step-tool">RudderStack → ChurnZero</div>
+    </div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-step">
+      <div class="loop-step-type" style="color:#6D28D9">Gen AI</div>
+      <div class="loop-step-name">Reach Out</div>
+      <div class="loop-step-desc">Personalised email: common causes of this pattern with a fix link.</div>
+      <div class="loop-step-tool">Customer.io</div>
+    </div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-step">
+      <div class="loop-step-type" style="color:#92400E">Agentic AI</div>
+      <div class="loop-step-name">Diagnose &amp; Resolve</div>
+      <div class="loop-step-desc">Customer describes error. Fin finds KB match, provides step-by-step fix.</div>
+      <div class="loop-step-tool">Intercom Fin</div>
+    </div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-step">
+      <div class="loop-step-type" style="color:#1D4ED8">Predictive AI</div>
+      <div class="loop-step-name">Confirm Recovery</div>
+      <div class="loop-step-desc">Calls resume. Health score recovers. At-risk flag auto-closed.</div>
+      <div class="loop-step-tool">RudderStack → ChurnZero</div>
+    </div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-step">
+      <div class="loop-step-type" style="color:#6D28D9">Gen AI</div>
+      <div class="loop-step-name">Educate &amp; Expand</div>
+      <div class="loop-step-desc">Follow-up email + in-app Power Dialer guide. Usage grows 40% above pre-incident.</div>
+      <div class="loop-step-tool">Customer.io + Userpilot</div>
+    </div>
+  </div>
+
+  <!-- Detailed timeline -->
+  <div class="sc-section-lbl">Step-by-step · what the customer experiences</div>
+  <div class="sc-legend">
+    <span class="sc-legend-item"><span class="badge badge-ai">Predictive AI</span></span>
+    <span class="sc-legend-item"><span class="badge badge-gen">Gen AI</span></span>
+    <span class="sc-legend-item"><span class="badge badge-agent">Agentic AI</span></span>
+    <span style="font-size:11px;color:var(--gray);margin-left:4px">No CSM involved at any stage</span>
+  </div>
+  <table class="sc-table">
+    <thead><tr><th style="width:80px">Day</th><th style="width:110px">Actor</th><th>What happens</th><th style="width:130px">Tool</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="sc-day">Days 1–30</td>
+        <td><span class="badge badge-ai">Predictive AI</span></td>
+        <td class="sc-action-main">Normal operation. Agents making <strong>30 calls/day</strong> to property leads. RudderStack logs all events. Health score stable at 74. Userpilot fires onboarding checklist on Day 1 — both agents complete it without contacting support.</td>
+        <td><span class="sc-tool-tag">RudderStack · Userpilot</span></td>
+      </tr>
+      <tr class="risk-row">
+        <td class="sc-day">Day 31</td>
+        <td><span class="badge badge-ai">Predictive AI</span></td>
+        <td class="sc-action-main"><strong>Zero calls for 2 days.</strong> RudderStack detects usage cliff. ChurnZero health score: 74 → 38. Pattern recognised: "sudden zero usage" — precedes churn in 71% of accounts this size within 30 days. <strong>Automated playbook fires. No human notified yet.</strong></td>
+        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 32</td>
+        <td><span class="badge badge-gen">Gen AI</span></td>
+        <td class="sc-action-main">Customer.io sends personalised email to account admin (Sarah): <em>"Hi Sarah, we noticed your team hasn't made calls in 2 days. Common causes: Caller ID not verified · Credit balance low · Browser microphone permission blocked. Check your dashboard — takes 2 minutes to fix."</em> Content generated from account's usage profile, not a generic blast.</td>
+        <td><span class="sc-tool-tag">Customer.io</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 34</td>
+        <td><span class="badge badge-agent">Agentic AI</span></td>
+        <td class="sc-action-main">Sarah doesn't respond to email but logs into JustCall dashboard. <strong>Intercom Fin fires a proactive in-product message:</strong> <em>"Hi Sarah — we noticed your team's call volume dropped. Is everything working okay?"</em> Sarah types: <em>"Yes, we're getting a 'number not verified' error whenever we try to call."</em></td>
+        <td><span class="sc-tool-tag">Intercom Fin (L1)</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td class="sc-day">Day 34</td>
+        <td><span class="badge badge-agent">Agentic AI</span></td>
+        <td class="sc-action-main"><strong>Fin diagnoses autonomously:</strong> KB match found → "number not verified" = outbound Caller ID not verified. Fin provides step-by-step resolution:
+          <div style="background:#F0FDF4;border-radius:5px;padding:7px 10px;margin-top:5px;font-size:10.5px;color:#065F46;line-height:1.6"><strong>Fin's response:</strong> "This is an easy fix! Go to Settings → Phone Numbers → find your number → click 'Verify Caller ID' → enter the 6-digit code sent to that number. Takes about 2 minutes. Let me know once you're done and I'll confirm everything looks right."</div>
+          Sarah follows the steps. Caller ID verified. <strong>No ticket raised. No support agent involved.</strong></td>
+        <td><span class="sc-tool-tag">Intercom Fin (L1)</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td class="sc-day">Day 34 +20 min</td>
+        <td><span class="badge badge-ai">Predictive AI</span></td>
+        <td class="sc-action-main">RudderStack: <strong>8 calls made.</strong> Usage resumes. Fin detects recovery via ChurnZero webhook → auto-closes conversation: <em>"Great — you're back in action! Your team just made 8 calls. Anything else I can help with?"</em> Health score recovers to 71. At-risk playbook auto-closed.</td>
+        <td><span class="sc-tool-tag">RudderStack → ChurnZero → Fin</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 35</td>
+        <td><span class="badge badge-gen">Gen AI</span></td>
+        <td class="sc-action-main">Customer.io sends automated follow-up (triggered by usage recovery event): <em>"Great news Sarah — your team made 8 calls yesterday and you're back on track! Pro tip: switch to Power Dialer and your agents can work through 3× more leads in the same time. Here's a 2-minute setup guide."</em></td>
+        <td><span class="sc-tool-tag">Customer.io</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 36</td>
+        <td><span class="badge badge-gen">Gen AI</span></td>
+        <td class="sc-action-main">Userpilot detects manual dialling still in use → fires in-app contextual tip: <em>"You're calling one by one. Power Dialer auto-dials your lead list and skips unanswered calls — your agents spend more time talking, less time dialling."</em> Sarah clicks "Set up Power Dialer" — activates in 4 minutes.</td>
+        <td><span class="sc-tool-tag">Userpilot</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td class="sc-day">Day 40</td>
+        <td><span class="badge badge-ai">Predictive AI</span></td>
+        <td class="sc-action-main"><strong>42 calls/day — 40% above pre-incident baseline.</strong> Power Dialer active. Health score: 81. ChurnZero flags positive signal. Account retained. Engagement higher than before the incident. <strong>Zero human touches across the entire sequence.</strong></td>
+        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="zero-human">0 human touches &nbsp;·&nbsp; <span>Full loop: Detect → Reach out → Diagnose → Resolve → Educate → Expand</span> &nbsp;·&nbsp; 3 digital specialists never involved &nbsp;·&nbsp; L2+ issues would escalate to support automatically</div>
+
+  <div class="sc-outcome">
+    <div class="sc-out-item"><div class="sc-out-val">0</div><div class="sc-out-label">Human touches</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">3 days</div><div class="sc-out-label">Detection to resolution</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">+40%</div><div class="sc-out-label">Usage above pre-incident</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">$0</div><div class="sc-out-label">CS cost to retain this account</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">Retained</div><div class="sc-out-label">Account · Power Dialer activated</div></div>
+  </div>
+
+</div>
+</div>
+
 <!-- ── NAV ── -->
 <nav class="nav-bar">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
   <div class="slide-dots" id="dotsContainer"></div>
-  <span class="slide-counter" id="counter">1 / 10</span>
+  <span class="slide-counter" id="counter">1 / 12</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
 </nav>
 
