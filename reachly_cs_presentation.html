@@ -2117,7 +2117,167 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
-<!-- ── S24 · APPENDIX ── -->
+<!-- ── S24 · 3 PARALLEL PROGRAM ── -->
+<div class="slide" id="s24">
+<div class="slide-header">
+  <h1>3 Parallel Program — Adoption · Performance · MAU</h1>
+  <span class="sub">Driving feature adoption, business outcomes, and seat utilization to reduce churn · Two motions: PLG AI-agent (T2-T3) and Human-led CSM (MM + T1)</span>
+</div>
+<div class="slide-body">
+
+  <!-- Problem / Solution / Impact strip -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
+    <div style="background:#FFF3CD;border-left:3px solid #F59E0B;border-radius:5px;padding:8px 11px">
+      <div style="font-size:9.5px;font-weight:700;color:#92400E;letter-spacing:0.8px;margin-bottom:3px">PROBLEM</div>
+      <div style="font-size:10px;color:#1a1a2e;font-weight:600;margin-bottom:2px">Customers buy but don't activate or utilize</div>
+      <div style="font-size:9.5px;color:#555">43% of SMB churn before Day 90. Seats licensed but unused. No visibility into feature gaps or performance ROI until it's too late to save the account.</div>
+    </div>
+    <div style="background:#D1FAE5;border-left:3px solid #00B27A;border-radius:5px;padding:8px 11px">
+      <div style="font-size:9.5px;font-weight:700;color:#065F46;letter-spacing:0.8px;margin-bottom:3px">SOLUTION</div>
+      <div style="font-size:10px;color:#1a1a2e;font-weight:600;margin-bottom:2px">3 Parallel tracks — milestone-triggered, segment-specific</div>
+      <div style="font-size:9.5px;color:#555">Adoption (feature milestones) + Performance (outcome measurement) + MAU (seat utilization). Two motions: PLG AI-agent for T2-T3 scale; human-led CSM for MM + T1.</div>
+    </div>
+    <div style="background:#EDE9FE;border-left:3px solid #7C3AED;border-radius:5px;padding:8px 11px">
+      <div style="font-size:9.5px;font-weight:700;color:#4C1D95;letter-spacing:0.8px;margin-bottom:3px">IMPACT</div>
+      <div style="font-size:10px;color:#1a1a2e;font-weight:600;margin-bottom:2px">+3–7pp GRR · Activation 55% → 80%</div>
+      <div style="font-size:9.5px;color:#555">HIGH-tier accounts churn 50% less. MAU &gt; 65% = +40% renewal probability. $2.1M+ ARR retained from pre-90 fix alone. Scales to 25,000 accounts without adding headcount.</div>
+    </div>
+  </div>
+
+  <!-- 3 Pillar Architecture -->
+  <div class="sc-section-lbl" style="margin-bottom:6px">Program Architecture — 3 Parallel Pillars</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
+
+    <!-- Pillar 1: Adoption -->
+    <div style="border:1.5px solid #0284C7;border-radius:6px;overflow:hidden">
+      <div style="background:#0284C7;color:#fff;font-size:10px;font-weight:700;padding:5px 10px;letter-spacing:0.5px">PILLAR 1 — ADOPTION</div>
+      <div style="padding:8px 10px;background:#F0F9FF">
+        <div style="font-size:9.5px;font-weight:600;color:#0A2540;margin-bottom:5px">Feature Milestone Journey (JustCall)</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="background:#fff;border:1px solid #BAE6FD;border-radius:4px;padding:5px 8px">
+            <div style="font-size:8.5px;font-weight:700;color:#0284C7;margin-bottom:2px">CORE · D1–15 · Onboarding</div>
+            <div style="font-size:9px;color:#444;line-height:1.5">Cloud calling live · CRM connected<br>First call made · AI score enabled</div>
+          </div>
+          <div style="background:#fff;border:1px solid #BBF7D0;border-radius:4px;padding:5px 8px">
+            <div style="font-size:8.5px;font-weight:700;color:#16A34A;margin-bottom:2px">CORE · D15–30 · Depth</div>
+            <div style="font-size:9px;color:#444;line-height:1.5">Power Dialer configured · IVR live<br>Call routing set · AI scoring in use</div>
+          </div>
+          <div style="background:#fff;border:1px solid #FED7AA;border-radius:4px;padding:5px 8px">
+            <div style="font-size:8.5px;font-weight:700;color:#EA580C;margin-bottom:2px">SEMI-CORE · D30–60 · Breadth</div>
+            <div style="font-size:9px;color:#444;line-height:1.5">SMS campaigns · WhatsApp Business<br>Analytics reviewed · Adv. reporting</div>
+          </div>
+        </div>
+        <div style="margin-top:6px;font-size:8.5px;font-weight:700;color:#0A2540;margin-bottom:3px">Adoption tier classification:</div>
+        <div style="display:flex;gap:3px;margin-top:2px;flex-wrap:wrap">
+          <span style="background:#FEE2E2;color:#991B1B;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px">LOW: ≤2 core · 0 integr.</span>
+          <span style="background:#FFF7ED;color:#92400E;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px">MED: 3-4 core · CRM</span>
+          <span style="background:#D1FAE5;color:#065F46;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px">HIGH: 5+ · semi-core · 2+ integr.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 2: Performance -->
+    <div style="border:1.5px solid #00B27A;border-radius:6px;overflow:hidden">
+      <div style="background:#00B27A;color:#fff;font-size:10px;font-weight:700;padding:5px 10px;letter-spacing:0.5px">PILLAR 2 — PERFORMANCE</div>
+      <div style="padding:8px 10px;background:#F0FFF8">
+        <div style="font-size:9.5px;font-weight:600;color:#0A2540;margin-bottom:5px">Business Outcome Measurement</div>
+        <table style="width:100%;font-size:9px;border-collapse:collapse">
+          <thead><tr style="background:#0A2540;color:#fff"><th style="padding:4px 6px;text-align:left;border-radius:3px 0 0 0">Metric</th><th style="padding:4px 6px;text-align:right;border-radius:0 3px 0 0">Target</th></tr></thead>
+          <tbody>
+            <tr style="background:#fff"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">Calls made / agent / day</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#0284C7">≥ 40</td></tr>
+            <tr style="background:#F0FFF8"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">Connect rate</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#00B27A">≥ 35%</td></tr>
+            <tr style="background:#fff"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">Avg call duration</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#0284C7">≥ 3 min</td></tr>
+            <tr style="background:#F0FFF8"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">AI score utilization</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#00B27A">≥ 70%</td></tr>
+            <tr style="background:#fff"><td style="padding:3px 6px">Power Dialer usage</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#0284C7">≥ 3×/wk</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:7px;background:#fff;border:1px solid #BBF7D0;border-radius:4px;padding:5px 8px">
+          <div style="font-size:9px;color:#444"><strong style="color:#065F46">Health trigger:</strong> Account below 2+ metrics for 14+ days → ChurnZero fires intervention playbook automatically</div>
+        </div>
+        <div style="margin-top:6px;background:#fff;border:1px solid #BAE6FD;border-radius:4px;padding:5px 8px">
+          <div style="font-size:9px;color:#444"><strong style="color:#0284C7">Source:</strong> RudderStack pipes call data to ChurnZero weekly. CSM / AI agent reads the performance cut each Monday.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 3: MAU / Seat Utilization -->
+    <div style="border:1.5px solid #7C3AED;border-radius:6px;overflow:hidden">
+      <div style="background:#7C3AED;color:#fff;font-size:10px;font-weight:700;padding:5px 10px;letter-spacing:0.5px">PILLAR 3 — MAU / SEAT UTILIZATION</div>
+      <div style="padding:8px 10px;background:#FAF5FF">
+        <div style="font-size:9.5px;font-weight:600;color:#0A2540;margin-bottom:5px">Seat Health: Bought → Configured → MAU</div>
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
+          <div style="background:#0A2540;color:#fff;font-size:8.5px;font-weight:700;padding:5px 7px;border-radius:4px;text-align:center;flex:1">BOUGHT<br><span style="font-weight:400;font-size:7.5px">Seats Licensed</span></div>
+          <div style="font-size:14px;color:#7C3AED;font-weight:700;flex-shrink:0">→</div>
+          <div style="background:#4F46E5;color:#fff;font-size:8.5px;font-weight:700;padding:5px 7px;border-radius:4px;text-align:center;flex:1">CONFIGURED<br><span style="font-weight:400;font-size:7.5px">Set Up</span></div>
+          <div style="font-size:14px;color:#7C3AED;font-weight:700;flex-shrink:0">→</div>
+          <div style="background:#7C3AED;color:#fff;font-size:8.5px;font-weight:700;padding:5px 7px;border-radius:4px;text-align:center;flex:1">MAU<br><span style="font-weight:400;font-size:7.5px">Active Monthly</span></div>
+        </div>
+        <div style="font-size:8.5px;font-weight:700;color:#4C1D95;margin-bottom:5px;text-align:center">GAP = Health Signal · Tracked weekly per account in ChurnZero</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="display:flex;align-items:center;gap:7px;background:#FEE2E2;border-radius:4px;padding:5px 8px">
+            <div style="width:10px;height:10px;background:#EF4444;border-radius:2px;flex-shrink:0"></div>
+            <span style="font-size:9px;color:#991B1B;font-weight:700">RED · MAU &lt; 40%</span>
+            <span style="font-size:9px;color:#444;margin-left:auto">Immediate alert · escalate</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;background:#FFF7ED;border-radius:4px;padding:5px 8px">
+            <div style="width:10px;height:10px;background:#F59E0B;border-radius:2px;flex-shrink:0"></div>
+            <span style="font-size:9px;color:#92400E;font-weight:700">AMBER · 40–65%</span>
+            <span style="font-size:9px;color:#444;margin-left:auto">Proactive nudge playbook</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;background:#D1FAE5;border-radius:4px;padding:5px 8px">
+            <div style="width:10px;height:10px;background:#10B981;border-radius:2px;flex-shrink:0"></div>
+            <span style="font-size:9px;color:#065F46;font-weight:700">GREEN · &gt; 65%</span>
+            <span style="font-size:9px;color:#444;margin-left:auto">Monitor + NRR expand play</span>
+          </div>
+        </div>
+        <div style="margin-top:7px;background:#fff;border:1px solid #C4B5FD;border-radius:4px;padding:5px 8px">
+          <div style="font-size:9px;color:#444"><strong style="color:#4C1D95">NRR linkage:</strong> GREEN accounts = seat expansion opportunity. CSM / Fin proactively surfaces "you have 8 unused seats" expansion prompt.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two Delivery Motions -->
+  <div class="sc-section-lbl" style="margin-bottom:6px">Delivery Motions — Same Program, Segment-Specific Execution</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+
+    <!-- Motion 1: PLG -->
+    <div style="background:linear-gradient(135deg,#EDE9FE,#F5F3FF);border:1px solid #C4B5FD;border-radius:6px;padding:9px 12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <div style="font-size:10px;font-weight:700;color:#4C1D95">MOTION 1 · PLG / AI-AGENT SELF-SERVE</div>
+        <span style="background:#7C3AED;color:#fff;font-size:8.5px;font-weight:700;padding:2px 7px;border-radius:3px">T2 + T3 · 20,000 accounts</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:3px 8px;font-size:9.5px;color:#444;align-items:start">
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">RudderStack</span><span>Detects adoption / MAU gap → triggers ChurnZero milestone playbook</span>
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Userpilot</span><span>In-app tooltip + guided flow for the next uncompleted milestone feature</span>
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Customer.io</span><span>Milestone email: feature guide, video walkthrough, use-case story</span>
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Intercom Fin</span><span>AI agent answers configuration Q&amp;As, resolves setup blockers</span>
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">ChurnZero</span><span>Tracks tier movement L→M→H · auto-escalates RED accounts to human queue</span>
+      </div>
+      <div style="margin-top:7px;font-size:9px;background:#7C3AED;color:#fff;padding:3px 8px;border-radius:3px;display:inline-block;font-weight:600">0 human touches · fully agentic · scales 20k accounts</div>
+    </div>
+
+    <!-- Motion 2: Human-led -->
+    <div style="background:linear-gradient(135deg,#F0FDF4,#ECFDF5);border:1px solid #86EFAC;border-radius:6px;padding:9px 12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <div style="font-size:10px;font-weight:700;color:#065F46">MOTION 2 · HUMAN-LED CSM (AI-ASSISTED)</div>
+        <span style="background:#16A34A;color:#fff;font-size:8.5px;font-weight:700;padding:2px 7px;border-radius:3px">MM + T1 · 5,000 accounts</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:3px 8px;font-size:9.5px;color:#444;align-items:start">
+        <span style="color:#16A34A;font-weight:600;white-space:nowrap">ChurnZero</span><span>Weekly account cut flags Low/Medium adoption tier → pushed to CSM queue</span>
+        <span style="color:#16A34A;font-weight:600;white-space:nowrap">CSM Review</span><span>Reads account cut: milestone gaps, MAU health, performance metrics</span>
+        <span style="color:#16A34A;font-weight:600;white-space:nowrap">AI Assist</span><span>Drafts personalized adoption email / QBR talking points with data</span>
+        <span style="color:#16A34A;font-weight:600;white-space:nowrap">Outreach</span><span>Adoption call / QBR — presents performance benchmarks + config help</span>
+        <span style="color:#16A34A;font-weight:600;white-space:nowrap">Userpilot</span><span>CSM assigns targeted in-app flows post-call to activate next 2 features</span>
+      </div>
+      <div style="margin-top:7px;font-size:9px;background:#16A34A;color:#fff;padding:3px 8px;border-radius:3px;display:inline-block;font-weight:600">1–2 human touches · AI-assisted decision-making</div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── S25 · APPENDIX ── -->
 <div class="slide" id="s18">
 <div class="slide-header">
   <h1>Appendix &#8212; Key Assumptions</h1>
@@ -2164,7 +2324,7 @@ tr:last-child td{border-bottom:none}
 <nav class="nav-bar">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
   <div class="slide-dots" id="dotsContainer"></div>
-  <span class="slide-counter" id="counter">1 / 23</span>
+  <span class="slide-counter" id="counter">1 / 24</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
 </nav>
 
