@@ -1108,6 +1108,493 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
+<!-- ── S24 · 3 PARALLEL PROGRAM ── -->
+<div class="slide" id="s24">
+<div class="slide-header">
+  <h1>3 Parallel Program — Adoption · Performance · MAU</h1>
+  <span class="sub">Driving feature adoption, business outcomes, and seat utilization to reduce churn · Two motions: PLG AI-agent (T2-T3) and Human-led CSM (MM + T1)</span>
+</div>
+<div class="slide-body">
+
+  <!-- Problem / Solution / Impact strip -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
+    <div style="background:#FFF3CD;border-left:3px solid #F59E0B;border-radius:5px;padding:8px 11px">
+      <div style="font-size:9.5px;font-weight:700;color:#92400E;letter-spacing:0.8px;margin-bottom:3px">PROBLEM</div>
+      <div style="font-size:10px;color:#1a1a2e;font-weight:600;margin-bottom:2px">Customers buy but don't activate or utilize</div>
+      <div style="font-size:9.5px;color:#555">43% of SMB churn before Day 90. Seats licensed but unused. No visibility into feature gaps or performance ROI until it's too late to save the account.</div>
+    </div>
+    <div style="background:#D1FAE5;border-left:3px solid #00B27A;border-radius:5px;padding:8px 11px">
+      <div style="font-size:9.5px;font-weight:700;color:#065F46;letter-spacing:0.8px;margin-bottom:3px">SOLUTION</div>
+      <div style="font-size:10px;color:#1a1a2e;font-weight:600;margin-bottom:2px">3 Parallel tracks — milestone-triggered, segment-specific</div>
+      <div style="font-size:9.5px;color:#555">Adoption (feature milestones) + Performance (outcome measurement) + MAU (seat utilization). Two motions: PLG AI-agent for T2-T3 scale; human-led CSM for MM + T1.</div>
+    </div>
+    <div style="background:#EDE9FE;border-left:3px solid #7C3AED;border-radius:5px;padding:8px 11px">
+      <div style="font-size:9.5px;font-weight:700;color:#4C1D95;letter-spacing:0.8px;margin-bottom:3px">IMPACT</div>
+      <div style="font-size:10px;color:#1a1a2e;font-weight:600;margin-bottom:2px">+3–7pp GRR · Activation 55% → 80%</div>
+      <div style="font-size:9.5px;color:#555">HIGH-tier accounts churn 50% less. MAU &gt; 65% = +40% renewal probability. $2.1M+ ARR retained from pre-90 fix alone. Scales to 25,000 accounts without adding headcount.</div>
+    </div>
+  </div>
+
+  <!-- 3 Pillar Architecture -->
+  <div class="sc-section-lbl" style="margin-bottom:6px">Program Architecture — 3 Parallel Pillars</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
+
+    <!-- Pillar 1: Adoption -->
+    <div style="border:1.5px solid #0284C7;border-radius:6px;overflow:hidden">
+      <div style="background:#0284C7;color:#fff;font-size:10px;font-weight:700;padding:5px 10px;letter-spacing:0.5px">PILLAR 1 — ADOPTION</div>
+      <div style="padding:8px 10px;background:#F0F9FF">
+        <div style="font-size:9.5px;font-weight:600;color:#0A2540;margin-bottom:5px">Feature Milestone Journey (JustCall)</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="background:#fff;border:1px solid #BAE6FD;border-radius:4px;padding:5px 8px">
+            <div style="font-size:8.5px;font-weight:700;color:#0284C7;margin-bottom:2px">CORE · D1–15 · Onboarding</div>
+            <div style="font-size:9px;color:#444;line-height:1.5">Cloud calling live · CRM connected<br>First call made · AI score enabled</div>
+          </div>
+          <div style="background:#fff;border:1px solid #BBF7D0;border-radius:4px;padding:5px 8px">
+            <div style="font-size:8.5px;font-weight:700;color:#16A34A;margin-bottom:2px">CORE · D15–30 · Depth</div>
+            <div style="font-size:9px;color:#444;line-height:1.5">Power Dialer configured · IVR live<br>Call routing set · AI scoring in use</div>
+          </div>
+          <div style="background:#fff;border:1px solid #FED7AA;border-radius:4px;padding:5px 8px">
+            <div style="font-size:8.5px;font-weight:700;color:#EA580C;margin-bottom:2px">SEMI-CORE · D30–60 · Breadth</div>
+            <div style="font-size:9px;color:#444;line-height:1.5">SMS campaigns · WhatsApp Business<br>Analytics reviewed · Adv. reporting</div>
+          </div>
+        </div>
+        <div style="margin-top:6px;font-size:8.5px;font-weight:700;color:#0A2540;margin-bottom:3px">Adoption tier classification:</div>
+        <div style="display:flex;gap:3px;margin-top:2px;flex-wrap:wrap">
+          <span style="background:#FEE2E2;color:#991B1B;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px">LOW: ≤2 core · 0 integr.</span>
+          <span style="background:#FFF7ED;color:#92400E;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px">MED: 3-4 core · CRM</span>
+          <span style="background:#D1FAE5;color:#065F46;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px">HIGH: 5+ · semi-core · 2+ integr.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 2: Performance -->
+    <div style="border:1.5px solid #00B27A;border-radius:6px;overflow:hidden">
+      <div style="background:#00B27A;color:#fff;font-size:10px;font-weight:700;padding:5px 10px;letter-spacing:0.5px">PILLAR 2 — PERFORMANCE</div>
+      <div style="padding:8px 10px;background:#F0FFF8">
+        <div style="font-size:9.5px;font-weight:600;color:#0A2540;margin-bottom:5px">Business Outcome Measurement</div>
+        <table style="width:100%;font-size:9px;border-collapse:collapse">
+          <thead><tr style="background:#0A2540;color:#fff"><th style="padding:4px 6px;text-align:left;border-radius:3px 0 0 0">Metric</th><th style="padding:4px 6px;text-align:right;border-radius:0 3px 0 0">Target</th></tr></thead>
+          <tbody>
+            <tr style="background:#fff"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">Calls made / agent / day</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#0284C7">≥ 40</td></tr>
+            <tr style="background:#F0FFF8"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">Connect rate</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#00B27A">≥ 35%</td></tr>
+            <tr style="background:#fff"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">Avg call duration</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#0284C7">≥ 3 min</td></tr>
+            <tr style="background:#F0FFF8"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">AI score utilization</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#00B27A">≥ 70%</td></tr>
+            <tr style="background:#fff"><td style="padding:3px 6px">Power Dialer usage</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#0284C7">≥ 3×/wk</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:7px;background:#fff;border:1px solid #BBF7D0;border-radius:4px;padding:5px 8px">
+          <div style="font-size:9px;color:#444"><strong style="color:#065F46">Health trigger:</strong> Account below 2+ metrics for 14+ days → ChurnZero fires intervention playbook automatically</div>
+        </div>
+        <div style="margin-top:6px;background:#fff;border:1px solid #BAE6FD;border-radius:4px;padding:5px 8px">
+          <div style="font-size:9px;color:#444"><strong style="color:#0284C7">Source:</strong> RudderStack pipes call data to ChurnZero weekly. CSM / AI agent reads the performance cut each Monday.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 3: MAU / Seat Utilization -->
+    <div style="border:1.5px solid #7C3AED;border-radius:6px;overflow:hidden">
+      <div style="background:#7C3AED;color:#fff;font-size:10px;font-weight:700;padding:5px 10px;letter-spacing:0.5px">PILLAR 3 — MAU / SEAT UTILIZATION</div>
+      <div style="padding:8px 10px;background:#FAF5FF">
+        <div style="font-size:9.5px;font-weight:600;color:#0A2540;margin-bottom:5px">Seat Health: Bought → Configured → MAU</div>
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
+          <div style="background:#0A2540;color:#fff;font-size:8.5px;font-weight:700;padding:5px 7px;border-radius:4px;text-align:center;flex:1">BOUGHT<br><span style="font-weight:400;font-size:7.5px">Seats Licensed</span></div>
+          <div style="font-size:14px;color:#7C3AED;font-weight:700;flex-shrink:0">→</div>
+          <div style="background:#4F46E5;color:#fff;font-size:8.5px;font-weight:700;padding:5px 7px;border-radius:4px;text-align:center;flex:1">CONFIGURED<br><span style="font-weight:400;font-size:7.5px">Set Up</span></div>
+          <div style="font-size:14px;color:#7C3AED;font-weight:700;flex-shrink:0">→</div>
+          <div style="background:#7C3AED;color:#fff;font-size:8.5px;font-weight:700;padding:5px 7px;border-radius:4px;text-align:center;flex:1">MAU<br><span style="font-weight:400;font-size:7.5px">Active Monthly</span></div>
+        </div>
+        <div style="font-size:8.5px;font-weight:700;color:#4C1D95;margin-bottom:5px;text-align:center">GAP = Health Signal · Tracked weekly per account in ChurnZero</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="display:flex;align-items:center;gap:7px;background:#FEE2E2;border-radius:4px;padding:5px 8px">
+            <div style="width:10px;height:10px;background:#EF4444;border-radius:2px;flex-shrink:0"></div>
+            <span style="font-size:9px;color:#991B1B;font-weight:700">RED · MAU &lt; 40%</span>
+            <span style="font-size:9px;color:#444;margin-left:auto">Immediate alert · escalate</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;background:#FFF7ED;border-radius:4px;padding:5px 8px">
+            <div style="width:10px;height:10px;background:#F59E0B;border-radius:2px;flex-shrink:0"></div>
+            <span style="font-size:9px;color:#92400E;font-weight:700">AMBER · 40–65%</span>
+            <span style="font-size:9px;color:#444;margin-left:auto">Proactive nudge playbook</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;background:#D1FAE5;border-radius:4px;padding:5px 8px">
+            <div style="width:10px;height:10px;background:#10B981;border-radius:2px;flex-shrink:0"></div>
+            <span style="font-size:9px;color:#065F46;font-weight:700">GREEN · &gt; 65%</span>
+            <span style="font-size:9px;color:#444;margin-left:auto">Monitor + NRR expand play</span>
+          </div>
+        </div>
+        <div style="margin-top:7px;background:#fff;border:1px solid #C4B5FD;border-radius:4px;padding:5px 8px">
+          <div style="font-size:9px;color:#444"><strong style="color:#4C1D95">NRR linkage:</strong> GREEN accounts = seat expansion opportunity. CSM / Fin proactively surfaces "you have 8 unused seats" expansion prompt.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two Delivery Motions -->
+  <div class="sc-section-lbl" style="margin-bottom:6px">Delivery Motions — Same Program, Segment-Specific Execution</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+
+    <!-- Motion 1: PLG -->
+    <div style="background:linear-gradient(135deg,#EDE9FE,#F5F3FF);border:1px solid #C4B5FD;border-radius:6px;padding:9px 12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <div style="font-size:10px;font-weight:700;color:#4C1D95">MOTION 1 · PLG / AI-AGENT SELF-SERVE</div>
+        <span style="background:#7C3AED;color:#fff;font-size:8.5px;font-weight:700;padding:2px 7px;border-radius:3px">T2 + T3 · 20,000 accounts</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:3px 8px;font-size:9.5px;color:#444;align-items:start">
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">RudderStack</span><span>Detects adoption / MAU gap → triggers ChurnZero milestone playbook</span>
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Userpilot</span><span>In-app tooltip + guided flow for the next uncompleted milestone feature</span>
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Customer.io</span><span>Milestone email: feature guide, video walkthrough, use-case story</span>
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Intercom Fin</span><span>AI agent answers configuration Q&amp;As, resolves setup blockers</span>
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">ChurnZero</span><span>Tracks tier movement L→M→H · auto-escalates RED accounts to human queue</span>
+      </div>
+      <div style="margin-top:7px;font-size:9px;background:#7C3AED;color:#fff;padding:3px 8px;border-radius:3px;display:inline-block;font-weight:600">0 human touches · fully agentic · scales 20k accounts</div>
+    </div>
+
+    <!-- Motion 2: Human-led -->
+    <div style="background:linear-gradient(135deg,#F0FDF4,#ECFDF5);border:1px solid #86EFAC;border-radius:6px;padding:9px 12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <div style="font-size:10px;font-weight:700;color:#065F46">MOTION 2 · HUMAN-LED CSM (AI-ASSISTED)</div>
+        <span style="background:#16A34A;color:#fff;font-size:8.5px;font-weight:700;padding:2px 7px;border-radius:3px">MM + T1 · 5,000 accounts</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:3px 8px;font-size:9.5px;color:#444;align-items:start">
+        <span style="color:#16A34A;font-weight:600;white-space:nowrap">ChurnZero</span><span>Weekly account cut flags Low/Medium adoption tier → pushed to CSM queue</span>
+        <span style="color:#16A34A;font-weight:600;white-space:nowrap">CSM Review</span><span>Reads account cut: milestone gaps, MAU health, performance metrics</span>
+        <span style="color:#16A34A;font-weight:600;white-space:nowrap">AI Assist</span><span>Drafts personalized adoption email / QBR talking points with data</span>
+        <span style="color:#16A34A;font-weight:600;white-space:nowrap">Outreach</span><span>Adoption call / QBR — presents performance benchmarks + config help</span>
+        <span style="color:#16A34A;font-weight:600;white-space:nowrap">Userpilot</span><span>CSM assigns targeted in-app flows post-call to activate next 2 features</span>
+      </div>
+      <div style="margin-top:7px;font-size:9px;background:#16A34A;color:#fff;padding:3px 8px;border-radius:3px;display:inline-block;font-weight:600">1–2 human touches · AI-assisted decision-making</div>
+    </div>
+  </div>
+
+  <!-- Governance band -->
+  <div class="sc-section-lbl" style="margin-top:10px;margin-bottom:6px">Governance — How We Drive &amp; Measure Movement (not just deploy)</div>
+  <div style="display:grid;grid-template-columns:0.95fr 1.3fr 1.05fr;gap:8px">
+
+    <!-- The metric -->
+    <div style="background:linear-gradient(135deg,#0A2540,#13344f);border-radius:6px;padding:8px 11px;color:#fff">
+      <div style="font-size:8.5px;font-weight:700;color:#00B27A;letter-spacing:0.5px;margin-bottom:3px">THE GOVERNANCE METRIC</div>
+      <div style="font-size:11px;font-weight:700;margin-bottom:3px">Net Tier Progression</div>
+      <div style="font-size:10px;font-weight:700;font-family:monospace;background:rgba(255,255,255,0.08);padding:3px 6px;border-radius:4px;text-align:center;margin-bottom:4px">NTP = %↑up − %↓down</div>
+      <div style="font-size:8.5px;color:#cdd9e5;line-height:1.45">Every CSM &amp; agent owns net movement across all 3 pillars, per segment. Up-tier = retention; down-tier = pre-renewal churn signal. <strong style="color:#fff">Comp-tied.</strong></div>
+    </div>
+
+    <!-- Movement targets -->
+    <div style="border:1px solid #E2E8F0;border-radius:6px;overflow:hidden">
+      <div style="background:#334155;color:#fff;font-size:8.5px;font-weight:700;padding:4px 9px;letter-spacing:0.4px">CSM &amp; AGENT TARGETS · QUARTERLY NET UP-TIER (% of book)</div>
+      <table style="width:100%;font-size:8.5px;border-collapse:collapse">
+        <thead><tr style="background:#F1F5F9"><th style="padding:3px 7px;text-align:left">Pillar</th><th style="padding:3px 7px;text-align:center">Human<br>MM+T1</th><th style="padding:3px 7px;text-align:center">Agent<br>T2+T3</th><th style="padding:3px 7px;text-align:center">↓ Floor</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:3px 7px;color:#0284C7;font-weight:600;border-top:1px solid #E2E8F0">Adoption L→M→H</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+20%</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+12%</td><td style="padding:3px 7px;text-align:center;color:#991B1B;font-weight:700;border-top:1px solid #E2E8F0">&lt;5%</td></tr>
+          <tr><td style="padding:3px 7px;color:#00B27A;font-weight:600;border-top:1px solid #E2E8F0">Performance L→M→H</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+15%</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+8%</td><td style="padding:3px 7px;text-align:center;color:#991B1B;font-weight:700;border-top:1px solid #E2E8F0">&lt;5%</td></tr>
+          <tr><td style="padding:3px 7px;color:#7C3AED;font-weight:600;border-top:1px solid #E2E8F0">MAU R→A→G</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+30%</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+18%</td><td style="padding:3px 7px;text-align:center;color:#991B1B;font-weight:700;border-top:1px solid #E2E8F0">&lt;5%</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:8px;color:#92400E;background:#FFF3CD;padding:3px 7px;border-top:1px solid #FDE68A">Hard rule: any <strong>High→Low / Green→Red</strong> fall = instant escalation + root-cause review</div>
+    </div>
+
+    <!-- Tracked at 3 levels -->
+    <div style="border:1px solid #E2E8F0;border-radius:6px;overflow:hidden">
+      <div style="background:#334155;color:#fff;font-size:8.5px;font-weight:700;padding:4px 9px;letter-spacing:0.4px">TRACKED &amp; REPORTED — 3 LEVELS</div>
+      <div style="padding:6px 9px;display:flex;flex-direction:column;gap:4px">
+        <div style="font-size:8.5px;color:#444"><strong style="color:#0284C7">CSM / Agent</strong> — owns book movement; works down-movers + RED first (weekly)</div>
+        <div style="font-size:8.5px;color:#444"><strong style="color:#00B27A">Team / Manager</strong> — aggregate tier-mix Δ; coaches stuck accounts (monthly)</div>
+        <div style="font-size:8.5px;color:#444"><strong style="color:#7C3AED">Function / Head of CS</strong> — portfolio mix → GRR/NRR forecast (quarterly)</div>
+        <div style="font-size:8px;color:#555;background:#F8FAFC;border-radius:4px;padding:3px 7px;margin-top:1px"><strong>Reporting:</strong> account scorecard (ChurnZero, live) · portfolio heatmap + movement velocity (MBR/QBR)</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:7px;background:#0A2540;border-radius:5px;padding:5px 12px;text-align:center">
+    <span style="font-size:9px;color:#00B27A;font-weight:700">Tier movement = leading indicator</span>
+    <span style="font-size:9px;color:#9fb3c8;margin:0 6px">·</span>
+    <span style="font-size:9px;color:#fff;font-weight:600">GRR / NRR = lagging outcome</span>
+    <span style="font-size:8.5px;color:#cdd9e5;margin-left:5px">— we govern the leading indicator weekly, so renewals are never a surprise.</span>
+  </div>
+
+  <!-- CSM-level worked example -->
+  <div class="sc-section-lbl" style="margin-top:10px;margin-bottom:6px">CSM-Level Example — Target vs Achievement &amp; Impact on Book</div>
+  <div style="background:#fff;border:1.5px solid #E2E8F0;border-radius:6px;overflow:hidden">
+    <div style="background:#334155;color:#fff;font-size:8.5px;font-weight:700;padding:4px 10px;display:flex;justify-content:space-between;align-items:center">
+      <span>Priya Sharma — MM Strategic CSM · Portfolio: 28 accounts · $3.6M ARR · April 2025</span>
+      <span style="background:#00B27A;color:#fff;font-size:8px;font-weight:700;padding:1px 8px;border-radius:3px">CPI: 84 / 100 · Rank #3 of 30</span>
+    </div>
+    <div style="padding:7px 10px">
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:0;font-size:8px">
+
+        <!-- Header row -->
+        <div style="padding:3px 8px;font-weight:700;color:#0A2540;background:#F1F5F9;border-bottom:1px solid #E2E8F0">Pillar / Activity</div>
+        <div style="padding:3px 8px;font-weight:700;color:#0A2540;background:#F1F5F9;border-bottom:1px solid #E2E8F0;text-align:center">Target</div>
+        <div style="padding:3px 8px;font-weight:700;color:#0A2540;background:#F1F5F9;border-bottom:1px solid #E2E8F0;text-align:center">Actual</div>
+        <div style="padding:3px 8px;font-weight:700;color:#0A2540;background:#F1F5F9;border-bottom:1px solid #E2E8F0;text-align:center">Impact on Book</div>
+
+        <!-- Row 1 -->
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;color:#0284C7;font-weight:600">Adoption sessions (weekly)</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;text-align:center">3 / wk → 12 / mo</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;text-align:center;font-weight:700;color:#16A34A">14 / mo ✓</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0">6 accounts moved LOW → MED · 2 MED → HIGH</div>
+
+        <!-- Row 2 -->
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;color:#00B27A;font-weight:600">Performance (calls, connect rate)</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;text-align:center">≥ 35% connect, 40 calls/day</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;text-align:center;font-weight:700;color:#F59E0B">31% · 37 calls ↗</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC">3 accounts LOW → MED · 1 stuck</div>
+
+        <!-- Row 3 -->
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;color:#7C3AED;font-weight:600">MAU seat utilization</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;text-align:center">+30% RED → AMBER/GREEN</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;text-align:center;font-weight:700;color:#16A34A">+34% ✓</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0">5 RED → AMBER · 3 AMBER → GREEN</div>
+
+        <!-- Row 4 -->
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;color:#444;font-weight:600">QBRs completed</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;text-align:center">3 / mo</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;text-align:center;font-weight:700;color:#16A34A">3 / mo ✓</div>
+        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC">All HIGH-tier accounts have confirmed next QBR</div>
+
+        <!-- Book coverage outcome row -->
+        <div style="padding:4px 8px;background:#0A2540;color:#fff;font-weight:700;border-radius:0 0 0 5px">Book Outcome (retention POV)</div>
+        <div style="padding:4px 8px;background:#0A2540;text-align:center;color:#9fb3c8">—</div>
+        <div style="padding:4px 8px;background:#0A2540;text-align:center;color:#9fb3c8">—</div>
+        <div style="padding:4px 8px;background:#0A2540;border-radius:0 0 5px 0">
+          <span style="color:#00B27A;font-weight:700">SAFE 75%</span>
+          <span style="color:#9fb3c8;margin:0 5px">·</span>
+          <span style="color:#EF4444;font-weight:700">UNSAFE 8%</span>
+          <span style="color:#9fb3c8;margin:0 5px">·</span>
+          <span style="color:#94A3B8;font-weight:700">UNKNOWN 17%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── S28 · CC DECLINE & COLLECTIONS ── -->
+<div class="slide" id="s28cc">
+<div class="slide-header">
+  <h1>CC Decline &amp; Collections — Business Desk</h1>
+  <span class="sub">Pre-dunning automation · Dunning flow &amp; retry logic · Offline payments · Team structure &amp; cost model</span>
+</div>
+<div class="slide-body">
+
+  <!-- Dunning timeline strip -->
+  <div style="background:#fff;border:1.5px solid #E2E8F0;border-radius:6px;padding:9px 12px;margin-bottom:8px">
+    <div class="sc-section-lbl" style="margin-bottom:6px">Monthly CC Dunning Timeline — Card Declined / Expired / Insufficient Funds</div>
+    <div style="display:flex;align-items:stretch;gap:0">
+
+      <div style="flex:1;text-align:center">
+        <div style="background:#EF4444;color:#fff;padding:3px 6px;border-radius:4px 0 0 0;font-size:8.5px;font-weight:700">D 0</div>
+        <div style="background:#FEE2E2;border:1px solid #FECACA;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
+          <b>Charge fails</b><br>1 auto-retry<br>Email: "Payment failed"<br>+ update-card link
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;padding-bottom:0;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
+      <div style="flex:1;text-align:center">
+        <div style="background:#F59E0B;color:#fff;padding:3px 6px;font-size:8.5px;font-weight:700">D +3</div>
+        <div style="background:#FFFBEB;border:1px solid #FCD34D;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
+          <b>Retry #2</b><br>Customer.io seq #2<br>In-app banner live<br>&nbsp;
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
+      <div style="flex:1;text-align:center">
+        <div style="background:#EA580C;color:#fff;padding:3px 6px;font-size:8.5px;font-weight:700">D +7</div>
+        <div style="background:#FFF7ED;border:1px solid #FDBA74;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
+          <b>Retry #3 + SMS</b><br>Urgent email — final<br>CSM alert if ARR &gt;$500<br>&nbsp;
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
+      <div style="flex:1;text-align:center">
+        <div style="background:#DC2626;color:#fff;padding:3px 6px;font-size:8.5px;font-weight:700">D +14</div>
+        <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
+          <b>Service suspension</b><br>Calls blocked<br>Data preserved 30d<br>Business desk calls
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
+      <div style="flex:1;text-align:center">
+        <div style="background:#7F1D1D;color:#fff;padding:3px 6px;border-radius:0 4px 0 0;font-size:8.5px;font-weight:700">D +21</div>
+        <div style="background:#FEF2F2;border:1px solid #FECACA;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
+          <b>Hard cancellation</b><br>Churn recorded<br>Data export 30d<br>Winback tagged
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 columns -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px">
+
+    <!-- Col 1: Pre-dunning automation -->
+    <div style="border:1.5px solid #00B27A;border-radius:6px;overflow:hidden">
+      <div style="background:#00B27A;color:#fff;font-size:9px;font-weight:700;padding:5px 10px;letter-spacing:0.4px">PRE-DUNNING AUTOMATION — Proactive</div>
+      <div style="padding:8px 10px;background:#F0FDF4">
+        <div style="font-size:8px;color:#444;margin-bottom:5px">Resolve failures <em>before</em> D0 — target: &gt;40% of dunning cases eliminated upstream.</div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#00B27A;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−30</span><span>Stripe/Chargebee: scan cards expiring in 30d → Customer.io "update card" email auto-fires</span></div>
+          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#00B27A;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−14</span><span>No update yet → Userpilot in-app nudge + email reminder with 1-click card update button</span></div>
+          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#F59E0B;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−7</span><span><b>Soft-auth ($0 hold)</b> to validate card. Fail → business desk outreach list; no waiting for D0 bounce</span></div>
+          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#F59E0B;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−3</span><span>Final pre-renewal nudge: SMS + Intercom Fin proactive chat — "Your renewal is in 3 days"</span></div>
+        </div>
+        <div style="margin-top:6px;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 7px;font-size:7.5px;color:#444">
+          <b style="color:#065F46">Stack:</b> Stripe / Chargebee + Customer.io + Userpilot + Intercom Fin
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 2: CC dunning chase detail -->
+    <div style="border:1.5px solid #EF4444;border-radius:6px;overflow:hidden">
+      <div style="background:#EF4444;color:#fff;font-size:9px;font-weight:700;padding:5px 10px;letter-spacing:0.4px">CC DUNNING — CHASE PLAYBOOK</div>
+      <div style="padding:8px 10px;background:#FFF5F5">
+        <div style="font-size:8px;font-weight:700;color:#991B1B;margin-bottom:3px">RETRY SCHEDULE</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:6px">
+          <div style="background:#FEE2E2;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444">Attempt 1 — Renewal date (immediate)</div>
+          <div style="background:#FEE2E2;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444">Attempt 2 — D+3 (72h later, different time slot)</div>
+          <div style="background:#FEE2E2;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444">Attempt 3 — D+7 (final automatic retry)</div>
+          <div style="background:#FFF0F0;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444;font-style:italic">3 fails → business desk manual outreach</div>
+        </div>
+        <div style="font-size:8px;font-weight:700;color:#991B1B;margin-bottom:3px">TRIAGE BY ARR</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:6px">
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#FFF5F5;border-radius:3px;padding:3px 7px">
+            <span style="color:#EF4444;font-weight:700;min-width:60px">&gt;$500/mo</span><span>CSM alerted D+7; personal call D+10</span>
+          </div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#FFF5F5;border-radius:3px;padding:3px 7px">
+            <span style="color:#F59E0B;font-weight:700;min-width:60px">$100–500</span><span>Business desk: automated + 1 call attempt</span>
+          </div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#FFF5F5;border-radius:3px;padding:3px 7px">
+            <span style="color:#64748B;font-weight:700;min-width:60px">&lt;$100</span><span>Fully automated — no human touch</span>
+          </div>
+        </div>
+        <div style="font-size:8px;font-weight:700;color:#991B1B;margin-bottom:3px">CHANNEL ORDER</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">1. Email (auto)</div>
+          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">2. In-app banner</div>
+          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">3. SMS (D+7)</div>
+          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">4. Call (desk / CSM)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 3: Offline / bank transfer -->
+    <div style="border:1.5px solid #6366F1;border-radius:6px;overflow:hidden">
+      <div style="background:#6366F1;color:#fff;font-size:9px;font-weight:700;padding:5px 10px;letter-spacing:0.4px">OFFLINE PAYMENTS — BANK TRANSFER</div>
+      <div style="padding:8px 10px;background:#F5F3FF">
+        <div style="font-size:8px;color:#444;margin-bottom:5px">MM accounts &amp; annual contracts only. SMB T1–T3 must keep card on file.</div>
+        <div style="font-size:8px;font-weight:700;color:#4338CA;margin-bottom:3px">TERMS &amp; COLLECTIONS WINDOW</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:6px">
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EEF2FF;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D 0</span><span>Invoice auto-issued. <b>Net 7 standard terms.</b></span></div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EEF2FF;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D+7</span><span>Overdue notice + CS nudge to MM accounts</span></div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EEF2FF;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D+14</span><span>Finance escalation + service access warning sent</span></div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EDE9FE;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D+21</span><span>Service suspension. Payment plan option: max 2× per year</span></div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EDE9FE;border-radius:3px;padding:3px 7px;border:1px solid #C4B5FD"><span style="font-weight:700;min-width:32px">D+30</span><span><b>Hard cancellation</b> if no payment or agreed plan</span></div>
+        </div>
+        <div style="font-size:8px;font-weight:700;color:#4338CA;margin-bottom:3px">GOVERNANCE</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <div style="font-size:7.5px;color:#444;background:#fff;border:1px solid #C4B5FD;border-radius:3px;padding:3px 7px">Finance owns invoice tracking; CS owns the account relationship</div>
+          <div style="font-size:7.5px;color:#444;background:#fff;border:1px solid #C4B5FD;border-radius:3px;padding:3px 7px">Quarterly audit: % of offline accounts switched to card (reduces float risk)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Business desk recommendation -->
+  <div style="border:1.5px solid #0A2540;border-radius:6px;overflow:hidden">
+    <div style="background:#0A2540;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:0.4px">BUSINESS DESK — WHO RUNS BILLING &amp; COLLECTIONS (Recommendation)</div>
+    <div style="padding:7px 12px 8px;background:#fff">
+      <div style="display:grid;grid-template-columns:1.15fr 1fr 1fr 1.25fr;gap:8px">
+        <div style="background:#F1F5F9;border-radius:4px;padding:6px 8px">
+          <div style="font-size:8px;font-weight:700;color:#0A2540;margin-bottom:4px">VOLUME CALC</div>
+          <div style="font-size:7.5px;color:#444;line-height:1.6">
+            25,000 accts × 80% monthly = <b>20,000 billing/mo</b><br>
+            Dunning rate ~3–5% → <b>600–1,000 cases/mo</b><br>
+            Offline/bank transfer → ~150–200 cases/mo<br>
+            <b>Total: ~750–1,200 cases/month</b>
+          </div>
+        </div>
+        <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:4px;padding:6px 8px">
+          <div style="font-size:8px;font-weight:700;color:#065F46;margin-bottom:4px">RECOMMENDATION</div>
+          <div style="font-size:7.5px;color:#444;line-height:1.6">
+            <b>3 contract billing agents</b> (not CSMs)<br>
+            Automation handles &gt;60% of cases<br>
+            Agents handle escalations &amp; calls<br>
+            CSMs stay out of billing entirely
+          </div>
+        </div>
+        <div style="background:#FFFBEB;border:1px solid #FCD34D;border-radius:4px;padding:6px 8px">
+          <div style="font-size:8px;font-weight:700;color:#B45309;margin-bottom:4px">COST MODEL (INR)</div>
+          <div style="font-size:7.5px;color:#444;line-height:1.6">
+            3 contractors × ₹35K/mo = <b>₹1.05L/mo</b><br>
+            Tool costs (Chargebee) ~₹40K/mo<br>
+            vs. CSM billing time: ~<b>₹3.8L/mo</b><br>
+            <b>Net saving ≈ ₹30L/yr</b>
+          </div>
+        </div>
+        <div style="background:#F5F3FF;border:1px solid #C4B5FD;border-radius:4px;padding:6px 8px">
+          <div style="font-size:8px;font-weight:700;color:#4338CA;margin-bottom:4px">TOOLING STACK</div>
+          <div style="font-size:7.5px;color:#444;line-height:1.6">
+            <b>Stripe Billing / Chargebee</b> — retry logic, dunning automation, invoice<br>
+            <b>Customer.io</b> — email sequences D−30 → D+14<br>
+            <b>ChurnZero</b> — flag delinquent as churn risk task<br>
+            <b>Userpilot</b> — in-app card update nudge
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Point 1: 0-60 day collections driven in advance -->
+  <div style="margin-top:8px;border:1.5px solid #0EA5E9;border-radius:6px;overflow:hidden">
+    <div style="background:#0EA5E9;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:0.4px">0–60 DAY COLLECTIONS — DRIVE IN ADVANCE · never let an account tip into 60+ days (= uncollectible write-off / logo loss)</div>
+    <div style="padding:7px 12px;background:#F0F9FF;display:flex;align-items:stretch;gap:0">
+      <div style="flex:1;background:#fff;border:1px solid #BAE6FD;border-radius:4px;padding:5px 9px">
+        <div style="font-size:8px;font-weight:700;color:#0369A1">0–30 DAYS · CURRENT / EARLY</div>
+        <div style="font-size:7.5px;color:#444;line-height:1.45;margin-top:2px">Auto-retries + email / SMS / in-app reminders. <b>Recover the bulk here</b> while intent is fresh and friction is low.</div>
+      </div>
+      <div style="display:flex;align-items:center;color:#0EA5E9;font-size:15px;padding:0 6px">›</div>
+      <div style="flex:1;background:#fff;border:1px solid #FCD34D;border-radius:4px;padding:5px 9px">
+        <div style="font-size:8px;font-weight:700;color:#B45309">30–60 DAYS · ACTIVE CHASE</div>
+        <div style="font-size:7.5px;color:#444;line-height:1.45;margin-top:2px">Business desk calls, payment-plan offer, finance escalation. <b>Every case must resolve before D60.</b></div>
+      </div>
+      <div style="display:flex;align-items:center;color:#0EA5E9;font-size:15px;padding:0 6px">›</div>
+      <div style="flex:1;background:#FEF2F2;border:1px solid #FCA5A5;border-radius:4px;padding:5px 9px">
+        <div style="font-size:8px;font-weight:700;color:#991B1B">60+ DAYS · WRITE-OFF RISK</div>
+        <div style="font-size:7.5px;color:#444;line-height:1.45;margin-top:2px">Uncollectible / logo loss. <b>GOAL: zero accounts reach here</b> — collections worked forward, not after the fact.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Point 2: churn reduction impact, industry vs this model -->
+  <div style="margin-top:8px;border:1.5px solid #0A2540;border-radius:6px;overflow:hidden">
+    <div style="background:#0A2540;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:0.4px">CHURN IMPACT — INVOLUNTARY (PAYMENT-FAILURE &amp; COLLECTIONS) CHURN · INDUSTRY BASELINE → REACHLY WITH THIS MODEL</div>
+    <div style="padding:7px 12px;background:#fff">
+      <div style="font-size:7.5px;color:#475569;margin-bottom:6px;line-height:1.45"><b>Industry context:</b> failed payments &amp; expired cards drive <b>20–40% of all SaaS churn</b> (Recurly / ProfitWell benchmarks); passive recovery is only <b>15–25%</b>, and SMB month-to-month books are the hardest hit. This is <b>recoverable churn</b> — it leaks silently with no process behind it.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:7px">
+        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 8px;text-align:center">
+          <div style="font-size:7.5px;color:#64748B;font-weight:700;min-height:20px">CC DECLINE<br>RECOVERY RATE</div>
+          <div style="font-size:13px;font-weight:800;color:#0A2540;margin-top:3px">25% <span style="color:#00B27A">→ 68%</span></div>
+          <div style="font-size:7px;color:#64748B;margin-top:2px">pre-dunning + smart retries</div>
+        </div>
+        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 8px;text-align:center">
+          <div style="font-size:7.5px;color:#64748B;font-weight:700;min-height:20px">COLLECTIONS<br>60+ DAY WRITE-OFF</div>
+          <div style="font-size:13px;font-weight:800;color:#0A2540;margin-top:3px">~7% <span style="color:#00B27A">→ ~2.5%</span></div>
+          <div style="font-size:7px;color:#64748B;margin-top:2px">of overdue AR $</div>
+        </div>
+        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 8px;text-align:center">
+          <div style="font-size:7.5px;color:#64748B;font-weight:700;min-height:20px">INVOLUNTARY SHARE<br>OF GROSS CHURN</div>
+          <div style="font-size:13px;font-weight:800;color:#0A2540;margin-top:3px">~30% <span style="color:#00B27A">→ ~11%</span></div>
+          <div style="font-size:7px;color:#64748B;margin-top:2px">payment-failure logo loss</div>
+        </div>
+        <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:4px;padding:6px 8px;text-align:center">
+          <div style="font-size:7.5px;color:#065F46;font-weight:700;min-height:20px">ARR PROTECTED<br>PER YEAR</div>
+          <div style="font-size:13px;font-weight:800;color:#00B27A;margin-top:3px">+$4–5M</div>
+          <div style="font-size:7px;color:#64748B;margin-top:2px">on $80M monthly book</div>
+        </div>
+      </div>
+      <div style="margin-top:7px;background:#0A2540;border-radius:5px;padding:5px 13px;text-align:center;font-size:8px;color:#9fb3c8">
+        <b style="color:#fff">Net effect — uncollectible logo loss cut ~60%.</b> &nbsp;These are the cheapest saves in the business: no discount, no CSM hours — pure process + automation working <em>ahead</em> of the renewal date.
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
 <!-- ── S11 · MM AI-ASSISTED HUMAN-LED ── -->
 <div class="slide" id="s11">
 <div class="slide-header"><h1>Mid-Market — AI-Assisted, Human-Led Retention</h1><span class="sub">Adoption score dip → root cause → fix → recovery → expansion · JustCall Growth tier · How AI and CSM operate together</span></div>
@@ -2291,266 +2778,6 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
-<!-- ── S24 · 3 PARALLEL PROGRAM ── -->
-<div class="slide" id="s24">
-<div class="slide-header">
-  <h1>3 Parallel Program — Adoption · Performance · MAU</h1>
-  <span class="sub">Driving feature adoption, business outcomes, and seat utilization to reduce churn · Two motions: PLG AI-agent (T2-T3) and Human-led CSM (MM + T1)</span>
-</div>
-<div class="slide-body">
-
-  <!-- Problem / Solution / Impact strip -->
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
-    <div style="background:#FFF3CD;border-left:3px solid #F59E0B;border-radius:5px;padding:8px 11px">
-      <div style="font-size:9.5px;font-weight:700;color:#92400E;letter-spacing:0.8px;margin-bottom:3px">PROBLEM</div>
-      <div style="font-size:10px;color:#1a1a2e;font-weight:600;margin-bottom:2px">Customers buy but don't activate or utilize</div>
-      <div style="font-size:9.5px;color:#555">43% of SMB churn before Day 90. Seats licensed but unused. No visibility into feature gaps or performance ROI until it's too late to save the account.</div>
-    </div>
-    <div style="background:#D1FAE5;border-left:3px solid #00B27A;border-radius:5px;padding:8px 11px">
-      <div style="font-size:9.5px;font-weight:700;color:#065F46;letter-spacing:0.8px;margin-bottom:3px">SOLUTION</div>
-      <div style="font-size:10px;color:#1a1a2e;font-weight:600;margin-bottom:2px">3 Parallel tracks — milestone-triggered, segment-specific</div>
-      <div style="font-size:9.5px;color:#555">Adoption (feature milestones) + Performance (outcome measurement) + MAU (seat utilization). Two motions: PLG AI-agent for T2-T3 scale; human-led CSM for MM + T1.</div>
-    </div>
-    <div style="background:#EDE9FE;border-left:3px solid #7C3AED;border-radius:5px;padding:8px 11px">
-      <div style="font-size:9.5px;font-weight:700;color:#4C1D95;letter-spacing:0.8px;margin-bottom:3px">IMPACT</div>
-      <div style="font-size:10px;color:#1a1a2e;font-weight:600;margin-bottom:2px">+3–7pp GRR · Activation 55% → 80%</div>
-      <div style="font-size:9.5px;color:#555">HIGH-tier accounts churn 50% less. MAU &gt; 65% = +40% renewal probability. $2.1M+ ARR retained from pre-90 fix alone. Scales to 25,000 accounts without adding headcount.</div>
-    </div>
-  </div>
-
-  <!-- 3 Pillar Architecture -->
-  <div class="sc-section-lbl" style="margin-bottom:6px">Program Architecture — 3 Parallel Pillars</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
-
-    <!-- Pillar 1: Adoption -->
-    <div style="border:1.5px solid #0284C7;border-radius:6px;overflow:hidden">
-      <div style="background:#0284C7;color:#fff;font-size:10px;font-weight:700;padding:5px 10px;letter-spacing:0.5px">PILLAR 1 — ADOPTION</div>
-      <div style="padding:8px 10px;background:#F0F9FF">
-        <div style="font-size:9.5px;font-weight:600;color:#0A2540;margin-bottom:5px">Feature Milestone Journey (JustCall)</div>
-        <div style="display:flex;flex-direction:column;gap:4px">
-          <div style="background:#fff;border:1px solid #BAE6FD;border-radius:4px;padding:5px 8px">
-            <div style="font-size:8.5px;font-weight:700;color:#0284C7;margin-bottom:2px">CORE · D1–15 · Onboarding</div>
-            <div style="font-size:9px;color:#444;line-height:1.5">Cloud calling live · CRM connected<br>First call made · AI score enabled</div>
-          </div>
-          <div style="background:#fff;border:1px solid #BBF7D0;border-radius:4px;padding:5px 8px">
-            <div style="font-size:8.5px;font-weight:700;color:#16A34A;margin-bottom:2px">CORE · D15–30 · Depth</div>
-            <div style="font-size:9px;color:#444;line-height:1.5">Power Dialer configured · IVR live<br>Call routing set · AI scoring in use</div>
-          </div>
-          <div style="background:#fff;border:1px solid #FED7AA;border-radius:4px;padding:5px 8px">
-            <div style="font-size:8.5px;font-weight:700;color:#EA580C;margin-bottom:2px">SEMI-CORE · D30–60 · Breadth</div>
-            <div style="font-size:9px;color:#444;line-height:1.5">SMS campaigns · WhatsApp Business<br>Analytics reviewed · Adv. reporting</div>
-          </div>
-        </div>
-        <div style="margin-top:6px;font-size:8.5px;font-weight:700;color:#0A2540;margin-bottom:3px">Adoption tier classification:</div>
-        <div style="display:flex;gap:3px;margin-top:2px;flex-wrap:wrap">
-          <span style="background:#FEE2E2;color:#991B1B;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px">LOW: ≤2 core · 0 integr.</span>
-          <span style="background:#FFF7ED;color:#92400E;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px">MED: 3-4 core · CRM</span>
-          <span style="background:#D1FAE5;color:#065F46;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px">HIGH: 5+ · semi-core · 2+ integr.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pillar 2: Performance -->
-    <div style="border:1.5px solid #00B27A;border-radius:6px;overflow:hidden">
-      <div style="background:#00B27A;color:#fff;font-size:10px;font-weight:700;padding:5px 10px;letter-spacing:0.5px">PILLAR 2 — PERFORMANCE</div>
-      <div style="padding:8px 10px;background:#F0FFF8">
-        <div style="font-size:9.5px;font-weight:600;color:#0A2540;margin-bottom:5px">Business Outcome Measurement</div>
-        <table style="width:100%;font-size:9px;border-collapse:collapse">
-          <thead><tr style="background:#0A2540;color:#fff"><th style="padding:4px 6px;text-align:left;border-radius:3px 0 0 0">Metric</th><th style="padding:4px 6px;text-align:right;border-radius:0 3px 0 0">Target</th></tr></thead>
-          <tbody>
-            <tr style="background:#fff"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">Calls made / agent / day</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#0284C7">≥ 40</td></tr>
-            <tr style="background:#F0FFF8"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">Connect rate</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#00B27A">≥ 35%</td></tr>
-            <tr style="background:#fff"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">Avg call duration</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#0284C7">≥ 3 min</td></tr>
-            <tr style="background:#F0FFF8"><td style="padding:3px 6px;border-bottom:1px solid #E2E8F0">AI score utilization</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#00B27A">≥ 70%</td></tr>
-            <tr style="background:#fff"><td style="padding:3px 6px">Power Dialer usage</td><td style="padding:3px 6px;text-align:right;font-weight:700;color:#0284C7">≥ 3×/wk</td></tr>
-          </tbody>
-        </table>
-        <div style="margin-top:7px;background:#fff;border:1px solid #BBF7D0;border-radius:4px;padding:5px 8px">
-          <div style="font-size:9px;color:#444"><strong style="color:#065F46">Health trigger:</strong> Account below 2+ metrics for 14+ days → ChurnZero fires intervention playbook automatically</div>
-        </div>
-        <div style="margin-top:6px;background:#fff;border:1px solid #BAE6FD;border-radius:4px;padding:5px 8px">
-          <div style="font-size:9px;color:#444"><strong style="color:#0284C7">Source:</strong> RudderStack pipes call data to ChurnZero weekly. CSM / AI agent reads the performance cut each Monday.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pillar 3: MAU / Seat Utilization -->
-    <div style="border:1.5px solid #7C3AED;border-radius:6px;overflow:hidden">
-      <div style="background:#7C3AED;color:#fff;font-size:10px;font-weight:700;padding:5px 10px;letter-spacing:0.5px">PILLAR 3 — MAU / SEAT UTILIZATION</div>
-      <div style="padding:8px 10px;background:#FAF5FF">
-        <div style="font-size:9.5px;font-weight:600;color:#0A2540;margin-bottom:5px">Seat Health: Bought → Configured → MAU</div>
-        <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
-          <div style="background:#0A2540;color:#fff;font-size:8.5px;font-weight:700;padding:5px 7px;border-radius:4px;text-align:center;flex:1">BOUGHT<br><span style="font-weight:400;font-size:7.5px">Seats Licensed</span></div>
-          <div style="font-size:14px;color:#7C3AED;font-weight:700;flex-shrink:0">→</div>
-          <div style="background:#4F46E5;color:#fff;font-size:8.5px;font-weight:700;padding:5px 7px;border-radius:4px;text-align:center;flex:1">CONFIGURED<br><span style="font-weight:400;font-size:7.5px">Set Up</span></div>
-          <div style="font-size:14px;color:#7C3AED;font-weight:700;flex-shrink:0">→</div>
-          <div style="background:#7C3AED;color:#fff;font-size:8.5px;font-weight:700;padding:5px 7px;border-radius:4px;text-align:center;flex:1">MAU<br><span style="font-weight:400;font-size:7.5px">Active Monthly</span></div>
-        </div>
-        <div style="font-size:8.5px;font-weight:700;color:#4C1D95;margin-bottom:5px;text-align:center">GAP = Health Signal · Tracked weekly per account in ChurnZero</div>
-        <div style="display:flex;flex-direction:column;gap:4px">
-          <div style="display:flex;align-items:center;gap:7px;background:#FEE2E2;border-radius:4px;padding:5px 8px">
-            <div style="width:10px;height:10px;background:#EF4444;border-radius:2px;flex-shrink:0"></div>
-            <span style="font-size:9px;color:#991B1B;font-weight:700">RED · MAU &lt; 40%</span>
-            <span style="font-size:9px;color:#444;margin-left:auto">Immediate alert · escalate</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:7px;background:#FFF7ED;border-radius:4px;padding:5px 8px">
-            <div style="width:10px;height:10px;background:#F59E0B;border-radius:2px;flex-shrink:0"></div>
-            <span style="font-size:9px;color:#92400E;font-weight:700">AMBER · 40–65%</span>
-            <span style="font-size:9px;color:#444;margin-left:auto">Proactive nudge playbook</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:7px;background:#D1FAE5;border-radius:4px;padding:5px 8px">
-            <div style="width:10px;height:10px;background:#10B981;border-radius:2px;flex-shrink:0"></div>
-            <span style="font-size:9px;color:#065F46;font-weight:700">GREEN · &gt; 65%</span>
-            <span style="font-size:9px;color:#444;margin-left:auto">Monitor + NRR expand play</span>
-          </div>
-        </div>
-        <div style="margin-top:7px;background:#fff;border:1px solid #C4B5FD;border-radius:4px;padding:5px 8px">
-          <div style="font-size:9px;color:#444"><strong style="color:#4C1D95">NRR linkage:</strong> GREEN accounts = seat expansion opportunity. CSM / Fin proactively surfaces "you have 8 unused seats" expansion prompt.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Two Delivery Motions -->
-  <div class="sc-section-lbl" style="margin-bottom:6px">Delivery Motions — Same Program, Segment-Specific Execution</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-
-    <!-- Motion 1: PLG -->
-    <div style="background:linear-gradient(135deg,#EDE9FE,#F5F3FF);border:1px solid #C4B5FD;border-radius:6px;padding:9px 12px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-        <div style="font-size:10px;font-weight:700;color:#4C1D95">MOTION 1 · PLG / AI-AGENT SELF-SERVE</div>
-        <span style="background:#7C3AED;color:#fff;font-size:8.5px;font-weight:700;padding:2px 7px;border-radius:3px">T2 + T3 · 20,000 accounts</span>
-      </div>
-      <div style="display:grid;grid-template-columns:auto 1fr;gap:3px 8px;font-size:9.5px;color:#444;align-items:start">
-        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">RudderStack</span><span>Detects adoption / MAU gap → triggers ChurnZero milestone playbook</span>
-        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Userpilot</span><span>In-app tooltip + guided flow for the next uncompleted milestone feature</span>
-        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Customer.io</span><span>Milestone email: feature guide, video walkthrough, use-case story</span>
-        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Intercom Fin</span><span>AI agent answers configuration Q&amp;As, resolves setup blockers</span>
-        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">ChurnZero</span><span>Tracks tier movement L→M→H · auto-escalates RED accounts to human queue</span>
-      </div>
-      <div style="margin-top:7px;font-size:9px;background:#7C3AED;color:#fff;padding:3px 8px;border-radius:3px;display:inline-block;font-weight:600">0 human touches · fully agentic · scales 20k accounts</div>
-    </div>
-
-    <!-- Motion 2: Human-led -->
-    <div style="background:linear-gradient(135deg,#F0FDF4,#ECFDF5);border:1px solid #86EFAC;border-radius:6px;padding:9px 12px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-        <div style="font-size:10px;font-weight:700;color:#065F46">MOTION 2 · HUMAN-LED CSM (AI-ASSISTED)</div>
-        <span style="background:#16A34A;color:#fff;font-size:8.5px;font-weight:700;padding:2px 7px;border-radius:3px">MM + T1 · 5,000 accounts</span>
-      </div>
-      <div style="display:grid;grid-template-columns:auto 1fr;gap:3px 8px;font-size:9.5px;color:#444;align-items:start">
-        <span style="color:#16A34A;font-weight:600;white-space:nowrap">ChurnZero</span><span>Weekly account cut flags Low/Medium adoption tier → pushed to CSM queue</span>
-        <span style="color:#16A34A;font-weight:600;white-space:nowrap">CSM Review</span><span>Reads account cut: milestone gaps, MAU health, performance metrics</span>
-        <span style="color:#16A34A;font-weight:600;white-space:nowrap">AI Assist</span><span>Drafts personalized adoption email / QBR talking points with data</span>
-        <span style="color:#16A34A;font-weight:600;white-space:nowrap">Outreach</span><span>Adoption call / QBR — presents performance benchmarks + config help</span>
-        <span style="color:#16A34A;font-weight:600;white-space:nowrap">Userpilot</span><span>CSM assigns targeted in-app flows post-call to activate next 2 features</span>
-      </div>
-      <div style="margin-top:7px;font-size:9px;background:#16A34A;color:#fff;padding:3px 8px;border-radius:3px;display:inline-block;font-weight:600">1–2 human touches · AI-assisted decision-making</div>
-    </div>
-  </div>
-
-  <!-- Governance band -->
-  <div class="sc-section-lbl" style="margin-top:10px;margin-bottom:6px">Governance — How We Drive &amp; Measure Movement (not just deploy)</div>
-  <div style="display:grid;grid-template-columns:0.95fr 1.3fr 1.05fr;gap:8px">
-
-    <!-- The metric -->
-    <div style="background:linear-gradient(135deg,#0A2540,#13344f);border-radius:6px;padding:8px 11px;color:#fff">
-      <div style="font-size:8.5px;font-weight:700;color:#00B27A;letter-spacing:0.5px;margin-bottom:3px">THE GOVERNANCE METRIC</div>
-      <div style="font-size:11px;font-weight:700;margin-bottom:3px">Net Tier Progression</div>
-      <div style="font-size:10px;font-weight:700;font-family:monospace;background:rgba(255,255,255,0.08);padding:3px 6px;border-radius:4px;text-align:center;margin-bottom:4px">NTP = %↑up − %↓down</div>
-      <div style="font-size:8.5px;color:#cdd9e5;line-height:1.45">Every CSM &amp; agent owns net movement across all 3 pillars, per segment. Up-tier = retention; down-tier = pre-renewal churn signal. <strong style="color:#fff">Comp-tied.</strong></div>
-    </div>
-
-    <!-- Movement targets -->
-    <div style="border:1px solid #E2E8F0;border-radius:6px;overflow:hidden">
-      <div style="background:#334155;color:#fff;font-size:8.5px;font-weight:700;padding:4px 9px;letter-spacing:0.4px">CSM &amp; AGENT TARGETS · QUARTERLY NET UP-TIER (% of book)</div>
-      <table style="width:100%;font-size:8.5px;border-collapse:collapse">
-        <thead><tr style="background:#F1F5F9"><th style="padding:3px 7px;text-align:left">Pillar</th><th style="padding:3px 7px;text-align:center">Human<br>MM+T1</th><th style="padding:3px 7px;text-align:center">Agent<br>T2+T3</th><th style="padding:3px 7px;text-align:center">↓ Floor</th></tr></thead>
-        <tbody>
-          <tr><td style="padding:3px 7px;color:#0284C7;font-weight:600;border-top:1px solid #E2E8F0">Adoption L→M→H</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+20%</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+12%</td><td style="padding:3px 7px;text-align:center;color:#991B1B;font-weight:700;border-top:1px solid #E2E8F0">&lt;5%</td></tr>
-          <tr><td style="padding:3px 7px;color:#00B27A;font-weight:600;border-top:1px solid #E2E8F0">Performance L→M→H</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+15%</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+8%</td><td style="padding:3px 7px;text-align:center;color:#991B1B;font-weight:700;border-top:1px solid #E2E8F0">&lt;5%</td></tr>
-          <tr><td style="padding:3px 7px;color:#7C3AED;font-weight:600;border-top:1px solid #E2E8F0">MAU R→A→G</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+30%</td><td style="padding:3px 7px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">+18%</td><td style="padding:3px 7px;text-align:center;color:#991B1B;font-weight:700;border-top:1px solid #E2E8F0">&lt;5%</td></tr>
-        </tbody>
-      </table>
-      <div style="font-size:8px;color:#92400E;background:#FFF3CD;padding:3px 7px;border-top:1px solid #FDE68A">Hard rule: any <strong>High→Low / Green→Red</strong> fall = instant escalation + root-cause review</div>
-    </div>
-
-    <!-- Tracked at 3 levels -->
-    <div style="border:1px solid #E2E8F0;border-radius:6px;overflow:hidden">
-      <div style="background:#334155;color:#fff;font-size:8.5px;font-weight:700;padding:4px 9px;letter-spacing:0.4px">TRACKED &amp; REPORTED — 3 LEVELS</div>
-      <div style="padding:6px 9px;display:flex;flex-direction:column;gap:4px">
-        <div style="font-size:8.5px;color:#444"><strong style="color:#0284C7">CSM / Agent</strong> — owns book movement; works down-movers + RED first (weekly)</div>
-        <div style="font-size:8.5px;color:#444"><strong style="color:#00B27A">Team / Manager</strong> — aggregate tier-mix Δ; coaches stuck accounts (monthly)</div>
-        <div style="font-size:8.5px;color:#444"><strong style="color:#7C3AED">Function / Head of CS</strong> — portfolio mix → GRR/NRR forecast (quarterly)</div>
-        <div style="font-size:8px;color:#555;background:#F8FAFC;border-radius:4px;padding:3px 7px;margin-top:1px"><strong>Reporting:</strong> account scorecard (ChurnZero, live) · portfolio heatmap + movement velocity (MBR/QBR)</div>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top:7px;background:#0A2540;border-radius:5px;padding:5px 12px;text-align:center">
-    <span style="font-size:9px;color:#00B27A;font-weight:700">Tier movement = leading indicator</span>
-    <span style="font-size:9px;color:#9fb3c8;margin:0 6px">·</span>
-    <span style="font-size:9px;color:#fff;font-weight:600">GRR / NRR = lagging outcome</span>
-    <span style="font-size:8.5px;color:#cdd9e5;margin-left:5px">— we govern the leading indicator weekly, so renewals are never a surprise.</span>
-  </div>
-
-  <!-- CSM-level worked example -->
-  <div class="sc-section-lbl" style="margin-top:10px;margin-bottom:6px">CSM-Level Example — Target vs Achievement &amp; Impact on Book</div>
-  <div style="background:#fff;border:1.5px solid #E2E8F0;border-radius:6px;overflow:hidden">
-    <div style="background:#334155;color:#fff;font-size:8.5px;font-weight:700;padding:4px 10px;display:flex;justify-content:space-between;align-items:center">
-      <span>Priya Sharma — MM Strategic CSM · Portfolio: 28 accounts · $3.6M ARR · April 2025</span>
-      <span style="background:#00B27A;color:#fff;font-size:8px;font-weight:700;padding:1px 8px;border-radius:3px">CPI: 84 / 100 · Rank #3 of 30</span>
-    </div>
-    <div style="padding:7px 10px">
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:0;font-size:8px">
-
-        <!-- Header row -->
-        <div style="padding:3px 8px;font-weight:700;color:#0A2540;background:#F1F5F9;border-bottom:1px solid #E2E8F0">Pillar / Activity</div>
-        <div style="padding:3px 8px;font-weight:700;color:#0A2540;background:#F1F5F9;border-bottom:1px solid #E2E8F0;text-align:center">Target</div>
-        <div style="padding:3px 8px;font-weight:700;color:#0A2540;background:#F1F5F9;border-bottom:1px solid #E2E8F0;text-align:center">Actual</div>
-        <div style="padding:3px 8px;font-weight:700;color:#0A2540;background:#F1F5F9;border-bottom:1px solid #E2E8F0;text-align:center">Impact on Book</div>
-
-        <!-- Row 1 -->
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;color:#0284C7;font-weight:600">Adoption sessions (weekly)</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;text-align:center">3 / wk → 12 / mo</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;text-align:center;font-weight:700;color:#16A34A">14 / mo ✓</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0">6 accounts moved LOW → MED · 2 MED → HIGH</div>
-
-        <!-- Row 2 -->
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;color:#00B27A;font-weight:600">Performance (calls, connect rate)</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;text-align:center">≥ 35% connect, 40 calls/day</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;text-align:center;font-weight:700;color:#F59E0B">31% · 37 calls ↗</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC">3 accounts LOW → MED · 1 stuck</div>
-
-        <!-- Row 3 -->
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;color:#7C3AED;font-weight:600">MAU seat utilization</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;text-align:center">+30% RED → AMBER/GREEN</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;text-align:center;font-weight:700;color:#16A34A">+34% ✓</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0">5 RED → AMBER · 3 AMBER → GREEN</div>
-
-        <!-- Row 4 -->
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;color:#444;font-weight:600">QBRs completed</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;text-align:center">3 / mo</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC;text-align:center;font-weight:700;color:#16A34A">3 / mo ✓</div>
-        <div style="padding:3px 8px;border-bottom:1px solid #E2E8F0;background:#F8FAFC">All HIGH-tier accounts have confirmed next QBR</div>
-
-        <!-- Book coverage outcome row -->
-        <div style="padding:4px 8px;background:#0A2540;color:#fff;font-weight:700;border-radius:0 0 0 5px">Book Outcome (retention POV)</div>
-        <div style="padding:4px 8px;background:#0A2540;text-align:center;color:#9fb3c8">—</div>
-        <div style="padding:4px 8px;background:#0A2540;text-align:center;color:#9fb3c8">—</div>
-        <div style="padding:4px 8px;background:#0A2540;border-radius:0 0 5px 0">
-          <span style="color:#00B27A;font-weight:700">SAFE 75%</span>
-          <span style="color:#9fb3c8;margin:0 5px">·</span>
-          <span style="color:#EF4444;font-weight:700">UNSAFE 8%</span>
-          <span style="color:#9fb3c8;margin:0 5px">·</span>
-          <span style="color:#94A3B8;font-weight:700">UNKNOWN 17%</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-</div>
-
 <!-- ── S25 · PRODUCTIVITY TRACKING ── -->
 <div class="slide" id="s25p">
 <div class="slide-header">
@@ -2975,233 +3202,6 @@ tr:last-child td{border-bottom:none}
     <span style="color:#9fb3c8;font-size:9px">·</span>
     <span style="color:#FCA5A5;font-size:9px;font-weight:700">True churn reason → systemic fix</span>
     <span style="color:#9fb3c8;font-size:9px;margin-left:8px">All three are CSM-owned actions that protect GRR before it's too late to act.</span>
-  </div>
-
-</div>
-</div>
-
-<!-- ── S28 · CC DECLINE & COLLECTIONS ── -->
-<div class="slide" id="s28cc">
-<div class="slide-header">
-  <h1>CC Decline &amp; Collections — Business Desk</h1>
-  <span class="sub">Pre-dunning automation · Dunning flow &amp; retry logic · Offline payments · Team structure &amp; cost model</span>
-</div>
-<div class="slide-body">
-
-  <!-- Dunning timeline strip -->
-  <div style="background:#fff;border:1.5px solid #E2E8F0;border-radius:6px;padding:9px 12px;margin-bottom:8px">
-    <div class="sc-section-lbl" style="margin-bottom:6px">Monthly CC Dunning Timeline — Card Declined / Expired / Insufficient Funds</div>
-    <div style="display:flex;align-items:stretch;gap:0">
-
-      <div style="flex:1;text-align:center">
-        <div style="background:#EF4444;color:#fff;padding:3px 6px;border-radius:4px 0 0 0;font-size:8.5px;font-weight:700">D 0</div>
-        <div style="background:#FEE2E2;border:1px solid #FECACA;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
-          <b>Charge fails</b><br>1 auto-retry<br>Email: "Payment failed"<br>+ update-card link
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;padding-bottom:0;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
-      <div style="flex:1;text-align:center">
-        <div style="background:#F59E0B;color:#fff;padding:3px 6px;font-size:8.5px;font-weight:700">D +3</div>
-        <div style="background:#FFFBEB;border:1px solid #FCD34D;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
-          <b>Retry #2</b><br>Customer.io seq #2<br>In-app banner live<br>&nbsp;
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
-      <div style="flex:1;text-align:center">
-        <div style="background:#EA580C;color:#fff;padding:3px 6px;font-size:8.5px;font-weight:700">D +7</div>
-        <div style="background:#FFF7ED;border:1px solid #FDBA74;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
-          <b>Retry #3 + SMS</b><br>Urgent email — final<br>CSM alert if ARR &gt;$500<br>&nbsp;
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
-      <div style="flex:1;text-align:center">
-        <div style="background:#DC2626;color:#fff;padding:3px 6px;font-size:8.5px;font-weight:700">D +14</div>
-        <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
-          <b>Service suspension</b><br>Calls blocked<br>Data preserved 30d<br>Business desk calls
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
-      <div style="flex:1;text-align:center">
-        <div style="background:#7F1D1D;color:#fff;padding:3px 6px;border-radius:0 4px 0 0;font-size:8.5px;font-weight:700">D +21</div>
-        <div style="background:#FEF2F2;border:1px solid #FECACA;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
-          <b>Hard cancellation</b><br>Churn recorded<br>Data export 30d<br>Winback tagged
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3 columns -->
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px">
-
-    <!-- Col 1: Pre-dunning automation -->
-    <div style="border:1.5px solid #00B27A;border-radius:6px;overflow:hidden">
-      <div style="background:#00B27A;color:#fff;font-size:9px;font-weight:700;padding:5px 10px;letter-spacing:0.4px">PRE-DUNNING AUTOMATION — Proactive</div>
-      <div style="padding:8px 10px;background:#F0FDF4">
-        <div style="font-size:8px;color:#444;margin-bottom:5px">Resolve failures <em>before</em> D0 — target: &gt;40% of dunning cases eliminated upstream.</div>
-        <div style="display:flex;flex-direction:column;gap:3px">
-          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#00B27A;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−30</span><span>Stripe/Chargebee: scan cards expiring in 30d → Customer.io "update card" email auto-fires</span></div>
-          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#00B27A;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−14</span><span>No update yet → Userpilot in-app nudge + email reminder with 1-click card update button</span></div>
-          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#F59E0B;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−7</span><span><b>Soft-auth ($0 hold)</b> to validate card. Fail → business desk outreach list; no waiting for D0 bounce</span></div>
-          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#F59E0B;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−3</span><span>Final pre-renewal nudge: SMS + Intercom Fin proactive chat — "Your renewal is in 3 days"</span></div>
-        </div>
-        <div style="margin-top:6px;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 7px;font-size:7.5px;color:#444">
-          <b style="color:#065F46">Stack:</b> Stripe / Chargebee + Customer.io + Userpilot + Intercom Fin
-        </div>
-      </div>
-    </div>
-
-    <!-- Col 2: CC dunning chase detail -->
-    <div style="border:1.5px solid #EF4444;border-radius:6px;overflow:hidden">
-      <div style="background:#EF4444;color:#fff;font-size:9px;font-weight:700;padding:5px 10px;letter-spacing:0.4px">CC DUNNING — CHASE PLAYBOOK</div>
-      <div style="padding:8px 10px;background:#FFF5F5">
-        <div style="font-size:8px;font-weight:700;color:#991B1B;margin-bottom:3px">RETRY SCHEDULE</div>
-        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:6px">
-          <div style="background:#FEE2E2;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444">Attempt 1 — Renewal date (immediate)</div>
-          <div style="background:#FEE2E2;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444">Attempt 2 — D+3 (72h later, different time slot)</div>
-          <div style="background:#FEE2E2;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444">Attempt 3 — D+7 (final automatic retry)</div>
-          <div style="background:#FFF0F0;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444;font-style:italic">3 fails → business desk manual outreach</div>
-        </div>
-        <div style="font-size:8px;font-weight:700;color:#991B1B;margin-bottom:3px">TRIAGE BY ARR</div>
-        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:6px">
-          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#FFF5F5;border-radius:3px;padding:3px 7px">
-            <span style="color:#EF4444;font-weight:700;min-width:60px">&gt;$500/mo</span><span>CSM alerted D+7; personal call D+10</span>
-          </div>
-          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#FFF5F5;border-radius:3px;padding:3px 7px">
-            <span style="color:#F59E0B;font-weight:700;min-width:60px">$100–500</span><span>Business desk: automated + 1 call attempt</span>
-          </div>
-          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#FFF5F5;border-radius:3px;padding:3px 7px">
-            <span style="color:#64748B;font-weight:700;min-width:60px">&lt;$100</span><span>Fully automated — no human touch</span>
-          </div>
-        </div>
-        <div style="font-size:8px;font-weight:700;color:#991B1B;margin-bottom:3px">CHANNEL ORDER</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
-          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">1. Email (auto)</div>
-          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">2. In-app banner</div>
-          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">3. SMS (D+7)</div>
-          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">4. Call (desk / CSM)</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Col 3: Offline / bank transfer -->
-    <div style="border:1.5px solid #6366F1;border-radius:6px;overflow:hidden">
-      <div style="background:#6366F1;color:#fff;font-size:9px;font-weight:700;padding:5px 10px;letter-spacing:0.4px">OFFLINE PAYMENTS — BANK TRANSFER</div>
-      <div style="padding:8px 10px;background:#F5F3FF">
-        <div style="font-size:8px;color:#444;margin-bottom:5px">MM accounts &amp; annual contracts only. SMB T1–T3 must keep card on file.</div>
-        <div style="font-size:8px;font-weight:700;color:#4338CA;margin-bottom:3px">TERMS &amp; COLLECTIONS WINDOW</div>
-        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:6px">
-          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EEF2FF;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D 0</span><span>Invoice auto-issued. <b>Net 7 standard terms.</b></span></div>
-          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EEF2FF;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D+7</span><span>Overdue notice + CS nudge to MM accounts</span></div>
-          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EEF2FF;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D+14</span><span>Finance escalation + service access warning sent</span></div>
-          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EDE9FE;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D+21</span><span>Service suspension. Payment plan option: max 2× per year</span></div>
-          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EDE9FE;border-radius:3px;padding:3px 7px;border:1px solid #C4B5FD"><span style="font-weight:700;min-width:32px">D+30</span><span><b>Hard cancellation</b> if no payment or agreed plan</span></div>
-        </div>
-        <div style="font-size:8px;font-weight:700;color:#4338CA;margin-bottom:3px">GOVERNANCE</div>
-        <div style="display:flex;flex-direction:column;gap:2px">
-          <div style="font-size:7.5px;color:#444;background:#fff;border:1px solid #C4B5FD;border-radius:3px;padding:3px 7px">Finance owns invoice tracking; CS owns the account relationship</div>
-          <div style="font-size:7.5px;color:#444;background:#fff;border:1px solid #C4B5FD;border-radius:3px;padding:3px 7px">Quarterly audit: % of offline accounts switched to card (reduces float risk)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Business desk recommendation -->
-  <div style="border:1.5px solid #0A2540;border-radius:6px;overflow:hidden">
-    <div style="background:#0A2540;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:0.4px">BUSINESS DESK — WHO RUNS BILLING &amp; COLLECTIONS (Recommendation)</div>
-    <div style="padding:7px 12px 8px;background:#fff">
-      <div style="display:grid;grid-template-columns:1.15fr 1fr 1fr 1.25fr;gap:8px">
-        <div style="background:#F1F5F9;border-radius:4px;padding:6px 8px">
-          <div style="font-size:8px;font-weight:700;color:#0A2540;margin-bottom:4px">VOLUME CALC</div>
-          <div style="font-size:7.5px;color:#444;line-height:1.6">
-            25,000 accts × 80% monthly = <b>20,000 billing/mo</b><br>
-            Dunning rate ~3–5% → <b>600–1,000 cases/mo</b><br>
-            Offline/bank transfer → ~150–200 cases/mo<br>
-            <b>Total: ~750–1,200 cases/month</b>
-          </div>
-        </div>
-        <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:4px;padding:6px 8px">
-          <div style="font-size:8px;font-weight:700;color:#065F46;margin-bottom:4px">RECOMMENDATION</div>
-          <div style="font-size:7.5px;color:#444;line-height:1.6">
-            <b>3 contract billing agents</b> (not CSMs)<br>
-            Automation handles &gt;60% of cases<br>
-            Agents handle escalations &amp; calls<br>
-            CSMs stay out of billing entirely
-          </div>
-        </div>
-        <div style="background:#FFFBEB;border:1px solid #FCD34D;border-radius:4px;padding:6px 8px">
-          <div style="font-size:8px;font-weight:700;color:#B45309;margin-bottom:4px">COST MODEL (INR)</div>
-          <div style="font-size:7.5px;color:#444;line-height:1.6">
-            3 contractors × ₹35K/mo = <b>₹1.05L/mo</b><br>
-            Tool costs (Chargebee) ~₹40K/mo<br>
-            vs. CSM billing time: ~<b>₹3.8L/mo</b><br>
-            <b>Net saving ≈ ₹30L/yr</b>
-          </div>
-        </div>
-        <div style="background:#F5F3FF;border:1px solid #C4B5FD;border-radius:4px;padding:6px 8px">
-          <div style="font-size:8px;font-weight:700;color:#4338CA;margin-bottom:4px">TOOLING STACK</div>
-          <div style="font-size:7.5px;color:#444;line-height:1.6">
-            <b>Stripe Billing / Chargebee</b> — retry logic, dunning automation, invoice<br>
-            <b>Customer.io</b> — email sequences D−30 → D+14<br>
-            <b>ChurnZero</b> — flag delinquent as churn risk task<br>
-            <b>Userpilot</b> — in-app card update nudge
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Point 1: 0-60 day collections driven in advance -->
-  <div style="margin-top:8px;border:1.5px solid #0EA5E9;border-radius:6px;overflow:hidden">
-    <div style="background:#0EA5E9;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:0.4px">0–60 DAY COLLECTIONS — DRIVE IN ADVANCE · never let an account tip into 60+ days (= uncollectible write-off / logo loss)</div>
-    <div style="padding:7px 12px;background:#F0F9FF;display:flex;align-items:stretch;gap:0">
-      <div style="flex:1;background:#fff;border:1px solid #BAE6FD;border-radius:4px;padding:5px 9px">
-        <div style="font-size:8px;font-weight:700;color:#0369A1">0–30 DAYS · CURRENT / EARLY</div>
-        <div style="font-size:7.5px;color:#444;line-height:1.45;margin-top:2px">Auto-retries + email / SMS / in-app reminders. <b>Recover the bulk here</b> while intent is fresh and friction is low.</div>
-      </div>
-      <div style="display:flex;align-items:center;color:#0EA5E9;font-size:15px;padding:0 6px">›</div>
-      <div style="flex:1;background:#fff;border:1px solid #FCD34D;border-radius:4px;padding:5px 9px">
-        <div style="font-size:8px;font-weight:700;color:#B45309">30–60 DAYS · ACTIVE CHASE</div>
-        <div style="font-size:7.5px;color:#444;line-height:1.45;margin-top:2px">Business desk calls, payment-plan offer, finance escalation. <b>Every case must resolve before D60.</b></div>
-      </div>
-      <div style="display:flex;align-items:center;color:#0EA5E9;font-size:15px;padding:0 6px">›</div>
-      <div style="flex:1;background:#FEF2F2;border:1px solid #FCA5A5;border-radius:4px;padding:5px 9px">
-        <div style="font-size:8px;font-weight:700;color:#991B1B">60+ DAYS · WRITE-OFF RISK</div>
-        <div style="font-size:7.5px;color:#444;line-height:1.45;margin-top:2px">Uncollectible / logo loss. <b>GOAL: zero accounts reach here</b> — collections worked forward, not after the fact.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Point 2: churn reduction impact, industry vs this model -->
-  <div style="margin-top:8px;border:1.5px solid #0A2540;border-radius:6px;overflow:hidden">
-    <div style="background:#0A2540;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:0.4px">CHURN IMPACT — INVOLUNTARY (PAYMENT-FAILURE &amp; COLLECTIONS) CHURN · INDUSTRY BASELINE → REACHLY WITH THIS MODEL</div>
-    <div style="padding:7px 12px;background:#fff">
-      <div style="font-size:7.5px;color:#475569;margin-bottom:6px;line-height:1.45"><b>Industry context:</b> failed payments &amp; expired cards drive <b>20–40% of all SaaS churn</b> (Recurly / ProfitWell benchmarks); passive recovery is only <b>15–25%</b>, and SMB month-to-month books are the hardest hit. This is <b>recoverable churn</b> — it leaks silently with no process behind it.</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:7px">
-        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 8px;text-align:center">
-          <div style="font-size:7.5px;color:#64748B;font-weight:700;min-height:20px">CC DECLINE<br>RECOVERY RATE</div>
-          <div style="font-size:13px;font-weight:800;color:#0A2540;margin-top:3px">25% <span style="color:#00B27A">→ 68%</span></div>
-          <div style="font-size:7px;color:#64748B;margin-top:2px">pre-dunning + smart retries</div>
-        </div>
-        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 8px;text-align:center">
-          <div style="font-size:7.5px;color:#64748B;font-weight:700;min-height:20px">COLLECTIONS<br>60+ DAY WRITE-OFF</div>
-          <div style="font-size:13px;font-weight:800;color:#0A2540;margin-top:3px">~7% <span style="color:#00B27A">→ ~2.5%</span></div>
-          <div style="font-size:7px;color:#64748B;margin-top:2px">of overdue AR $</div>
-        </div>
-        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 8px;text-align:center">
-          <div style="font-size:7.5px;color:#64748B;font-weight:700;min-height:20px">INVOLUNTARY SHARE<br>OF GROSS CHURN</div>
-          <div style="font-size:13px;font-weight:800;color:#0A2540;margin-top:3px">~30% <span style="color:#00B27A">→ ~11%</span></div>
-          <div style="font-size:7px;color:#64748B;margin-top:2px">payment-failure logo loss</div>
-        </div>
-        <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:4px;padding:6px 8px;text-align:center">
-          <div style="font-size:7.5px;color:#065F46;font-weight:700;min-height:20px">ARR PROTECTED<br>PER YEAR</div>
-          <div style="font-size:13px;font-weight:800;color:#00B27A;margin-top:3px">+$4–5M</div>
-          <div style="font-size:7px;color:#64748B;margin-top:2px">on $80M monthly book</div>
-        </div>
-      </div>
-      <div style="margin-top:7px;background:#0A2540;border-radius:5px;padding:5px 13px;text-align:center;font-size:8px;color:#9fb3c8">
-        <b style="color:#fff">Net effect — uncollectible logo loss cut ~60%.</b> &nbsp;These are the cheapest saves in the business: no discount, no CSM hours — pure process + automation working <em>ahead</em> of the renewal date.
-      </div>
-    </div>
   </div>
 
 </div>
