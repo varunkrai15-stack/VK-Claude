@@ -454,113 +454,125 @@ tr:last-child td{border-bottom:none}
   <h1>The 60-Second Case</h1>
   <span class="sub">Problem · Intervention · Outcome — everything before the deep dive</span>
 </div>
-<div class="slide-body" style="display:flex;flex-direction:column;gap:8px;padding:14px 44px 52px">
+<div class="slide-body" style="display:flex;flex-direction:column;justify-content:flex-start;gap:8px;padding:14px 44px 52px">
 
-  <!-- THE PROBLEM — full-width dark band -->
-  <div style="background:linear-gradient(135deg,#0A2540,#13344f);border-radius:7px;padding:10px 14px">
-    <div style="font-size:8.5px;font-weight:700;letter-spacing:.7px;color:#00B27A;margin-bottom:7px">THE PROBLEM — THE BURNING PLATFORM</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:7px;margin-bottom:7px">
-      <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:7px 10px;border-left:3px solid #EF4444">
-        <div style="font-size:18px;font-weight:800;color:#fff;line-height:1.1">$80M</div>
-        <div style="font-size:7.5px;color:rgba(255,255,255,0.6);margin-top:3px">ARR re-earned every 30 days. 80% of accounts on monthly billing — no annual safety net. Retention is re-earned, not locked.</div>
+  <!-- THE PROBLEM — fixed height top band -->
+  <div style="flex-shrink:0;background:linear-gradient(135deg,#0A2540,#13344f);border-radius:7px;padding:11px 14px">
+    <div style="font-size:8.5px;font-weight:700;letter-spacing:.7px;color:#00B27A;margin-bottom:8px">THE PROBLEM — THE BURNING PLATFORM</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:7px;margin-bottom:8px">
+      <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:9px 11px;border-left:3px solid #EF4444">
+        <div style="font-size:20px;font-weight:800;color:#fff;line-height:1.1">$80M</div>
+        <div style="font-size:7.5px;color:rgba(255,255,255,0.6);margin-top:4px;line-height:1.45">ARR re-earned every 30 days. 80% of accounts on monthly billing — no annual safety net. Retention is re-earned, not locked in.</div>
       </div>
-      <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:7px 10px;border-left:3px solid #EF4444">
-        <div style="font-size:18px;font-weight:800;color:#fff;line-height:1.1">~70%</div>
-        <div style="font-size:7.5px;color:rgba(255,255,255,0.6);margin-top:3px">GRR today — 5–8 pts below SaaS median for this ACV band. Each point = $1M ARR. Structural gap, not a market gap.</div>
+      <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:9px 11px;border-left:3px solid #EF4444">
+        <div style="font-size:20px;font-weight:800;color:#fff;line-height:1.1">~70%</div>
+        <div style="font-size:7.5px;color:rgba(255,255,255,0.6);margin-top:4px;line-height:1.45">GRR today — 5–8 pts below SaaS median for this ACV band. Each point = $1M ARR. Structural gap, not a market gap.</div>
       </div>
-      <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:7px 10px;border-left:3px solid #F59E0B">
-        <div style="font-size:18px;font-weight:800;color:#fff;line-height:1.1">6% / mo</div>
-        <div style="font-size:7.5px;color:rgba(255,255,255,0.6);margin-top:3px">Logo churn in SMB long-tail. Mostly silent — no signal, no playbook, no intervention. Largely preventable.</div>
+      <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:9px 11px;border-left:3px solid #F59E0B">
+        <div style="font-size:20px;font-weight:800;color:#fff;line-height:1.1">6% / mo</div>
+        <div style="font-size:7.5px;color:rgba(255,255,255,0.6);margin-top:4px;line-height:1.45">Logo churn in SMB long-tail. Mostly silent — no signal, no playbook, no intervention. Largely preventable with early action.</div>
       </div>
-      <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:7px 10px;border-left:3px solid #F59E0B">
-        <div style="font-size:18px;font-weight:800;color:#fff;line-height:1.1">43%</div>
-        <div style="font-size:7.5px;color:rgba(255,255,255,0.6);margin-top:3px">SMB churn occurs before Day 90 — before first value. No structured onboarding = silent exit at renewal #1.</div>
+      <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:9px 11px;border-left:3px solid #F59E0B">
+        <div style="font-size:20px;font-weight:800;color:#fff;line-height:1.1">43%</div>
+        <div style="font-size:7.5px;color:rgba(255,255,255,0.6);margin-top:4px;line-height:1.45">SMB churn occurs before Day 90 — before first value. No structured onboarding = silent exit at renewal #1.</div>
       </div>
     </div>
-    <div style="background:rgba(239,68,68,0.13);border-radius:4px;padding:5px 10px;font-size:8px;color:rgba(255,255,255,0.78)">
+    <div style="background:rgba(239,68,68,0.13);border-radius:4px;padding:6px 10px;font-size:8px;color:rgba(255,255,255,0.78)">
       <b style="color:#fff">Root cause:</b>&nbsp; No structured coverage model &nbsp;·&nbsp; No tier-based playbooks &nbsp;·&nbsp; No predictive churn signal &nbsp;·&nbsp; CSMs reactive not proactive &nbsp;·&nbsp; No governance loop closing field activity to GRR
     </div>
   </div>
 
-  <!-- MIDDLE: What Changes (left 60%) + Outcome Numbers (right 40%) -->
-  <div style="display:grid;grid-template-columns:1.65fr 1fr;gap:8px;flex:1;min-height:0">
+  <!-- MIDDLE: fills all remaining vertical space -->
+  <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.65fr 1fr;gap:8px">
 
-    <!-- What Changes — 3 sub-columns -->
+    <!-- What Changes — stretches full height -->
     <div style="border:1.5px solid #CBD5E1;border-radius:7px;overflow:hidden;display:flex;flex-direction:column">
-      <div style="background:#1E3A5F;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:.4px;flex-shrink:0">WHAT CHANGES — STRUCTURE · PROGRAMS &amp; MOTION · SCOPE &amp; GOVERNANCE</div>
+      <div style="background:#1E3A5F;color:#fff;font-size:9px;font-weight:700;padding:6px 12px;letter-spacing:.4px;flex-shrink:0">WHAT CHANGES — STRUCTURE · PROGRAMS &amp; MOTION · SCOPE &amp; GOVERNANCE</div>
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;flex:1;min-height:0">
 
-        <div style="padding:8px 9px;border-right:1px solid #E2E8F0;background:#fff;overflow-y:auto">
-          <div style="font-size:7.5px;font-weight:700;color:#0A2540;letter-spacing:.4px;margin-bottom:4px">STRUCTURE &amp; SEGMENTATION</div>
-          <div style="display:flex;flex-direction:column;gap:3px">
-            <div style="background:#F1F5F9;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#0A2540">2-team design:</b> MM (named CSM) + SMB (AI-agent first)</div>
-            <div style="background:#F1F5F9;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#0A2540">5 tiers:</b> Strategic · Core · T1 · T2 · T3 — each with own motion &amp; ratio</div>
-            <div style="background:#F1F5F9;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#0A2540">43 FTE:</b> 30 front-line CSMs + 7 specialist + 6 leadership</div>
-            <div style="background:#F1F5F9;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#0A2540">ARR-first ratios:</b> 1:58 Strategic · 1:143 Core · 1:650 T1</div>
-            <div style="background:#F1F5F9;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#0A2540">Scope clarity:</b> CS owns GRR · AE owns ARR quality · RevOps audits</div>
+        <div style="padding:10px 9px;border-right:1px solid #E2E8F0;background:#fff;display:flex;flex-direction:column">
+          <div style="font-size:7.5px;font-weight:700;color:#0A2540;letter-spacing:.5px;margin-bottom:6px;padding-bottom:5px;border-bottom:2px solid #0A2540">STRUCTURE &amp; SEGMENTATION</div>
+          <div style="display:flex;flex-direction:column;gap:0;flex:1;justify-content:space-between">
+            <div style="background:#F1F5F9;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#0A2540">2-team design:</b> MM (named CSM) + SMB (AI-agent first)</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#F1F5F9;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#0A2540">5 tiers:</b> Strategic · Core · T1 · T2 · T3 — each with own motion &amp; coverage ratio</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#F1F5F9;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#0A2540">43 FTE:</b> 30 front-line CSMs + 7 specialist + 6 leadership</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#F1F5F9;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#0A2540">ARR-first ratios:</b> 1:58 Strategic · 1:143 Core · 1:650 T1</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#F1F5F9;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#0A2540">Scope clarity:</b> CS owns GRR · AE owns ARR quality · RevOps audits</span></div>
           </div>
         </div>
 
-        <div style="padding:8px 9px;border-right:1px solid #E2E8F0;background:#fff;overflow-y:auto">
-          <div style="font-size:7.5px;font-weight:700;color:#065F46;letter-spacing:.4px;margin-bottom:4px">PROGRAMS &amp; TOOLING</div>
-          <div style="display:flex;flex-direction:column;gap:3px">
-            <div style="background:#F0FDF4;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#065F46">3 Parallel:</b> Adoption · Performance · MAU seat utilisation — Low→High tier movement</div>
-            <div style="background:#F0FDF4;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#065F46">5 programs:</b> Onboarding · Pre-90 Churn · 3 Parallel · Renewal · Advocacy</div>
-            <div style="background:#F0FDF4;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#065F46">2 motions:</b> PLG AI-agent self-serve (T2/T3) + Human-led CSM (MM + T1)</div>
-            <div style="background:#F0FDF4;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#065F46">8-tool stack:</b> ChurnZero · RudderStack · Customer.io · Userpilot · Intercom Fin · Salesforce · Gong · Looker — $189k/yr</div>
-            <div style="background:#F0FDF4;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#065F46">AI signal engine:</b> predicts churn 30–60d before billing event fires</div>
+        <div style="padding:10px 9px;border-right:1px solid #E2E8F0;background:#fff;display:flex;flex-direction:column">
+          <div style="font-size:7.5px;font-weight:700;color:#065F46;letter-spacing:.5px;margin-bottom:6px;padding-bottom:5px;border-bottom:2px solid #00B27A">PROGRAMS &amp; TOOLING</div>
+          <div style="display:flex;flex-direction:column;gap:0;flex:1;justify-content:space-between">
+            <div style="background:#F0FDF4;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#065F46">3 Parallel:</b> Adoption · Performance · MAU seat utilisation — Low→High tier movement</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#F0FDF4;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#065F46">5 programs:</b> Onboarding · Pre-90 Churn · 3 Parallel · Renewal · Advocacy</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#F0FDF4;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#065F46">2 motions:</b> PLG AI-agent self-serve (T2/T3) + Human-led CSM (MM + T1)</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#F0FDF4;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#065F46">8-tool stack:</b> ChurnZero · RudderStack · Customer.io · Userpilot · Intercom Fin · Salesforce · Gong · Looker — $189k/yr</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#F0FDF4;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#065F46">AI signal engine:</b> predicts churn 30–60d before the billing event fires</span></div>
           </div>
         </div>
 
-        <div style="padding:8px 9px;background:#fff;overflow-y:auto">
-          <div style="font-size:7.5px;font-weight:700;color:#4338CA;letter-spacing:.4px;margin-bottom:4px">SCOPE &amp; GOVERNANCE</div>
-          <div style="display:flex;flex-direction:column;gap:3px">
-            <div style="background:#EEF2FF;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#3730A3">KPIs:</b> GRR + NRR primary · CPI per CSM · NTP per program</div>
-            <div style="background:#EEF2FF;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#3730A3">Book coverage:</b> Safe / Unsafe / Unknown — reviewed weekly</div>
-            <div style="background:#EEF2FF;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#3730A3">AE RoE:</b> last-week ARR gate · annual→monthly approval · risk signal 24h SLA</div>
-            <div style="background:#EEF2FF;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#3730A3">Business desk:</b> CC decline + collections off CSM plates → 3 contract agents</div>
-            <div style="background:#EEF2FF;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444"><b style="color:#3730A3">OKRs:</b> GRR 70→78% · NRR 85→95% · D30 activation · Dormant churn &lt;15%</div>
+        <div style="padding:10px 9px;background:#fff;display:flex;flex-direction:column">
+          <div style="font-size:7.5px;font-weight:700;color:#4338CA;letter-spacing:.5px;margin-bottom:6px;padding-bottom:5px;border-bottom:2px solid #6366F1">SCOPE &amp; GOVERNANCE</div>
+          <div style="display:flex;flex-direction:column;gap:0;flex:1;justify-content:space-between">
+            <div style="background:#EEF2FF;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#3730A3">KPIs:</b> GRR + NRR primary · CPI per CSM · NTP per program</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#EEF2FF;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#3730A3">Book coverage:</b> Safe / Unsafe / Unknown — reviewed weekly by CSM &amp; manager</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#EEF2FF;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#3730A3">AE RoE:</b> last-week ARR gate · annual→monthly approval · risk signal 24h SLA</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#EEF2FF;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#3730A3">Business desk:</b> CC decline + collections off CSM plates → 3 contract agents</span></div>
+            <div style="height:3px"></div>
+            <div style="background:#EEF2FF;border-radius:3px;padding:5px 7px;font-size:7.5px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#3730A3">OKRs:</b> GRR 70→78% · NRR 85→95% · D30 activation · Dormant churn &lt;15%</span></div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Outcome numbers -->
+    <!-- Outcome numbers — stretches full height -->
     <div style="border:1.5px solid #00B27A;border-radius:7px;overflow:hidden;display:flex;flex-direction:column">
-      <div style="background:#00B27A;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:.4px;flex-shrink:0">THE OUTCOME — IN NUMBERS</div>
-      <div style="padding:8px 10px;background:#F0FDF4;display:flex;flex-direction:column;gap:5px;flex:1">
-        <div style="background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:6px 9px">
-          <div style="font-size:11px;font-weight:800;color:#0A2540">GRR &nbsp;<span style="color:#94A3B8;font-weight:400;font-size:10px">70%</span>&nbsp;→&nbsp;<span style="color:#00B27A">78%</span></div>
-          <div style="font-size:7.5px;color:#64748B;margin-top:1px">+8 pts in 18 months = <b>$8M ARR</b> retained</div>
+      <div style="background:#00B27A;color:#fff;font-size:9px;font-weight:700;padding:6px 12px;letter-spacing:.4px;flex-shrink:0">THE OUTCOME — IN NUMBERS</div>
+      <div style="padding:8px 10px;background:#F0FDF4;display:flex;flex-direction:column;flex:1;gap:0">
+        <div style="flex:1;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:0 9px;display:flex;flex-direction:column;justify-content:center;margin-bottom:5px">
+          <div style="font-size:12px;font-weight:800;color:#0A2540">GRR &nbsp;<span style="color:#94A3B8;font-weight:400;font-size:10px">70%</span>&nbsp;→&nbsp;<span style="color:#00B27A">78%</span></div>
+          <div style="font-size:7.5px;color:#64748B;margin-top:2px">+8 pts in 18 months = <b>$8M ARR</b> retained</div>
         </div>
-        <div style="background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:6px 9px">
-          <div style="font-size:11px;font-weight:800;color:#0A2540">NRR &nbsp;<span style="color:#94A3B8;font-weight:400;font-size:10px">~85%</span>&nbsp;→&nbsp;<span style="color:#00B27A">95%</span></div>
-          <div style="font-size:7.5px;color:#64748B;margin-top:1px">Expansion via integrations + seat growth</div>
+        <div style="flex:1;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:0 9px;display:flex;flex-direction:column;justify-content:center;margin-bottom:5px">
+          <div style="font-size:12px;font-weight:800;color:#0A2540">NRR &nbsp;<span style="color:#94A3B8;font-weight:400;font-size:10px">~85%</span>&nbsp;→&nbsp;<span style="color:#00B27A">95%</span></div>
+          <div style="font-size:7.5px;color:#64748B;margin-top:2px">Expansion via integrations + seat growth</div>
         </div>
-        <div style="background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:6px 9px">
-          <div style="font-size:11px;font-weight:800;color:#00B27A">+$3–5M ARR / yr</div>
-          <div style="font-size:7.5px;color:#64748B;margin-top:1px">Programs + CC recovery + dormant revival</div>
+        <div style="flex:1;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:0 9px;display:flex;flex-direction:column;justify-content:center;margin-bottom:5px">
+          <div style="font-size:12px;font-weight:800;color:#00B27A">+$3–5M ARR / yr</div>
+          <div style="font-size:7.5px;color:#64748B;margin-top:2px">Programs + CC recovery + dormant revival</div>
         </div>
-        <div style="background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:6px 9px">
-          <div style="font-size:11px;font-weight:800;color:#0A2540">Payback &nbsp;<span style="color:#00B27A">6.5–12 mo</span></div>
-          <div style="font-size:7.5px;color:#64748B;margin-top:1px">$1.68M investment vs $3–5M annual ARR save</div>
+        <div style="flex:1;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:0 9px;display:flex;flex-direction:column;justify-content:center;margin-bottom:5px">
+          <div style="font-size:12px;font-weight:800;color:#0A2540">Payback &nbsp;<span style="color:#00B27A">6.5–12 mo</span></div>
+          <div style="font-size:7.5px;color:#64748B;margin-top:2px">$1.68M investment vs $3–5M annual ARR save</div>
         </div>
-        <div style="background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:6px 9px">
-          <div style="font-size:11px;font-weight:800;color:#0A2540">Involuntary churn &nbsp;<span style="color:#00B27A">↓57%</span></div>
-          <div style="font-size:7.5px;color:#64748B;margin-top:1px">Pre-dunning + CC automation + collections</div>
+        <div style="flex:1;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:0 9px;display:flex;flex-direction:column;justify-content:center;margin-bottom:5px">
+          <div style="font-size:12px;font-weight:800;color:#0A2540">Involuntary churn &nbsp;<span style="color:#00B27A">↓57%</span></div>
+          <div style="font-size:7.5px;color:#64748B;margin-top:2px">Pre-dunning + CC automation + collections</div>
         </div>
-        <div style="background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:6px 9px">
-          <div style="font-size:11px;font-weight:800;color:#0A2540">Cost to ARR &nbsp;<span style="color:#00B27A">1.68%</span></div>
-          <div style="font-size:7.5px;color:#64748B;margin-top:1px">vs industry avg 2–3% — lean, AI-augmented model</div>
+        <div style="flex:1;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:0 9px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-size:12px;font-weight:800;color:#0A2540">Cost to ARR &nbsp;<span style="color:#00B27A">1.68%</span></div>
+          <div style="font-size:7.5px;color:#64748B;margin-top:2px">vs industry avg 2–3% — lean, AI-augmented model</div>
         </div>
       </div>
     </div>
 
   </div>
 
-  <!-- Why Now / What Now strip -->
-  <div style="background:#0A2540;border-radius:5px;padding:6px 14px;display:flex;gap:14px;align-items:center">
+  <!-- Why Now strip — pinned at bottom -->
+  <div style="flex-shrink:0;background:#0A2540;border-radius:5px;padding:8px 14px;display:flex;gap:14px;align-items:center">
     <div style="font-size:8.5px;font-weight:700;color:#00B27A;flex-shrink:0;white-space:nowrap">WHY NOW</div>
     <div style="width:1px;background:rgba(255,255,255,0.15);align-self:stretch"></div>
     <div style="font-size:8px;color:rgba(255,255,255,0.75)">$80M re-earned every 30 days with no structured coverage model = ~$2M in preventable churn every month we delay. The structure, tooling, and programs are defined in this deck — this is the operating manual to run it from Day 1.</div>
