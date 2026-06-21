@@ -2806,7 +2806,180 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
-<!-- ── S28 · APPENDIX ── -->
+<!-- ── S28 · CC DECLINE & COLLECTIONS ── -->
+<div class="slide" id="s28cc">
+<div class="slide-header">
+  <h1>CC Decline &amp; Collections — Business Desk</h1>
+  <span class="sub">Pre-dunning automation · Dunning flow &amp; retry logic · Offline payments · Team structure &amp; cost model</span>
+</div>
+<div class="slide-body">
+
+  <!-- Dunning timeline strip -->
+  <div style="background:#fff;border:1.5px solid #E2E8F0;border-radius:6px;padding:9px 12px;margin-bottom:8px">
+    <div class="sc-section-lbl" style="margin-bottom:6px">Monthly CC Dunning Timeline — Card Declined / Expired / Insufficient Funds</div>
+    <div style="display:flex;align-items:stretch;gap:0">
+
+      <div style="flex:1;text-align:center">
+        <div style="background:#EF4444;color:#fff;padding:3px 6px;border-radius:4px 0 0 0;font-size:8.5px;font-weight:700">D 0</div>
+        <div style="background:#FEE2E2;border:1px solid #FECACA;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
+          <b>Charge fails</b><br>1 auto-retry<br>Email: "Payment failed"<br>+ update-card link
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;padding-bottom:0;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
+      <div style="flex:1;text-align:center">
+        <div style="background:#F59E0B;color:#fff;padding:3px 6px;font-size:8.5px;font-weight:700">D +3</div>
+        <div style="background:#FFFBEB;border:1px solid #FCD34D;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
+          <b>Retry #2</b><br>Customer.io seq #2<br>In-app banner live<br>&nbsp;
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
+      <div style="flex:1;text-align:center">
+        <div style="background:#EA580C;color:#fff;padding:3px 6px;font-size:8.5px;font-weight:700">D +7</div>
+        <div style="background:#FFF7ED;border:1px solid #FDBA74;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
+          <b>Retry #3 + SMS</b><br>Urgent email — final<br>CSM alert if ARR &gt;$500<br>&nbsp;
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
+      <div style="flex:1;text-align:center">
+        <div style="background:#DC2626;color:#fff;padding:3px 6px;font-size:8.5px;font-weight:700">D +14</div>
+        <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
+          <b>Service suspension</b><br>Calls blocked<br>Data preserved 30d<br>Business desk calls
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
+      <div style="flex:1;text-align:center">
+        <div style="background:#7F1D1D;color:#fff;padding:3px 6px;border-radius:0 4px 0 0;font-size:8.5px;font-weight:700">D +21</div>
+        <div style="background:#FEF2F2;border:1px solid #FECACA;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
+          <b>Hard cancellation</b><br>Churn recorded<br>Data export 30d<br>Winback tagged
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 columns -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px">
+
+    <!-- Col 1: Pre-dunning automation -->
+    <div style="border:1.5px solid #00B27A;border-radius:6px;overflow:hidden">
+      <div style="background:#00B27A;color:#fff;font-size:9px;font-weight:700;padding:5px 10px;letter-spacing:0.4px">PRE-DUNNING AUTOMATION — Proactive</div>
+      <div style="padding:8px 10px;background:#F0FDF4">
+        <div style="font-size:8px;color:#444;margin-bottom:5px">Resolve failures <em>before</em> D0 — target: &gt;40% of dunning cases eliminated upstream.</div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#00B27A;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−30</span><span>Stripe/Chargebee: scan cards expiring in 30d → Customer.io "update card" email auto-fires</span></div>
+          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#00B27A;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−14</span><span>No update yet → Userpilot in-app nudge + email reminder with 1-click card update button</span></div>
+          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#F59E0B;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−7</span><span><b>Soft-auth ($0 hold)</b> to validate card. Fail → business desk outreach list; no waiting for D0 bounce</span></div>
+          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#F59E0B;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−3</span><span>Final pre-renewal nudge: SMS + Intercom Fin proactive chat — "Your renewal is in 3 days"</span></div>
+        </div>
+        <div style="margin-top:6px;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 7px;font-size:7.5px;color:#444">
+          <b style="color:#065F46">Stack:</b> Stripe / Chargebee + Customer.io + Userpilot + Intercom Fin
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 2: CC dunning chase detail -->
+    <div style="border:1.5px solid #EF4444;border-radius:6px;overflow:hidden">
+      <div style="background:#EF4444;color:#fff;font-size:9px;font-weight:700;padding:5px 10px;letter-spacing:0.4px">CC DUNNING — CHASE PLAYBOOK</div>
+      <div style="padding:8px 10px;background:#FFF5F5">
+        <div style="font-size:8px;font-weight:700;color:#991B1B;margin-bottom:3px">RETRY SCHEDULE</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:6px">
+          <div style="background:#FEE2E2;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444">Attempt 1 — Renewal date (immediate)</div>
+          <div style="background:#FEE2E2;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444">Attempt 2 — D+3 (72h later, different time slot)</div>
+          <div style="background:#FEE2E2;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444">Attempt 3 — D+7 (final automatic retry)</div>
+          <div style="background:#FFF0F0;border-radius:3px;padding:3px 7px;font-size:7.5px;color:#444;font-style:italic">3 fails → business desk manual outreach</div>
+        </div>
+        <div style="font-size:8px;font-weight:700;color:#991B1B;margin-bottom:3px">TRIAGE BY ARR</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:6px">
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#FFF5F5;border-radius:3px;padding:3px 7px">
+            <span style="color:#EF4444;font-weight:700;min-width:60px">&gt;$500/mo</span><span>CSM alerted D+7; personal call D+10</span>
+          </div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#FFF5F5;border-radius:3px;padding:3px 7px">
+            <span style="color:#F59E0B;font-weight:700;min-width:60px">$100–500</span><span>Business desk: automated + 1 call attempt</span>
+          </div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#FFF5F5;border-radius:3px;padding:3px 7px">
+            <span style="color:#64748B;font-weight:700;min-width:60px">&lt;$100</span><span>Fully automated — no human touch</span>
+          </div>
+        </div>
+        <div style="font-size:8px;font-weight:700;color:#991B1B;margin-bottom:3px">CHANNEL ORDER</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">1. Email (auto)</div>
+          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">2. In-app banner</div>
+          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">3. SMS (D+7)</div>
+          <div style="background:#FEE2E2;border-radius:3px;padding:2px 6px;font-size:7.5px;color:#444">4. Call (desk / CSM)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 3: Offline / bank transfer -->
+    <div style="border:1.5px solid #6366F1;border-radius:6px;overflow:hidden">
+      <div style="background:#6366F1;color:#fff;font-size:9px;font-weight:700;padding:5px 10px;letter-spacing:0.4px">OFFLINE PAYMENTS — BANK TRANSFER</div>
+      <div style="padding:8px 10px;background:#F5F3FF">
+        <div style="font-size:8px;color:#444;margin-bottom:5px">MM accounts &amp; annual contracts only. SMB T1–T3 must keep card on file.</div>
+        <div style="font-size:8px;font-weight:700;color:#4338CA;margin-bottom:3px">TERMS &amp; COLLECTIONS WINDOW</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:6px">
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EEF2FF;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D 0</span><span>Invoice auto-issued. <b>Net 7 standard terms.</b></span></div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EEF2FF;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D+7</span><span>Overdue notice + CS nudge to MM accounts</span></div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EEF2FF;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D+14</span><span>Finance escalation + service access warning sent</span></div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EDE9FE;border-radius:3px;padding:3px 7px"><span style="font-weight:700;min-width:32px">D+21</span><span>Service suspension. Payment plan option: max 2× per year</span></div>
+          <div style="display:flex;gap:6px;font-size:7.5px;color:#444;background:#EDE9FE;border-radius:3px;padding:3px 7px;border:1px solid #C4B5FD"><span style="font-weight:700;min-width:32px">D+30</span><span><b>Hard cancellation</b> if no payment or agreed plan</span></div>
+        </div>
+        <div style="font-size:8px;font-weight:700;color:#4338CA;margin-bottom:3px">GOVERNANCE</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <div style="font-size:7.5px;color:#444;background:#fff;border:1px solid #C4B5FD;border-radius:3px;padding:3px 7px">Finance owns invoice tracking; CS owns the account relationship</div>
+          <div style="font-size:7.5px;color:#444;background:#fff;border:1px solid #C4B5FD;border-radius:3px;padding:3px 7px">Quarterly audit: % of offline accounts switched to card (reduces float risk)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Business desk recommendation -->
+  <div style="border:1.5px solid #0A2540;border-radius:6px;overflow:hidden">
+    <div style="background:#0A2540;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:0.4px">BUSINESS DESK — WHO RUNS BILLING &amp; COLLECTIONS (Recommendation)</div>
+    <div style="padding:7px 12px 8px;background:#fff">
+      <div style="display:grid;grid-template-columns:1.15fr 1fr 1fr 1.25fr;gap:8px">
+        <div style="background:#F1F5F9;border-radius:4px;padding:6px 8px">
+          <div style="font-size:8px;font-weight:700;color:#0A2540;margin-bottom:4px">VOLUME CALC</div>
+          <div style="font-size:7.5px;color:#444;line-height:1.6">
+            25,000 accts × 70% monthly = <b>17,500 billing/mo</b><br>
+            Dunning rate ~3–5% → <b>525–875 cases/mo</b><br>
+            Offline/bank transfer → ~150–200 cases/mo<br>
+            <b>Total: ~700–1,000 cases/month</b>
+          </div>
+        </div>
+        <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:4px;padding:6px 8px">
+          <div style="font-size:8px;font-weight:700;color:#065F46;margin-bottom:4px">RECOMMENDATION</div>
+          <div style="font-size:7.5px;color:#444;line-height:1.6">
+            <b>3 contract billing agents</b> (not CSMs)<br>
+            Automation handles &gt;60% of cases<br>
+            Agents handle escalations &amp; calls<br>
+            CSMs stay out of billing entirely
+          </div>
+        </div>
+        <div style="background:#FFFBEB;border:1px solid #FCD34D;border-radius:4px;padding:6px 8px">
+          <div style="font-size:8px;font-weight:700;color:#B45309;margin-bottom:4px">COST MODEL (INR)</div>
+          <div style="font-size:7.5px;color:#444;line-height:1.6">
+            3 contractors × ₹35K/mo = <b>₹1.05L/mo</b><br>
+            Tool costs (Chargebee) ~₹40K/mo<br>
+            vs. CSM billing time: ~<b>₹3.8L/mo</b><br>
+            <b>Net saving ≈ ₹30L/yr</b>
+          </div>
+        </div>
+        <div style="background:#F5F3FF;border:1px solid #C4B5FD;border-radius:4px;padding:6px 8px">
+          <div style="font-size:8px;font-weight:700;color:#4338CA;margin-bottom:4px">TOOLING STACK</div>
+          <div style="font-size:7.5px;color:#444;line-height:1.6">
+            <b>Stripe Billing / Chargebee</b> — retry logic, dunning automation, invoice<br>
+            <b>Customer.io</b> — email sequences D−30 → D+14<br>
+            <b>ChurnZero</b> — flag delinquent as churn risk task<br>
+            <b>Userpilot</b> — in-app card update nudge
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── S29 · APPENDIX ── -->
 <div class="slide" id="s18">
 <div class="slide-header">
   <h1>Appendix &#8212; Key Assumptions</h1>
@@ -2853,7 +3026,7 @@ tr:last-child td{border-bottom:none}
 <nav class="nav-bar">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
   <div class="slide-dots" id="dotsContainer"></div>
-  <span class="slide-counter" id="counter">1 / 27</span>
+  <span class="slide-counter" id="counter">1 / 28</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
 </nav>
 
