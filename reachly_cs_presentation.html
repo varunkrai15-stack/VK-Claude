@@ -1086,6 +1086,81 @@ tr:last-child td{border-bottom:none}
     <strong>Monthly Renewal Cohort Prioritisation:</strong> 80% of renewals are monthly &#8212; CSM and digital agents work a rolling 30-day cohort. Every Monday: ChurnZero auto-generates &#8220;this week&#8217;s renewal cohort&#8221; ranked by <strong>health score &#215; ARR &#215; days-to-renewal</strong>. CSM knows: which accounts to call this week, in what order, and with what talking point.
   </div>
 
+  <!-- Section 5: How we measure model success -->
+  <div style="margin-top:7px;flex-shrink:0">
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#64748B;margin-bottom:5px">How We Measure Model Success</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px">
+      <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #7C3AED;border-radius:5px;padding:6px 8px">
+        <div style="font-size:7.5px;font-weight:700;color:#7C3AED;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Model Health</div>
+        <div style="font-size:8px;color:#374151;line-height:1.45"><b>Precision &#8805; 70%</b> &#8212; of accounts flagged P1, &#8805;70% actually churn &middot; <b>Catch rate &#8805; 80%</b> &#8212; % of churned accounts that were P1/P2-flagged 30+ days before &middot; <b>Avg lead time &#8805; 45 days</b> &#8212; intervention window before renewal</div>
+      </div>
+      <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #0A2540;border-radius:5px;padding:6px 8px">
+        <div style="font-size:7.5px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Segment KPIs</div>
+        <div style="font-size:8px;color:#374151;line-height:1.45"><b>MM</b> &#8212; CSM save rate on P1 accounts &gt;50% &middot; <b>T1 SMB</b> &#8212; pooled queue save rate &gt;30%; avg first-touch &lt;5 days &middot; <b>T2+T3</b> &#8212; digital campaign engagement &gt;20%; login restart after touch &gt;15%</div>
+      </div>
+      <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-left:3px solid #00B27A;border-radius:5px;padding:6px 8px">
+        <div style="font-size:7.5px;font-weight:700;color:#005C3F;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Business Validation</div>
+        <div style="font-size:8px;color:#374151;line-height:1.45"><b>GRR moving +1pp/quarter</b> confirms signals are converting to saves &middot; <b>Queue utilisation &gt;85%</b> &#8212; P1 accounts touched within SLA &middot; <b>False positive &lt;30%</b> &#8212; flagged-but-retained; if &gt;30%, weights recalibrated immediately</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 6: Build & Deploy Roadmap -->
+  <div style="margin-top:7px;flex-shrink:0">
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#64748B;margin-bottom:5px">Build &amp; Deploy Roadmap</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px">
+      <div style="background:#0A2540;border-radius:5px;padding:7px 9px">
+        <div style="font-size:8px;font-weight:700;color:#00B27A;letter-spacing:.5px;margin-bottom:3px">Phase 1 &middot; Days 0&#8211;30 &middot; Design</div>
+        <div style="font-size:7.5px;color:rgba(255,255,255,0.78);line-height:1.45">Define 50 parameters &amp; initial weights from 12-month churn back-test &middot; Set segment-specific score thresholds (MM vs T1 vs T2+T3) &middot; Map signal sources: RudderStack events, Stripe webhooks, Zendesk tickets, HubSpot champion-change detection</div>
+      </div>
+      <div style="background:#0A2540;border-radius:5px;padding:7px 9px">
+        <div style="font-size:8px;font-weight:700;color:#00B27A;letter-spacing:.5px;margin-bottom:3px">Phase 2 &middot; Days 31&#8211;60 &middot; Build</div>
+        <div style="font-size:7.5px;color:rgba(255,255,255,0.78);line-height:1.45">Build RudderStack &#8594; ChurnZero pipeline &middot; Configure weighted health score formula in ChurnZero &middot; Run shadow mode: score every account, don&#8217;t surface to CSMs yet &middot; Compare shadow scores against actual churn &middot; Tune until precision &gt;65%</div>
+      </div>
+      <div style="background:#0A2540;border-radius:5px;padding:7px 9px">
+        <div style="font-size:8px;font-weight:700;color:#00B27A;letter-spacing:.5px;margin-bottom:3px">Phase 3 &middot; Days 61&#8211;90 &middot; Deploy</div>
+        <div style="font-size:7.5px;color:rgba(255,255,255,0.78);line-height:1.45">Go live MM first (highest ARR, easiest to validate saves) &middot; Auto-generate weekly T1 pooled queue &middot; Trigger digital sequences for T2+T3 on score drop &middot; Quarterly BI recalibration cycle &middot; Gate: if precision &lt;70% at Day 90, revert to manual CSM queue</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 7: Blockers & Mitigations -->
+  <div style="margin-top:7px;flex-shrink:0">
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#64748B;margin-bottom:5px">Possible Blockers &amp; Solutions</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px">
+      <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:5px;padding:6px 8px">
+        <div style="font-size:7.5px;font-weight:700;color:#DC2626;margin-bottom:2px">&#9650; Dirty / incomplete product data</div>
+        <div style="font-size:7.5px;color:#374151;line-height:1.4">RudderStack event gaps make the health score misfire on key signals &#8212; flags wrong accounts, burns CSM trust early.</div>
+        <div style="font-size:7.5px;color:#005C3F;font-weight:600;margin-top:3px">Fix: Week-1 data audit &middot; shadow mode runs parallel before go-live &middot; score only surfaces if data completeness &gt;80%</div>
+      </div>
+      <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:5px;padding:6px 8px">
+        <div style="font-size:7.5px;font-weight:700;color:#DC2626;margin-bottom:2px">&#9650; No historical signal-churn correlation</div>
+        <div style="font-size:7.5px;color:#374151;line-height:1.4">Starting weights are estimates without labelled signal-to-churn data &#8212; model v1 precision may only reach 55&#8211;60%.</div>
+        <div style="font-size:7.5px;color:#005C3F;font-weight:600;margin-top:3px">Fix: Back-test 12 months of churned accounts &middot; seed with Gainsight benchmark weights &middot; recalibrate at Day 30, 60, 90</div>
+      </div>
+      <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:5px;padding:6px 8px">
+        <div style="font-size:7.5px;font-weight:700;color:#DC2626;margin-bottom:2px">&#9650; CSM gut-feel overrides score</div>
+        <div style="font-size:7.5px;color:#374151;line-height:1.4">CSMs trust their own relationship read over the algorithm &#8212; model flags are ignored, queue works from memory.</div>
+        <div style="font-size:7.5px;color:#005C3F;font-weight:600;margin-top:3px">Fix: Score IS the queue &#8212; no manual list &middot; playbook access gated by health score &middot; manager tracks override rate weekly</div>
+      </div>
+      <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:5px;padding:6px 8px">
+        <div style="font-size:7.5px;font-weight:700;color:#DC2626;margin-bottom:2px">&#9650; Model drift as product evolves</div>
+        <div style="font-size:7.5px;color:#374151;line-height:1.4">New features, pricing changes, or behaviour shifts make weights stale within 6&#8211;9 months; precision decays silently.</div>
+        <div style="font-size:7.5px;color:#005C3F;font-weight:600;margin-top:3px">Fix: BI Analyst owns quarterly recalibration &middot; auto-alert if precision drops &lt;65% between review cycles</div>
+      </div>
+      <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:5px;padding:6px 8px">
+        <div style="font-size:7.5px;font-weight:700;color:#DC2626;margin-bottom:2px">&#9650; False-positive fatigue</div>
+        <div style="font-size:7.5px;color:#374151;line-height:1.4">Too many P1 alerts &#8212; CSMs deprioritise all flags &#8212; the urgency signal loses meaning within weeks.</div>
+        <div style="font-size:7.5px;color:#005C3F;font-weight:600;margin-top:3px">Fix: P1 queue capped at 15% of book &middot; P1 requires 2+ co-occurring signals &middot; false-positive rate tracked as L1 KPI</div>
+      </div>
+      <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:5px;padding:6px 8px">
+        <div style="font-size:7.5px;font-weight:700;color:#DC2626;margin-bottom:2px">&#9650; One score, wrong thresholds per segment</div>
+        <div style="font-size:7.5px;color:#374151;line-height:1.4">A single threshold treats a $49k MM account and a $1.1k T3 the same &#8212; wrong intervention intensity across the book.</div>
+        <div style="font-size:7.5px;color:#005C3F;font-weight:600;margin-top:3px">Fix: Segment thresholds in ChurnZero &#8212; MM human at &lt;65 &middot; T1 pooled queue at &lt;55 &middot; T2+T3 digital at &lt;45</div>
+      </div>
+    </div>
+  </div>
+
 <div class="eval-strip">
   <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Product-behaviour signals (usage trends, integration health, seat utilisation) are 3&#8211;4&#215; more predictive of churn than lagging indicators (NPS, renewal proximity). This drives investment in RudderStack + ChurnZero. If model precision &lt;70%, automation is gated &#8212; human review stays in the loop.</span></div>
   <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">Earlier detection &#8594; higher save rate. Churn caught 90&#8211;120 days out allows 3&#8211;4 intervention attempts vs 0&#8211;1 at renewal. Each 1pp save rate improvement on at-risk pool = ~$300k+ ARR retained. Signal-based model is the GRR lever with the longest time horizon.</span></div>
