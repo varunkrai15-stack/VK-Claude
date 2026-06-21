@@ -1299,69 +1299,196 @@ tr:last-child td{border-bottom:none}
 <div class="slide" id="s14">
 <div class="slide-header">
   <div style="display:inline-flex;margin-bottom:5px"><span style="background:#00B27A;color:#fff;font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;border-radius:4px;padding:3px 10px">Level 2</span></div>
-  <h1>Retention Programs &#8212; Designed Against the Lifecycle</h1>
-  <span class="sub">Pre-90 and post-90 cohorts &middot; deletion and downgrade prevention &middot; MM 1:1, SMB scale, tech-touch PLG</span>
+  <h1>Retention Programs &#8212; Sequenced Against the Customer Lifecycle</h1>
+  <span class="sub">MM named CSM &middot; T1 SMB pooled signal-first &middot; T2+T3 fully digital &middot; pre-90 activation cohort &middot; post-90 value &amp; renewal cohort</span>
 </div>
-<div class="slide-body">
+<div class="slide-body" style="padding:8px 44px 14px;display:flex;flex-direction:column;gap:3px">
 
-  <!-- Section 1: Two Cohort Frames -->
-  <div class="cohort-cards">
-    <div class="cohort-card red-border">
-      <div class="cohort-card-hdr red-hdr">
-        <div class="cohort-card-title red">Pre-90 Day Cohort &#8212; The Leaky Bucket</div>
-        <div class="cohort-card-stat red">43%</div>
-        <div class="cohort-card-desc">of SMB churn lands before Day 90 &#8212; activation failures, not usage failures</div>
-      </div>
-      <div class="cohort-card-body">
-        <div class="cohort-program">Day 2 retention call (MM)</div>
-        <div class="cohort-program">Onboarding milestone check-ins (Days 7, 14, 30)</div>
-        <div class="cohort-program">Integration setup sprint</div>
-        <div class="cohort-program">First-value proof email (T1+2)</div>
-        <div class="cohort-program">In-app guided activation (T3)</div>
-      </div>
+  <!-- Pre / Post-90 cohort brackets -->
+  <div style="display:grid;grid-template-columns:152px repeat(5,1fr);gap:3px;flex-shrink:0">
+    <div></div>
+    <div style="grid-column:2/5;background:#FFF0F0;border:1.5px solid #FCA5A5;border-bottom:none;border-radius:5px 5px 0 0;padding:3px 10px;display:flex;align-items:center;justify-content:center;gap:10px">
+      <span style="font-size:9px;font-weight:700;color:#DC2626;text-transform:uppercase;letter-spacing:.5px">&#9650; Pre-90 Cohort</span>
+      <span style="font-size:8.5px;color:#B91C1C">43% of SMB churn lands here &mdash; activation &amp; first-value failure</span>
     </div>
-    <div class="cohort-card green-border">
-      <div class="cohort-card-hdr green-hdr">
-        <div class="cohort-card-title green-t">Post-90 Day Cohort &#8212; Value Erosion</div>
-        <div class="cohort-card-stat green-s">Activated</div>
-        <div class="cohort-card-desc">but value is fading &#8212; requires ongoing proof, expansion, and habit reinforcement</div>
-      </div>
-      <div class="cohort-card-body">
-        <div class="cohort-program">Quarterly Business Reviews (MM)</div>
-        <div class="cohort-program">Monthly health-based touchpoints (T1)</div>
-        <div class="cohort-program">Automated value nudges (T2+3)</div>
-        <div class="cohort-program">Annual contract conversion program</div>
-      </div>
+    <div style="grid-column:5/7;background:#F0FDF4;border:1.5px solid #86EFAC;border-bottom:none;border-radius:5px 5px 0 0;padding:3px 10px;display:flex;align-items:center;justify-content:center;gap:10px">
+      <span style="font-size:9px;font-weight:700;color:#166534;text-transform:uppercase;letter-spacing:.5px">&#9650; Post-90 Cohort</span>
+      <span style="font-size:8.5px;color:#15803D">Value erosion, stickiness &amp; renewal lock-in</span>
     </div>
   </div>
 
-  <!-- Section 2: Retention Program Matrix -->
-  <table style="margin-bottom:10px">
-    <thead>
-      <tr><th>Program</th><th>Segment</th><th>Format</th><th>Trigger</th><th>Owner</th><th>Goal</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>Day 2 Retention Call</strong></td><td>MM + T1</td><td>1:1 video/call</td><td>Auto-scheduled at signup</td><td>CSM</td><td>Surface early friction before it becomes intent</td></tr>
-      <tr><td><strong>Onboarding Milestone Check-ins</strong> (D7, D14, D30)</td><td>MM + T1</td><td>1:1 + in-app</td><td>Milestone not hit</td><td>CSM + Userpilot</td><td>Drive activation to 80% by Day 30</td></tr>
-      <tr><td><strong>Integration Setup Sprint</strong></td><td>MM + T1</td><td>Guided call</td><td>HubSpot/SF not connected Day 7</td><td>CSM</td><td>Remove #1 activation blocker</td></tr>
-      <tr><td><strong>First Value Proof Email</strong></td><td>T1 + T2</td><td>Automated email</td><td>30 calls made milestone</td><td>Customer.io</td><td>Prove ROI early &#8212; &#8220;you made 30 calls, here&#8217;s what that means&#8221;</td></tr>
-      <tr><td><strong>In-App Guided Activation</strong></td><td>T3 (20k accts)</td><td>PLG / in-app</td><td>Day 1 product trigger</td><td>Userpilot</td><td>Scale onboarding without headcount</td></tr>
-      <tr><td><strong>Monthly Health Touchpoint</strong></td><td>T1</td><td>1:many email/webinar</td><td>Health score amber</td><td>Customer.io + CSM pool</td><td>Prevent silent churn</td></tr>
-      <tr><td><strong>Quarterly Business Review</strong></td><td>MM Strategic</td><td>1:1 exec call</td><td>Quarterly auto-scheduled</td><td>CSM + CS Ops</td><td>Value proof + expansion signal</td></tr>
-      <tr><td><strong>Annual Contract Conversion</strong></td><td>T1 + T2</td><td>Targeted outreach</td><td>Month 8-10 of tenure</td><td>CS Ops + CSM</td><td>Convert M-t-M to annual &#8212; lock GRR</td></tr>
-      <tr><td><strong>Win-Back Campaign</strong></td><td>Churned &lt;90 days</td><td>Automated sequence</td><td>Post-churn day 7</td><td>Customer.io</td><td>Recover involuntary + regretted churn</td></tr>
-      <tr><td><strong>Pricing Rescue Program</strong></td><td>Downgrade intent</td><td>1:1 call</td><td>Pricing objection in ticket or call</td><td>CSM + AE</td><td>Right-size plan vs lose account</td></tr>
-    </tbody>
-  </table>
+  <!-- Lifecycle stage column headers -->
+  <div style="display:grid;grid-template-columns:152px repeat(5,1fr);gap:3px;flex-shrink:0">
+    <div style="background:#F1F5F9;border-radius:4px;padding:5px 8px;display:flex;align-items:center">
+      <span style="font-size:8.5px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.5px">Segment</span>
+    </div>
+    <div style="background:#FFF0F0;border:1.5px solid #FCA5A5;border-top:none;border-radius:0 0 4px 4px;padding:4px 6px;text-align:center">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540">Onboarding</div>
+      <div style="font-size:8px;color:#64748B">Day 0 &ndash; 7</div>
+    </div>
+    <div style="background:#FFF0F0;border:1.5px solid #FCA5A5;border-top:none;border-left:none;border-radius:0 0 4px 4px;padding:4px 6px;text-align:center">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540">Activation</div>
+      <div style="font-size:8px;color:#64748B">Day 7 &ndash; 30</div>
+    </div>
+    <div style="background:#FFF0F0;border:1.5px solid #FCA5A5;border-top:none;border-left:none;border-radius:0 0 4px 4px;padding:4px 6px;text-align:center">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540">First Value</div>
+      <div style="font-size:8px;color:#64748B">Day 30 &ndash; 90</div>
+    </div>
+    <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-top:none;border-radius:0 0 4px 4px;padding:4px 6px;text-align:center">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540">Adoption &amp; Proof</div>
+      <div style="font-size:8px;color:#64748B">Day 90 &ndash; 180</div>
+    </div>
+    <div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-top:none;border-left:none;border-radius:0 0 4px 4px;padding:4px 6px;text-align:center">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540">Risk &amp; Renewal</div>
+      <div style="font-size:8px;color:#64748B">Day 180+</div>
+    </div>
+  </div>
 
-  <!-- Section 3: Downgrade Prevention -->
-  <div class="downgrade-box">
-    <strong>Downgrade is the silent GRR killer</strong> &#8212; harder to see than deletion. Monitor: seat reduction requests, plan downgrade attempts, usage below plan threshold for 30 days. Playbook fires before customer asks: proactively right-size or add value rather than react after the request.
+  <!-- MM Strategic -->
+  <div style="display:grid;grid-template-columns:152px repeat(5,1fr);gap:3px;flex:1;min-height:0">
+    <div style="background:#0A2540;border-radius:5px;padding:7px 10px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:8px;font-weight:700;color:#00B27A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">MM Strategic</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;line-height:1.3">13 Named CSMs</div>
+      <div style="font-size:8px;color:rgba(255,255,255,0.5);margin-top:3px">$15&ndash;49k ACV &middot; 1:1 model</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Day 2 Retention Call</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">Surface early friction before it hardens into intent</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">CSM (named)</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">D7 / D14 / D30 Milestones</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">Integration sprint · HubSpot/SF by Day 7 · activation to 80%</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">CSM + Onboarding Specialist</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Feature Deep-Dive Session</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">Drive 3+ feature adoption: Power Dialer, AI scoring, SMS · first QBR prep</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">CSM</div>
+    </div>
+    <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Quarterly Business Review</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">Value proof + expansion signal + exec stakeholder alignment</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">CSM + CS Lead</div>
+    </div>
+    <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Pre-Renewal Executive Review</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">Renewal plan · pricing rescue if needed · champion re-engagement</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">CSM + AE</div>
+    </div>
+  </div>
+
+  <!-- MM Core -->
+  <div style="display:grid;grid-template-columns:152px repeat(5,1fr);gap:3px;flex:1;min-height:0">
+    <div style="background:#1A3A5C;border-radius:5px;padding:7px 10px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:8px;font-weight:700;color:#00B27A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">MM Core</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;line-height:1.3">7 Named CSMs</div>
+      <div style="font-size:8px;color:rgba(255,255,255,0.5);margin-top:3px">$7&ndash;15k ACV &middot; 1:1 model</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Welcome Call + Setup Guide</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">CSM-led onboarding with Userpilot supplement</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">CSM</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">D14 / D30 Milestones</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">Integration health check · first-value confirmation</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">CSM</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Monthly Health Check</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">ChurnZero signal review · address amber flags proactively</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">CSM</div>
+    </div>
+    <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Bi-Annual Business Review</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">ROI review · seat expansion conversation · upsell signal</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">CSM</div>
+    </div>
+    <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Annual Contract Conversion</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">Month 8&ndash;10: M-t-M &rarr; annual · lock GRR for 12 months</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">CSM + CS Ops</div>
+    </div>
+  </div>
+
+  <!-- T1 SMB Pooled -->
+  <div style="display:grid;grid-template-columns:152px repeat(5,1fr);gap:3px;flex:1;min-height:0">
+    <div style="background:#00572E;border-radius:5px;padding:7px 10px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:8px;font-weight:700;color:#6EE7B7;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">T1 SMB Pooled</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;line-height:1.3">10 Pooled CSMs</div>
+      <div style="font-size:8px;color:rgba(255,255,255,0.5);margin-top:3px">$4.6&ndash;7k ACV &middot; signal-first queue</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Welcome Email + Userpilot</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">In-app guided setup · integration checklist</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">Customer.io + Userpilot</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">First-Value Proof Email</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">&ldquo;You made 30 calls &mdash; here's your ROI&rdquo; · D30 pooled CSM check</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">Customer.io + Pooled CSM</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Health Score Queue</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">ChurnZero auto-queue · amber &rarr; pooled CSM call within 5 days</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">ChurnZero + Pooled CSM</div>
+    </div>
+    <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Monthly Health Email</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">Automated usage digest · feature tip nudge</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">Customer.io</div>
+    </div>
+    <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Pooled Save Play + Annual Offer</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">P1 flagged &rarr; pooled CSM · Month 8&ndash;10 annual upgrade</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">Pooled CSM + Customer.io</div>
+    </div>
+  </div>
+
+  <!-- T2+T3 SMB Digital -->
+  <div style="display:grid;grid-template-columns:152px repeat(5,1fr);gap:3px;flex:1;min-height:0">
+    <div style="background:#075985;border-radius:5px;padding:7px 10px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:8px;font-weight:700;color:#BAE6FD;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">T2 + T3 SMB</div>
+      <div style="font-size:11px;font-weight:700;color:#fff;line-height:1.3">14,400 Accounts</div>
+      <div style="font-size:8px;color:rgba(255,255,255,0.5);margin-top:3px">$1&ndash;4.6k ACV &middot; fully digital</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Welcome Email + In-App Guide</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">Userpilot step-by-step flow · no human in the loop</div>
+      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">Customer.io + Userpilot</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Feature Activation Nudge</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">D14 prompt if no 2nd feature · Fin AI for product questions</div>
+      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">Userpilot + Fin (AI)</div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Re-Engagement Campaign</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">Usage-drop email sequence · NPS survey at Day 60</div>
+      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">Customer.io + Digital CS</div>
+    </div>
+    <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Quarterly Value Digest</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">&ldquo;Your team made X calls, saved Y hrs&rdquo; · in-app upgrade prompt</div>
+      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">Customer.io + Digital CS</div>
+    </div>
+    <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
+      <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Renewal Flow + Win-Back</div>
+      <div style="font-size:8.5px;color:#374151;line-height:1.45">5-email renewal sequence · Fin cancellation intervention · D7 win-back if churned</div>
+      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">Customer.io + Fin + Digital CS</div>
+    </div>
+  </div>
+
+  <!-- Bottom callout bar -->
+  <div style="background:#0A2540;border-radius:6px;padding:8px 14px;display:grid;grid-template-columns:1fr 1fr;gap:12px;flex-shrink:0">
+    <div style="font-size:9.5px;color:rgba(255,255,255,0.85);line-height:1.55"><b style="color:#fff">Downgrade is the silent GRR killer.</b> Monitor seat-reduction requests, plan downgrades and sub-plan usage &lt;30 days. Playbook fires before customer asks &mdash; proactively right-size or add value rather than react after the request arrives.</div>
+    <div style="font-size:9.5px;color:rgba(255,255,255,0.85);line-height:1.55"><b style="color:#fff">Annual contract conversion at Month 8&ndash;10</b> (T1 + MM Core) locks GRR for 12 months vs 1. Converting 20% of monthly T1 accounts to annual = 12&times; renewal certainty and removes the monthly churn risk exposure entirely.</div>
   </div>
 
 <div class="eval-strip">
-  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">43% of SMB churn is an activation failure &#8212; not a product-market fit failure. Customers who fail to reach first-value (Day 30) exit at renewal #1. This prioritises onboarding investment over support or feature delivery as the primary retention lever.</span></div>
-  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">Fixing the pre-90 cohort (target: churn 43% &#8594; &lt;25%) = ~$0.87M+ ARR retained per cohort. Annual contract conversion (Month 8&#8211;10) is the secondary GRR lock-in &#8212; locking revenue for 12 months vs 1.</span></div>
+  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Programs are sequenced against when churn risk occurs in the lifecycle, not when CSMs are free. Pre-90 programs solve activation failure (root cause of 43% SMB churn); post-90 programs prove ongoing value and convert commitment. The motion &mdash; human vs digital &mdash; matches the segment's ACV and ability to fund human attention at that stage.</span></div>
+  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">Fixing the pre-90 cohort (43% early churn &rarr; &lt;25%) = ~$870k ARR retained. Annual contract conversion (Month 8&ndash;10) = 12&times; renewal certainty vs monthly. T2+T3 digital programs cost ~$81k/yr in tooling and cover 14,400 accounts &mdash; only viable because the motion is 100% automated.</span></div>
 </div>
 </div>
 </div>
