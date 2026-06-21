@@ -2976,6 +2976,60 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
+  <!-- Point 1: 0-60 day collections driven in advance -->
+  <div style="margin-top:8px;border:1.5px solid #0EA5E9;border-radius:6px;overflow:hidden">
+    <div style="background:#0EA5E9;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:0.4px">0–60 DAY COLLECTIONS — DRIVE IN ADVANCE · never let an account tip into 60+ days (= uncollectible write-off / logo loss)</div>
+    <div style="padding:7px 12px;background:#F0F9FF;display:flex;align-items:stretch;gap:0">
+      <div style="flex:1;background:#fff;border:1px solid #BAE6FD;border-radius:4px;padding:5px 9px">
+        <div style="font-size:8px;font-weight:700;color:#0369A1">0–30 DAYS · CURRENT / EARLY</div>
+        <div style="font-size:7.5px;color:#444;line-height:1.45;margin-top:2px">Auto-retries + email / SMS / in-app reminders. <b>Recover the bulk here</b> while intent is fresh and friction is low.</div>
+      </div>
+      <div style="display:flex;align-items:center;color:#0EA5E9;font-size:15px;padding:0 6px">›</div>
+      <div style="flex:1;background:#fff;border:1px solid #FCD34D;border-radius:4px;padding:5px 9px">
+        <div style="font-size:8px;font-weight:700;color:#B45309">30–60 DAYS · ACTIVE CHASE</div>
+        <div style="font-size:7.5px;color:#444;line-height:1.45;margin-top:2px">Business desk calls, payment-plan offer, finance escalation. <b>Every case must resolve before D60.</b></div>
+      </div>
+      <div style="display:flex;align-items:center;color:#0EA5E9;font-size:15px;padding:0 6px">›</div>
+      <div style="flex:1;background:#FEF2F2;border:1px solid #FCA5A5;border-radius:4px;padding:5px 9px">
+        <div style="font-size:8px;font-weight:700;color:#991B1B">60+ DAYS · WRITE-OFF RISK</div>
+        <div style="font-size:7.5px;color:#444;line-height:1.45;margin-top:2px">Uncollectible / logo loss. <b>GOAL: zero accounts reach here</b> — collections worked forward, not after the fact.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Point 2: churn reduction impact, industry vs this model -->
+  <div style="margin-top:8px;border:1.5px solid #0A2540;border-radius:6px;overflow:hidden">
+    <div style="background:#0A2540;color:#fff;font-size:9px;font-weight:700;padding:5px 12px;letter-spacing:0.4px">CHURN IMPACT — INVOLUNTARY (PAYMENT-FAILURE &amp; COLLECTIONS) CHURN · INDUSTRY BASELINE → REACHLY WITH THIS MODEL</div>
+    <div style="padding:7px 12px;background:#fff">
+      <div style="font-size:7.5px;color:#475569;margin-bottom:6px;line-height:1.45"><b>Industry context:</b> failed payments &amp; expired cards drive <b>20–40% of all SaaS churn</b> (Recurly / ProfitWell benchmarks); passive recovery is only <b>15–25%</b>, and SMB month-to-month books are the hardest hit. This is <b>recoverable churn</b> — it leaks silently with no process behind it.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:7px">
+        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 8px;text-align:center">
+          <div style="font-size:7.5px;color:#64748B;font-weight:700;min-height:20px">CC DECLINE<br>RECOVERY RATE</div>
+          <div style="font-size:13px;font-weight:800;color:#0A2540;margin-top:3px">25% <span style="color:#00B27A">→ 68%</span></div>
+          <div style="font-size:7px;color:#64748B;margin-top:2px">pre-dunning + smart retries</div>
+        </div>
+        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 8px;text-align:center">
+          <div style="font-size:7.5px;color:#64748B;font-weight:700;min-height:20px">COLLECTIONS<br>60+ DAY WRITE-OFF</div>
+          <div style="font-size:13px;font-weight:800;color:#0A2540;margin-top:3px">~7% <span style="color:#00B27A">→ ~2.5%</span></div>
+          <div style="font-size:7px;color:#64748B;margin-top:2px">of overdue AR $</div>
+        </div>
+        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:4px;padding:6px 8px;text-align:center">
+          <div style="font-size:7.5px;color:#64748B;font-weight:700;min-height:20px">INVOLUNTARY SHARE<br>OF GROSS CHURN</div>
+          <div style="font-size:13px;font-weight:800;color:#0A2540;margin-top:3px">~30% <span style="color:#00B27A">→ ~11%</span></div>
+          <div style="font-size:7px;color:#64748B;margin-top:2px">payment-failure logo loss</div>
+        </div>
+        <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:4px;padding:6px 8px;text-align:center">
+          <div style="font-size:7.5px;color:#065F46;font-weight:700;min-height:20px">ARR PROTECTED<br>PER YEAR</div>
+          <div style="font-size:13px;font-weight:800;color:#00B27A;margin-top:3px">+$4–5M</div>
+          <div style="font-size:7px;color:#64748B;margin-top:2px">on $70M monthly book</div>
+        </div>
+      </div>
+      <div style="margin-top:7px;background:#0A2540;border-radius:5px;padding:5px 13px;text-align:center;font-size:8px;color:#9fb3c8">
+        <b style="color:#fff">Net effect — uncollectible logo loss cut ~60%.</b> &nbsp;These are the cheapest saves in the business: no discount, no CSM hours — pure process + automation working <em>ahead</em> of the renewal date.
+      </div>
+    </div>
+  </div>
+
 </div>
 </div>
 
