@@ -815,6 +815,605 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
+<!-- ── S13 · CHURN PREDICTION ── -->
+<div class="slide" id="s13">
+<div class="slide-header">
+  <h1>Attacking Churn &#8212; Predictive AI Signal Engine</h1>
+  <span class="sub">50+ parameter health score &middot; 90-120 day lead time &middot; daily signal vs monthly metric &middot; segment-specific cohort prioritisation</span>
+</div>
+<div class="slide-body">
+
+  <!-- Section 1: Why Monthly Metrics Fail -->
+  <div class="why-box">
+    <h3>Why Monthly Metrics Fail</h3>
+    <div class="why-list">
+      <div class="why-item"><div class="why-icon">!</div>Monthly review catches churn intent <strong>30-45 days after it formed</strong> &#8212; by the time NPS drops or a ticket is filed, the customer has already decided.</div>
+      <div class="why-item"><div class="why-icon">!</div>Waiting for a metric to move is watching the past. We need to catch the decision <em>before</em> it becomes intent.</div>
+      <div class="why-item"><div class="why-icon green">&#10003;</div>We track <strong>DAILY changes in 50+ parameters</strong> &#8212; the signal leads the conversation by 90-120 days, not chases it.</div>
+    </div>
+  </div>
+
+  <!-- Section 2: Health Score -->
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray);margin-bottom:7px">The 50-Parameter Health Score</div>
+  <div class="hs-cols">
+    <div class="hs-col">
+      <div class="hs-col-hdr">Product Signals (weighted)</div>
+      <div class="hs-param"><span class="hs-param-name">Daily call volume trend</span><span class="hs-param-wt high">15%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Feature depth &#8212; calls + SMS + WhatsApp vs just calls</span><span class="hs-param-wt high">12%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Integration health &#8212; HubSpot/Salesforce sync events</span><span class="hs-param-wt high">12%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Seat utilisation &#8212; active/licensed ratio</span><span class="hs-param-wt mid">10%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Login frequency per user</span><span class="hs-param-wt mid">8%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Power Dialer usage</span><span class="hs-param-wt low">6%</span></div>
+      <div class="hs-param"><span class="hs-param-name">AI call scoring engagement</span><span class="hs-param-wt low">5%</span></div>
+    </div>
+    <div class="hs-col">
+      <div class="hs-col-hdr green">Business Signals (weighted)</div>
+      <div class="hs-param"><span class="hs-param-name">Payment history &#8212; failed charges, retries</span><span class="hs-param-wt high">12%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Renewal timeline proximity</span><span class="hs-param-wt mid">10%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Support ticket volume + severity</span><span class="hs-param-wt mid">8%</span></div>
+      <div class="hs-param"><span class="hs-param-name">NPS / CSAT score</span><span class="hs-param-wt low">6%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Contract type: monthly vs annual</span><span class="hs-param-wt low">6%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Competitor mention in tickets</span><span class="hs-param-wt low">3%</span></div>
+      <div class="hs-param"><span class="hs-param-name">Champion change / new admin detected</span><span class="hs-param-wt low">3%</span></div>
+    </div>
+  </div>
+
+  <!-- Section 3: Signal Table -->
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray);margin-bottom:7px">Signal Types and Priority Queue</div>
+  <table style="margin-bottom:12px">
+    <thead>
+      <tr><th>Signal</th><th>Trigger</th><th>Lead Time</th><th>Priority</th><th>Owner</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Usage cliff</strong></td><td>Call vol drops 40%+ in 7 days</td><td>90-120 days</td><td><span class="p1">P1</span></td><td>CSM / Digital</td></tr>
+      <tr><td><strong>Integration silence</strong></td><td>Sync events = 0 for 5+ days</td><td>60-90 days</td><td><span class="p1">P1</span></td><td>CSM</td></tr>
+      <tr><td><strong>Payment failure</strong></td><td>Stripe retry triggered</td><td>30 days</td><td><span class="p1">P1</span></td><td>CS Ops</td></tr>
+      <tr><td><strong>Seat decay</strong></td><td>Active/licensed ratio &lt; 60%</td><td>60 days</td><td><span class="p2">P2</span></td><td>CSM</td></tr>
+      <tr><td><strong>Feature regression</strong></td><td>Drops to single feature use</td><td>45 days</td><td><span class="p2">P2</span></td><td>CSM / Digital</td></tr>
+      <tr><td><strong>Low NPS post-onboarding</strong></td><td>Score &le; 6 at Day 30</td><td>45 days</td><td><span class="p2">P2</span></td><td>CSM</td></tr>
+      <tr><td><strong>No login 21+ days (T3)</strong></td><td>Zero login streak</td><td>21 days</td><td><span class="p3">P3</span></td><td>Digital / Fin</td></tr>
+      <tr><td><strong>Champion change</strong></td><td>New admin detected</td><td>30 days</td><td><span class="p2">P2</span></td><td>CSM (MM)</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Section 4: Monthly Cohort Prioritisation -->
+  <div class="callout green">
+    <strong>Monthly Renewal Cohort Prioritisation:</strong> 80% of renewals are monthly &#8212; CSM and digital agents work a rolling 30-day cohort. Every Monday: ChurnZero auto-generates &#8220;this week&#8217;s renewal cohort&#8221; ranked by <strong>health score &#215; ARR &#215; days-to-renewal</strong>. CSM knows: which accounts to call this week, in what order, and with what talking point.
+  </div>
+
+</div>
+</div>
+
+<!-- ── S14 · RETENTION PROGRAMS ── -->
+<div class="slide" id="s14">
+<div class="slide-header">
+  <h1>Retention Programs &#8212; Designed Against the Lifecycle</h1>
+  <span class="sub">Pre-90 and post-90 cohorts &middot; deletion and downgrade prevention &middot; MM 1:1, SMB scale, tech-touch PLG</span>
+</div>
+<div class="slide-body">
+
+  <!-- Section 1: Two Cohort Frames -->
+  <div class="cohort-cards">
+    <div class="cohort-card red-border">
+      <div class="cohort-card-hdr red-hdr">
+        <div class="cohort-card-title red">Pre-90 Day Cohort &#8212; The Leaky Bucket</div>
+        <div class="cohort-card-stat red">43%</div>
+        <div class="cohort-card-desc">of SMB churn lands before Day 90 &#8212; activation failures, not usage failures</div>
+      </div>
+      <div class="cohort-card-body">
+        <div class="cohort-program">Day 2 retention call (MM)</div>
+        <div class="cohort-program">Onboarding milestone check-ins (Days 7, 14, 30)</div>
+        <div class="cohort-program">Integration setup sprint</div>
+        <div class="cohort-program">First-value proof email (T1+2)</div>
+        <div class="cohort-program">In-app guided activation (T3)</div>
+      </div>
+    </div>
+    <div class="cohort-card green-border">
+      <div class="cohort-card-hdr green-hdr">
+        <div class="cohort-card-title green-t">Post-90 Day Cohort &#8212; Value Erosion</div>
+        <div class="cohort-card-stat green-s">Activated</div>
+        <div class="cohort-card-desc">but value is fading &#8212; requires ongoing proof, expansion, and habit reinforcement</div>
+      </div>
+      <div class="cohort-card-body">
+        <div class="cohort-program">Quarterly Business Reviews (MM)</div>
+        <div class="cohort-program">Monthly health-based touchpoints (T1)</div>
+        <div class="cohort-program">Automated value nudges (T2+3)</div>
+        <div class="cohort-program">Annual contract conversion program</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Retention Program Matrix -->
+  <table style="margin-bottom:10px">
+    <thead>
+      <tr><th>Program</th><th>Segment</th><th>Format</th><th>Trigger</th><th>Owner</th><th>Goal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Day 2 Retention Call</strong></td><td>MM + T1</td><td>1:1 video/call</td><td>Auto-scheduled at signup</td><td>CSM</td><td>Surface early friction before it becomes intent</td></tr>
+      <tr><td><strong>Onboarding Milestone Check-ins</strong> (D7, D14, D30)</td><td>MM + T1</td><td>1:1 + in-app</td><td>Milestone not hit</td><td>CSM + Userpilot</td><td>Drive activation to 80% by Day 30</td></tr>
+      <tr><td><strong>Integration Setup Sprint</strong></td><td>MM + T1</td><td>Guided call</td><td>HubSpot/SF not connected Day 7</td><td>CSM</td><td>Remove #1 activation blocker</td></tr>
+      <tr><td><strong>First Value Proof Email</strong></td><td>T1 + T2</td><td>Automated email</td><td>30 calls made milestone</td><td>Customer.io</td><td>Prove ROI early &#8212; &#8220;you made 30 calls, here&#8217;s what that means&#8221;</td></tr>
+      <tr><td><strong>In-App Guided Activation</strong></td><td>T3 (20k accts)</td><td>PLG / in-app</td><td>Day 1 product trigger</td><td>Userpilot</td><td>Scale onboarding without headcount</td></tr>
+      <tr><td><strong>Monthly Health Touchpoint</strong></td><td>T1</td><td>1:many email/webinar</td><td>Health score amber</td><td>Customer.io + CSM pool</td><td>Prevent silent churn</td></tr>
+      <tr><td><strong>Quarterly Business Review</strong></td><td>MM Strategic</td><td>1:1 exec call</td><td>Quarterly auto-scheduled</td><td>CSM + CS Ops</td><td>Value proof + expansion signal</td></tr>
+      <tr><td><strong>Annual Contract Conversion</strong></td><td>T1 + T2</td><td>Targeted outreach</td><td>Month 8-10 of tenure</td><td>CS Ops + CSM</td><td>Convert M-t-M to annual &#8212; lock GRR</td></tr>
+      <tr><td><strong>Win-Back Campaign</strong></td><td>Churned &lt;90 days</td><td>Automated sequence</td><td>Post-churn day 7</td><td>Customer.io</td><td>Recover involuntary + regretted churn</td></tr>
+      <tr><td><strong>Pricing Rescue Program</strong></td><td>Downgrade intent</td><td>1:1 call</td><td>Pricing objection in ticket or call</td><td>CSM + AE</td><td>Right-size plan vs lose account</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Section 3: Downgrade Prevention -->
+  <div class="downgrade-box">
+    <strong>Downgrade is the silent GRR killer</strong> &#8212; harder to see than deletion. Monitor: seat reduction requests, plan downgrade attempts, usage below plan threshold for 30 days. Playbook fires before customer asks: proactively right-size or add value rather than react after the request.
+  </div>
+
+</div>
+</div>
+
+<!-- ── S15 · PLAYBOOK SYSTEM ── -->
+<div class="slide" id="s15">
+<div class="slide-header">
+  <h1>Retention Playbook System &#8212; Signal to Response</h1>
+  <span class="sub">Every churn reason has a playbook &middot; CSM-ready or auto-fired &middot; ready-reply scripts for MM &middot; nudges/prompts for tech-touch</span>
+</div>
+<div class="slide-body">
+
+  <!-- Section 1: How Playbooks Work -->
+  <div class="pb-how">
+    <div class="pb-how-col">
+      <div class="pb-how-hdr navy-hdr">For MM / High-Touch</div>
+      <div class="pb-how-body">
+        <div class="pb-how-item">ChurnZero detects signal &#8594; fires playbook &#8594; CSM gets task with: <strong>ready-reply script, account context, recommended action, urgency tier</strong></div>
+        <div class="pb-how-item">CSM adapts and executes &#8212; AI did the prep, human owns the outcome</div>
+        <div class="pb-how-item"><em>Example: &#8220;Pricing objection detected in support ticket &#8594; Playbook: Pricing Rescue &#8594; Script: Acknowledge the concern, quantify ROI, offer annual contract with 15% discount&#8221;</em></div>
+      </div>
+    </div>
+    <div class="pb-how-col">
+      <div class="pb-how-hdr green-hdr">For SMB Tech-Touch</div>
+      <div class="pb-how-body">
+        <div class="pb-how-item green-left">ChurnZero detects signal &#8594; fires automated sequence via Customer.io + Intercom Fin &#8212; no human in the loop for T2 + T3 unless escalated</div>
+        <div class="pb-how-item green-left">Nudges, in-app prompts, email sequences personalised by usage profile</div>
+        <div class="pb-how-item green-left">Escalates to digital specialist only if <strong>3 automated touches fail</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Playbook Library -->
+  <table>
+    <thead>
+      <tr><th>Churn Reason</th><th>Segment</th><th>Playbook Name</th><th>Response</th><th>Channel</th><th>Owner</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Pricing / ROI not clear</strong></td><td>MM + T1</td><td>Pricing Rescue</td><td>ROI calculation + annual offer (15% discount)</td><td>1:1 call</td><td>CSM + AE</td></tr>
+      <tr><td><strong>Low adoption / not using</strong></td><td>MM + T1</td><td>Activation Recovery</td><td>Usage audit + guided setup call + Userpilot flow</td><td>1:1 + in-app</td><td>CSM</td></tr>
+      <tr><td><strong>Low adoption / not using</strong></td><td>T2 + T3</td><td>Re-engagement Nudge</td><td>&#8220;Here&#8217;s what you&#8217;re missing&#8221; email sequence + Fin prompt</td><td>Email + in-app</td><td>Customer.io + Fin</td></tr>
+      <tr><td><strong>Integration failure</strong></td><td>All</td><td>Integration Fix Sprint</td><td>Proactive outreach + live reconnection</td><td>1:1 call (MM) / Email (SMB)</td><td>CSM / Auto</td></tr>
+      <tr><td><strong>Business slowdown</strong></td><td>MM + T1</td><td>Helping Hand</td><td>Offer 1-month free pause + resume commitment</td><td>1:1 call</td><td>CSM</td></tr>
+      <tr><td><strong>Business slowdown</strong></td><td>T2 + T3</td><td>Pause &amp; Resume</td><td>Automated: &#8220;Pause your plan, resume when ready&#8221;</td><td>Email</td><td>Customer.io</td></tr>
+      <tr><td><strong>Competitor mention</strong></td><td>MM</td><td>Competitive Shield</td><td>Win/loss analysis + differentiation call</td><td>1:1 call</td><td>CSM + Product</td></tr>
+      <tr><td><strong>Champion change</strong></td><td>MM + T1</td><td>New Champion Onboarding</td><td>Personalised intro + value replay</td><td>1:1 call</td><td>CSM</td></tr>
+      <tr><td><strong>No usage / zombie account</strong></td><td>T2 + T3</td><td>Last-Mile Rescue</td><td>3-touch sequence: email &#8594; Fin &#8594; specialist</td><td>Email + in-app</td><td>Auto &#8594; Digital</td></tr>
+      <tr><td><strong>Surprise cancellation</strong></td><td>All</td><td>Save Attempt</td><td>Understand reason &#8594; match to playbook &#8594; escalate to CSM lead</td><td>Call</td><td>CS Lead</td></tr>
+      <tr><td><strong>Annual-to-monthly intent</strong></td><td>MM + T1</td><td>Lock-In Offer</td><td>Annual contract at 10-15% savings, EBR commitment</td><td>1:1 call</td><td>CSM + AE</td></tr>
+      <tr><td><strong>Non-usage downgrade request</strong></td><td>T1 + T2</td><td>Right-Size &amp; Retain</td><td>Right-size plan + add value (training, integration help)</td><td>Email + call</td><td>CS Pool</td></tr>
+    </tbody>
+  </table>
+
+</div>
+</div>
+
+<!-- ── S16 · ONBOARDING FLOW ── -->
+<div class="slide" id="s16">
+<div class="slide-header">
+  <h1>Onboarding &#8212; Designed to Fix the Pre-90 Leakage</h1>
+  <span class="sub">43% of SMB churn happens before Day 90 &middot; onboarding is a retention strategy, not a setup exercise</span>
+</div>
+<div class="slide-body">
+
+  <!-- Stat Bar -->
+  <div class="stat-bar">
+    <div class="stat-bar-item">
+      <div class="stat-bar-n">43%</div>
+      <div class="stat-bar-l">of all SMB churn lands before Day 90</div>
+    </div>
+    <div class="stat-bar-item">
+      <div class="stat-bar-n">Day 2</div>
+      <div class="stat-bar-l">when friction first forms &#8212; most customers don&#8217;t tell you</div>
+    </div>
+    <div class="stat-bar-item">
+      <div class="stat-bar-n">80%</div>
+      <div class="stat-bar-l">target activation rate by Day 30 (current: ~55%)</div>
+    </div>
+  </div>
+
+  <!-- MM + T1 Onboarding -->
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff;margin-bottom:7px;padding:6px 12px;background:var(--navy);border-radius:6px">MM + T1 Onboarding &#8212; High-Touch Offline</div>
+  <div class="ob-timeline">
+    <div class="ob-stage">
+      <div class="ob-stage-hdr">
+        <div class="ob-stage-day">Day 0-2</div>
+        <div class="ob-stage-name">Welcome &amp; Setup</div>
+      </div>
+      <div class="ob-stage-items">
+        <div class="ob-item">CSM intro call (30 min): goals, team structure, JustCall use cases for their industry</div>
+        <div class="ob-item">Admin setup: numbers ported, users added, caller ID verified</div>
+        <div class="ob-item">First call made: CSM stays on until team makes first call together</div>
+      </div>
+    </div>
+    <div class="ob-stage">
+      <div class="ob-stage-hdr">
+        <div class="ob-stage-day">Day 3-7</div>
+        <div class="ob-stage-name">Integration Sprint</div>
+      </div>
+      <div class="ob-stage-items">
+        <div class="ob-item">HubSpot / Salesforce / Pipedrive connection: CSM-led live session</div>
+        <div class="ob-item">Call logging verified in CRM: team sees auto-logged notes</div>
+        <div class="ob-item">Power Dialer setup for outbound teams</div>
+      </div>
+    </div>
+    <div class="ob-stage">
+      <div class="ob-stage-hdr">
+        <div class="ob-stage-day">Day 8-14</div>
+        <div class="ob-stage-name">Feature Activation</div>
+      </div>
+      <div class="ob-stage-items">
+        <div class="ob-item">AI call scoring enabled, first scores reviewed together</div>
+        <div class="ob-item">SMS campaign setup (if applicable)</div>
+        <div class="ob-item">First milestone reached: 50 calls &#8594; &#8220;First Value Email&#8221; triggered by Customer.io</div>
+      </div>
+    </div>
+    <div class="ob-stage">
+      <div class="ob-stage-hdr">
+        <div class="ob-stage-day">Day 15-30</div>
+        <div class="ob-stage-name">Momentum &amp; Habit</div>
+      </div>
+      <div class="ob-stage-items">
+        <div class="ob-item">Health score checked by CSM: target 75+</div>
+        <div class="ob-item">Any amber signals &#8594; immediate outreach</div>
+        <div class="ob-item">Day 30 check-in: review usage, answer questions, set Month 2 goals</div>
+      </div>
+    </div>
+    <div class="ob-stage">
+      <div class="ob-stage-hdr">
+        <div class="ob-stage-day">Day 31-90</div>
+        <div class="ob-stage-name">Adoption &amp; Proof</div>
+      </div>
+      <div class="ob-stage-items">
+        <div class="ob-item">Monthly health review (CSM-led for MM, pooled for T1)</div>
+        <div class="ob-item">QBR prep begins: build value story from usage data</div>
+        <div class="ob-item">Expansion signal monitoring begins: seat additions, API growth</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- T2 + T3 Tech-Touch -->
+  <div class="ob-techtouch">
+    <div class="ob-techtouch-hdr">SMB T2 + T3 Onboarding &#8212; Tech-Touch In-Product</div>
+    <div class="ob-techtouch-body">
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 0</span>Welcome email (Customer.io) + in-app checklist launched (Userpilot): 5 steps to first call</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 1</span>First call prompt: Userpilot tooltip on making first call</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 3</span>&#8220;You haven&#8217;t connected your CRM yet&#8221; &#8212; in-app nudge + email</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 7</span>Integration not done &#8594; Customer.io email: &#8220;3 things stopping you from getting 10x value&#8221;</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 14</span>Activation check: if &lt;3 calls made &#8594; Intercom Fin proactive: &#8220;need help getting started?&#8221;</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 30</span>First Value Email (Customer.io): &#8220;Here&#8217;s what 30 calls a month does for a team like yours&#8221;</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Ongoing</span>Userpilot tips triggered by product behavior. ChurnZero health score monitoring begins.</div>
+    </div>
+  </div>
+
+  <!-- Onboarding + Pre-90 Handoff -->
+  <div class="callout green" style="margin-top:10px">
+    <strong>How Onboarding + Pre-90 Programs Work Together:</strong> Onboarding ends at Day 30. Pre-90 program runs Day 30-90. The handoff is automated: if activation score &ge; 70 at Day 30, account enters standard lifecycle. If score &lt; 70, account enters <strong>&#8220;At-Risk Pre-90&#8221; cohort</strong> &#8212; CSM (MM/T1) or digital specialist (T2) personally reviews and intervenes. No account falls through the crack unnoticed.
+  </div>
+
+</div>
+</div>
+
+<!-- ── S11 · MM AI-ASSISTED HUMAN-LED ── -->
+<div class="slide" id="s11">
+<div class="slide-header"><h1>Mid-Market — AI-Assisted, Human-Led Retention</h1><span class="sub">Adoption score dip → root cause → fix → recovery → expansion · JustCall Growth tier · How AI and CSM operate together</span></div>
+<div class="slide-body">
+
+  <!-- Account context -->
+  <div class="sc-ctx">
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Account</div><div class="sc-ctx-val">TechScale Ventures</div><div class="sc-ctx-sub">22-seat B2B outbound sales team</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Tier</div><div class="sc-ctx-val">Growth (MM)</div><div class="sc-ctx-sub">Dedicated CSM · 85-account book</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">MRR</div><div class="sc-ctx-val">$950 / mo</div><div class="sc-ctx-sub">$11,400 ARR · Month 3</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Stack</div><div class="sc-ctx-val">JustCall + HubSpot CRM</div><div class="sc-ctx-sub">Power Dialer · AI call scoring · 22 seats</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Trigger</div><div class="sc-ctx-val" style="color:#EF4444">Adoption score: 82 → 54</div><div class="sc-ctx-sub">HubSpot sync silent failure · 9 days</div></div>
+    <div class="sc-ctx-tag">AI detects · Human resolves · AI monitors</div>
+  </div>
+
+  <!-- Lifecycle position bar -->
+  <div class="sc-lifecycle">
+    <div class="lc-stage past"><div class="lcs-n">✓ Onboarding</div><div class="lcs-s">Complete · Day 1–30</div></div>
+    <div class="lc-stage past"><div class="lcs-n">✓ Activation</div><div class="lcs-s">Score 82 · Day 45</div></div>
+    <div class="lc-stage lc-active"><div class="lcs-n">⚠ Adoption Dip</div><div class="lcs-s">Score 82→54 · Month 3</div></div>
+    <div class="lc-stage lc-recover"><div class="lcs-n">→ Recovery</div><div class="lcs-s">Score 79 · +14 days</div></div>
+    <div class="lc-stage lc-recover"><div class="lcs-n">→ Expansion</div><div class="lcs-s">22→28 seats · Month 5</div></div>
+    <div class="lc-stage lc-future"><div class="lcs-n">Renewal</div><div class="lcs-s">Month 12 · NRR 145%</div></div>
+  </div>
+
+  <!-- Score trajectory + root cause -->
+  <div class="score-bar">
+    <div class="score-pill"><div class="sp-val" style="color:var(--green2)">82</div><div class="sp-label">Month 2<br>baseline</div></div>
+    <div class="score-arrow">→</div>
+    <div class="score-pill dip"><div class="sp-val" style="color:#EF4444">54</div><div class="sp-label">9-day dip<br>silent failure</div></div>
+    <div class="score-arrow">→</div>
+    <div class="score-pill rec"><div class="sp-val" style="color:var(--green2)">79</div><div class="sp-label">Day 14<br>post-fix</div></div>
+    <div class="score-arrow">→</div>
+    <div class="score-pill rec"><div class="sp-val" style="color:var(--green2)">84</div><div class="sp-label">Month 5<br>expansion</div></div>
+    <div style="flex:1;background:var(--navy);border-radius:8px;padding:9px 14px">
+      <div style="font-size:9px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:4px">Root cause identified by AI before CSM looked</div>
+      <div style="font-size:11.5px;color:#fff;font-weight:600;line-height:1.5">HubSpot API v3 deprecated → OAuth tokens expired → call logs stopped syncing to CRM. 22 reps manually copying notes for 9 days. Trust eroding silently. Customer was discussing alternatives.</div>
+    </div>
+  </div>
+
+  <!-- Dual-lane swimlane -->
+  <div class="dual-wrap">
+    <div class="dual-header">
+      <div class="dh-phase">Phase</div>
+      <div class="dh-ai">🤖 AI / System — autonomous actions</div>
+      <div class="dh-human">👤 CSM / Human — signal-triggered actions</div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">1</div><div class="dpc-name detect">DETECT</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Predictive AI — fully automated, no human triggered this</div>
+        <div class="cell-line"><strong>RudderStack</strong> logs drop over 9 days: HubSpot sync events → 0. Calls/day: 45 → 19 (−58%). Login sessions: −40% across 22 seats.</div>
+        <div class="cell-line"><strong>ChurnZero</strong> re-scores: adoption 82 → 54. Primary driver: integration health = RED (weight 0.45). Churn risk elevated to HIGH. Automated playbook fires. CSM task auto-created: <em>"TechScale — Priority HIGH. Act within 24 hrs."</em></div>
+        <div class="cell-tools"><span class="sc-tool-tag">RudderStack</span><span class="sc-tool-tag">ChurnZero health score</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — receives signal, does not hunt</div>
+        <div class="cell-line">CSM opens morning task queue. TechScale is top priority. <strong>No manual monitoring. No spreadsheet. The signal came to them.</strong></div>
+        <div class="cell-line">Time from anomaly to CSM awareness: <strong>under 2 hours</strong> (overnight batch).</div>
+      </div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">2</div><div class="dpc-name diagnose">DIAGNOSE</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Gen AI — root cause brief auto-generated in 90 seconds</div>
+        <div class="cell-line"><strong>ChurnZero AI</strong> generates diagnostic brief:</div>
+        <span class="cell-quote red">"Score driver: HubSpot sync = 0 since Day 9 (weight 0.45 — primary). Login −40%. Call vol −58%. Zero support tickets filed — customer has not identified the issue. Pattern: integration failure, NOT disengagement. Risk: HIGH. Proactive outreach within 24 hrs."</span>
+        <div class="cell-line">Cross-references product changelog: HubSpot API v3 deprecated 10 days ago — known to invalidate OAuth tokens on older integrations.</div>
+        <div class="cell-tools"><span class="sc-tool-tag">ChurnZero AI brief</span><span class="sc-tool-tag">Product changelog feed</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — validates, adds institutional context</div>
+        <div class="cell-line">Reads brief (90 sec). Hypothesis: HubSpot integration broken, not intent to leave.</div>
+        <div class="cell-line">Validates on product team Slack — <strong>confirms HubSpot API v3 break affects ~12% of accounts. Fix: re-authenticate OAuth. Takes 5 minutes on a live call.</strong></div>
+        <div class="cell-line">Full picture before picking up the phone. <strong>AI diagnosed. Human confirmed.</strong></div>
+      </div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">3</div><div class="dpc-name reach">REACH OUT</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Gen AI — drafts outreach, CSM edits and sends</div>
+        <div class="cell-line"><strong>ChurnZero AI</strong> drafts email:</div>
+        <span class="cell-quote green">"Hi Sarah, our system flagged a drop in TechScale's activity. We're checking in proactively — have you noticed any issues with your HubSpot sync? We may have identified the cause."</span>
+        <div class="cell-tools"><span class="sc-tool-tag">ChurnZero AI draft</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — personalises, sends, handles real response</div>
+        <div class="cell-line">CSM edits draft: adds <em>"We believe it's related to HubSpot's API v3 change on [date]. We can fix in 5 minutes on a call."</em> Sends with calendar link.</div>
+        <div class="cell-line">Sarah (VP Sales) replies in 90 minutes:</div>
+        <span class="cell-quote red">"Yes!! Our reps have been manually copying call notes for over a week. The team is extremely frustrated — we were literally discussing alternatives last night."</span>
+        <div class="cell-line"><strong>Account was 1 night away from a cancel discussion.</strong></div>
+      </div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">4</div><div class="dpc-name fix">FIX</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Gen AI — supports fix live, confirms restoration</div>
+        <div class="cell-line">CSM triggers <strong>Userpilot in-app banner</strong> to all 22 seats during call: <em>"HubSpot sync fully restored ✓ — your call logs are back. No manual entry needed."</em></div>
+        <div class="cell-line"><strong>ChurnZero</strong> detects sync events resume → auto-logs restoration. CSM sees live confirmation on screen during the call.</div>
+        <div class="cell-line"><strong>Customer.io</strong>: "Sync restored" email to all 22 users within 1 hour of re-auth.</div>
+        <div class="cell-tools"><span class="sc-tool-tag">Userpilot</span><span class="sc-tool-tag">ChurnZero confirm</span><span class="sc-tool-tag">Customer.io</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — leads the call, owns the relationship moment</div>
+        <div class="cell-line"><strong>30-min call with Sarah.</strong> Explains root cause (HubSpot's API change, not JustCall). Walks through re-auth live: Settings → Integrations → HubSpot → Reconnect → OAuth. <strong>Fixed in 5 minutes.</strong></div>
+        <div class="cell-line">Offers 2-week credit as goodwill.</div>
+        <span class="cell-quote green">"I really appreciate you catching this before I had to file a complaint. The team had no idea the integration was broken."</span>
+        <div class="cell-line">Positions proactive monitoring: <em>"We saw this before your team did — that's the model."</em></div>
+      </div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">5</div><div class="dpc-name recover">RECOVER</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Predictive AI — monitors recovery, alerts on milestone</div>
+        <div class="cell-line"><strong>RudderStack</strong>: Day 3 → 38 calls/day. Day 7 → 44. Day 14 → 47 (above pre-incident baseline).</div>
+        <div class="cell-line"><strong>ChurnZero</strong> score: 54 → 67 → 79. Auto-alert to CSM: <em>"TechScale recovering — score 79. Integration green. Calls/day +4% above pre-incident."</em></div>
+        <div class="cell-line"><strong>Delighted</strong> NPS pulse at recovery milestone: 9/10 from Sarah.</div>
+        <div class="cell-tools"><span class="sc-tool-tag">RudderStack → ChurnZero</span><span class="sc-tool-tag">Delighted NPS</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — closes loop, converts incident into trust capital</div>
+        <div class="cell-line"><strong>Day 14 follow-up call.</strong> Presents recovery data from ChurnZero brief: <em>"You went from 19 calls/day at the dip to 47 today — 4% above where you were before."</em></div>
+        <div class="cell-line">Converts incident into proof of value: <em>"We caught this on day 2. You were 9 days in and hadn't noticed yet."</em></div>
+        <span class="cell-quote green">"Our CEO said — this is what a real vendor relationship looks like."</span>
+      </div>
+    </div>
+
+    <div class="dual-row">
+      <div class="dual-phase-cell"><div class="dpc-num">6</div><div class="dpc-name expand">EXPAND</div></div>
+      <div class="ai-cell">
+        <div class="cell-actor ai-a">Predictive AI — flags expansion, surfaces NPS proof</div>
+        <div class="cell-line"><strong>ChurnZero</strong> (Month 5): 4 new users, API calls +60%, Power Dialer ×3. Expansion signal auto-flagged. CSM task: <em>"TechScale — upsell ready. Recommend: 6 seats + SMS campaigns."</em></div>
+        <div class="cell-line"><strong>Delighted</strong> quarterly NPS 9/10: <em>"JustCall caught an issue before we knew about it. That's why we stay."</em></div>
+        <div class="cell-tools"><span class="sc-tool-tag">ChurnZero expansion signal</span><span class="sc-tool-tag">Delighted</span></div>
+      </div>
+      <div class="human-cell">
+        <div class="cell-actor hm-a">CSM — converts signal into contracted revenue</div>
+        <div class="cell-line">ChurnZero brief: 847 calls, connect rate +34%, 2,100 HubSpot contacts enriched. CSM presents SMS campaigns for lead follow-up.</div>
+        <div class="cell-line"><strong>Close: 22 → 28 seats. SMS campaigns live. MRR $950 → $1,380.</strong></div>
+        <div class="cell-line">The account discussing alternatives at Month 3 is now the team's highest NPS account at Month 5.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc-outcome">
+    <div class="sc-out-item"><div class="sc-out-val">9 days</div><div class="sc-out-label">Issue undetected before AI flagged it</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">&lt;24 hrs</div><div class="sc-out-label">Anomaly → CSM outreach</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">82 → 84</div><div class="sc-out-label">Score · above pre-dip baseline</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">145%</div><div class="sc-out-label">NRR · $950 → $1,380 MRR</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">9/10</div><div class="sc-out-label">NPS · "caught it before we did"</div></div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── S12 · SMB DIGITAL SCENARIO ── -->
+<div class="slide" id="s12">
+<div class="slide-header"><h1>Digital Scale in Practice — Autonomous Loop Scenario</h1><span class="sub">Tech-touch bottom funnel · Zero CSM involvement · JustCall customer · End-to-end agentic motion</span></div>
+<div class="slide-body">
+
+  <!-- Account context -->
+  <div class="sc-ctx">
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Account</div><div class="sc-ctx-val">QuickConnect Realty</div><div class="sc-ctx-sub">3-person real estate agency</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Tier</div><div class="sc-ctx-val">SMB Tier 3 (Digital)</div><div class="sc-ctx-sub">Pooled · no dedicated CSM</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">MRR</div><div class="sc-ctx-val">$120 / mo</div><div class="sc-ctx-sub">$1,440 ARR</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Use case</div><div class="sc-ctx-val">Outbound calls to property leads</div><div class="sc-ctx-sub">2 agents · local number · no CRM</div></div>
+    <div class="sc-ctx-divider"></div>
+    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Issue</div><div class="sc-ctx-val">Caller ID not verified → zero calls</div><div class="sc-ctx-sub">Usage cliff on Day 31</div></div>
+    <div class="sc-ctx-tag">0 Human Touches · Fully Autonomous</div>
+  </div>
+
+  <!-- Autonomous loop diagram -->
+  <div class="sc-section-lbl">The agentic loop — how the system runs the full lifecycle</div>
+  <div class="auto-loop">
+    <div class="loop-step">
+      <div class="loop-step-type" style="color:#1D4ED8">Predictive AI</div>
+      <div class="loop-step-name">Detect Anomaly</div>
+      <div class="loop-step-desc">Usage cliff — 30 calls/day → 0. Pattern matches pre-churn signature.</div>
+      <div class="loop-step-tool">RudderStack → ChurnZero</div>
+    </div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-step">
+      <div class="loop-step-type" style="color:#6D28D9">Gen AI</div>
+      <div class="loop-step-name">Reach Out</div>
+      <div class="loop-step-desc">Personalised email: common causes of this pattern with a fix link.</div>
+      <div class="loop-step-tool">Customer.io</div>
+    </div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-step">
+      <div class="loop-step-type" style="color:#92400E">Agentic AI</div>
+      <div class="loop-step-name">Diagnose &amp; Resolve</div>
+      <div class="loop-step-desc">Customer describes error. Fin finds KB match, provides step-by-step fix.</div>
+      <div class="loop-step-tool">Intercom Fin</div>
+    </div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-step">
+      <div class="loop-step-type" style="color:#1D4ED8">Predictive AI</div>
+      <div class="loop-step-name">Confirm Recovery</div>
+      <div class="loop-step-desc">Calls resume. Health score recovers. At-risk flag auto-closed.</div>
+      <div class="loop-step-tool">RudderStack → ChurnZero</div>
+    </div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-step">
+      <div class="loop-step-type" style="color:#6D28D9">Gen AI</div>
+      <div class="loop-step-name">Educate &amp; Expand</div>
+      <div class="loop-step-desc">Follow-up email + in-app Power Dialer guide. Usage grows 40% above pre-incident.</div>
+      <div class="loop-step-tool">Customer.io + Userpilot</div>
+    </div>
+  </div>
+
+  <!-- Detailed timeline -->
+  <div class="sc-section-lbl">Step-by-step · what the customer experiences</div>
+  <div class="sc-legend">
+    <span class="sc-legend-item"><span class="badge badge-ai">Predictive AI</span></span>
+    <span class="sc-legend-item"><span class="badge badge-gen">Gen AI</span></span>
+    <span class="sc-legend-item"><span class="badge badge-agent">Agentic AI</span></span>
+    <span style="font-size:11px;color:var(--gray);margin-left:4px">No CSM involved at any stage</span>
+  </div>
+  <table class="sc-table">
+    <thead><tr><th style="width:80px">Day</th><th style="width:110px">Actor</th><th>What happens</th><th style="width:130px">Tool</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="sc-day">Days 1–30</td>
+        <td><span class="badge badge-ai">Predictive AI</span></td>
+        <td class="sc-action-main">Normal operation. Agents making <strong>30 calls/day</strong> to property leads. RudderStack logs all events. Health score stable at 74. Userpilot fires onboarding checklist on Day 1 — both agents complete it without contacting support.</td>
+        <td><span class="sc-tool-tag">RudderStack · Userpilot</span></td>
+      </tr>
+      <tr class="risk-row">
+        <td class="sc-day">Day 31</td>
+        <td><span class="badge badge-ai">Predictive AI</span></td>
+        <td class="sc-action-main"><strong>Zero calls for 2 days.</strong> RudderStack detects usage cliff. ChurnZero health score: 74 → 38. Pattern recognised: "sudden zero usage" — precedes churn in 71% of accounts this size within 30 days. <strong>Automated playbook fires. No human notified yet.</strong></td>
+        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 32</td>
+        <td><span class="badge badge-gen">Gen AI</span></td>
+        <td class="sc-action-main">Customer.io sends personalised email to account admin (Sarah): <em>"Hi Sarah, we noticed your team hasn't made calls in 2 days. Common causes: Caller ID not verified · Credit balance low · Browser microphone permission blocked. Check your dashboard — takes 2 minutes to fix."</em> Content generated from account's usage profile, not a generic blast.</td>
+        <td><span class="sc-tool-tag">Customer.io</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 34</td>
+        <td><span class="badge badge-agent">Agentic AI</span></td>
+        <td class="sc-action-main">Sarah doesn't respond to email but logs into JustCall dashboard. <strong>Intercom Fin fires a proactive in-product message:</strong> <em>"Hi Sarah — we noticed your team's call volume dropped. Is everything working okay?"</em> Sarah types: <em>"Yes, we're getting a 'number not verified' error whenever we try to call."</em></td>
+        <td><span class="sc-tool-tag">Intercom Fin (L1)</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td class="sc-day">Day 34</td>
+        <td><span class="badge badge-agent">Agentic AI</span></td>
+        <td class="sc-action-main"><strong>Fin diagnoses autonomously:</strong> KB match found → "number not verified" = outbound Caller ID not verified. Fin provides step-by-step resolution:
+          <div style="background:#F0FDF4;border-radius:5px;padding:7px 10px;margin-top:5px;font-size:10.5px;color:#065F46;line-height:1.6"><strong>Fin's response:</strong> "This is an easy fix! Go to Settings → Phone Numbers → find your number → click 'Verify Caller ID' → enter the 6-digit code sent to that number. Takes about 2 minutes. Let me know once you're done and I'll confirm everything looks right."</div>
+          Sarah follows the steps. Caller ID verified. <strong>No ticket raised. No support agent involved.</strong></td>
+        <td><span class="sc-tool-tag">Intercom Fin (L1)</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td class="sc-day">Day 34 +20 min</td>
+        <td><span class="badge badge-ai">Predictive AI</span></td>
+        <td class="sc-action-main">RudderStack: <strong>8 calls made.</strong> Usage resumes. Fin detects recovery via ChurnZero webhook → auto-closes conversation: <em>"Great — you're back in action! Your team just made 8 calls. Anything else I can help with?"</em> Health score recovers to 71. At-risk playbook auto-closed.</td>
+        <td><span class="sc-tool-tag">RudderStack → ChurnZero → Fin</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 35</td>
+        <td><span class="badge badge-gen">Gen AI</span></td>
+        <td class="sc-action-main">Customer.io sends automated follow-up (triggered by usage recovery event): <em>"Great news Sarah — your team made 8 calls yesterday and you're back on track! Pro tip: switch to Power Dialer and your agents can work through 3× more leads in the same time. Here's a 2-minute setup guide."</em></td>
+        <td><span class="sc-tool-tag">Customer.io</span></td>
+      </tr>
+      <tr>
+        <td class="sc-day">Day 36</td>
+        <td><span class="badge badge-gen">Gen AI</span></td>
+        <td class="sc-action-main">Userpilot detects manual dialling still in use → fires in-app contextual tip: <em>"You're calling one by one. Power Dialer auto-dials your lead list and skips unanswered calls — your agents spend more time talking, less time dialling."</em> Sarah clicks "Set up Power Dialer" — activates in 4 minutes.</td>
+        <td><span class="sc-tool-tag">Userpilot</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td class="sc-day">Day 40</td>
+        <td><span class="badge badge-ai">Predictive AI</span></td>
+        <td class="sc-action-main"><strong>42 calls/day — 40% above pre-incident baseline.</strong> Power Dialer active. Health score: 81. ChurnZero flags positive signal. Account retained. Engagement higher than before the incident. <strong>Zero human touches across the entire sequence.</strong></td>
+        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="zero-human">0 human touches &nbsp;·&nbsp; <span>Full loop: Detect → Reach out → Diagnose → Resolve → Educate → Expand</span> &nbsp;·&nbsp; 3 digital specialists never involved &nbsp;·&nbsp; L2+ issues would escalate to support automatically</div>
+
+  <div class="sc-outcome">
+    <div class="sc-out-item"><div class="sc-out-val">0</div><div class="sc-out-label">Human touches</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">3 days</div><div class="sc-out-label">Detection to resolution</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">+40%</div><div class="sc-out-label">Usage above pre-incident</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">$0</div><div class="sc-out-label">CS cost to retain this account</div></div>
+    <div class="sc-out-item"><div class="sc-out-val">Retained</div><div class="sc-out-label">Account · Power Dialer activated</div></div>
+  </div>
+
+</div>
+</div>
+
+
 <!-- ── S5 · ACCOUNT MOVEMENT ── -->
 <div class="slide" id="s5">
 <div class="slide-header">
@@ -1213,605 +1812,6 @@ tr:last-child td{border-bottom:none}
     <div class="fw-arrow">→</div>
     <div class="fw-item"><div class="lbl">NRR &gt; 100%</div><div class="val">Net growth</div></div>
   </div>
-</div>
-</div>
-
-<!-- ── S11 · MM AI-ASSISTED HUMAN-LED ── -->
-<div class="slide" id="s11">
-<div class="slide-header"><h1>Mid-Market — AI-Assisted, Human-Led Retention</h1><span class="sub">Adoption score dip → root cause → fix → recovery → expansion · JustCall Growth tier · How AI and CSM operate together</span></div>
-<div class="slide-body">
-
-  <!-- Account context -->
-  <div class="sc-ctx">
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Account</div><div class="sc-ctx-val">TechScale Ventures</div><div class="sc-ctx-sub">22-seat B2B outbound sales team</div></div>
-    <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Tier</div><div class="sc-ctx-val">Growth (MM)</div><div class="sc-ctx-sub">Dedicated CSM · 85-account book</div></div>
-    <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">MRR</div><div class="sc-ctx-val">$950 / mo</div><div class="sc-ctx-sub">$11,400 ARR · Month 3</div></div>
-    <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Stack</div><div class="sc-ctx-val">JustCall + HubSpot CRM</div><div class="sc-ctx-sub">Power Dialer · AI call scoring · 22 seats</div></div>
-    <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Trigger</div><div class="sc-ctx-val" style="color:#EF4444">Adoption score: 82 → 54</div><div class="sc-ctx-sub">HubSpot sync silent failure · 9 days</div></div>
-    <div class="sc-ctx-tag">AI detects · Human resolves · AI monitors</div>
-  </div>
-
-  <!-- Lifecycle position bar -->
-  <div class="sc-lifecycle">
-    <div class="lc-stage past"><div class="lcs-n">✓ Onboarding</div><div class="lcs-s">Complete · Day 1–30</div></div>
-    <div class="lc-stage past"><div class="lcs-n">✓ Activation</div><div class="lcs-s">Score 82 · Day 45</div></div>
-    <div class="lc-stage lc-active"><div class="lcs-n">⚠ Adoption Dip</div><div class="lcs-s">Score 82→54 · Month 3</div></div>
-    <div class="lc-stage lc-recover"><div class="lcs-n">→ Recovery</div><div class="lcs-s">Score 79 · +14 days</div></div>
-    <div class="lc-stage lc-recover"><div class="lcs-n">→ Expansion</div><div class="lcs-s">22→28 seats · Month 5</div></div>
-    <div class="lc-stage lc-future"><div class="lcs-n">Renewal</div><div class="lcs-s">Month 12 · NRR 145%</div></div>
-  </div>
-
-  <!-- Score trajectory + root cause -->
-  <div class="score-bar">
-    <div class="score-pill"><div class="sp-val" style="color:var(--green2)">82</div><div class="sp-label">Month 2<br>baseline</div></div>
-    <div class="score-arrow">→</div>
-    <div class="score-pill dip"><div class="sp-val" style="color:#EF4444">54</div><div class="sp-label">9-day dip<br>silent failure</div></div>
-    <div class="score-arrow">→</div>
-    <div class="score-pill rec"><div class="sp-val" style="color:var(--green2)">79</div><div class="sp-label">Day 14<br>post-fix</div></div>
-    <div class="score-arrow">→</div>
-    <div class="score-pill rec"><div class="sp-val" style="color:var(--green2)">84</div><div class="sp-label">Month 5<br>expansion</div></div>
-    <div style="flex:1;background:var(--navy);border-radius:8px;padding:9px 14px">
-      <div style="font-size:9px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:4px">Root cause identified by AI before CSM looked</div>
-      <div style="font-size:11.5px;color:#fff;font-weight:600;line-height:1.5">HubSpot API v3 deprecated → OAuth tokens expired → call logs stopped syncing to CRM. 22 reps manually copying notes for 9 days. Trust eroding silently. Customer was discussing alternatives.</div>
-    </div>
-  </div>
-
-  <!-- Dual-lane swimlane -->
-  <div class="dual-wrap">
-    <div class="dual-header">
-      <div class="dh-phase">Phase</div>
-      <div class="dh-ai">🤖 AI / System — autonomous actions</div>
-      <div class="dh-human">👤 CSM / Human — signal-triggered actions</div>
-    </div>
-
-    <div class="dual-row">
-      <div class="dual-phase-cell"><div class="dpc-num">1</div><div class="dpc-name detect">DETECT</div></div>
-      <div class="ai-cell">
-        <div class="cell-actor ai-a">Predictive AI — fully automated, no human triggered this</div>
-        <div class="cell-line"><strong>RudderStack</strong> logs drop over 9 days: HubSpot sync events → 0. Calls/day: 45 → 19 (−58%). Login sessions: −40% across 22 seats.</div>
-        <div class="cell-line"><strong>ChurnZero</strong> re-scores: adoption 82 → 54. Primary driver: integration health = RED (weight 0.45). Churn risk elevated to HIGH. Automated playbook fires. CSM task auto-created: <em>"TechScale — Priority HIGH. Act within 24 hrs."</em></div>
-        <div class="cell-tools"><span class="sc-tool-tag">RudderStack</span><span class="sc-tool-tag">ChurnZero health score</span></div>
-      </div>
-      <div class="human-cell">
-        <div class="cell-actor hm-a">CSM — receives signal, does not hunt</div>
-        <div class="cell-line">CSM opens morning task queue. TechScale is top priority. <strong>No manual monitoring. No spreadsheet. The signal came to them.</strong></div>
-        <div class="cell-line">Time from anomaly to CSM awareness: <strong>under 2 hours</strong> (overnight batch).</div>
-      </div>
-    </div>
-
-    <div class="dual-row">
-      <div class="dual-phase-cell"><div class="dpc-num">2</div><div class="dpc-name diagnose">DIAGNOSE</div></div>
-      <div class="ai-cell">
-        <div class="cell-actor ai-a">Gen AI — root cause brief auto-generated in 90 seconds</div>
-        <div class="cell-line"><strong>ChurnZero AI</strong> generates diagnostic brief:</div>
-        <span class="cell-quote red">"Score driver: HubSpot sync = 0 since Day 9 (weight 0.45 — primary). Login −40%. Call vol −58%. Zero support tickets filed — customer has not identified the issue. Pattern: integration failure, NOT disengagement. Risk: HIGH. Proactive outreach within 24 hrs."</span>
-        <div class="cell-line">Cross-references product changelog: HubSpot API v3 deprecated 10 days ago — known to invalidate OAuth tokens on older integrations.</div>
-        <div class="cell-tools"><span class="sc-tool-tag">ChurnZero AI brief</span><span class="sc-tool-tag">Product changelog feed</span></div>
-      </div>
-      <div class="human-cell">
-        <div class="cell-actor hm-a">CSM — validates, adds institutional context</div>
-        <div class="cell-line">Reads brief (90 sec). Hypothesis: HubSpot integration broken, not intent to leave.</div>
-        <div class="cell-line">Validates on product team Slack — <strong>confirms HubSpot API v3 break affects ~12% of accounts. Fix: re-authenticate OAuth. Takes 5 minutes on a live call.</strong></div>
-        <div class="cell-line">Full picture before picking up the phone. <strong>AI diagnosed. Human confirmed.</strong></div>
-      </div>
-    </div>
-
-    <div class="dual-row">
-      <div class="dual-phase-cell"><div class="dpc-num">3</div><div class="dpc-name reach">REACH OUT</div></div>
-      <div class="ai-cell">
-        <div class="cell-actor ai-a">Gen AI — drafts outreach, CSM edits and sends</div>
-        <div class="cell-line"><strong>ChurnZero AI</strong> drafts email:</div>
-        <span class="cell-quote green">"Hi Sarah, our system flagged a drop in TechScale's activity. We're checking in proactively — have you noticed any issues with your HubSpot sync? We may have identified the cause."</span>
-        <div class="cell-tools"><span class="sc-tool-tag">ChurnZero AI draft</span></div>
-      </div>
-      <div class="human-cell">
-        <div class="cell-actor hm-a">CSM — personalises, sends, handles real response</div>
-        <div class="cell-line">CSM edits draft: adds <em>"We believe it's related to HubSpot's API v3 change on [date]. We can fix in 5 minutes on a call."</em> Sends with calendar link.</div>
-        <div class="cell-line">Sarah (VP Sales) replies in 90 minutes:</div>
-        <span class="cell-quote red">"Yes!! Our reps have been manually copying call notes for over a week. The team is extremely frustrated — we were literally discussing alternatives last night."</span>
-        <div class="cell-line"><strong>Account was 1 night away from a cancel discussion.</strong></div>
-      </div>
-    </div>
-
-    <div class="dual-row">
-      <div class="dual-phase-cell"><div class="dpc-num">4</div><div class="dpc-name fix">FIX</div></div>
-      <div class="ai-cell">
-        <div class="cell-actor ai-a">Gen AI — supports fix live, confirms restoration</div>
-        <div class="cell-line">CSM triggers <strong>Userpilot in-app banner</strong> to all 22 seats during call: <em>"HubSpot sync fully restored ✓ — your call logs are back. No manual entry needed."</em></div>
-        <div class="cell-line"><strong>ChurnZero</strong> detects sync events resume → auto-logs restoration. CSM sees live confirmation on screen during the call.</div>
-        <div class="cell-line"><strong>Customer.io</strong>: "Sync restored" email to all 22 users within 1 hour of re-auth.</div>
-        <div class="cell-tools"><span class="sc-tool-tag">Userpilot</span><span class="sc-tool-tag">ChurnZero confirm</span><span class="sc-tool-tag">Customer.io</span></div>
-      </div>
-      <div class="human-cell">
-        <div class="cell-actor hm-a">CSM — leads the call, owns the relationship moment</div>
-        <div class="cell-line"><strong>30-min call with Sarah.</strong> Explains root cause (HubSpot's API change, not JustCall). Walks through re-auth live: Settings → Integrations → HubSpot → Reconnect → OAuth. <strong>Fixed in 5 minutes.</strong></div>
-        <div class="cell-line">Offers 2-week credit as goodwill.</div>
-        <span class="cell-quote green">"I really appreciate you catching this before I had to file a complaint. The team had no idea the integration was broken."</span>
-        <div class="cell-line">Positions proactive monitoring: <em>"We saw this before your team did — that's the model."</em></div>
-      </div>
-    </div>
-
-    <div class="dual-row">
-      <div class="dual-phase-cell"><div class="dpc-num">5</div><div class="dpc-name recover">RECOVER</div></div>
-      <div class="ai-cell">
-        <div class="cell-actor ai-a">Predictive AI — monitors recovery, alerts on milestone</div>
-        <div class="cell-line"><strong>RudderStack</strong>: Day 3 → 38 calls/day. Day 7 → 44. Day 14 → 47 (above pre-incident baseline).</div>
-        <div class="cell-line"><strong>ChurnZero</strong> score: 54 → 67 → 79. Auto-alert to CSM: <em>"TechScale recovering — score 79. Integration green. Calls/day +4% above pre-incident."</em></div>
-        <div class="cell-line"><strong>Delighted</strong> NPS pulse at recovery milestone: 9/10 from Sarah.</div>
-        <div class="cell-tools"><span class="sc-tool-tag">RudderStack → ChurnZero</span><span class="sc-tool-tag">Delighted NPS</span></div>
-      </div>
-      <div class="human-cell">
-        <div class="cell-actor hm-a">CSM — closes loop, converts incident into trust capital</div>
-        <div class="cell-line"><strong>Day 14 follow-up call.</strong> Presents recovery data from ChurnZero brief: <em>"You went from 19 calls/day at the dip to 47 today — 4% above where you were before."</em></div>
-        <div class="cell-line">Converts incident into proof of value: <em>"We caught this on day 2. You were 9 days in and hadn't noticed yet."</em></div>
-        <span class="cell-quote green">"Our CEO said — this is what a real vendor relationship looks like."</span>
-      </div>
-    </div>
-
-    <div class="dual-row">
-      <div class="dual-phase-cell"><div class="dpc-num">6</div><div class="dpc-name expand">EXPAND</div></div>
-      <div class="ai-cell">
-        <div class="cell-actor ai-a">Predictive AI — flags expansion, surfaces NPS proof</div>
-        <div class="cell-line"><strong>ChurnZero</strong> (Month 5): 4 new users, API calls +60%, Power Dialer ×3. Expansion signal auto-flagged. CSM task: <em>"TechScale — upsell ready. Recommend: 6 seats + SMS campaigns."</em></div>
-        <div class="cell-line"><strong>Delighted</strong> quarterly NPS 9/10: <em>"JustCall caught an issue before we knew about it. That's why we stay."</em></div>
-        <div class="cell-tools"><span class="sc-tool-tag">ChurnZero expansion signal</span><span class="sc-tool-tag">Delighted</span></div>
-      </div>
-      <div class="human-cell">
-        <div class="cell-actor hm-a">CSM — converts signal into contracted revenue</div>
-        <div class="cell-line">ChurnZero brief: 847 calls, connect rate +34%, 2,100 HubSpot contacts enriched. CSM presents SMS campaigns for lead follow-up.</div>
-        <div class="cell-line"><strong>Close: 22 → 28 seats. SMS campaigns live. MRR $950 → $1,380.</strong></div>
-        <div class="cell-line">The account discussing alternatives at Month 3 is now the team's highest NPS account at Month 5.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="sc-outcome">
-    <div class="sc-out-item"><div class="sc-out-val">9 days</div><div class="sc-out-label">Issue undetected before AI flagged it</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">&lt;24 hrs</div><div class="sc-out-label">Anomaly → CSM outreach</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">82 → 84</div><div class="sc-out-label">Score · above pre-dip baseline</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">145%</div><div class="sc-out-label">NRR · $950 → $1,380 MRR</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">9/10</div><div class="sc-out-label">NPS · "caught it before we did"</div></div>
-  </div>
-
-</div>
-</div>
-
-<!-- ── S12 · SMB DIGITAL SCENARIO ── -->
-<div class="slide" id="s12">
-<div class="slide-header"><h1>Digital Scale in Practice — Autonomous Loop Scenario</h1><span class="sub">Tech-touch bottom funnel · Zero CSM involvement · JustCall customer · End-to-end agentic motion</span></div>
-<div class="slide-body">
-
-  <!-- Account context -->
-  <div class="sc-ctx">
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Account</div><div class="sc-ctx-val">QuickConnect Realty</div><div class="sc-ctx-sub">3-person real estate agency</div></div>
-    <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Tier</div><div class="sc-ctx-val">SMB Tier 3 (Digital)</div><div class="sc-ctx-sub">Pooled · no dedicated CSM</div></div>
-    <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">MRR</div><div class="sc-ctx-val">$120 / mo</div><div class="sc-ctx-sub">$1,440 ARR</div></div>
-    <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Use case</div><div class="sc-ctx-val">Outbound calls to property leads</div><div class="sc-ctx-sub">2 agents · local number · no CRM</div></div>
-    <div class="sc-ctx-divider"></div>
-    <div class="sc-ctx-item"><div class="sc-ctx-lbl">Issue</div><div class="sc-ctx-val">Caller ID not verified → zero calls</div><div class="sc-ctx-sub">Usage cliff on Day 31</div></div>
-    <div class="sc-ctx-tag">0 Human Touches · Fully Autonomous</div>
-  </div>
-
-  <!-- Autonomous loop diagram -->
-  <div class="sc-section-lbl">The agentic loop — how the system runs the full lifecycle</div>
-  <div class="auto-loop">
-    <div class="loop-step">
-      <div class="loop-step-type" style="color:#1D4ED8">Predictive AI</div>
-      <div class="loop-step-name">Detect Anomaly</div>
-      <div class="loop-step-desc">Usage cliff — 30 calls/day → 0. Pattern matches pre-churn signature.</div>
-      <div class="loop-step-tool">RudderStack → ChurnZero</div>
-    </div>
-    <div class="loop-arrow">→</div>
-    <div class="loop-step">
-      <div class="loop-step-type" style="color:#6D28D9">Gen AI</div>
-      <div class="loop-step-name">Reach Out</div>
-      <div class="loop-step-desc">Personalised email: common causes of this pattern with a fix link.</div>
-      <div class="loop-step-tool">Customer.io</div>
-    </div>
-    <div class="loop-arrow">→</div>
-    <div class="loop-step">
-      <div class="loop-step-type" style="color:#92400E">Agentic AI</div>
-      <div class="loop-step-name">Diagnose &amp; Resolve</div>
-      <div class="loop-step-desc">Customer describes error. Fin finds KB match, provides step-by-step fix.</div>
-      <div class="loop-step-tool">Intercom Fin</div>
-    </div>
-    <div class="loop-arrow">→</div>
-    <div class="loop-step">
-      <div class="loop-step-type" style="color:#1D4ED8">Predictive AI</div>
-      <div class="loop-step-name">Confirm Recovery</div>
-      <div class="loop-step-desc">Calls resume. Health score recovers. At-risk flag auto-closed.</div>
-      <div class="loop-step-tool">RudderStack → ChurnZero</div>
-    </div>
-    <div class="loop-arrow">→</div>
-    <div class="loop-step">
-      <div class="loop-step-type" style="color:#6D28D9">Gen AI</div>
-      <div class="loop-step-name">Educate &amp; Expand</div>
-      <div class="loop-step-desc">Follow-up email + in-app Power Dialer guide. Usage grows 40% above pre-incident.</div>
-      <div class="loop-step-tool">Customer.io + Userpilot</div>
-    </div>
-  </div>
-
-  <!-- Detailed timeline -->
-  <div class="sc-section-lbl">Step-by-step · what the customer experiences</div>
-  <div class="sc-legend">
-    <span class="sc-legend-item"><span class="badge badge-ai">Predictive AI</span></span>
-    <span class="sc-legend-item"><span class="badge badge-gen">Gen AI</span></span>
-    <span class="sc-legend-item"><span class="badge badge-agent">Agentic AI</span></span>
-    <span style="font-size:11px;color:var(--gray);margin-left:4px">No CSM involved at any stage</span>
-  </div>
-  <table class="sc-table">
-    <thead><tr><th style="width:80px">Day</th><th style="width:110px">Actor</th><th>What happens</th><th style="width:130px">Tool</th></tr></thead>
-    <tbody>
-      <tr>
-        <td class="sc-day">Days 1–30</td>
-        <td><span class="badge badge-ai">Predictive AI</span></td>
-        <td class="sc-action-main">Normal operation. Agents making <strong>30 calls/day</strong> to property leads. RudderStack logs all events. Health score stable at 74. Userpilot fires onboarding checklist on Day 1 — both agents complete it without contacting support.</td>
-        <td><span class="sc-tool-tag">RudderStack · Userpilot</span></td>
-      </tr>
-      <tr class="risk-row">
-        <td class="sc-day">Day 31</td>
-        <td><span class="badge badge-ai">Predictive AI</span></td>
-        <td class="sc-action-main"><strong>Zero calls for 2 days.</strong> RudderStack detects usage cliff. ChurnZero health score: 74 → 38. Pattern recognised: "sudden zero usage" — precedes churn in 71% of accounts this size within 30 days. <strong>Automated playbook fires. No human notified yet.</strong></td>
-        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
-      </tr>
-      <tr>
-        <td class="sc-day">Day 32</td>
-        <td><span class="badge badge-gen">Gen AI</span></td>
-        <td class="sc-action-main">Customer.io sends personalised email to account admin (Sarah): <em>"Hi Sarah, we noticed your team hasn't made calls in 2 days. Common causes: Caller ID not verified · Credit balance low · Browser microphone permission blocked. Check your dashboard — takes 2 minutes to fix."</em> Content generated from account's usage profile, not a generic blast.</td>
-        <td><span class="sc-tool-tag">Customer.io</span></td>
-      </tr>
-      <tr>
-        <td class="sc-day">Day 34</td>
-        <td><span class="badge badge-agent">Agentic AI</span></td>
-        <td class="sc-action-main">Sarah doesn't respond to email but logs into JustCall dashboard. <strong>Intercom Fin fires a proactive in-product message:</strong> <em>"Hi Sarah — we noticed your team's call volume dropped. Is everything working okay?"</em> Sarah types: <em>"Yes, we're getting a 'number not verified' error whenever we try to call."</em></td>
-        <td><span class="sc-tool-tag">Intercom Fin (L1)</span></td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="sc-day">Day 34</td>
-        <td><span class="badge badge-agent">Agentic AI</span></td>
-        <td class="sc-action-main"><strong>Fin diagnoses autonomously:</strong> KB match found → "number not verified" = outbound Caller ID not verified. Fin provides step-by-step resolution:
-          <div style="background:#F0FDF4;border-radius:5px;padding:7px 10px;margin-top:5px;font-size:10.5px;color:#065F46;line-height:1.6"><strong>Fin's response:</strong> "This is an easy fix! Go to Settings → Phone Numbers → find your number → click 'Verify Caller ID' → enter the 6-digit code sent to that number. Takes about 2 minutes. Let me know once you're done and I'll confirm everything looks right."</div>
-          Sarah follows the steps. Caller ID verified. <strong>No ticket raised. No support agent involved.</strong></td>
-        <td><span class="sc-tool-tag">Intercom Fin (L1)</span></td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="sc-day">Day 34 +20 min</td>
-        <td><span class="badge badge-ai">Predictive AI</span></td>
-        <td class="sc-action-main">RudderStack: <strong>8 calls made.</strong> Usage resumes. Fin detects recovery via ChurnZero webhook → auto-closes conversation: <em>"Great — you're back in action! Your team just made 8 calls. Anything else I can help with?"</em> Health score recovers to 71. At-risk playbook auto-closed.</td>
-        <td><span class="sc-tool-tag">RudderStack → ChurnZero → Fin</span></td>
-      </tr>
-      <tr>
-        <td class="sc-day">Day 35</td>
-        <td><span class="badge badge-gen">Gen AI</span></td>
-        <td class="sc-action-main">Customer.io sends automated follow-up (triggered by usage recovery event): <em>"Great news Sarah — your team made 8 calls yesterday and you're back on track! Pro tip: switch to Power Dialer and your agents can work through 3× more leads in the same time. Here's a 2-minute setup guide."</em></td>
-        <td><span class="sc-tool-tag">Customer.io</span></td>
-      </tr>
-      <tr>
-        <td class="sc-day">Day 36</td>
-        <td><span class="badge badge-gen">Gen AI</span></td>
-        <td class="sc-action-main">Userpilot detects manual dialling still in use → fires in-app contextual tip: <em>"You're calling one by one. Power Dialer auto-dials your lead list and skips unanswered calls — your agents spend more time talking, less time dialling."</em> Sarah clicks "Set up Power Dialer" — activates in 4 minutes.</td>
-        <td><span class="sc-tool-tag">Userpilot</span></td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="sc-day">Day 40</td>
-        <td><span class="badge badge-ai">Predictive AI</span></td>
-        <td class="sc-action-main"><strong>42 calls/day — 40% above pre-incident baseline.</strong> Power Dialer active. Health score: 81. ChurnZero flags positive signal. Account retained. Engagement higher than before the incident. <strong>Zero human touches across the entire sequence.</strong></td>
-        <td><span class="sc-tool-tag">RudderStack → ChurnZero</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="zero-human">0 human touches &nbsp;·&nbsp; <span>Full loop: Detect → Reach out → Diagnose → Resolve → Educate → Expand</span> &nbsp;·&nbsp; 3 digital specialists never involved &nbsp;·&nbsp; L2+ issues would escalate to support automatically</div>
-
-  <div class="sc-outcome">
-    <div class="sc-out-item"><div class="sc-out-val">0</div><div class="sc-out-label">Human touches</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">3 days</div><div class="sc-out-label">Detection to resolution</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">+40%</div><div class="sc-out-label">Usage above pre-incident</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">$0</div><div class="sc-out-label">CS cost to retain this account</div></div>
-    <div class="sc-out-item"><div class="sc-out-val">Retained</div><div class="sc-out-label">Account · Power Dialer activated</div></div>
-  </div>
-
-</div>
-</div>
-
-
-<!-- ── S13 · CHURN PREDICTION ── -->
-<div class="slide" id="s13">
-<div class="slide-header">
-  <h1>Attacking Churn &#8212; Predictive AI Signal Engine</h1>
-  <span class="sub">50+ parameter health score &middot; 90-120 day lead time &middot; daily signal vs monthly metric &middot; segment-specific cohort prioritisation</span>
-</div>
-<div class="slide-body">
-
-  <!-- Section 1: Why Monthly Metrics Fail -->
-  <div class="why-box">
-    <h3>Why Monthly Metrics Fail</h3>
-    <div class="why-list">
-      <div class="why-item"><div class="why-icon">!</div>Monthly review catches churn intent <strong>30-45 days after it formed</strong> &#8212; by the time NPS drops or a ticket is filed, the customer has already decided.</div>
-      <div class="why-item"><div class="why-icon">!</div>Waiting for a metric to move is watching the past. We need to catch the decision <em>before</em> it becomes intent.</div>
-      <div class="why-item"><div class="why-icon green">&#10003;</div>We track <strong>DAILY changes in 50+ parameters</strong> &#8212; the signal leads the conversation by 90-120 days, not chases it.</div>
-    </div>
-  </div>
-
-  <!-- Section 2: Health Score -->
-  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray);margin-bottom:7px">The 50-Parameter Health Score</div>
-  <div class="hs-cols">
-    <div class="hs-col">
-      <div class="hs-col-hdr">Product Signals (weighted)</div>
-      <div class="hs-param"><span class="hs-param-name">Daily call volume trend</span><span class="hs-param-wt high">15%</span></div>
-      <div class="hs-param"><span class="hs-param-name">Feature depth &#8212; calls + SMS + WhatsApp vs just calls</span><span class="hs-param-wt high">12%</span></div>
-      <div class="hs-param"><span class="hs-param-name">Integration health &#8212; HubSpot/Salesforce sync events</span><span class="hs-param-wt high">12%</span></div>
-      <div class="hs-param"><span class="hs-param-name">Seat utilisation &#8212; active/licensed ratio</span><span class="hs-param-wt mid">10%</span></div>
-      <div class="hs-param"><span class="hs-param-name">Login frequency per user</span><span class="hs-param-wt mid">8%</span></div>
-      <div class="hs-param"><span class="hs-param-name">Power Dialer usage</span><span class="hs-param-wt low">6%</span></div>
-      <div class="hs-param"><span class="hs-param-name">AI call scoring engagement</span><span class="hs-param-wt low">5%</span></div>
-    </div>
-    <div class="hs-col">
-      <div class="hs-col-hdr green">Business Signals (weighted)</div>
-      <div class="hs-param"><span class="hs-param-name">Payment history &#8212; failed charges, retries</span><span class="hs-param-wt high">12%</span></div>
-      <div class="hs-param"><span class="hs-param-name">Renewal timeline proximity</span><span class="hs-param-wt mid">10%</span></div>
-      <div class="hs-param"><span class="hs-param-name">Support ticket volume + severity</span><span class="hs-param-wt mid">8%</span></div>
-      <div class="hs-param"><span class="hs-param-name">NPS / CSAT score</span><span class="hs-param-wt low">6%</span></div>
-      <div class="hs-param"><span class="hs-param-name">Contract type: monthly vs annual</span><span class="hs-param-wt low">6%</span></div>
-      <div class="hs-param"><span class="hs-param-name">Competitor mention in tickets</span><span class="hs-param-wt low">3%</span></div>
-      <div class="hs-param"><span class="hs-param-name">Champion change / new admin detected</span><span class="hs-param-wt low">3%</span></div>
-    </div>
-  </div>
-
-  <!-- Section 3: Signal Table -->
-  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray);margin-bottom:7px">Signal Types and Priority Queue</div>
-  <table style="margin-bottom:12px">
-    <thead>
-      <tr><th>Signal</th><th>Trigger</th><th>Lead Time</th><th>Priority</th><th>Owner</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>Usage cliff</strong></td><td>Call vol drops 40%+ in 7 days</td><td>90-120 days</td><td><span class="p1">P1</span></td><td>CSM / Digital</td></tr>
-      <tr><td><strong>Integration silence</strong></td><td>Sync events = 0 for 5+ days</td><td>60-90 days</td><td><span class="p1">P1</span></td><td>CSM</td></tr>
-      <tr><td><strong>Payment failure</strong></td><td>Stripe retry triggered</td><td>30 days</td><td><span class="p1">P1</span></td><td>CS Ops</td></tr>
-      <tr><td><strong>Seat decay</strong></td><td>Active/licensed ratio &lt; 60%</td><td>60 days</td><td><span class="p2">P2</span></td><td>CSM</td></tr>
-      <tr><td><strong>Feature regression</strong></td><td>Drops to single feature use</td><td>45 days</td><td><span class="p2">P2</span></td><td>CSM / Digital</td></tr>
-      <tr><td><strong>Low NPS post-onboarding</strong></td><td>Score &le; 6 at Day 30</td><td>45 days</td><td><span class="p2">P2</span></td><td>CSM</td></tr>
-      <tr><td><strong>No login 21+ days (T3)</strong></td><td>Zero login streak</td><td>21 days</td><td><span class="p3">P3</span></td><td>Digital / Fin</td></tr>
-      <tr><td><strong>Champion change</strong></td><td>New admin detected</td><td>30 days</td><td><span class="p2">P2</span></td><td>CSM (MM)</td></tr>
-    </tbody>
-  </table>
-
-  <!-- Section 4: Monthly Cohort Prioritisation -->
-  <div class="callout green">
-    <strong>Monthly Renewal Cohort Prioritisation:</strong> 80% of renewals are monthly &#8212; CSM and digital agents work a rolling 30-day cohort. Every Monday: ChurnZero auto-generates &#8220;this week&#8217;s renewal cohort&#8221; ranked by <strong>health score &#215; ARR &#215; days-to-renewal</strong>. CSM knows: which accounts to call this week, in what order, and with what talking point.
-  </div>
-
-</div>
-</div>
-
-<!-- ── S14 · RETENTION PROGRAMS ── -->
-<div class="slide" id="s14">
-<div class="slide-header">
-  <h1>Retention Programs &#8212; Designed Against the Lifecycle</h1>
-  <span class="sub">Pre-90 and post-90 cohorts &middot; deletion and downgrade prevention &middot; MM 1:1, SMB scale, tech-touch PLG</span>
-</div>
-<div class="slide-body">
-
-  <!-- Section 1: Two Cohort Frames -->
-  <div class="cohort-cards">
-    <div class="cohort-card red-border">
-      <div class="cohort-card-hdr red-hdr">
-        <div class="cohort-card-title red">Pre-90 Day Cohort &#8212; The Leaky Bucket</div>
-        <div class="cohort-card-stat red">43%</div>
-        <div class="cohort-card-desc">of SMB churn lands before Day 90 &#8212; activation failures, not usage failures</div>
-      </div>
-      <div class="cohort-card-body">
-        <div class="cohort-program">Day 2 retention call (MM)</div>
-        <div class="cohort-program">Onboarding milestone check-ins (Days 7, 14, 30)</div>
-        <div class="cohort-program">Integration setup sprint</div>
-        <div class="cohort-program">First-value proof email (T1+2)</div>
-        <div class="cohort-program">In-app guided activation (T3)</div>
-      </div>
-    </div>
-    <div class="cohort-card green-border">
-      <div class="cohort-card-hdr green-hdr">
-        <div class="cohort-card-title green-t">Post-90 Day Cohort &#8212; Value Erosion</div>
-        <div class="cohort-card-stat green-s">Activated</div>
-        <div class="cohort-card-desc">but value is fading &#8212; requires ongoing proof, expansion, and habit reinforcement</div>
-      </div>
-      <div class="cohort-card-body">
-        <div class="cohort-program">Quarterly Business Reviews (MM)</div>
-        <div class="cohort-program">Monthly health-based touchpoints (T1)</div>
-        <div class="cohort-program">Automated value nudges (T2+3)</div>
-        <div class="cohort-program">Annual contract conversion program</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section 2: Retention Program Matrix -->
-  <table style="margin-bottom:10px">
-    <thead>
-      <tr><th>Program</th><th>Segment</th><th>Format</th><th>Trigger</th><th>Owner</th><th>Goal</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>Day 2 Retention Call</strong></td><td>MM + T1</td><td>1:1 video/call</td><td>Auto-scheduled at signup</td><td>CSM</td><td>Surface early friction before it becomes intent</td></tr>
-      <tr><td><strong>Onboarding Milestone Check-ins</strong> (D7, D14, D30)</td><td>MM + T1</td><td>1:1 + in-app</td><td>Milestone not hit</td><td>CSM + Userpilot</td><td>Drive activation to 80% by Day 30</td></tr>
-      <tr><td><strong>Integration Setup Sprint</strong></td><td>MM + T1</td><td>Guided call</td><td>HubSpot/SF not connected Day 7</td><td>CSM</td><td>Remove #1 activation blocker</td></tr>
-      <tr><td><strong>First Value Proof Email</strong></td><td>T1 + T2</td><td>Automated email</td><td>30 calls made milestone</td><td>Customer.io</td><td>Prove ROI early &#8212; &#8220;you made 30 calls, here&#8217;s what that means&#8221;</td></tr>
-      <tr><td><strong>In-App Guided Activation</strong></td><td>T3 (20k accts)</td><td>PLG / in-app</td><td>Day 1 product trigger</td><td>Userpilot</td><td>Scale onboarding without headcount</td></tr>
-      <tr><td><strong>Monthly Health Touchpoint</strong></td><td>T1</td><td>1:many email/webinar</td><td>Health score amber</td><td>Customer.io + CSM pool</td><td>Prevent silent churn</td></tr>
-      <tr><td><strong>Quarterly Business Review</strong></td><td>MM Strategic</td><td>1:1 exec call</td><td>Quarterly auto-scheduled</td><td>CSM + CS Ops</td><td>Value proof + expansion signal</td></tr>
-      <tr><td><strong>Annual Contract Conversion</strong></td><td>T1 + T2</td><td>Targeted outreach</td><td>Month 8-10 of tenure</td><td>CS Ops + CSM</td><td>Convert M-t-M to annual &#8212; lock GRR</td></tr>
-      <tr><td><strong>Win-Back Campaign</strong></td><td>Churned &lt;90 days</td><td>Automated sequence</td><td>Post-churn day 7</td><td>Customer.io</td><td>Recover involuntary + regretted churn</td></tr>
-      <tr><td><strong>Pricing Rescue Program</strong></td><td>Downgrade intent</td><td>1:1 call</td><td>Pricing objection in ticket or call</td><td>CSM + AE</td><td>Right-size plan vs lose account</td></tr>
-    </tbody>
-  </table>
-
-  <!-- Section 3: Downgrade Prevention -->
-  <div class="downgrade-box">
-    <strong>Downgrade is the silent GRR killer</strong> &#8212; harder to see than deletion. Monitor: seat reduction requests, plan downgrade attempts, usage below plan threshold for 30 days. Playbook fires before customer asks: proactively right-size or add value rather than react after the request.
-  </div>
-
-</div>
-</div>
-
-<!-- ── S15 · PLAYBOOK SYSTEM ── -->
-<div class="slide" id="s15">
-<div class="slide-header">
-  <h1>Retention Playbook System &#8212; Signal to Response</h1>
-  <span class="sub">Every churn reason has a playbook &middot; CSM-ready or auto-fired &middot; ready-reply scripts for MM &middot; nudges/prompts for tech-touch</span>
-</div>
-<div class="slide-body">
-
-  <!-- Section 1: How Playbooks Work -->
-  <div class="pb-how">
-    <div class="pb-how-col">
-      <div class="pb-how-hdr navy-hdr">For MM / High-Touch</div>
-      <div class="pb-how-body">
-        <div class="pb-how-item">ChurnZero detects signal &#8594; fires playbook &#8594; CSM gets task with: <strong>ready-reply script, account context, recommended action, urgency tier</strong></div>
-        <div class="pb-how-item">CSM adapts and executes &#8212; AI did the prep, human owns the outcome</div>
-        <div class="pb-how-item"><em>Example: &#8220;Pricing objection detected in support ticket &#8594; Playbook: Pricing Rescue &#8594; Script: Acknowledge the concern, quantify ROI, offer annual contract with 15% discount&#8221;</em></div>
-      </div>
-    </div>
-    <div class="pb-how-col">
-      <div class="pb-how-hdr green-hdr">For SMB Tech-Touch</div>
-      <div class="pb-how-body">
-        <div class="pb-how-item green-left">ChurnZero detects signal &#8594; fires automated sequence via Customer.io + Intercom Fin &#8212; no human in the loop for T2 + T3 unless escalated</div>
-        <div class="pb-how-item green-left">Nudges, in-app prompts, email sequences personalised by usage profile</div>
-        <div class="pb-how-item green-left">Escalates to digital specialist only if <strong>3 automated touches fail</strong></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section 2: Playbook Library -->
-  <table>
-    <thead>
-      <tr><th>Churn Reason</th><th>Segment</th><th>Playbook Name</th><th>Response</th><th>Channel</th><th>Owner</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>Pricing / ROI not clear</strong></td><td>MM + T1</td><td>Pricing Rescue</td><td>ROI calculation + annual offer (15% discount)</td><td>1:1 call</td><td>CSM + AE</td></tr>
-      <tr><td><strong>Low adoption / not using</strong></td><td>MM + T1</td><td>Activation Recovery</td><td>Usage audit + guided setup call + Userpilot flow</td><td>1:1 + in-app</td><td>CSM</td></tr>
-      <tr><td><strong>Low adoption / not using</strong></td><td>T2 + T3</td><td>Re-engagement Nudge</td><td>&#8220;Here&#8217;s what you&#8217;re missing&#8221; email sequence + Fin prompt</td><td>Email + in-app</td><td>Customer.io + Fin</td></tr>
-      <tr><td><strong>Integration failure</strong></td><td>All</td><td>Integration Fix Sprint</td><td>Proactive outreach + live reconnection</td><td>1:1 call (MM) / Email (SMB)</td><td>CSM / Auto</td></tr>
-      <tr><td><strong>Business slowdown</strong></td><td>MM + T1</td><td>Helping Hand</td><td>Offer 1-month free pause + resume commitment</td><td>1:1 call</td><td>CSM</td></tr>
-      <tr><td><strong>Business slowdown</strong></td><td>T2 + T3</td><td>Pause &amp; Resume</td><td>Automated: &#8220;Pause your plan, resume when ready&#8221;</td><td>Email</td><td>Customer.io</td></tr>
-      <tr><td><strong>Competitor mention</strong></td><td>MM</td><td>Competitive Shield</td><td>Win/loss analysis + differentiation call</td><td>1:1 call</td><td>CSM + Product</td></tr>
-      <tr><td><strong>Champion change</strong></td><td>MM + T1</td><td>New Champion Onboarding</td><td>Personalised intro + value replay</td><td>1:1 call</td><td>CSM</td></tr>
-      <tr><td><strong>No usage / zombie account</strong></td><td>T2 + T3</td><td>Last-Mile Rescue</td><td>3-touch sequence: email &#8594; Fin &#8594; specialist</td><td>Email + in-app</td><td>Auto &#8594; Digital</td></tr>
-      <tr><td><strong>Surprise cancellation</strong></td><td>All</td><td>Save Attempt</td><td>Understand reason &#8594; match to playbook &#8594; escalate to CSM lead</td><td>Call</td><td>CS Lead</td></tr>
-      <tr><td><strong>Annual-to-monthly intent</strong></td><td>MM + T1</td><td>Lock-In Offer</td><td>Annual contract at 10-15% savings, EBR commitment</td><td>1:1 call</td><td>CSM + AE</td></tr>
-      <tr><td><strong>Non-usage downgrade request</strong></td><td>T1 + T2</td><td>Right-Size &amp; Retain</td><td>Right-size plan + add value (training, integration help)</td><td>Email + call</td><td>CS Pool</td></tr>
-    </tbody>
-  </table>
-
-</div>
-</div>
-
-<!-- ── S16 · ONBOARDING FLOW ── -->
-<div class="slide" id="s16">
-<div class="slide-header">
-  <h1>Onboarding &#8212; Designed to Fix the Pre-90 Leakage</h1>
-  <span class="sub">43% of SMB churn happens before Day 90 &middot; onboarding is a retention strategy, not a setup exercise</span>
-</div>
-<div class="slide-body">
-
-  <!-- Stat Bar -->
-  <div class="stat-bar">
-    <div class="stat-bar-item">
-      <div class="stat-bar-n">43%</div>
-      <div class="stat-bar-l">of all SMB churn lands before Day 90</div>
-    </div>
-    <div class="stat-bar-item">
-      <div class="stat-bar-n">Day 2</div>
-      <div class="stat-bar-l">when friction first forms &#8212; most customers don&#8217;t tell you</div>
-    </div>
-    <div class="stat-bar-item">
-      <div class="stat-bar-n">80%</div>
-      <div class="stat-bar-l">target activation rate by Day 30 (current: ~55%)</div>
-    </div>
-  </div>
-
-  <!-- MM + T1 Onboarding -->
-  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff;margin-bottom:7px;padding:6px 12px;background:var(--navy);border-radius:6px">MM + T1 Onboarding &#8212; High-Touch Offline</div>
-  <div class="ob-timeline">
-    <div class="ob-stage">
-      <div class="ob-stage-hdr">
-        <div class="ob-stage-day">Day 0-2</div>
-        <div class="ob-stage-name">Welcome &amp; Setup</div>
-      </div>
-      <div class="ob-stage-items">
-        <div class="ob-item">CSM intro call (30 min): goals, team structure, JustCall use cases for their industry</div>
-        <div class="ob-item">Admin setup: numbers ported, users added, caller ID verified</div>
-        <div class="ob-item">First call made: CSM stays on until team makes first call together</div>
-      </div>
-    </div>
-    <div class="ob-stage">
-      <div class="ob-stage-hdr">
-        <div class="ob-stage-day">Day 3-7</div>
-        <div class="ob-stage-name">Integration Sprint</div>
-      </div>
-      <div class="ob-stage-items">
-        <div class="ob-item">HubSpot / Salesforce / Pipedrive connection: CSM-led live session</div>
-        <div class="ob-item">Call logging verified in CRM: team sees auto-logged notes</div>
-        <div class="ob-item">Power Dialer setup for outbound teams</div>
-      </div>
-    </div>
-    <div class="ob-stage">
-      <div class="ob-stage-hdr">
-        <div class="ob-stage-day">Day 8-14</div>
-        <div class="ob-stage-name">Feature Activation</div>
-      </div>
-      <div class="ob-stage-items">
-        <div class="ob-item">AI call scoring enabled, first scores reviewed together</div>
-        <div class="ob-item">SMS campaign setup (if applicable)</div>
-        <div class="ob-item">First milestone reached: 50 calls &#8594; &#8220;First Value Email&#8221; triggered by Customer.io</div>
-      </div>
-    </div>
-    <div class="ob-stage">
-      <div class="ob-stage-hdr">
-        <div class="ob-stage-day">Day 15-30</div>
-        <div class="ob-stage-name">Momentum &amp; Habit</div>
-      </div>
-      <div class="ob-stage-items">
-        <div class="ob-item">Health score checked by CSM: target 75+</div>
-        <div class="ob-item">Any amber signals &#8594; immediate outreach</div>
-        <div class="ob-item">Day 30 check-in: review usage, answer questions, set Month 2 goals</div>
-      </div>
-    </div>
-    <div class="ob-stage">
-      <div class="ob-stage-hdr">
-        <div class="ob-stage-day">Day 31-90</div>
-        <div class="ob-stage-name">Adoption &amp; Proof</div>
-      </div>
-      <div class="ob-stage-items">
-        <div class="ob-item">Monthly health review (CSM-led for MM, pooled for T1)</div>
-        <div class="ob-item">QBR prep begins: build value story from usage data</div>
-        <div class="ob-item">Expansion signal monitoring begins: seat additions, API growth</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- T2 + T3 Tech-Touch -->
-  <div class="ob-techtouch">
-    <div class="ob-techtouch-hdr">SMB T2 + T3 Onboarding &#8212; Tech-Touch In-Product</div>
-    <div class="ob-techtouch-body">
-      <div class="ob-tt-item"><span class="ob-tt-day">Day 0</span>Welcome email (Customer.io) + in-app checklist launched (Userpilot): 5 steps to first call</div>
-      <div class="ob-tt-item"><span class="ob-tt-day">Day 1</span>First call prompt: Userpilot tooltip on making first call</div>
-      <div class="ob-tt-item"><span class="ob-tt-day">Day 3</span>&#8220;You haven&#8217;t connected your CRM yet&#8221; &#8212; in-app nudge + email</div>
-      <div class="ob-tt-item"><span class="ob-tt-day">Day 7</span>Integration not done &#8594; Customer.io email: &#8220;3 things stopping you from getting 10x value&#8221;</div>
-      <div class="ob-tt-item"><span class="ob-tt-day">Day 14</span>Activation check: if &lt;3 calls made &#8594; Intercom Fin proactive: &#8220;need help getting started?&#8221;</div>
-      <div class="ob-tt-item"><span class="ob-tt-day">Day 30</span>First Value Email (Customer.io): &#8220;Here&#8217;s what 30 calls a month does for a team like yours&#8221;</div>
-      <div class="ob-tt-item"><span class="ob-tt-day">Ongoing</span>Userpilot tips triggered by product behavior. ChurnZero health score monitoring begins.</div>
-    </div>
-  </div>
-
-  <!-- Onboarding + Pre-90 Handoff -->
-  <div class="callout green" style="margin-top:10px">
-    <strong>How Onboarding + Pre-90 Programs Work Together:</strong> Onboarding ends at Day 30. Pre-90 program runs Day 30-90. The handoff is automated: if activation score &ge; 70 at Day 30, account enters standard lifecycle. If score &lt; 70, account enters <strong>&#8220;At-Risk Pre-90&#8221; cohort</strong> &#8212; CSM (MM/T1) or digital specialist (T2) personally reviews and intervenes. No account falls through the crack unnoticed.
-  </div>
-
 </div>
 </div>
 
