@@ -2327,64 +2327,6 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
-<!-- ── S5 · ACCOUNT MOVEMENT ── -->
-<div class="slide" id="s5">
-<div class="slide-header">
-  <h1>Account Movement — Scenarios &amp; Guardrails</h1>
-  <span class="sub">How accounts re-tier as ARR grows or contracts · and how we prevent thrashing</span>
-</div>
-<div class="slide-body">
-  <div class="mv-grid">
-    <div class="mv-card">
-      <h3><span style="background:var(--green-light);color:#005C3F;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 1</span> Growth: SMB → Mid Market</h3>
-      <ul>
-        <li>Trailing 3-month average crosses $12k + 15% buffer ($13.8k), held 2 months</li>
-        <li>CSM assigned within 2 weeks of confirmation</li>
-        <li>Warm handoff from digital → named CSM with full account notes</li>
-        <li>Treated as buying signal — CSM scoped for expansion with AE immediately</li>
-      </ul>
-    </div>
-    <div class="mv-card">
-      <h3><span style="background:#FEE2E2;color:#991B1B;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 2</span> Contraction: MM → SMB</h3>
-      <ul>
-        <li>Trailing average below $12k (must breach $10.2k, i.e. −15% buffer)</li>
-        <li>2-quarter (6-month) hold before demotion — this is a save window, not a waiting period</li>
-        <li>CSM actively works to recover seats during the hold</li>
-        <li>Warm handoff to pooled SMB only after hold expires and account hasn't recovered</li>
-      </ul>
-    </div>
-    <div class="mv-card">
-      <h3><span style="background:#EFF6FF;color:#1E40AF;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 3</span> Signal-Based Pre-Promotion</h3>
-      <ul>
-        <li>Below $12k but 3+ months of consecutive seat adds, new team activating, or inbound to AE</li>
-        <li>CSM assigned proactively before threshold crossed — this is the NRR engine</li>
-        <li>When account crosses $12k: CSM already owns the relationship, no disruption</li>
-        <li>Pre-promotion tracked via ChurnZero usage velocity score</li>
-      </ul>
-    </div>
-    <div class="mv-card">
-      <h3><span style="background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 4</span> Payment Failure Path</h3>
-      <ul>
-        <li>Day 1: Stripe Smart Retries automated (3 attempts)</li>
-        <li>Day 3: Churnkey retry logic + save-offer email</li>
-        <li>Day 7: Human call for accounts &gt;$500 MRR (CSM or CS Ops)</li>
-        <li>Day 14: "Delinquent at-risk" flag in ChurnZero. Day 30: treated as churned. Target recovery: 33%</li>
-      </ul>
-    </div>
-  </div>
-  <div class="guardrails">
-    <h3>The 5 Non-Negotiable Guardrails</h3>
-    <div class="gr-list">
-      <div class="gr-item"><div class="gr-num">1</div><div class="gr-text"><strong>Trailing 3-month average only.</strong> No spot-rate re-tiering. A one-month spike or dip changes nothing.</div></div>
-      <div class="gr-item"><div class="gr-num">2</div><div class="gr-text"><strong>±15% hysteresis band.</strong> Must clear threshold by 15% before review triggers. Prevents boundary thrashing.</div></div>
-      <div class="gr-item"><div class="gr-num">3</div><div class="gr-text"><strong>Promote in 2 weeks. Demote in 2 quarters.</strong> Growth is a buying signal. Contraction is a save opportunity.</div></div>
-      <div class="gr-item"><div class="gr-num">4</div><div class="gr-text"><strong>No cold handoffs.</strong> Warm intro + 30-day overlap. Outgoing owner holds until new owner confirms in HubSpot.</div></div>
-      <div class="gr-item"><div class="gr-num">5</div><div class="gr-text"><strong>Account is always owned.</strong> Every account has a tier, motion, and coverage owner — even if that owner is an automated sequence.</div></div>
-    </div>
-  </div>
-</div>
-</div>
-
 <!-- ── S7 · TOOLING LANDSCAPE ── -->
 <div class="slide" id="s7">
 <div class="slide-header">
@@ -3203,6 +3145,64 @@ tr:last-child td{border-bottom:none}
     <div class="card green" style="padding:10px 14px"><div style="font-size:11.5px;color:var(--text2)"><strong style="color:var(--navy)">OKRs + comp live</strong> — L0/L1 published, variable payout in force</div></div>
     <div class="card green" style="padding:10px 14px"><div style="font-size:11.5px;color:var(--text2)"><strong style="color:var(--navy)">Tooling operational</strong> — RudderStack online, Userpilot + Fin live, ChurnZero configured</div></div>
     <div class="card green" style="padding:10px 14px"><div style="font-size:11.5px;color:var(--text2)"><strong style="color:var(--navy)">Baseline measured</strong> — GRR/NRR established; first leading indicators moving</div></div>
+  </div>
+</div>
+</div>
+
+<!-- ── S5 · ACCOUNT MOVEMENT ── -->
+<div class="slide" id="s5">
+<div class="slide-header">
+  <h1>Account Movement — Scenarios &amp; Guardrails</h1>
+  <span class="sub">How accounts re-tier as ARR grows or contracts · and how we prevent thrashing</span>
+</div>
+<div class="slide-body">
+  <div class="mv-grid">
+    <div class="mv-card">
+      <h3><span style="background:var(--green-light);color:#005C3F;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 1</span> Growth: SMB → Mid Market</h3>
+      <ul>
+        <li>Trailing 3-month average crosses $12k + 15% buffer ($13.8k), held 2 months</li>
+        <li>CSM assigned within 2 weeks of confirmation</li>
+        <li>Warm handoff from digital → named CSM with full account notes</li>
+        <li>Treated as buying signal — CSM scoped for expansion with AE immediately</li>
+      </ul>
+    </div>
+    <div class="mv-card">
+      <h3><span style="background:#FEE2E2;color:#991B1B;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 2</span> Contraction: MM → SMB</h3>
+      <ul>
+        <li>Trailing average below $12k (must breach $10.2k, i.e. −15% buffer)</li>
+        <li>2-quarter (6-month) hold before demotion — this is a save window, not a waiting period</li>
+        <li>CSM actively works to recover seats during the hold</li>
+        <li>Warm handoff to pooled SMB only after hold expires and account hasn't recovered</li>
+      </ul>
+    </div>
+    <div class="mv-card">
+      <h3><span style="background:#EFF6FF;color:#1E40AF;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 3</span> Signal-Based Pre-Promotion</h3>
+      <ul>
+        <li>Below $12k but 3+ months of consecutive seat adds, new team activating, or inbound to AE</li>
+        <li>CSM assigned proactively before threshold crossed — this is the NRR engine</li>
+        <li>When account crosses $12k: CSM already owns the relationship, no disruption</li>
+        <li>Pre-promotion tracked via ChurnZero usage velocity score</li>
+      </ul>
+    </div>
+    <div class="mv-card">
+      <h3><span style="background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:5px;font-size:10.5px">SCENARIO 4</span> Payment Failure Path</h3>
+      <ul>
+        <li>Day 1: Stripe Smart Retries automated (3 attempts)</li>
+        <li>Day 3: Churnkey retry logic + save-offer email</li>
+        <li>Day 7: Human call for accounts &gt;$500 MRR (CSM or CS Ops)</li>
+        <li>Day 14: "Delinquent at-risk" flag in ChurnZero. Day 30: treated as churned. Target recovery: 33%</li>
+      </ul>
+    </div>
+  </div>
+  <div class="guardrails">
+    <h3>The 5 Non-Negotiable Guardrails</h3>
+    <div class="gr-list">
+      <div class="gr-item"><div class="gr-num">1</div><div class="gr-text"><strong>Trailing 3-month average only.</strong> No spot-rate re-tiering. A one-month spike or dip changes nothing.</div></div>
+      <div class="gr-item"><div class="gr-num">2</div><div class="gr-text"><strong>±15% hysteresis band.</strong> Must clear threshold by 15% before review triggers. Prevents boundary thrashing.</div></div>
+      <div class="gr-item"><div class="gr-num">3</div><div class="gr-text"><strong>Promote in 2 weeks. Demote in 2 quarters.</strong> Growth is a buying signal. Contraction is a save opportunity.</div></div>
+      <div class="gr-item"><div class="gr-num">4</div><div class="gr-text"><strong>No cold handoffs.</strong> Warm intro + 30-day overlap. Outgoing owner holds until new owner confirms in HubSpot.</div></div>
+      <div class="gr-item"><div class="gr-num">5</div><div class="gr-text"><strong>Account is always owned.</strong> Every account has a tier, motion, and coverage owner — even if that owner is an automated sequence.</div></div>
+    </div>
   </div>
 </div>
 </div>
