@@ -584,97 +584,172 @@ tr:last-child td{border-bottom:none}
 <!-- ── S2 · COMBINED: BUSINESS REALITY + SEGMENTATION ── -->
 <div class="slide" id="s2">
 <div class="slide-header">
-  <h1>The Business + Segmentation</h1>
-  <span class="sub">Two fundamentally different problems that require two different motions</span>
+  <h1>Segmentation — Two Problems, Two Motions</h1>
+  <span class="sub">Why the account mix forces this split — where humans concentrate and where automation scales</span>
 </div>
-<div class="slide-body">
-  <div class="biz-top">
-    <div class="biz-chip"><div class="n">$100M</div><div class="l">Annual ARR</div></div>
-    <div class="biz-chip"><div class="n">25,000</div><div class="l">Total Accounts</div></div>
-    <div class="biz-chip"><div class="n" style="color:var(--red)">6% / mo</div><div class="l">Long tail logo churn</div></div>
-    <div class="biz-chip"><div class="n" style="color:var(--red)">70%</div><div class="l">Annual GRR (overall)</div></div>
-  </div>
-  <div class="biz-main">
-    <div class="biz-left">
-      <div class="pareto-wrap">
-        <h3>The Pareto Problem</h3>
-        <div class="p-bar"><div class="p-fill" style="width:7%;background:var(--navy)">7%</div></div>
-        <div class="p-label">1,750 accounts → $52M ARR · avg $30k ACV</div>
-        <div class="p-bar" style="margin-top:7px"><div class="p-fill" style="width:93%;background:var(--gray)">93%</div></div>
-        <div class="p-label">23,250 accounts → $48M ARR · avg $2.1k ACV</div>
-      </div>
-      <div class="callout green"><strong>80% of renewals are monthly</strong> — $80M ARR re-earned every 30 days, not locked by annual contracts. Intervention must happen inside the billing cycle.</div>
-      <div class="callout red"><strong>The 3-month problem:</strong> 43% of SMB churn lands before day 90, before customers reach first value. Onboarding is the highest-leverage intervention.</div>
-      <div class="callout amber"><strong>A small share of accounts carries most revenue.</strong> Top 5% (1,250 accounts) = 45% of ARR. Human coverage must concentrate here; everything else scales on automation.</div>
+<div class="slide-body" style="display:flex;flex-direction:column;justify-content:flex-start;gap:9px;padding:13px 44px 50px">
+
+  <!-- KPI STRIP -->
+  <div style="flex-shrink:0;display:grid;grid-template-columns:repeat(5,1fr);gap:9px">
+    <div style="background:#fff;border-radius:8px;padding:8px 13px;border:1px solid var(--border);text-align:center">
+      <div style="font-size:21px;font-weight:800;color:var(--navy)">$100M</div>
+      <div style="font-size:10px;color:var(--gray);margin-top:1px">Annual ARR</div>
     </div>
-    <div class="biz-right">
-      <div class="seg-box">
-        <div class="seg-box-hdr mm"><h3>Mid Market Team</h3><div class="b">≥ $12k ACV</div></div>
-        <div class="seg-stats-row">
-          <div class="seg-kv"><div class="k">Accounts</div><div class="v">1,750</div></div>
-          <div class="seg-kv"><div class="k">ARR</div><div class="v">$52M</div></div>
-          <div class="seg-kv"><div class="k">Avg ACV</div><div class="v">~$30k</div></div>
-          <div class="seg-kv"><div class="k">Current GRR</div><div class="v">75%</div></div>
-          <div class="seg-kv"><div class="k">Motion</div><div class="v">Named CSMs · QBRs</div></div>
-        </div>
-        <div class="seg-tiers">
-          <div class="seg-tier t1">
-            <div class="seg-tier-name">Strategic · ≥ $24k ACV</div>
-            <div class="seg-tier-vals">
-              <div class="stv"><div class="k">Accounts</div><div class="v">750</div></div>
-              <div class="stv"><div class="k">ARR</div><div class="v">$37M</div></div>
-              <div class="stv"><div class="k">Ratio</div><div class="v">1:58</div></div>
-              <div class="stv"><div class="k">ARR/CSM</div><div class="v">$2.85M</div></div>
-            </div>
-          </div>
-          <div class="seg-tier t2">
-            <div class="seg-tier-name">Core · $12k–$24k ACV</div>
-            <div class="seg-tier-vals">
-              <div class="stv"><div class="k">Accounts</div><div class="v">1,000</div></div>
-              <div class="stv"><div class="k">ARR</div><div class="v">$15M</div></div>
-              <div class="stv"><div class="k">Ratio</div><div class="v">1:143</div></div>
-              <div class="stv"><div class="k">ARR/CSM</div><div class="v">$2.14M</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="seg-box">
-        <div class="seg-box-hdr smb"><h3>SMB Team</h3><div class="b">&lt; $12k ACV · 3 Tiers</div></div>
-        <div class="seg-stats-row">
-          <div class="seg-kv"><div class="k">Accounts</div><div class="v">23,250</div></div>
-          <div class="seg-kv"><div class="k">ARR</div><div class="v">$48M</div></div>
-          <div class="seg-kv"><div class="k">Avg ACV</div><div class="v">~$2.1k</div></div>
-          <div class="seg-kv"><div class="k">Current GRR</div><div class="v">62%</div></div>
-        </div>
-        <div class="seg-tiers">
-          <div class="seg-tier t1">
-            <div class="seg-tier-name">Tier 1 · High $4.6k–$12k</div>
-            <div class="seg-tier-vals">
-              <div class="stv"><div class="k">Accounts</div><div class="v">3,250</div></div>
-              <div class="stv"><div class="k">ARR</div><div class="v">$19M</div></div>
-              <div class="stv"><div class="k">Coverage</div><div class="v">Pooled 1:325</div></div>
-            </div>
-          </div>
-          <div class="seg-tier t2">
-            <div class="seg-tier-name">Tier 2 · Mid $2k–$4.6k</div>
-            <div class="seg-tier-vals">
-              <div class="stv"><div class="k">Accounts</div><div class="v">4,000</div></div>
-              <div class="stv"><div class="k">ARR</div><div class="v">$12M</div></div>
-              <div class="stv"><div class="k">Coverage</div><div class="v">Digital + escalation</div></div>
-            </div>
-          </div>
-          <div class="seg-tier t3">
-            <div class="seg-tier-name">Tier 3 · Digital &lt; $2k</div>
-            <div class="seg-tier-vals">
-              <div class="stv"><div class="k">Accounts</div><div class="v">16,000</div></div>
-              <div class="stv"><div class="k">ARR</div><div class="v">$17M</div></div>
-              <div class="stv"><div class="k">Coverage</div><div class="v">Full automation</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div style="background:#fff;border-radius:8px;padding:8px 13px;border:1px solid var(--border);text-align:center">
+      <div style="font-size:21px;font-weight:800;color:var(--navy)">25,000</div>
+      <div style="font-size:10px;color:var(--gray);margin-top:1px">Total Accounts</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#0A2540,#13344f);border-radius:8px;padding:8px 13px;text-align:center">
+      <div style="font-size:21px;font-weight:800;color:#fff">7% = 52%</div>
+      <div style="font-size:10px;color:rgba(255,255,255,0.6);margin-top:1px">of accounts hold 52% of ARR</div>
+    </div>
+    <div style="background:#fff;border-radius:8px;padding:8px 13px;border:1px solid var(--border);text-align:center">
+      <div style="font-size:21px;font-weight:800;color:var(--red)">80%</div>
+      <div style="font-size:10px;color:var(--gray);margin-top:1px">On monthly billing</div>
+    </div>
+    <div style="background:#fff;border-radius:8px;padding:8px 13px;border:1px solid var(--border);text-align:center">
+      <div style="font-size:21px;font-weight:800;color:var(--red)">~70%</div>
+      <div style="font-size:10px;color:var(--gray);margin-top:1px">Blended GRR today</div>
     </div>
   </div>
+
+  <!-- MAIN -->
+  <div style="flex:1;min-height:0;display:grid;grid-template-columns:38% 62%;gap:11px">
+
+    <!-- LEFT: barbell + rationale -->
+    <div style="display:flex;flex-direction:column;gap:9px;min-height:0">
+
+      <div style="flex-shrink:0;background:#fff;border-radius:8px;border:1px solid var(--border);padding:11px 14px">
+        <div style="font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:10px">The Account Mix — a barbell, not a bell curve</div>
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px">
+          <div style="width:62px;flex-shrink:0;font-size:9.5px;font-weight:700;color:var(--navy)">MID MARKET</div>
+          <div style="flex:1;background:var(--gray-light);border-radius:5px;height:21px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;bottom:0;left:0;width:52%;background:var(--navy);display:flex;align-items:center;padding-left:8px;color:#fff;font-size:10px;font-weight:700;border-radius:5px">$52M · 52%</div>
+          </div>
+        </div>
+        <div style="font-size:9.5px;color:var(--gray);margin:0 0 9px 71px">1,750 accounts (7%) · avg $30k ACV</div>
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px">
+          <div style="width:62px;flex-shrink:0;font-size:9.5px;font-weight:700;color:var(--gray)">SMB TAIL</div>
+          <div style="flex:1;background:var(--gray-light);border-radius:5px;height:21px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;bottom:0;left:0;width:48%;background:var(--gray);display:flex;align-items:center;padding-left:8px;color:#fff;font-size:10px;font-weight:700;border-radius:5px">$48M · 48%</div>
+          </div>
+        </div>
+        <div style="font-size:9.5px;color:var(--gray);margin:0 0 0 71px">23,250 accounts (93%) · avg $2.1k ACV</div>
+      </div>
+
+      <div style="flex:1;min-height:0;background:linear-gradient(135deg,#0A2540,#13344f);border-radius:8px;padding:11px 14px;display:flex;flex-direction:column">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.6px;color:var(--green);margin-bottom:8px;flex-shrink:0">WHY WE SEGMENT THIS WAY</div>
+        <div style="display:flex;flex-direction:column;gap:6px;flex:1;justify-content:space-between">
+          <div style="background:rgba(255,255,255,0.06);border-left:3px solid var(--green);border-radius:0 5px 5px 0;padding:6px 10px;font-size:9.5px;color:rgba(255,255,255,0.82);line-height:1.42"><b style="color:#fff">ACV sets the economics.</b> ARR/CSM is the capacity proxy — a named human only pays back above ~$12k ACV. Below that, coverage must pool or automate.</div>
+          <div style="background:rgba(255,255,255,0.06);border-left:3px solid var(--green);border-radius:0 5px 5px 0;padding:6px 10px;font-size:9.5px;color:rgba(255,255,255,0.82);line-height:1.42"><b style="color:#fff">Two different problems.</b> MM churn = relationship &amp; expansion risk (QBRs, exec alignment). SMB churn = activation &amp; self-serve failure (onboarding, in-product). One playbook can't fix both.</div>
+          <div style="background:rgba(255,255,255,0.06);border-left:3px solid var(--green);border-radius:0 5px 5px 0;padding:6px 10px;font-size:9.5px;color:rgba(255,255,255,0.82);line-height:1.42"><b style="color:#fff">The tail is unservable by humans.</b> 16,000 accounts at ~$1.1k ACV can't carry a CSM. Automation is the only way they get any touch instead of zero — segmentation is what makes the 93% coverable at all.</div>
+          <div style="background:rgba(255,255,255,0.06);border-left:3px solid var(--green);border-radius:0 5px 5px 0;padding:6px 10px;font-size:9.5px;color:rgba(255,255,255,0.82);line-height:1.42"><b style="color:#fff">Effort follows saveable churn.</b> Concentrate where churn is high <em>and</em> recoverable — MM renewals and SMB T1 — not spread thin across 25,000 accounts.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: two team boxes -->
+    <div style="display:flex;flex-direction:column;gap:9px;min-height:0">
+
+      <!-- MM TEAM -->
+      <div style="flex:1;min-height:0;background:#fff;border-radius:8px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column">
+        <div style="background:var(--navy);padding:7px 14px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0">
+          <div style="color:#fff;font-size:12.5px;font-weight:700">Mid Market Team <span style="font-weight:400;color:rgba(255,255,255,0.55);font-size:10px">· human-led, named CSMs</span></div>
+          <div style="background:rgba(255,255,255,0.16);color:#fff;border-radius:10px;padding:2px 10px;font-size:10px;font-weight:600">≥ $12k ACV · 1,750 accts · $52M · GRR 75%</div>
+        </div>
+        <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)">
+          <div style="background:#fff;padding:8px 12px;display:flex;flex-direction:column;justify-content:center;border-top:3px solid var(--navy)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:11.5px;font-weight:700;color:var(--navy)">Strategic</span><span style="font-size:8.5px;color:var(--gray)">≥ $24k ACV</span></div>
+            <div style="display:flex;gap:13px;margin-top:6px">
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">Accts</div><div style="font-size:13px;font-weight:800;color:var(--navy)">750</div></div>
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">ARR</div><div style="font-size:13px;font-weight:800;color:var(--navy)">$37M</div></div>
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">Ratio</div><div style="font-size:13px;font-weight:800;color:var(--navy)">1:58</div></div>
+            </div>
+            <div style="font-size:8.5px;color:#1E3A5F;font-weight:600;margin-top:6px;background:#EFF6FF;border-radius:3px;padding:2px 7px;align-self:flex-start">Deep · QBRs + exec alignment · $2.85M/CSM</div>
+          </div>
+          <div style="background:#fff;padding:8px 12px;display:flex;flex-direction:column;justify-content:center;border-top:3px solid #1E4D7B">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:11.5px;font-weight:700;color:var(--navy)">Core</span><span style="font-size:8.5px;color:var(--gray)">$12k–$24k ACV</span></div>
+            <div style="display:flex;gap:13px;margin-top:6px">
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">Accts</div><div style="font-size:13px;font-weight:800;color:var(--navy)">1,000</div></div>
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">ARR</div><div style="font-size:13px;font-weight:800;color:var(--navy)">$15M</div></div>
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">Ratio</div><div style="font-size:13px;font-weight:800;color:var(--navy)">1:143</div></div>
+            </div>
+            <div style="font-size:8.5px;color:#1E3A5F;font-weight:600;margin-top:6px;background:#EFF6FF;border-radius:3px;padding:2px 7px;align-self:flex-start">Named · light-touch · digital QBRs · $2.14M/CSM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SMB TEAM -->
+      <div style="flex:1;min-height:0;background:#fff;border-radius:8px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column">
+        <div style="background:#1E4D7B;padding:7px 14px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0">
+          <div style="color:#fff;font-size:12.5px;font-weight:700">SMB Team <span style="font-weight:400;color:rgba(255,255,255,0.55);font-size:10px">· AI-agent first, pooled humans on the top tier</span></div>
+          <div style="background:rgba(255,255,255,0.16);color:#fff;border-radius:10px;padding:2px 10px;font-size:10px;font-weight:600">&lt; $12k ACV · 23,250 accts · $48M · GRR 62%</div>
+        </div>
+        <div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border)">
+          <div style="background:#fff;padding:8px 11px;display:flex;flex-direction:column;justify-content:center;border-top:3px solid var(--green)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:11px;font-weight:700;color:var(--navy)">Tier 1 · High</span><span style="font-size:8px;color:var(--gray)">$4.6k–12k</span></div>
+            <div style="display:flex;gap:11px;margin-top:6px">
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">Accts</div><div style="font-size:12.5px;font-weight:800;color:var(--navy)">3,250</div></div>
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">ARR</div><div style="font-size:12.5px;font-weight:800;color:var(--navy)">$19M</div></div>
+            </div>
+            <div style="font-size:8.5px;color:#005C3F;font-weight:600;margin-top:6px;background:var(--green-light);border-radius:3px;padding:2px 7px;align-self:flex-start">Pooled CSM 1:325 · triggered</div>
+          </div>
+          <div style="background:#fff;padding:8px 11px;display:flex;flex-direction:column;justify-content:center;border-top:3px solid #6366F1">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:11px;font-weight:700;color:var(--navy)">Tier 2 · Mid</span><span style="font-size:8px;color:var(--gray)">$2k–4.6k</span></div>
+            <div style="display:flex;gap:11px;margin-top:6px">
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">Accts</div><div style="font-size:12.5px;font-weight:800;color:var(--navy)">4,000</div></div>
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">ARR</div><div style="font-size:12.5px;font-weight:800;color:var(--navy)">$12M</div></div>
+            </div>
+            <div style="font-size:8.5px;color:#3730A3;font-weight:600;margin-top:6px;background:#EEF2FF;border-radius:3px;padding:2px 7px;align-self:flex-start">Digital + human escalation</div>
+          </div>
+          <div style="background:#fff;padding:8px 11px;display:flex;flex-direction:column;justify-content:center;border-top:3px solid #7C3AED">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:11px;font-weight:700;color:var(--navy)">Tier 3 · Digital</span><span style="font-size:8px;color:var(--gray)">&lt; $2k</span></div>
+            <div style="display:flex;gap:11px;margin-top:6px">
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">Accts</div><div style="font-size:12.5px;font-weight:800;color:var(--navy)">16,000</div></div>
+              <div><div style="font-size:8px;color:var(--gray);text-transform:uppercase;letter-spacing:.3px">ARR</div><div style="font-size:12.5px;font-weight:800;color:var(--navy)">$17M</div></div>
+            </div>
+            <div style="font-size:8.5px;color:#5B21B6;font-weight:600;margin-top:6px;background:#F5F3FF;border-radius:3px;padding:2px 7px;align-self:flex-start">Full automation · AI agent</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM: impact on business outcomes -->
+  <div style="flex-shrink:0;border-radius:8px;overflow:hidden;border:1.5px solid var(--green)">
+    <div style="background:var(--green);color:#fff;font-size:9px;font-weight:700;letter-spacing:.5px;padding:5px 14px">IMPACT ON BUSINESS OUTCOMES — WHAT THIS SEGMENTATION BUYS US (motion matched to where churn is saveable)</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border)">
+      <div style="background:#fff;padding:7px 12px">
+        <div style="font-size:8px;font-weight:700;letter-spacing:.5px;color:#00B27A">GRR</div>
+        <div style="font-size:12.5px;font-weight:800;color:var(--navy);margin-top:1px">70% → 78%</div>
+        <div style="font-size:8px;color:var(--text2);margin-top:3px;line-height:1.38">Humans concentrated on the MM base + saveable SMB T1 → <b>+$8M ARR retained</b>.</div>
+      </div>
+      <div style="background:#fff;padding:7px 12px">
+        <div style="font-size:8px;font-weight:700;letter-spacing:.5px;color:#00B27A">NRR</div>
+        <div style="font-size:12.5px;font-weight:800;color:var(--navy);margin-top:1px">~85% → 95%</div>
+        <div style="font-size:8px;color:var(--text2);margin-top:3px;line-height:1.38">MM named CSMs run QBRs that surface <b>integration + seat expansion</b>.</div>
+      </div>
+      <div style="background:#fff;padding:7px 12px">
+        <div style="font-size:8px;font-weight:700;letter-spacing:.5px;color:#00B27A">ADOPTION</div>
+        <div style="font-size:12.5px;font-weight:800;color:var(--navy);margin-top:1px">D30 55% → 80%</div>
+        <div style="font-size:8px;color:var(--text2);margin-top:3px;line-height:1.38">T2/T3 onboarding bots + in-product nudges <b>activate the tail</b> at scale.</div>
+      </div>
+      <div style="background:#fff;padding:7px 12px">
+        <div style="font-size:8px;font-weight:700;letter-spacing:.5px;color:#00B27A">EFFICIENCY</div>
+        <div style="font-size:12.5px;font-weight:800;color:var(--navy);margin-top:1px">1.68% cost-to-ARR</div>
+        <div style="font-size:8px;color:var(--text2);margin-top:3px;line-height:1.38">ARR-first ratios; <b>16k accounts served at ~zero marginal cost</b> via automation.</div>
+      </div>
+      <div style="background:#fff;padding:7px 12px">
+        <div style="font-size:8px;font-weight:700;letter-spacing:.5px;color:#00B27A">CHURN ↓</div>
+        <div style="font-size:12.5px;font-weight:800;color:var(--navy);margin-top:1px">Invol. ↓57%</div>
+        <div style="font-size:8px;color:var(--text2);margin-top:3px;line-height:1.38">Onboarding attacks the <b>43% pre-90 churn</b>; dunning automation cuts involuntary loss.</div>
+      </div>
+    </div>
+  </div>
+
 </div>
 </div>
 
