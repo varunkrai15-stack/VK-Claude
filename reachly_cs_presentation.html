@@ -1023,139 +1023,123 @@ tr:last-child td{border-bottom:none}
 <div class="slide" id="s3ov">
 <div class="slide-header">
   <h1>5-Level Churn Attack Framework &#8212; GRR 70% &#8594; 78%</h1>
-  <span class="sub">One integrated model &middot; each level targets a distinct churn cause &middot; combined impact = +8pp blended GRR over 18 months</span>
+  <span class="sub">Each level targets a distinct churn cause &middot; combined impact = +8pp blended GRR over 18 months &middot; no single layer delivers this alone</span>
 </div>
-<div class="slide-body" style="padding:10px 44px 16px;display:flex;flex-direction:column;gap:0">
+<div class="slide-body" style="padding:10px 44px 14px;display:flex;flex-direction:column;gap:5px">
 
-  <!-- Column header row -->
-  <div style="display:grid;grid-template-columns:168px 1fr 148px 180px 96px;gap:5px;padding:0 0 5px;border-bottom:2px solid #0A2540;margin-bottom:5px">
-    <div style="font-size:8px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.6px">Level</div>
-    <div style="font-size:8px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.6px">Approach &#8212; What It Does</div>
-    <div style="font-size:8px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.6px">Segment</div>
-    <div style="font-size:8px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.6px">Why This Approach</div>
-    <div style="font-size:8px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.6px;text-align:center">GRR Lift</div>
+  <!-- Column headers -->
+  <div style="display:grid;grid-template-columns:186px 1fr 118px;gap:8px;padding-bottom:6px;border-bottom:2px solid #0A2540;flex-shrink:0">
+    <div style="font-size:10px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.7px">Level</div>
+    <div style="font-size:10px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.7px">Approach &amp; Why</div>
+    <div style="font-size:10px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.7px;text-align:center">GRR Lift</div>
   </div>
 
   <!-- Level 1 -->
-  <div style="display:grid;grid-template-columns:168px 1fr 148px 180px 96px;gap:5px;margin-bottom:4px;border-radius:6px;overflow:hidden;border:1px solid #E2E8F0">
-    <div style="background:#0A2540;padding:9px 11px;display:flex;flex-direction:column;justify-content:center">
-      <div style="font-size:7px;font-weight:700;letter-spacing:1.2px;color:#00B27A;text-transform:uppercase;margin-bottom:3px">Level 1</div>
-      <div style="font-size:10.5px;font-weight:700;color:#fff;line-height:1.3">Predictive AI<br>Signal Engine</div>
+  <div style="display:grid;grid-template-columns:186px 1fr 118px;gap:0;flex:1;border-radius:7px;overflow:hidden;border:1px solid #E2E8F0;min-height:0">
+    <div style="background:#0A2540;padding:11px 14px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1px;color:#00B27A;text-transform:uppercase;margin-bottom:5px">Level 1 &middot; Foundation</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.3">Predictive AI<br>Signal Engine</div>
+      <div style="display:flex;gap:4px;margin-top:7px;flex-wrap:wrap">
+        <span style="font-size:9px;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);border-radius:3px;padding:2px 7px;font-weight:600">All Segments</span>
+      </div>
     </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0">
-      <div style="font-size:8.5px;color:#374151;line-height:1.5">50-parameter daily health score &middot; monitors product usage, integration health, payment behaviour &middot; flags churn risk <b>90&#8211;120 days before renewal</b> &middot; auto-generates weekly CSM priority queue ranked by health&#215;ARR&#215;days-to-renewal</div>
+    <div style="padding:11px 14px;background:#fff;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #E2E8F0;border-left:none">
+      <div style="font-size:11.5px;color:#1E293B;line-height:1.6"><b>50-parameter daily health score</b> — monitors usage, integration health and payments. Flags churn risk <b>90–120 days before renewal</b> and auto-generates a weekly CSM priority queue ranked by health × ARR × days-to-renewal.</div>
+      <div style="font-size:10.5px;color:#64748B;margin-top:6px;font-style:italic;line-height:1.5">Why: Monthly metrics catch churn intent 30–45 days after it forms. L1 is the foundation that tells every other level <em>where</em> and <em>when</em> to act.</div>
     </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0;display:flex;flex-direction:column;gap:3px;justify-content:center">
-      <div style="font-size:8px;background:#0A2540;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">MM Strategic &amp; Core</div>
-      <div style="font-size:8px;background:#00B27A;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">T1 SMB Pooled</div>
-      <div style="font-size:8px;background:#0891B2;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">T2 + T3 Digital</div>
-    </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0">
-      <div style="font-size:8px;color:#374151;line-height:1.5">Monthly metrics catch churn intent 30&#8211;45 days <em>after</em> it formed. Signal-first model catches it while a save is still possible. <b>Foundation layer</b> &#8212; enables all 4 levels below by telling the team <em>where</em> to act.</div>
-    </div>
-    <div style="padding:8px;background:#F0FDF4;display:flex;flex-direction:column;align-items:center;justify-content:center">
-      <div style="font-size:18px;font-weight:800;color:#00B27A">+2pp</div>
-      <div style="font-size:7px;color:#005C3F;text-align:center;line-height:1.4;font-weight:600">All segments &middot; higher save rate from earlier intervention</div>
+    <div style="padding:10px 8px;background:#F0FDF4;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div style="font-size:28px;font-weight:800;color:#00B27A;line-height:1">+2pp</div>
+      <div style="font-size:9px;color:#005C3F;text-align:center;font-weight:600;margin-top:4px;line-height:1.4">All segments<br>earlier detection = higher save rate</div>
     </div>
   </div>
 
   <!-- Level 2 -->
-  <div style="display:grid;grid-template-columns:168px 1fr 148px 180px 96px;gap:5px;margin-bottom:4px;border-radius:6px;overflow:hidden;border:1px solid #E2E8F0">
-    <div style="background:#0A2540;padding:9px 11px;display:flex;flex-direction:column;justify-content:center">
-      <div style="font-size:7px;font-weight:700;letter-spacing:1.2px;color:#00B27A;text-transform:uppercase;margin-bottom:3px">Level 2</div>
-      <div style="font-size:10.5px;font-weight:700;color:#fff;line-height:1.3">Retention Programs<br>Lifecycle-Designed</div>
+  <div style="display:grid;grid-template-columns:186px 1fr 118px;gap:0;flex:1;border-radius:7px;overflow:hidden;border:1px solid #E2E8F0;min-height:0">
+    <div style="background:#0A2540;padding:11px 14px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1px;color:#00B27A;text-transform:uppercase;margin-bottom:5px">Level 2 &middot; Intervention</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.3">Retention Programs<br>Lifecycle-Designed</div>
+      <div style="display:flex;gap:4px;margin-top:7px;flex-wrap:wrap">
+        <span style="font-size:9px;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);border-radius:3px;padding:2px 7px;font-weight:600">MM</span>
+        <span style="font-size:9px;background:rgba(0,178,122,0.35);color:#A7F3D0;border-radius:3px;padding:2px 7px;font-weight:600">T1 SMB</span>
+      </div>
     </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0">
-      <div style="font-size:8.5px;color:#374151;line-height:1.5">Two cohort frames: <b>Pre-90</b> (Day 2 call, D7/D14/D30 milestones, integration sprint) and <b>Post-90</b> (QBRs, monthly health touchpoints, automated value nudges, annual contract conversion) &middot; deletion and downgrade prevention programs</div>
+    <div style="padding:11px 14px;background:#fff;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #E2E8F0">
+      <div style="font-size:11.5px;color:#1E293B;line-height:1.6"><b>Two cohort programs:</b> Pre-90 (Day 2 call, D7/D14/D30 milestones, integration sprint) and Post-90 (QBRs, monthly health touchpoints, value nudges, annual contract conversion). Also covers deletion and downgrade prevention.</div>
+      <div style="font-size:10.5px;color:#64748B;margin-top:6px;font-style:italic;line-height:1.5">Why: Churn risk peaks at two lifecycle points. Programs designed against the lifecycle — triggered by L1 signals — are more precise than generic calendar cadences.</div>
     </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0;display:flex;flex-direction:column;gap:3px;justify-content:center">
-      <div style="font-size:8px;background:#0A2540;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">MM (1:1 CSM)</div>
-      <div style="font-size:8px;background:#00B27A;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">T1 SMB Pooled</div>
-    </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0">
-      <div style="font-size:8px;color:#374151;line-height:1.5">Churn risk is highest at two lifecycle points: pre-90 (activation failure) and post-90 (value erosion). Programs designed <em>against</em> the lifecycle are more precise than calendar-based cadences. Signal from L1 triggers the right program at the right time.</div>
-    </div>
-    <div style="padding:8px;background:#F0FDF4;display:flex;flex-direction:column;align-items:center;justify-content:center">
-      <div style="font-size:18px;font-weight:800;color:#00B27A">+1.5pp</div>
-      <div style="font-size:7px;color:#005C3F;text-align:center;line-height:1.4;font-weight:600">MM + T1 &middot; structured cadence converts signals into retained revenue</div>
+    <div style="padding:10px 8px;background:#F0FDF4;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div style="font-size:28px;font-weight:800;color:#00B27A;line-height:1">+1.5pp</div>
+      <div style="font-size:9px;color:#005C3F;text-align:center;font-weight:600;margin-top:4px;line-height:1.4">MM + T1<br>signals converted to retained revenue</div>
     </div>
   </div>
 
   <!-- Level 3 -->
-  <div style="display:grid;grid-template-columns:168px 1fr 148px 180px 96px;gap:5px;margin-bottom:4px;border-radius:6px;overflow:hidden;border:1px solid #E2E8F0">
-    <div style="background:#0A2540;padding:9px 11px;display:flex;flex-direction:column;justify-content:center">
-      <div style="font-size:7px;font-weight:700;letter-spacing:1.2px;color:#00B27A;text-transform:uppercase;margin-bottom:3px">Level 3</div>
-      <div style="font-size:10.5px;font-weight:700;color:#fff;line-height:1.3">Onboarding<br>Fix Pre-90 Leakage</div>
+  <div style="display:grid;grid-template-columns:186px 1fr 118px;gap:0;flex:1;border-radius:7px;overflow:hidden;border:1px solid #E2E8F0;min-height:0">
+    <div style="background:#0A2540;padding:11px 14px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1px;color:#00B27A;text-transform:uppercase;margin-bottom:5px">Level 3 &middot; Activation</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.3">Onboarding<br>Fix Pre-90 Leakage</div>
+      <div style="display:flex;gap:4px;margin-top:7px;flex-wrap:wrap">
+        <span style="font-size:9px;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);border-radius:3px;padding:2px 7px;font-weight:600">MM</span>
+        <span style="font-size:9px;background:rgba(0,178,122,0.35);color:#A7F3D0;border-radius:3px;padding:2px 7px;font-weight:600">T1</span>
+        <span style="font-size:9px;background:rgba(8,145,178,0.35);color:#BAE6FD;border-radius:3px;padding:2px 7px;font-weight:600">T2+T3</span>
+      </div>
     </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0">
-      <div style="font-size:8.5px;color:#374151;line-height:1.5">4 Onboarding Specialists own Day 0&#8211;30 &middot; integration setup sprint (HubSpot/SF by Day 7) &middot; milestone check-ins D7, D14, D30 &middot; first-value proof for T1+T2 &middot; in-app guided activation for T3 via Userpilot &middot; target: <b>activation &#8594; 80% by Day 30</b></div>
+    <div style="padding:11px 14px;background:#fff;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #E2E8F0">
+      <div style="font-size:11.5px;color:#1E293B;line-height:1.6"><b>4 Onboarding Specialists</b> own Day 0–30 — integration setup sprint by Day 7, milestone check-ins at D7/D14/D30, first-value proof for T1+T2, in-app guided activation via Userpilot for T3. Target: <b>activation → 80% by Day 30</b>.</div>
+      <div style="font-size:10.5px;color:#64748B;margin-top:6px;font-style:italic;line-height:1.5">Why: 43% of SMB churn lands before Day 90 — it's an activation failure, not a relationship failure. A CSM covering 325 accounts cannot spend 5+ hrs per new account on setup.</div>
     </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0;display:flex;flex-direction:column;gap:3px;justify-content:center">
-      <div style="font-size:8px;background:#0A2540;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">MM</div>
-      <div style="font-size:8px;background:#00B27A;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">T1 SMB</div>
-      <div style="font-size:8px;background:#0891B2;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">T2+T3 (Digital)</div>
-    </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0">
-      <div style="font-size:8px;color:#374151;line-height:1.5"><b>43% of SMB churn lands before Day 90</b> &#8212; activation failure, not usage failure. A CSM managing 325 accounts cannot spend 5+ hrs per new account. Dedicated specialists remove the #1 churn cause at its root.</div>
-    </div>
-    <div style="padding:8px;background:#F0FDF4;display:flex;flex-direction:column;align-items:center;justify-content:center">
-      <div style="font-size:18px;font-weight:800;color:#00B27A">+2pp</div>
-      <div style="font-size:7px;color:#005C3F;text-align:center;line-height:1.4;font-weight:600">All segments &middot; plugs the biggest single churn bucket</div>
+    <div style="padding:10px 8px;background:#F0FDF4;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div style="font-size:28px;font-weight:800;color:#00B27A;line-height:1">+2pp</div>
+      <div style="font-size:9px;color:#005C3F;text-align:center;font-weight:600;margin-top:4px;line-height:1.4">All segments<br>plugs the #1 churn bucket</div>
     </div>
   </div>
 
   <!-- Level 4 -->
-  <div style="display:grid;grid-template-columns:168px 1fr 148px 180px 96px;gap:5px;margin-bottom:4px;border-radius:6px;overflow:hidden;border:1px solid #E2E8F0">
-    <div style="background:#0A2540;padding:9px 11px;display:flex;flex-direction:column;justify-content:center">
-      <div style="font-size:7px;font-weight:700;letter-spacing:1.2px;color:#00B27A;text-transform:uppercase;margin-bottom:3px">Level 4</div>
-      <div style="font-size:10.5px;font-weight:700;color:#fff;line-height:1.3">3 Parallel Programs<br>Adoption·Perf·MAU</div>
+  <div style="display:grid;grid-template-columns:186px 1fr 118px;gap:0;flex:1;border-radius:7px;overflow:hidden;border:1px solid #E2E8F0;min-height:0">
+    <div style="background:#0A2540;padding:11px 14px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1px;color:#00B27A;text-transform:uppercase;margin-bottom:5px">Level 4 &middot; Stickiness</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.3">3 Parallel Programs<br>Adoption·Perf·MAU</div>
+      <div style="display:flex;gap:4px;margin-top:7px;flex-wrap:wrap">
+        <span style="font-size:9px;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);border-radius:3px;padding:2px 7px;font-weight:600">MM human</span>
+        <span style="font-size:9px;background:rgba(8,145,178,0.35);color:#BAE6FD;border-radius:3px;padding:2px 7px;font-weight:600">T2+T3 PLG</span>
+      </div>
     </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0">
-      <div style="font-size:8.5px;color:#374151;line-height:1.5">Adoption (feature depth), Performance (business outcome proof), and MAU (seat utilisation) programs run simultaneously &middot; MM: human-led CSM &middot; T2+T3: PLG AI agent (Fin) &middot; goal is continuous value proof, not point-in-time reviews</div>
+    <div style="padding:11px 14px;background:#fff;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #E2E8F0">
+      <div style="font-size:11.5px;color:#1E293B;line-height:1.6"><b>Adoption</b> (feature depth), <b>Performance</b> (business outcome proof) and <b>MAU</b> (seat utilisation) programs run simultaneously — MM is human-led CSM; T2+T3 is PLG AI agent (Fin). Goal is continuous value proof, not point-in-time reviews.</div>
+      <div style="font-size:10.5px;color:#64748B;margin-top:6px;font-style:italic;line-height:1.5">Why: Activated ≠ retained. Customers using 3+ features churn at half the rate of single-feature users. Low seat utilisation (&lt;60%) is a leading churn signal — stickiness makes switching painful.</div>
     </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0;display:flex;flex-direction:column;gap:3px;justify-content:center">
-      <div style="font-size:8px;background:#0A2540;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">MM (Human-led)</div>
-      <div style="font-size:8px;background:#0891B2;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">T2+T3 (PLG AI)</div>
-    </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0">
-      <div style="font-size:8px;color:#374151;line-height:1.5">Activated &#8800; retained. Customers who use 3+ features churn at half the rate of single-feature users. Low seat utilisation (&lt;60%) is a leading churn signal &#8212; these programs build the stickiness that makes switching painful.</div>
-    </div>
-    <div style="padding:8px;background:#F0FDF4;display:flex;flex-direction:column;align-items:center;justify-content:center">
-      <div style="font-size:18px;font-weight:800;color:#00B27A">+1pp</div>
-      <div style="font-size:7px;color:#005C3F;text-align:center;line-height:1.4;font-weight:600">MM + T2+T3 &middot; feature depth reduces voluntary churn</div>
+    <div style="padding:10px 8px;background:#F0FDF4;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div style="font-size:28px;font-weight:800;color:#00B27A;line-height:1">+1pp</div>
+      <div style="font-size:9px;color:#005C3F;text-align:center;font-weight:600;margin-top:4px;line-height:1.4">MM + T2+T3<br>feature depth reduces voluntary churn</div>
     </div>
   </div>
 
   <!-- Level 5 -->
-  <div style="display:grid;grid-template-columns:168px 1fr 148px 180px 96px;gap:5px;border-radius:6px;overflow:hidden;border:1px solid #E2E8F0">
-    <div style="background:#0A2540;padding:9px 11px;display:flex;flex-direction:column;justify-content:center">
-      <div style="font-size:7px;font-weight:700;letter-spacing:1.2px;color:#00B27A;text-transform:uppercase;margin-bottom:3px">Level 5</div>
-      <div style="font-size:10.5px;font-weight:700;color:#fff;line-height:1.3">CC Decline &amp;<br>Collections</div>
+  <div style="display:grid;grid-template-columns:186px 1fr 118px;gap:0;flex:1;border-radius:7px;overflow:hidden;border:1px solid #E2E8F0;min-height:0">
+    <div style="background:#0A2540;padding:11px 14px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-size:9px;font-weight:700;letter-spacing:1px;color:#00B27A;text-transform:uppercase;margin-bottom:5px">Level 5 &middot; Recovery</div>
+      <div style="font-size:14px;font-weight:700;color:#fff;line-height:1.3">CC Decline &amp;<br>Collections</div>
+      <div style="display:flex;gap:4px;margin-top:7px;flex-wrap:wrap">
+        <span style="font-size:9px;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);border-radius:3px;padding:2px 7px;font-weight:600">All Segments</span>
+      </div>
     </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0">
-      <div style="font-size:8.5px;color:#374151;line-height:1.5">Pre-dunning automation (3-day warning email before charge) &middot; smart retry logic (day 1, 3, 7, 14) &middot; offline payment options &middot; Business Desk for high-ACV manual recovery &middot; target: <b>payment recovery rate 5% &#8594; 33%</b></div>
+    <div style="padding:11px 14px;background:#fff;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #E2E8F0">
+      <div style="font-size:11.5px;color:#1E293B;line-height:1.6"><b>Pre-dunning automation</b> (3-day warning before charge), smart retry logic (Day 1, 3, 7, 14), offline payment options, and a <b>Business Desk</b> for high-ACV manual recovery. Target: payment recovery rate <b>5% → 33%</b>.</div>
+      <div style="font-size:10.5px;color:#64748B;margin-top:6px;font-style:italic;line-height:1.5">Why: 80% of accounts are monthly billing — every month is a payment failure risk. ~5% of SMB churn is involuntary (payment failure, not dissatisfaction) — 100% recoverable revenue currently going untouched.</div>
     </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0;display:flex;flex-direction:column;gap:3px;justify-content:center">
-      <div style="font-size:8px;background:#0A2540;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">MM (Business Desk)</div>
-      <div style="font-size:8px;background:#00B27A;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">T1 SMB</div>
-      <div style="font-size:8px;background:#0891B2;color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;width:fit-content;font-weight:600">T2+T3 (Automated)</div>
-    </div>
-    <div style="padding:8px 10px;background:#fff;border-right:1px solid #E2E8F0">
-      <div style="font-size:8px;color:#374151;line-height:1.5"><b>80% of accounts are on monthly billing</b> &#8212; every month is a failure point. ~5% of SMB churn is payment failure, not product dissatisfaction &#8212; 100% recoverable revenue that currently goes untouched.</div>
-    </div>
-    <div style="padding:8px;background:#F0FDF4;display:flex;flex-direction:column;align-items:center;justify-content:center">
-      <div style="font-size:18px;font-weight:800;color:#00B27A">+1.5pp</div>
-      <div style="font-size:7px;color:#005C3F;text-align:center;line-height:1.4;font-weight:600">All segments &middot; eliminates involuntary churn</div>
+    <div style="padding:10px 8px;background:#F0FDF4;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div style="font-size:28px;font-weight:800;color:#00B27A;line-height:1">+1.5pp</div>
+      <div style="font-size:9px;color:#005C3F;text-align:center;font-weight:600;margin-top:4px;line-height:1.4">All segments<br>eliminates involuntary churn</div>
     </div>
   </div>
 
   <!-- Summary bar -->
-  <div style="margin-top:7px;background:#0A2540;border-radius:6px;padding:8px 14px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;flex-shrink:0">
-    <div style="font-size:8.5px;color:rgba(255,255,255,0.78);line-height:1.5">L1 enables targeting &middot; L2 structures interventions &middot; L3 stops early leakage &middot; L4 builds stickiness &middot; L5 recovers involuntary loss &middot; <b style="color:#fff">Each level attacks a different churn cause &#8212; no single layer can deliver +8pp alone</b></div>
+  <div style="background:#0A2540;border-radius:7px;padding:9px 16px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;flex-shrink:0">
+    <div style="font-size:10.5px;color:rgba(255,255,255,0.78);line-height:1.55">L1 enables targeting &middot; L2 structures the intervention &middot; L3 stops early leakage &middot; L4 builds product stickiness &middot; L5 recovers involuntary loss &middot; <b style="color:#fff">Each level attacks a different churn cause — no single layer can deliver +8pp alone.</b></div>
     <div style="text-align:right;flex-shrink:0">
-      <div style="font-size:9px;font-weight:700;color:#00B27A;letter-spacing:.5px;text-transform:uppercase">Combined GRR Impact</div>
-      <div style="font-size:22px;font-weight:800;color:#fff;line-height:1.1">70% &#8594; 78%</div>
-      <div style="font-size:8.5px;color:rgba(255,255,255,0.55)">+8pp blended &middot; 18-month horizon &middot; $8M ARR retained</div>
+      <div style="font-size:9px;font-weight:700;color:#00B27A;letter-spacing:.6px;text-transform:uppercase">Combined GRR Impact</div>
+      <div style="font-size:26px;font-weight:800;color:#fff;line-height:1.1">70% &#8594; 78%</div>
+      <div style="font-size:9.5px;color:rgba(255,255,255,0.55)">+8pp blended &middot; 18-month horizon &middot; $8M ARR retained</div>
     </div>
   </div>
 
