@@ -1992,6 +1992,93 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
+<!-- ── S22 · KPIs & OKRs ── -->
+<div class="slide" id="s22">
+<div class="slide-header"><h1>KPIs &amp; OKRs — How We Measure and Pay</h1><span class="sub">L0 outcomes the org owns · L1 drivers the CSM and the AI control · variable comp tied to both · split by segment</span></div>
+<div class="slide-body">
+
+  <!-- L0 -->
+  <div class="sc-section-lbl">L0 OKRs — the two outcomes the whole CS org is accountable for (lagging)</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:13px">
+    <div class="card green">
+      <div class="card-label">L0 · North Star</div>
+      <div style="font-size:17px;font-weight:800;color:var(--navy)">GRR — Gross Revenue Retention</div>
+      <div style="font-size:11.5px;color:var(--gray);margin:5px 0 7px">Churn reduction is the outcome. Blended <strong>~69% → ~73% (base) / ~76% (best)</strong>.</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span class="tag tag-navy">MM 75 → 79%</span>
+        <span class="tag tag-navy">T1 65 → 70%</span>
+        <span class="tag tag-navy">T2–T3 ~62 → 65%</span>
+      </div>
+    </div>
+    <div class="card green">
+      <div class="card-label">L0 · Growth</div>
+      <div style="font-size:17px;font-weight:800;color:var(--navy)">NRR — Net Revenue Retention</div>
+      <div style="font-size:11.5px;color:var(--gray);margin:5px 0 7px">Retention + expansion. Adoption improvement is the leading driver that powers both L0s.</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span class="tag tag-green">MM 100 → 108%</span>
+        <span class="tag tag-green">T1 ~95 → 100%</span>
+        <span class="tag tag-green">T2–T3 ~90 → 93%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- L1 -->
+  <div class="sc-section-lbl">L1 metrics — the leading, controllable drivers (what each owner is measured on weekly)</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:25%">MM CSM <span style="font-weight:400;text-transform:none">(dedicated)</span></th>
+        <th style="width:25%">SMB T1 CSM <span style="font-weight:400;text-transform:none">(pooled)</span></th>
+        <th>SMB T2–T3 + Agentic AI <span style="font-weight:400;text-transform:none">(digital specialists run the system)</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Adoption depth</strong> — active sessions / feature breadth per account (≥ target adoption score)</td>
+        <td><strong>Activation rate</strong> — % new accounts activated by Day 30 (target 80%)</td>
+        <td><strong>Deflection rate</strong> — Intercom Fin L1 auto-resolution (target ≥55%)</td>
+      </tr>
+      <tr>
+        <td><strong>Book coverage</strong> — % of book with QBR + monthly health touch (target 100%)</td>
+        <td><strong>Pool coverage / SLA</strong> — % of at-risk pool contacted within SLA</td>
+        <td><strong>Digital activation</strong> — % T2–T3 activated by Day 30 via Userpilot (target 80%)</td>
+      </tr>
+      <tr>
+        <td><strong>Health movement</strong> — % book green; # at-risk accounts recovered</td>
+        <td><strong>Connectivity</strong> — % accounts with healthy usage (CRM connected, calls live)</td>
+        <td><strong>Nudge → action conversion</strong> — % of Customer.io / Userpilot nudges that drive the target action</td>
+      </tr>
+      <tr>
+        <td><strong>Expansion signals actioned</strong> — # qualified / pipeline to AE (SPIFF)</td>
+        <td><strong>Save rate</strong> — % of at-risk accounts retained</td>
+        <td><strong>Auto-resolution rate</strong> — % at-risk recovered with no human touch</td>
+      </tr>
+      <tr>
+        <td><strong>Onboarding</strong> — activation milestone hit by Day 30 (new logos)</td>
+        <td><strong>Adoption trend</strong> — % accounts with rising usage period-over-period</td>
+        <td><strong>Model precision + CSAT</strong> — churn-prediction precision/recall; digital CSAT ≥ 4.2 <span style="font-size:10px;color:var(--gray)">(the AI's own KPIs)</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Variable comp -->
+  <div class="sc-section-lbl" style="margin-top:13px">Variable payout — retention-weighted, scaled to control level (CS benchmark: 10–25% of OTE, not sales-style 40–50%)</div>
+  <table>
+    <thead>
+      <tr><th style="width:20%">Role</th><th style="width:14%">Base : Variable</th><th>Variable weighting</th><th style="width:24%">Rationale</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>MM CSM</strong></td><td>80 : 20</td><td><span class="tag tag-navy">60% GRR of book</span> <span class="tag tag-green">25% NRR / expansion</span> <span class="tag tag-amber">15% adoption + coverage</span></td><td>Highest expansion motion → meaningful NRR weight; still retention-led.</td></tr>
+      <tr><td><strong>SMB T1 CSM (pooled)</strong></td><td>85 : 15</td><td><span class="tag tag-navy">70% pool retention / save rate</span> <span class="tag tag-green">20% activation rate</span> <span class="tag tag-amber">10% coverage</span></td><td>Volume retention role; activation is the controllable lever that drives GRR.</td></tr>
+      <tr><td><strong>Digital specialists (T2–T3)</strong></td><td>90 : 10</td><td><span class="tag tag-navy">60% tail GRR</span> <span class="tag tag-green">25% deflection + digital activation</span> <span class="tag tag-amber">15% CSAT</span></td><td>Outcome is system performance, not individual heroics → lower variable, paid on the machine working.</td></tr>
+    </tbody>
+  </table>
+  <div style="margin-top:11px;background:var(--green-light);border-left:4px solid var(--green);border-radius:7px;padding:10px 15px;font-size:11.5px;color:#005C3F;line-height:1.5">
+    <strong>Industry alignment:</strong> GRR + NRR are the standard CS L0 North Stars (Gainsight / Bessemer). Best-in-class: MM GRR &gt;90% &amp; NRR &gt;110%; SMB GRR 75–85% &amp; NRR 95–105%. L1 leading indicators — adoption, time-to-value / activation, health score, coverage, CSAT — are the recognised drivers. Agentic AI carries its own L1s (deflection, precision, auto-resolution) so the system is held to a measurable bar, exactly like a human pod.
+  </div>
+</div>
+</div>
+
 <!-- ── S25 · PRODUCTIVITY TRACKING ── -->
 <div class="slide" id="s25p">
 <div class="slide-header">
@@ -2849,93 +2936,6 @@ tr:last-child td{border-bottom:none}
       <tr><td><strong style="color:var(--green2)">Lean + tooling beats big headcount</strong></td><td>Automation leverages 43 FTE across 25,000 accounts.</td><td>Best-in-class GRR at a <strong>1.51% people-cost ratio</strong> — a structural margin advantage in a low-margin category.</td><td>Book sizes, CSM burnout, attrition</td></tr>
     </tbody>
   </table>
-</div>
-</div>
-
-<!-- ── S22 · KPIs & OKRs ── -->
-<div class="slide" id="s22">
-<div class="slide-header"><h1>KPIs &amp; OKRs — How We Measure and Pay</h1><span class="sub">L0 outcomes the org owns · L1 drivers the CSM and the AI control · variable comp tied to both · split by segment</span></div>
-<div class="slide-body">
-
-  <!-- L0 -->
-  <div class="sc-section-lbl">L0 OKRs — the two outcomes the whole CS org is accountable for (lagging)</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:13px">
-    <div class="card green">
-      <div class="card-label">L0 · North Star</div>
-      <div style="font-size:17px;font-weight:800;color:var(--navy)">GRR — Gross Revenue Retention</div>
-      <div style="font-size:11.5px;color:var(--gray);margin:5px 0 7px">Churn reduction is the outcome. Blended <strong>~69% → ~73% (base) / ~76% (best)</strong>.</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <span class="tag tag-navy">MM 75 → 79%</span>
-        <span class="tag tag-navy">T1 65 → 70%</span>
-        <span class="tag tag-navy">T2–T3 ~62 → 65%</span>
-      </div>
-    </div>
-    <div class="card green">
-      <div class="card-label">L0 · Growth</div>
-      <div style="font-size:17px;font-weight:800;color:var(--navy)">NRR — Net Revenue Retention</div>
-      <div style="font-size:11.5px;color:var(--gray);margin:5px 0 7px">Retention + expansion. Adoption improvement is the leading driver that powers both L0s.</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <span class="tag tag-green">MM 100 → 108%</span>
-        <span class="tag tag-green">T1 ~95 → 100%</span>
-        <span class="tag tag-green">T2–T3 ~90 → 93%</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- L1 -->
-  <div class="sc-section-lbl">L1 metrics — the leading, controllable drivers (what each owner is measured on weekly)</div>
-  <table>
-    <thead>
-      <tr>
-        <th style="width:25%">MM CSM <span style="font-weight:400;text-transform:none">(dedicated)</span></th>
-        <th style="width:25%">SMB T1 CSM <span style="font-weight:400;text-transform:none">(pooled)</span></th>
-        <th>SMB T2–T3 + Agentic AI <span style="font-weight:400;text-transform:none">(digital specialists run the system)</span></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Adoption depth</strong> — active sessions / feature breadth per account (≥ target adoption score)</td>
-        <td><strong>Activation rate</strong> — % new accounts activated by Day 30 (target 80%)</td>
-        <td><strong>Deflection rate</strong> — Intercom Fin L1 auto-resolution (target ≥55%)</td>
-      </tr>
-      <tr>
-        <td><strong>Book coverage</strong> — % of book with QBR + monthly health touch (target 100%)</td>
-        <td><strong>Pool coverage / SLA</strong> — % of at-risk pool contacted within SLA</td>
-        <td><strong>Digital activation</strong> — % T2–T3 activated by Day 30 via Userpilot (target 80%)</td>
-      </tr>
-      <tr>
-        <td><strong>Health movement</strong> — % book green; # at-risk accounts recovered</td>
-        <td><strong>Connectivity</strong> — % accounts with healthy usage (CRM connected, calls live)</td>
-        <td><strong>Nudge → action conversion</strong> — % of Customer.io / Userpilot nudges that drive the target action</td>
-      </tr>
-      <tr>
-        <td><strong>Expansion signals actioned</strong> — # qualified / pipeline to AE (SPIFF)</td>
-        <td><strong>Save rate</strong> — % of at-risk accounts retained</td>
-        <td><strong>Auto-resolution rate</strong> — % at-risk recovered with no human touch</td>
-      </tr>
-      <tr>
-        <td><strong>Onboarding</strong> — activation milestone hit by Day 30 (new logos)</td>
-        <td><strong>Adoption trend</strong> — % accounts with rising usage period-over-period</td>
-        <td><strong>Model precision + CSAT</strong> — churn-prediction precision/recall; digital CSAT ≥ 4.2 <span style="font-size:10px;color:var(--gray)">(the AI's own KPIs)</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Variable comp -->
-  <div class="sc-section-lbl" style="margin-top:13px">Variable payout — retention-weighted, scaled to control level (CS benchmark: 10–25% of OTE, not sales-style 40–50%)</div>
-  <table>
-    <thead>
-      <tr><th style="width:20%">Role</th><th style="width:14%">Base : Variable</th><th>Variable weighting</th><th style="width:24%">Rationale</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>MM CSM</strong></td><td>80 : 20</td><td><span class="tag tag-navy">60% GRR of book</span> <span class="tag tag-green">25% NRR / expansion</span> <span class="tag tag-amber">15% adoption + coverage</span></td><td>Highest expansion motion → meaningful NRR weight; still retention-led.</td></tr>
-      <tr><td><strong>SMB T1 CSM (pooled)</strong></td><td>85 : 15</td><td><span class="tag tag-navy">70% pool retention / save rate</span> <span class="tag tag-green">20% activation rate</span> <span class="tag tag-amber">10% coverage</span></td><td>Volume retention role; activation is the controllable lever that drives GRR.</td></tr>
-      <tr><td><strong>Digital specialists (T2–T3)</strong></td><td>90 : 10</td><td><span class="tag tag-navy">60% tail GRR</span> <span class="tag tag-green">25% deflection + digital activation</span> <span class="tag tag-amber">15% CSAT</span></td><td>Outcome is system performance, not individual heroics → lower variable, paid on the machine working.</td></tr>
-    </tbody>
-  </table>
-  <div style="margin-top:11px;background:var(--green-light);border-left:4px solid var(--green);border-radius:7px;padding:10px 15px;font-size:11.5px;color:#005C3F;line-height:1.5">
-    <strong>Industry alignment:</strong> GRR + NRR are the standard CS L0 North Stars (Gainsight / Bessemer). Best-in-class: MM GRR &gt;90% &amp; NRR &gt;110%; SMB GRR 75–85% &amp; NRR 95–105%. L1 leading indicators — adoption, time-to-value / activation, health score, coverage, CSAT — are the recognised drivers. Agentic AI carries its own L1s (deflection, precision, auto-resolution) so the system is held to a measurable bar, exactly like a human pod.
-  </div>
 </div>
 </div>
 
