@@ -26,7 +26,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .slide-header{background:var(--navy);padding:14px 44px 12px;border-bottom:3px solid var(--green);display:flex;align-items:baseline;gap:14px;flex-shrink:0}
 .slide-header h1{color:#fff;font-size:20px;font-weight:700;letter-spacing:-0.3px}
 .slide-header .sub{color:rgba(255,255,255,0.5);font-size:12.5px}
-.slide-body{flex:1;background:var(--gray-light);padding:20px 44px 52px;overflow-y:auto}
+.slide-body{flex:1;background:var(--gray-light);padding:20px 44px 52px;overflow-y:auto;display:flex;flex-direction:column;justify-content:safe center}
 .slide-body.white{background:#fff}
 table{width:100%;border-collapse:collapse;font-size:12.5px}
 th{background:var(--navy);color:#fff;padding:8px 11px;text-align:left;font-weight:600;font-size:11.5px;letter-spacing:.4px;text-transform:uppercase}
@@ -461,8 +461,8 @@ tr:last-child td{border-bottom:none}
     <div style="font-size:8.5px;font-weight:700;letter-spacing:.7px;color:#00B27A;margin-bottom:7px">THE PROBLEM — THE BURNING PLATFORM</div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:7px;margin-bottom:7px">
       <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:7px 10px;border-left:3px solid #EF4444">
-        <div style="font-size:18px;font-weight:800;color:#fff;line-height:1.1">$70M</div>
-        <div style="font-size:7.5px;color:rgba(255,255,255,0.6);margin-top:3px">ARR re-earned every 30 days. 70% of accounts on monthly billing — no annual safety net. Retention is re-earned, not locked.</div>
+        <div style="font-size:18px;font-weight:800;color:#fff;line-height:1.1">$80M</div>
+        <div style="font-size:7.5px;color:rgba(255,255,255,0.6);margin-top:3px">ARR re-earned every 30 days. 80% of accounts on monthly billing — no annual safety net. Retention is re-earned, not locked.</div>
       </div>
       <div style="background:rgba(255,255,255,0.06);border-radius:5px;padding:7px 10px;border-left:3px solid #EF4444">
         <div style="font-size:18px;font-weight:800;color:#fff;line-height:1.1">~70%</div>
@@ -563,7 +563,7 @@ tr:last-child td{border-bottom:none}
   <div style="background:#0A2540;border-radius:5px;padding:6px 14px;display:flex;gap:14px;align-items:center">
     <div style="font-size:8.5px;font-weight:700;color:#00B27A;flex-shrink:0;white-space:nowrap">WHY NOW</div>
     <div style="width:1px;background:rgba(255,255,255,0.15);align-self:stretch"></div>
-    <div style="font-size:8px;color:rgba(255,255,255,0.75)">$70M re-earned every 30 days with no structured coverage model = ~$2M in preventable churn every month we delay. The structure, tooling, and programs are defined in this deck — this is the operating manual to run it from Day 1.</div>
+    <div style="font-size:8px;color:rgba(255,255,255,0.75)">$80M re-earned every 30 days with no structured coverage model = ~$2M in preventable churn every month we delay. The structure, tooling, and programs are defined in this deck — this is the operating manual to run it from Day 1.</div>
   </div>
 
 </div>
@@ -591,7 +591,7 @@ tr:last-child td{border-bottom:none}
         <div class="p-bar" style="margin-top:7px"><div class="p-fill" style="width:93%;background:var(--gray)">93%</div></div>
         <div class="p-label">23,250 accounts → $48M ARR · avg $2.1k ACV</div>
       </div>
-      <div class="callout green"><strong>70% of renewals are monthly</strong> — $70M ARR re-earned every 30 days, not locked by annual contracts. Intervention must happen inside the billing cycle.</div>
+      <div class="callout green"><strong>80% of renewals are monthly</strong> — $80M ARR re-earned every 30 days, not locked by annual contracts. Intervention must happen inside the billing cycle.</div>
       <div class="callout red"><strong>The 3-month problem:</strong> 43% of SMB churn lands before day 90, before customers reach first value. Onboarding is the highest-leverage intervention.</div>
       <div class="callout amber"><strong>A small share of accounts carries most revenue.</strong> Top 5% (1,250 accounts) = 45% of ARR. Human coverage must concentrate here; everything else scales on automation.</div>
     </div>
@@ -1533,7 +1533,7 @@ tr:last-child td{border-bottom:none}
 
   <!-- Section 4: Monthly Cohort Prioritisation -->
   <div class="callout green">
-    <strong>Monthly Renewal Cohort Prioritisation:</strong> 70% of renewals are monthly &#8212; CSM and digital agents work a rolling 30-day cohort. Every Monday: ChurnZero auto-generates &#8220;this week&#8217;s renewal cohort&#8221; ranked by <strong>health score &#215; ARR &#215; days-to-renewal</strong>. CSM knows: which accounts to call this week, in what order, and with what talking point.
+    <strong>Monthly Renewal Cohort Prioritisation:</strong> 80% of renewals are monthly &#8212; CSM and digital agents work a rolling 30-day cohort. Every Monday: ChurnZero auto-generates &#8220;this week&#8217;s renewal cohort&#8221; ranked by <strong>health score &#215; ARR &#215; days-to-renewal</strong>. CSM knows: which accounts to call this week, in what order, and with what talking point.
   </div>
 
 </div>
@@ -3061,10 +3061,10 @@ tr:last-child td{border-bottom:none}
         <div style="background:#F1F5F9;border-radius:4px;padding:6px 8px">
           <div style="font-size:8px;font-weight:700;color:#0A2540;margin-bottom:4px">VOLUME CALC</div>
           <div style="font-size:7.5px;color:#444;line-height:1.6">
-            25,000 accts × 70% monthly = <b>17,500 billing/mo</b><br>
-            Dunning rate ~3–5% → <b>525–875 cases/mo</b><br>
+            25,000 accts × 80% monthly = <b>20,000 billing/mo</b><br>
+            Dunning rate ~3–5% → <b>600–1,000 cases/mo</b><br>
             Offline/bank transfer → ~150–200 cases/mo<br>
-            <b>Total: ~700–1,000 cases/month</b>
+            <b>Total: ~750–1,200 cases/month</b>
           </div>
         </div>
         <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:4px;padding:6px 8px">
@@ -3143,7 +3143,7 @@ tr:last-child td{border-bottom:none}
         <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:4px;padding:6px 8px;text-align:center">
           <div style="font-size:7.5px;color:#065F46;font-weight:700;min-height:20px">ARR PROTECTED<br>PER YEAR</div>
           <div style="font-size:13px;font-weight:800;color:#00B27A;margin-top:3px">+$4–5M</div>
-          <div style="font-size:7px;color:#64748B;margin-top:2px">on $70M monthly book</div>
+          <div style="font-size:7px;color:#64748B;margin-top:2px">on $80M monthly book</div>
         </div>
       </div>
       <div style="margin-top:7px;background:#0A2540;border-radius:5px;padding:5px 13px;text-align:center;font-size:8px;color:#9fb3c8">
@@ -3170,7 +3170,7 @@ tr:last-child td{border-bottom:none}
     <tbody>
       <tr><td>Total ARR</td><td>$100M</td></tr>
       <tr><td>Total accounts</td><td>25,000</td></tr>
-      <tr><td>Monthly renewals</td><td>70% of base ($70M ARR re-earned every 30 days)</td></tr>
+      <tr><td>Monthly renewals</td><td>80% of base ($80M ARR re-earned every 30 days)</td></tr>
       <tr><td>MM segment ARR</td><td>$52M (52% of total · 1,750 accounts)</td></tr>
       <tr><td>SMB T1 ARR</td><td>$19M (3,250 accounts)</td></tr>
       <tr><td>SMB T2 ARR</td><td>$12M (4,000 accounts)</td></tr>
