@@ -814,6 +814,117 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
+
+<!-- ── S2R · SEGMENTATION RATIONALE ── -->
+<div class="slide" id="s2r">
+<div class="slide-header">
+  <h1>Segmentation Rationale &#8212; Why This Model, Not Another</h1>
+  <span class="sub">5 design decisions &middot; the logic and assumptions behind each &middot; business outcome it drives</span>
+</div>
+<div class="slide-body" style="padding:10px 44px 52px;display:flex;flex-direction:column;gap:6px">
+
+  <div style="flex:1;display:flex;flex-direction:column;gap:5px;min-height:0">
+
+    <!-- D1: SMB three tiers -->
+    <div style="flex:1;background:#fff;border-radius:7px;border:1px solid #E2E8F0;overflow:hidden;display:grid;grid-template-columns:170px 1fr 200px;min-height:0">
+      <div style="background:#0A2540;padding:10px 12px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:7.5px;font-weight:700;letter-spacing:.8px;color:#00B27A;text-transform:uppercase;margin-bottom:4px">Decision 01</div>
+        <div style="font-size:11.5px;font-weight:700;color:#fff;line-height:1.3">Why split SMB into T1 / T2 / T3?</div>
+        <div style="font-size:8.5px;color:rgba(255,255,255,0.38);margin-top:6px;line-height:1.3">vs. one flat SMB segment</div>
+      </div>
+      <div style="padding:9px 12px;border-right:1px solid #E2E8F0;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:8px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.5px">Logic + Unit Economics</div>
+        <div style="font-size:9.5px;color:#374151;line-height:1.5">SMB spans a <b>5&times; ACV range</b> ($5.8k &rarr; $1.1k). Cost-to-serve must track value-to-serve or the model haemorrhages on the tail. <b>T1 ($5.8k, $19M ARR)</b> &#8212; pooled human triggered by signal hits viable $1.9M ARR/CSM. <b>T2 ($3k, $12M)</b> &#8212; below the human-at-all line, but worth digital + human escalation when a risk signal fires. <b>T3 ($1.1k, $17M, 16k accounts)</b> &#8212; human touch destroys unit economics; automation is the only way 64% of accounts get any coverage at all. Flatten into one tier = abandon $29M or bankrupt the coverage model.</div>
+        <div style="background:#FEF3C7;border-left:2.5px solid #F59E0B;border-radius:0 4px 4px 0;padding:4px 9px;font-size:9px;color:#78350F;line-height:1.4"><b>Key Note:</b> T3&#8217;s $17M ARR &gt; MM Core&#8217;s $15M &#8212; it cannot be ignored. Three tiers = three distinct unit-economics breakpoints, each requiring a different coverage motion.</div>
+      </div>
+      <div style="padding:9px 12px;background:#F0FDF4;border-left:3px solid #00B27A;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:8px;font-weight:700;color:#005C3F;text-transform:uppercase;letter-spacing:.5px">Business Outcome</div>
+        <div style="font-size:12px;font-weight:800;color:#0A2540">SMB GRR +3&#8211;5pp</div>
+        <div style="font-size:9px;color:#374151;line-height:1.5">$29M tail at ~zero marginal cost &middot; T1 saves viable at 325:1 &middot; <b>$1.5&#8211;2.5M ARR retained</b> from 23k-account tail with no incremental headcount</div>
+      </div>
+    </div>
+
+    <!-- D2: MM Strategic vs Core -->
+    <div style="flex:1;background:#fff;border-radius:7px;border:1px solid #E2E8F0;overflow:hidden;display:grid;grid-template-columns:170px 1fr 200px;min-height:0">
+      <div style="background:#1E3A5F;padding:10px 12px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:7.5px;font-weight:700;letter-spacing:.8px;color:#00B27A;text-transform:uppercase;margin-bottom:4px">Decision 02</div>
+        <div style="font-size:11.5px;font-weight:700;color:#fff;line-height:1.3">Why Strategic vs Core in MM?</div>
+        <div style="font-size:8.5px;color:rgba(255,255,255,0.38);margin-top:6px;line-height:1.3">MM ACV: $15k &rarr; $49k &middot; a 3&times; spread</div>
+      </div>
+      <div style="padding:9px 12px;border-right:1px solid #E2E8F0;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:8px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.5px">Logic + Unit Economics</div>
+        <div style="font-size:9.5px;color:#374151;line-height:1.5">MM internally spans a <b>3&times; ACV spread</b> ($15k &rarr; $49k+). One coverage ratio across both would either over-invest Core at 58:1 (wasting CSM hours on $15k accounts) or starve Strategic at 143:1 (losing $37M of relationship depth). <b>Strategic</b> (750 accts, $49k avg, $37M ARR) = 3% of accounts, 37% of total ARR &#8212; crown jewels requiring QBRs, exec alignment, and active expansion plays. <b>Core</b> (1,000 accts, $15k avg, $15M) = above the named-human threshold (~$12k ACV) so still gets a dedicated CSM for continuity and trust, but lighter programmatic cadence. Same named model &#8212; different intensity.</div>
+        <div style="background:#FEF3C7;border-left:2.5px solid #F59E0B;border-radius:0 4px 4px 0;padding:4px 9px;font-size:9px;color:#78350F;line-height:1.4"><b>Key Note:</b> Named CSM (not pooled) is the right model above ~$12k ACV &#8212; relationship continuity is a retention moat. One mishandled QBR on a $49k account = potentially $49k churned. The split protects both the economics and the relationship.</div>
+      </div>
+      <div style="padding:9px 12px;background:#F0FDF4;border-left:3px solid #00B27A;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:8px;font-weight:700;color:#005C3F;text-transform:uppercase;letter-spacing:.5px">Business Outcome</div>
+        <div style="font-size:12px;font-weight:800;color:#0A2540">MM GRR 75&rarr;79%</div>
+        <div style="font-size:9px;color:#374151;line-height:1.5">NRR 100&rarr;108% via Strategic QBR-led expansion &middot; each 1pp MM GRR = <b>~$520k ARR retained</b> &middot; zero orphaned MM accounts at any ACV</div>
+      </div>
+    </div>
+
+    <!-- D3: Human line at $4.6k -->
+    <div style="flex:1;background:#fff;border-radius:7px;border:1px solid #E2E8F0;overflow:hidden;display:grid;grid-template-columns:170px 1fr 200px;min-height:0">
+      <div style="background:#0A2540;padding:10px 12px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:7.5px;font-weight:700;letter-spacing:.8px;color:#00B27A;text-transform:uppercase;margin-bottom:4px">Decision 03</div>
+        <div style="font-size:11.5px;font-weight:700;color:#fff;line-height:1.3">Why draw the human line at ~$4.6k ACV?</div>
+        <div style="font-size:8.5px;color:rgba(255,255,255,0.38);margin-top:6px;line-height:1.3">Line set by math, not preference</div>
+      </div>
+      <div style="padding:9px 12px;border-right:1px solid #E2E8F0;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:8px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.5px">Logic + Unit Economics</div>
+        <div style="font-size:9.5px;color:#374151;line-height:1.5">The line marks where pooled CSM cost exceeds attributable retention value. <b>Formula:</b> Human-line ACV &asymp; CSM loaded cost &divide; (max viable book &times; attributable GRR save) &asymp; $35k &divide; (325 accts &times; 2.3pp) &asymp; <b>$4.6k.</b> Below it: to hit viable ARR/CSM a CSM needs 950+ accounts &#8212; physically unworkable and relationship-destroying. Two thresholds exist: <b>(1) Named ~$12k</b> &#8212; dedicated CSM pays back above this (MM). <b>(2) Human-at-all ~$4.6k</b> &#8212; any pooled human pays back above this (T1 at $5.8k sits just above). T2 ($3k) and T3 ($1.1k) fall below both lines &rarr; digital only.</div>
+        <div style="background:#FEF3C7;border-left:2.5px solid #F59E0B;border-radius:0 4px 4px 0;padding:4px 9px;font-size:9px;color:#78350F;line-height:1.4"><b>Key Note:</b> Line inputs: CSM loaded cost ~$35k (India base), max pooled book 325 accts, attributable GRR save 2.3pp. If India costs rise, the line moves up and the T1 threshold needs re-testing.</div>
+      </div>
+      <div style="padding:9px 12px;background:#F0FDF4;border-left:3px solid #00B27A;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:8px;font-weight:700;color:#005C3F;text-transform:uppercase;letter-spacing:.5px">Business Outcome</div>
+        <div style="font-size:12px;font-weight:800;color:#0A2540">Cost-to-ARR 1.68%</div>
+        <div style="font-size:9px;color:#374151;line-height:1.5">vs 2&#8211;3% industry avg &middot; T1 pooled human ROI-positive above line &middot; <b>16k T3 accounts</b> covered at ~$0 marginal cost &middot; protects margin while maximising coverage</div>
+      </div>
+    </div>
+
+    <!-- D4: One model, five tiers -->
+    <div style="flex:1;background:#fff;border-radius:7px;border:1px solid #E2E8F0;overflow:hidden;display:grid;grid-template-columns:170px 1fr 200px;min-height:0">
+      <div style="background:#1E3A5F;padding:10px 12px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:7.5px;font-weight:700;letter-spacing:.8px;color:#00B27A;text-transform:uppercase;margin-bottom:4px">Decision 04</div>
+        <div style="font-size:11.5px;font-weight:700;color:#fff;line-height:1.3">&#8220;One model&#8221; with 5 tiers and 2 motions?</div>
+        <div style="font-size:8.5px;color:rgba(255,255,255,0.38);margin-top:6px;line-height:1.3">One formula &middot; one brain &middot; different responses</div>
+      </div>
+      <div style="padding:9px 12px;border-right:1px solid #E2E8F0;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:8px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.5px">Logic + Design Principle</div>
+        <div style="font-size:9.5px;color:#374151;line-height:1.5">All five tiers are produced by <b>one governing rule:</b> ARR-first placement, account-capped ceiling. Set ARR/CSM target &rarr; check account-count ceiling doesn&#8217;t breach relationship limit &rarr; assign tier. The same <b>50-parameter health engine</b> scores all 25,000 accounts. The same playbook system fires the response. What changes at tier boundaries is the <em>response</em> (human call vs digital nudge) &#8212; not the detection, not the criteria. Motions differ because economics differ, not because we designed five separate strategies. Change an account&#8217;s ARR and it re-tiers automatically &#8212; no manual re-assignment.</div>
+        <div style="background:#FEF3C7;border-left:2.5px solid #F59E0B;border-radius:0 4px 4px 0;padding:4px 9px;font-size:9px;color:#78350F;line-height:1.4"><b>Key Note:</b> One CS Ops workflow, one health score formula, one reporting model for the CFO. Auto-tiering is also the NRR engine: accounts grow ARR &rarr; move up-tier &rarr; more CS investment &rarr; more expansion captured via the 3 Parallel Program.</div>
+      </div>
+      <div style="padding:9px 12px;background:#F0FDF4;border-left:3px solid #00B27A;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:8px;font-weight:700;color:#005C3F;text-transform:uppercase;letter-spacing:.5px">Business Outcome</div>
+        <div style="font-size:12px;font-weight:800;color:#0A2540">GRR 70&rarr;78% &middot; NRR 85&rarr;95%</div>
+        <div style="font-size:9px;color:#374151;line-height:1.5">One model = one GRR story for the board &middot; auto-tiering is the organic NRR engine &middot; accounts that grow in ARR naturally receive more CS investment</div>
+      </div>
+    </div>
+
+    <!-- D5: Pooled vs Named -->
+    <div style="flex:1;background:#fff;border-radius:7px;border:1px solid #E2E8F0;overflow:hidden;display:grid;grid-template-columns:170px 1fr 200px;min-height:0">
+      <div style="background:#0A2540;padding:10px 12px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:7.5px;font-weight:700;letter-spacing:.8px;color:#00B27A;text-transform:uppercase;margin-bottom:4px">Decision 05</div>
+        <div style="font-size:11.5px;font-weight:700;color:#fff;line-height:1.3">Pooled vs Named &#8212; what actually changes?</div>
+        <div style="font-size:8.5px;color:rgba(255,255,255,0.38);margin-top:6px;line-height:1.3">Signal-first vs calendar-first</div>
+      </div>
+      <div style="padding:9px 12px;border-right:1px solid #E2E8F0;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:8px;font-weight:700;color:#0A2540;text-transform:uppercase;letter-spacing:.5px">Logic + How It Works</div>
+        <div style="font-size:9.5px;color:#374151;line-height:1.5"><b>Named</b> = &#8220;who owns this account?&#8221; &#8212; person-first, calendar-driven cadence. QBRs, scheduled touches, relationship continuity. <b>Pooled</b> = &#8220;which account needs a human right now?&#8221; &#8212; signal-first, intervention-driven. ChurnZero auto-generates the weekly T1 cohort ranked by health score &times; ARR &times; days-to-renewal; next available CSM picks from the queue. At any point only <b>~10&#8211;15% of the T1 book is at risk</b> (~325&#8211;480 accounts/month). Pooling concentrates 10 CSMs on that active slice instead of spreading each thin over 325 accounts doing shallow routine check-ins. Named model fails at $5.8k ACV (too costly); pooled model fails at $49k ACV (relationship IS the moat).</div>
+        <div style="background:#FEF3C7;border-left:2.5px solid #F59E0B;border-radius:0 4px 4px 0;padding:4px 9px;font-size:9px;color:#78350F;line-height:1.4"><b>Key Note:</b> Customer gets &#8220;a CSM&#8221; not &#8220;their CSM&#8221; &#8212; relationship is with the brand, acceptable at $5.8k ACV. Save rate is driven by signal quality and intervention timing, not personal relationship depth.</div>
+      </div>
+      <div style="padding:9px 12px;background:#F0FDF4;border-left:3px solid #00B27A;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:8px;font-weight:700;color:#005C3F;text-transform:uppercase;letter-spacing:.5px">Business Outcome</div>
+        <div style="font-size:12px;font-weight:800;color:#0A2540">T1 GRR 65&rarr;70%</div>
+        <div style="font-size:9px;color:#374151;line-height:1.5">+5pp on $19M = <b>$950k ARR retained</b> &middot; 325:1 viable because only ~15% at risk at once &middot; variable-cost model: spend human hours on saves, not routine maintenance</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
 <!-- ── S3 · TEAM STRUCTURE ── -->
 <div class="slide" id="s4">
 <div class="slide-header">
@@ -3441,7 +3552,7 @@ tr:last-child td{border-bottom:none}
 <nav class="nav-bar">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
   <div class="slide-dots" id="dotsContainer"></div>
-  <span class="slide-counter" id="counter">1 / 35</span>
+  <span class="slide-counter" id="counter">1 / 36</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
 </nav>
 
