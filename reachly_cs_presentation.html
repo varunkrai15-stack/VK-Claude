@@ -447,7 +447,7 @@ tr:last-child td{border-bottom:none}
     <li>2-team structure · Mid Market + SMB (3 tiers)</li>
     <li>ARR-first book of business · account-capped coverage</li>
     <li>43 FTE · $1.51M people · 1.51% of ARR</li>
-    <li>8-tool stack · $183k + ~$120k build · 5.6x realistic Year-1 / 10.9x steady-state ROI</li>
+    <li>8-tool lean stack (4 already owned) · $87k + ~$55k build · 12.7x Year-1 / 23x steady-state ROI</li>
     <li>Base payback 12 months · Best 6.5 months</li>
     <li>GRR target: 70% → 75–78% in 18 months</li>
   </ul>
@@ -531,7 +531,7 @@ tr:last-child td{border-bottom:none}
             <div style="height:3px"></div>
             <div style="background:#F0FDF4;border-radius:3px;padding:5px 7px;font-size:10px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#065F46">2 motions:</b> PLG AI-agent self-serve (T2/T3) + Human-led CSM (MM + T1)</span></div>
             <div style="height:3px"></div>
-            <div style="background:#F0FDF4;border-radius:3px;padding:5px 7px;font-size:10px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#065F46">8-tool stack:</b> HubSpot · RudderStack · Userpilot · Customer.io · Churnkey · Intercom Fin · Delighted · Metabase — $183k/yr</span></div>
+            <div style="background:#F0FDF4;border-radius:3px;padding:5px 7px;font-size:10px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#065F46">8-tool lean stack:</b> HubSpot · PostHog · Userpilot · Churnkey · Intercom Fin · Delighted · Metabase — $87k/yr (4 already owned)</span></div>
             <div style="height:3px"></div>
             <div style="background:#F0FDF4;border-radius:3px;padding:5px 7px;font-size:10px;color:#444;flex:1;display:flex;align-items:center"><span><b style="color:#065F46">AI signal engine:</b> predicts churn 30–60d before the billing event fires</span></div>
           </div>
@@ -972,7 +972,7 @@ tr:last-child td{border-bottom:none}
 
       <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-top:3px solid #0A2540;border-radius:6px;padding:8px">
         <div style="font-size:8.5px;font-weight:700;color:#0A2540;margin-bottom:3px;line-height:1.3">CS Systems / RevOps <span style="background:#0A2540;color:#fff;font-size:7px;border-radius:3px;padding:1px 5px;margin-left:2px">&#215;1</span></div>
-        <div style="font-size:8px;color:#374151;line-height:1.45;margin-bottom:4px">Owns HubSpot orchestration (Service + Operations Hub), RudderStack pipelines, and CS workflow automation. Builds and maintains CSM workflows, health-score data feeds, and playbook automation triggers. Without this, CSMs operate across disconnected tools with no priority queue.</div>
+        <div style="font-size:8px;color:#374151;line-height:1.45;margin-bottom:4px">Owns HubSpot orchestration (Service + Operations Hub), PostHog pipelines, and CS workflow automation. Builds and maintains CSM workflows, health-score data feeds, and playbook automation triggers. Without this, CSMs operate across disconnected tools with no priority queue.</div>
         <div style="font-size:7.5px;color:#DC2626;font-weight:600;margin-bottom:3px">&#9650; Blocker: No clean data pipelines = no health score = the entire signal-to-action model collapses.</div>
         <div style="font-size:7.5px;color:#005C3F;font-weight:600">Impact: 540 CSM hrs/mo freed from admin; automated playbooks fire without manual intervention</div>
       </div>
@@ -1003,7 +1003,7 @@ tr:last-child td{border-bottom:none}
 
 <div class="eval-strip">
   <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">MM accounts (&gt;$5k ACV) justify dedicated 1:1 CSM &#8212; relationship depth is a retention differentiator at this ACV. SMB accounts ($1&#8211;2k ACV) cannot be profitably served 1:1 at scale (break-even is $10k+ ACV). This drives the 2-motion model, not a headcount constraint.</span></div>
-  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">43 FTE at $1.51M people cost = 1.51% people cost-to-ARR vs 2&#8211;3% industry average (total CS investment incl. $183k tooling = 1.68%). Lean team forces tooling discipline &#8212; automation becomes mandatory infrastructure, not optional efficiency. India base creates 6&#8211;7&#215; cost advantage that funds both heads and the full tooling stack.</span></div>
+  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">43 FTE at $1.51M people cost = 1.51% people cost-to-ARR vs 2&#8211;3% industry average (total CS investment incl. $87k lean tooling = ~1.6%). Lean team forces tooling discipline &#8212; automation becomes mandatory infrastructure, not optional efficiency. India base creates 6&#8211;7&#215; cost advantage that funds both heads and the lean tooling stack.</span></div>
 </div>
 </div>
 </div>
@@ -1238,11 +1238,11 @@ tr:last-child td{border-bottom:none}
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px">
       <div style="background:#0A2540;border-radius:5px;padding:7px 9px">
         <div style="font-size:8px;font-weight:700;color:#00B27A;letter-spacing:.5px;margin-bottom:3px">Phase 1 &middot; Days 0&#8211;30 &middot; Design</div>
-        <div style="font-size:7.5px;color:rgba(255,255,255,0.78);line-height:1.45">Define 50 parameters &amp; initial weights from 12-month churn back-test &middot; Set segment-specific score thresholds (MM vs T1 vs T2+T3) &middot; Map signal sources: RudderStack events, Stripe webhooks, Zendesk tickets, HubSpot champion-change detection</div>
+        <div style="font-size:7.5px;color:rgba(255,255,255,0.78);line-height:1.45">Define 50 parameters &amp; initial weights from 12-month churn back-test &middot; Set segment-specific score thresholds (MM vs T1 vs T2+T3) &middot; Map signal sources: PostHog events, Stripe webhooks, Zendesk tickets, HubSpot champion-change detection</div>
       </div>
       <div style="background:#0A2540;border-radius:5px;padding:7px 9px">
         <div style="font-size:8px;font-weight:700;color:#00B27A;letter-spacing:.5px;margin-bottom:3px">Phase 2 &middot; Days 31&#8211;60 &middot; Build</div>
-        <div style="font-size:7.5px;color:rgba(255,255,255,0.78);line-height:1.45">Build RudderStack &#8594; HubSpot pipeline &middot; Configure weighted health score formula in HubSpot &middot; Run shadow mode: score every account, don&#8217;t surface to CSMs yet &middot; Compare shadow scores against actual churn &middot; Tune until precision &gt;65%</div>
+        <div style="font-size:7.5px;color:rgba(255,255,255,0.78);line-height:1.45">Build PostHog &#8594; HubSpot pipeline &middot; Configure weighted health score formula in HubSpot &middot; Run shadow mode: score every account, don&#8217;t surface to CSMs yet &middot; Compare shadow scores against actual churn &middot; Tune until precision &gt;65%</div>
       </div>
       <div style="background:#0A2540;border-radius:5px;padding:7px 9px">
         <div style="font-size:8px;font-weight:700;color:#00B27A;letter-spacing:.5px;margin-bottom:3px">Phase 3 &middot; Days 61&#8211;90 &middot; Deploy</div>
@@ -1257,7 +1257,7 @@ tr:last-child td{border-bottom:none}
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px">
       <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:5px;padding:6px 8px">
         <div style="font-size:7.5px;font-weight:700;color:#DC2626;margin-bottom:2px">&#9650; Dirty / incomplete product data</div>
-        <div style="font-size:7.5px;color:#374151;line-height:1.4">RudderStack event gaps make the health score misfire on key signals &#8212; flags wrong accounts, burns CSM trust early.</div>
+        <div style="font-size:7.5px;color:#374151;line-height:1.4">PostHog event gaps make the health score misfire on key signals &#8212; flags wrong accounts, burns CSM trust early.</div>
         <div style="font-size:7.5px;color:#005C3F;font-weight:600;margin-top:3px">Fix: Week-1 data audit &middot; shadow mode runs parallel before go-live &middot; score only surfaces if data completeness &gt;80%</div>
       </div>
       <div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:5px;padding:6px 8px">
@@ -1289,7 +1289,7 @@ tr:last-child td{border-bottom:none}
   </div>
 
 <div class="eval-strip">
-  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Product-behaviour signals (usage trends, integration health, seat utilisation) are 3&#8211;4&#215; more predictive of churn than lagging indicators (NPS, renewal proximity). This drives investment in RudderStack + HubSpot. If model precision &lt;70%, automation is gated &#8212; human review stays in the loop.</span></div>
+  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Product-behaviour signals (usage trends, integration health, seat utilisation) are 3&#8211;4&#215; more predictive of churn than lagging indicators (NPS, renewal proximity). This drives investment in PostHog + HubSpot. If model precision &lt;70%, automation is gated &#8212; human review stays in the loop.</span></div>
   <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">Earlier detection &#8594; higher save rate. Churn caught 90&#8211;120 days out allows 3&#8211;4 intervention attempts vs 0&#8211;1 at renewal. Each 1pp save rate improvement on at-risk pool = $300k+ ARR retained. Signal-based model is the GRR lever with the longest time horizon.</span></div>
 </div>
 </div>
@@ -1422,12 +1422,12 @@ tr:last-child td{border-bottom:none}
     <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
       <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Welcome Email + Userpilot</div>
       <div style="font-size:8.5px;color:#374151;line-height:1.45">In-app guided setup · integration checklist</div>
-      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">Customer.io + Userpilot</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">HubSpot + Userpilot</div>
     </div>
     <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
       <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">First-Value Proof Email</div>
       <div style="font-size:8.5px;color:#374151;line-height:1.45">&ldquo;You made 30 calls &mdash; here's your ROI&rdquo; · D30 pooled CSM check</div>
-      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">Customer.io + Pooled CSM</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">HubSpot + Pooled CSM</div>
     </div>
     <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
       <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Health Score Queue</div>
@@ -1437,12 +1437,12 @@ tr:last-child td{border-bottom:none}
     <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
       <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Monthly Health Email</div>
       <div style="font-size:8.5px;color:#374151;line-height:1.45">Automated usage digest · feature tip nudge</div>
-      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">Customer.io</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">HubSpot</div>
     </div>
     <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
       <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Pooled Save Play + Annual Offer</div>
       <div style="font-size:8.5px;color:#374151;line-height:1.45">P1 flagged &rarr; pooled CSM · Month 8&ndash;10 annual upgrade</div>
-      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">Pooled CSM + Customer.io</div>
+      <div style="font-size:7.5px;color:#00B27A;font-weight:700;margin-top:4px">Pooled CSM + HubSpot</div>
     </div>
   </div>
 
@@ -1456,7 +1456,7 @@ tr:last-child td{border-bottom:none}
     <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
       <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Welcome Email + In-App Guide</div>
       <div style="font-size:8.5px;color:#374151;line-height:1.45">Userpilot step-by-step flow · no human in the loop</div>
-      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">Customer.io + Userpilot</div>
+      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">HubSpot + Userpilot</div>
     </div>
     <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
       <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Feature Activation Nudge</div>
@@ -1466,17 +1466,17 @@ tr:last-child td{border-bottom:none}
     <div style="background:#fff;border:1px solid #E2E8F0;border-radius:5px;padding:6px 8px">
       <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Re-Engagement Campaign</div>
       <div style="font-size:8.5px;color:#374151;line-height:1.45">Usage-drop email sequence · NPS survey at Day 60</div>
-      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">Customer.io + Digital CS</div>
+      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">HubSpot + Digital CS</div>
     </div>
     <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
       <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Quarterly Value Digest</div>
       <div style="font-size:8.5px;color:#374151;line-height:1.45">&ldquo;Your team made X calls, saved Y hrs&rdquo; · in-app upgrade prompt</div>
-      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">Customer.io + Digital CS</div>
+      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">HubSpot + Digital CS</div>
     </div>
     <div style="background:#F0FDF4;border:1px solid #A7F3D0;border-radius:5px;padding:6px 8px">
       <div style="font-size:9.5px;font-weight:700;color:#0A2540;margin-bottom:2px">Renewal Flow + Win-Back</div>
       <div style="font-size:8.5px;color:#374151;line-height:1.45">5-email renewal sequence · Fin cancellation intervention · D7 win-back if churned</div>
-      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">Customer.io + Fin + Digital CS</div>
+      <div style="font-size:7.5px;color:#0891B2;font-weight:700;margin-top:4px">HubSpot + Fin + Digital CS</div>
     </div>
   </div>
 
@@ -1514,7 +1514,7 @@ tr:last-child td{border-bottom:none}
     <div class="pb-how-col">
       <div class="pb-how-hdr green-hdr">For SMB Tech-Touch</div>
       <div class="pb-how-body">
-        <div class="pb-how-item green-left">HubSpot detects signal &#8594; fires automated sequence via Customer.io + Intercom Fin &#8212; no human in the loop for T2 + T3 unless escalated</div>
+        <div class="pb-how-item green-left">HubSpot detects signal &#8594; fires automated sequence via HubSpot + Intercom Fin &#8212; no human in the loop for T2 + T3 unless escalated</div>
         <div class="pb-how-item green-left">Nudges, in-app prompts, email sequences personalised by usage profile</div>
         <div class="pb-how-item green-left">Escalates to digital specialist only if <strong>3 automated touches fail</strong></div>
       </div>
@@ -1574,10 +1574,10 @@ tr:last-child td{border-bottom:none}
     <tbody>
       <tr><td><strong>Pricing / ROI not clear</strong></td><td>MM + T1</td><td>Pricing Rescue</td><td>ROI calculation + annual offer (15% discount)</td><td>1:1 call</td><td>CSM + AE</td></tr>
       <tr><td><strong>Low adoption / not using</strong></td><td>MM + T1</td><td>Activation Recovery</td><td>Usage audit + guided setup call + Userpilot flow</td><td>1:1 + in-app</td><td>CSM</td></tr>
-      <tr><td><strong>Low adoption / not using</strong></td><td>T2 + T3</td><td>Re-engagement Nudge</td><td>&#8220;Here&#8217;s what you&#8217;re missing&#8221; email sequence + Fin prompt</td><td>Email + in-app</td><td>Customer.io + Fin</td></tr>
+      <tr><td><strong>Low adoption / not using</strong></td><td>T2 + T3</td><td>Re-engagement Nudge</td><td>&#8220;Here&#8217;s what you&#8217;re missing&#8221; email sequence + Fin prompt</td><td>Email + in-app</td><td>HubSpot + Fin</td></tr>
       <tr><td><strong>Integration failure</strong></td><td>All</td><td>Integration Fix Sprint</td><td>Proactive outreach + live reconnection</td><td>1:1 call (MM) / Email (SMB)</td><td>CSM / Auto</td></tr>
       <tr><td><strong>Business slowdown</strong></td><td>MM + T1</td><td>Helping Hand</td><td>Offer 1-month free pause + resume commitment</td><td>1:1 call</td><td>CSM</td></tr>
-      <tr><td><strong>Business slowdown</strong></td><td>T2 + T3</td><td>Pause &amp; Resume</td><td>Automated: &#8220;Pause your plan, resume when ready&#8221;</td><td>Email</td><td>Customer.io</td></tr>
+      <tr><td><strong>Business slowdown</strong></td><td>T2 + T3</td><td>Pause &amp; Resume</td><td>Automated: &#8220;Pause your plan, resume when ready&#8221;</td><td>Email</td><td>HubSpot</td></tr>
       <tr><td><strong>Competitor mention</strong></td><td>MM</td><td>Competitive Shield</td><td>Win/loss analysis + differentiation call</td><td>1:1 call</td><td>CSM + Product</td></tr>
       <tr><td><strong>Champion change</strong></td><td>MM + T1</td><td>New Champion Onboarding</td><td>Personalised intro + value replay</td><td>1:1 call</td><td>CSM</td></tr>
       <tr><td><strong>No usage / zombie account</strong></td><td>T2 + T3</td><td>Last-Mile Rescue</td><td>3-touch sequence: email &#8594; Fin &#8594; specialist</td><td>Email + in-app</td><td>Auto &#8594; Digital</td></tr>
@@ -1738,7 +1738,7 @@ tr:last-child td{border-bottom:none}
       <div class="ob-stage-items">
         <div class="ob-item">AI call scoring enabled, first scores reviewed together</div>
         <div class="ob-item">SMS campaign setup (if applicable)</div>
-        <div class="ob-item">First milestone reached: 50 calls &#8594; &#8220;First Value Email&#8221; triggered by Customer.io</div>
+        <div class="ob-item">First milestone reached: 50 calls &#8594; &#8220;First Value Email&#8221; triggered by HubSpot</div>
       </div>
     </div>
     <div class="ob-stage">
@@ -1769,12 +1769,12 @@ tr:last-child td{border-bottom:none}
   <div class="ob-techtouch">
     <div class="ob-techtouch-hdr">SMB T2 + T3 Onboarding &#8212; Tech-Touch In-Product</div>
     <div class="ob-techtouch-body">
-      <div class="ob-tt-item"><span class="ob-tt-day">Day 0</span>Welcome email (Customer.io) + in-app checklist launched (Userpilot): 5 steps to first call</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 0</span>Welcome email (HubSpot) + in-app checklist launched (Userpilot): 5 steps to first call</div>
       <div class="ob-tt-item"><span class="ob-tt-day">Day 1</span>First call prompt: Userpilot tooltip on making first call</div>
       <div class="ob-tt-item"><span class="ob-tt-day">Day 3</span>&#8220;You haven&#8217;t connected your CRM yet&#8221; &#8212; in-app nudge + email</div>
-      <div class="ob-tt-item"><span class="ob-tt-day">Day 7</span>Integration not done &#8594; Customer.io email: &#8220;3 things stopping you from getting 10x value&#8221;</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 7</span>Integration not done &#8594; HubSpot email: &#8220;3 things stopping you from getting 10x value&#8221;</div>
       <div class="ob-tt-item"><span class="ob-tt-day">Day 14</span>Activation check: if &lt;3 calls made &#8594; Intercom Fin proactive: &#8220;need help getting started?&#8221;</div>
-      <div class="ob-tt-item"><span class="ob-tt-day">Day 30</span>First Value Email (Customer.io): &#8220;Here&#8217;s what 30 calls a month does for a team like yours&#8221;</div>
+      <div class="ob-tt-item"><span class="ob-tt-day">Day 30</span>First Value Email (HubSpot): &#8220;Here&#8217;s what 30 calls a month does for a team like yours&#8221;</div>
       <div class="ob-tt-item"><span class="ob-tt-day">Ongoing</span>Userpilot tips triggered by product behavior. HubSpot health score monitoring begins.</div>
     </div>
   </div>
@@ -1874,7 +1874,7 @@ tr:last-child td{border-bottom:none}
           <div style="font-size:9px;color:#444"><strong style="color:#065F46">Health trigger:</strong> Account below 2+ metrics for 14+ days → HubSpot fires intervention playbook automatically</div>
         </div>
         <div style="margin-top:6px;background:#fff;border:1px solid #BAE6FD;border-radius:4px;padding:5px 8px">
-          <div style="font-size:9px;color:#444"><strong style="color:#0284C7">Source:</strong> RudderStack pipes call data to HubSpot weekly. CSM / AI agent reads the performance cut each Monday.</div>
+          <div style="font-size:9px;color:#444"><strong style="color:#0284C7">Source:</strong> PostHog pipes call data to HubSpot weekly. CSM / AI agent reads the performance cut each Monday.</div>
         </div>
       </div>
     </div>
@@ -1927,9 +1927,9 @@ tr:last-child td{border-bottom:none}
         <span style="background:#7C3AED;color:#fff;font-size:8.5px;font-weight:700;padding:2px 7px;border-radius:3px">T2 + T3 · 20,000 accounts</span>
       </div>
       <div style="display:grid;grid-template-columns:auto 1fr;gap:3px 8px;font-size:9.5px;color:#444;align-items:start">
-        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">RudderStack</span><span>Detects adoption / MAU gap → triggers HubSpot milestone playbook</span>
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">PostHog</span><span>Detects adoption / MAU gap → triggers HubSpot milestone playbook</span>
         <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Userpilot</span><span>In-app tooltip + guided flow for the next uncompleted milestone feature</span>
-        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Customer.io</span><span>Milestone email: feature guide, video walkthrough, use-case story</span>
+        <span style="color:#7C3AED;font-weight:600;white-space:nowrap">HubSpot</span><span>Milestone email: feature guide, video walkthrough, use-case story</span>
         <span style="color:#7C3AED;font-weight:600;white-space:nowrap">Intercom Fin</span><span>AI agent answers configuration Q&amp;As, resolves setup blockers</span>
         <span style="color:#7C3AED;font-weight:600;white-space:nowrap">HubSpot</span><span>Tracks tier movement L→M→H · auto-escalates RED accounts to human queue</span>
       </div>
@@ -2084,7 +2084,7 @@ tr:last-child td{border-bottom:none}
       <div style="flex:1;text-align:center">
         <div style="background:#F59E0B;color:#fff;padding:3px 6px;font-size:8.5px;font-weight:700">D +3</div>
         <div style="background:#FFFBEB;border:1px solid #FCD34D;border-right:none;padding:5px 4px;font-size:7.5px;line-height:1.45;height:52px">
-          <b>Retry #2</b><br>Customer.io seq #2<br>In-app banner live<br>&nbsp;
+          <b>Retry #2</b><br>HubSpot seq #2<br>In-app banner live<br>&nbsp;
         </div>
       </div>
       <div style="display:flex;align-items:center;color:#94A3B8;font-size:14px;padding-top:18px">›</div>
@@ -2120,13 +2120,13 @@ tr:last-child td{border-bottom:none}
       <div style="padding:8px 10px;background:#F0FDF4">
         <div style="font-size:8px;color:#444;margin-bottom:5px">Resolve failures <em>before</em> D0 — target: &gt;40% of dunning cases eliminated upstream.</div>
         <div style="display:flex;flex-direction:column;gap:3px">
-          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#00B27A;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−30</span><span>Stripe/Chargebee: scan cards expiring in 30d → Customer.io "update card" email auto-fires</span></div>
+          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#00B27A;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−30</span><span>Stripe/Chargebee: scan cards expiring in 30d → HubSpot "update card" email auto-fires</span></div>
           <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#00B27A;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−14</span><span>No update yet → Userpilot in-app nudge + email reminder with 1-click card update button</span></div>
           <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#F59E0B;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−7</span><span><b>Soft-auth ($0 hold)</b> to validate card. Fail → business desk outreach list; no waiting for D0 bounce</span></div>
           <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#F59E0B;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D−3</span><span>Final pre-renewal nudge: SMS + Intercom Fin proactive chat — "Your renewal is in 3 days"</span></div>
         </div>
         <div style="margin-top:6px;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 7px;font-size:7.5px;color:#444">
-          <b style="color:#065F46">Stack:</b> Stripe / Chargebee + Customer.io + Userpilot + Intercom Fin
+          <b style="color:#065F46">Stack:</b> Stripe / Chargebee + HubSpot + Userpilot + Intercom Fin
         </div>
       </div>
     </div>
@@ -2222,7 +2222,7 @@ tr:last-child td{border-bottom:none}
           <div style="font-size:8px;font-weight:700;color:#4338CA;margin-bottom:4px">TOOLING STACK</div>
           <div style="font-size:7.5px;color:#444;line-height:1.6">
             <b>Stripe Billing / Chargebee</b> — retry logic, dunning automation, invoice<br>
-            <b>Customer.io</b> — email sequences D−30 → D+14<br>
+            <b>HubSpot</b> — email sequences D−30 → D+14<br>
             <b>HubSpot</b> — flag delinquent as churn risk task<br>
             <b>Userpilot</b> — in-app card update nudge
           </div>
@@ -2478,7 +2478,7 @@ tr:last-child td{border-bottom:none}
       <tr>
         <td style="padding:8px 6px"><strong style="font-size:10px">Health movement</strong><br><span style="color:var(--gray);font-size:8.5px">% book green; # at-risk accounts recovered</span></td>
         <td style="padding:8px 6px"><strong style="font-size:10px">Connectivity</strong><br><span style="color:var(--gray);font-size:8.5px">% accounts with healthy usage (CRM connected, calls live)</span></td>
-        <td style="padding:8px 6px"><strong style="font-size:10px">Nudge → action conversion</strong><br><span style="color:var(--gray);font-size:8.5px">% of Customer.io / Userpilot nudges that drive the target action</span></td>
+        <td style="padding:8px 6px"><strong style="font-size:10px">Nudge → action conversion</strong><br><span style="color:var(--gray);font-size:8.5px">% of HubSpot / Userpilot nudges that drive the target action</span></td>
       </tr>
       <tr>
         <td style="padding:8px 6px"><strong style="font-size:10px">Expansion signals actioned</strong><br><span style="color:var(--gray);font-size:8.5px"># qualified / pipeline to AE (SPIFF)</span></td>
@@ -2557,7 +2557,7 @@ tr:last-child td{border-bottom:none}
 <div class="slide" id="s7">
 <div class="slide-header">
   <h1>Tooling Landscape</h1>
-  <span class="sub">$183k / yr · each tool owns a churn bucket · HubSpot is the orchestration backbone</span>
+  <span class="sub">$87k / yr · 4 of 8 tools already owned or native · HubSpot is the orchestration backbone</span>
 </div>
 <div class="slide-body white">
   <div class="stack-layer">
@@ -2568,12 +2568,12 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
   <div class="stack-layer">
-    <div class="sl-label">Data Layer — must go live first (engineering dependency)</div>
+    <div class="sl-label">Data Layer — PostHog, 1–2 week deploy (only engineering dependency)</div>
     <div class="stack-tools">
       <div class="tool-card">
-        <div class="tool-name">RudderStack</div>
-        <div class="tool-desc">CDP — pipes product usage events into health scoring. Without this, health scores run on CRM data only = blind. 4–8 week engineering implementation.</div>
-        <div class="tool-meta"><span class="tool-cost">$40k / yr</span><span class="tool-integ">→ HubSpot · Userpilot · Metabase</span><span class="tool-roi">Metric: % accounts with full usage data; health score accuracy</span></div>
+        <div class="tool-name">PostHog</div>
+        <div class="tool-desc">Product analytics + event pipeline (open-source core). Pipes usage events into HubSpot health scoring. Deploys in 1–2 weeks, not 4–8 — and is the only tool in the stack that needs engineering. Without it, health scores run on CRM data only.</div>
+        <div class="tool-meta"><span class="tool-cost">$18k / yr</span><span class="tool-integ">→ HubSpot · Userpilot · Metabase</span><span class="tool-roi">Metric: % accounts with full usage data; health score accuracy</span></div>
       </div>
       <div class="tool-card">
         <div class="tool-name">Stripe Smart Retries</div>
@@ -2587,8 +2587,8 @@ tr:last-child td{border-bottom:none}
     <div class="stack-tools">
       <div class="tool-card" style="flex:2">
         <div class="tool-name">HubSpot Service + Operations Hub</div>
-        <div class="tool-desc">Orchestration backbone — built on the HubSpot the team already runs on. Health scoring (calculated properties fed by RudderStack data), playbook automation, renewal task queues, at-risk alerts, CSM task management. <strong>Replaces ChurnZero:</strong> completes the consolidation onto HubSpot rather than running a second CS platform. The Service + Operations Hub upgrade adds the workflow engine, programmable automation and health-scoring layer the base CRM lacks — no parallel tool to license, configure or sync.</div>
-        <div class="tool-meta"><span class="tool-cost">$24k / yr (upgrade)</span><span class="tool-integ">→ RudderStack · Delighted · Userpilot · Customer.io</span><span class="tool-roi">Metric: GRR improvement; playbook completion rate; at-risk accounts rescued</span></div>
+        <div class="tool-desc">Orchestration backbone — already owned and running today. Health scoring (calculated properties fed by PostHog data), playbook automation, renewal task queues, at-risk alerts, CSM task management, and native lifecycle email. <strong>Replaces ChurnZero:</strong> completes the consolidation onto HubSpot rather than running a second CS platform — no parallel tool to license, configure or sync. The Service + Operations Hub tier the team already holds carries the workflow engine, programmable automation and health-scoring layer.</div>
+        <div class="tool-meta"><span class="tool-cost">$0 — already owned</span><span class="tool-integ">→ PostHog · Delighted · Userpilot · HubSpot workflows</span><span class="tool-roi">Metric: GRR improvement; playbook completion rate; at-risk accounts rescued</span></div>
       </div>
     </div>
   </div>
@@ -2597,13 +2597,13 @@ tr:last-child td{border-bottom:none}
     <div class="stack-tools">
       <div class="tool-card">
         <div class="tool-name">Userpilot</div>
-        <div class="tool-desc">In-app onboarding guides — deploys in 1–7 days vs Pendo's 8–12 weeks. 60–80% cheaper. Covers all year-1 onboarding needs. RudderStack handles analytics.</div>
-        <div class="tool-meta"><span class="tool-cost">$15k / yr</span><span class="tool-integ">→ RudderStack · HubSpot</span><span class="tool-roi">Metric: Activation rate in 14 days; feature adoption depth</span></div>
+        <div class="tool-desc">In-app onboarding guides — deploys in 1–7 days vs Pendo's 8–12 weeks. 60–80% cheaper. Covers all year-1 onboarding needs. PostHog handles analytics.</div>
+        <div class="tool-meta"><span class="tool-cost">$15k / yr</span><span class="tool-integ">→ PostHog · HubSpot</span><span class="tool-roi">Metric: Activation rate in 14 days; feature adoption depth</span></div>
       </div>
       <div class="tool-card">
-        <div class="tool-name">Customer.io</div>
-        <div class="tool-desc">Behavioural lifecycle email — triggered by usage events. Sends the right message when an account goes dark, not 30 days later on a calendar schedule.</div>
-        <div class="tool-meta"><span class="tool-cost">$36k / yr</span><span class="tool-integ">→ RudderStack · HubSpot</span><span class="tool-roi">Metric: Email → activation rate; at-risk re-engagement %</span></div>
+        <div class="tool-name">HubSpot Lifecycle Workflows</div>
+        <div class="tool-desc">Behavioural lifecycle email, native to HubSpot — triggered by PostHog usage events. Sends the right message when an account goes dark, not 30 days later on a calendar schedule. $0 incremental; nothing new to integrate or train on.</div>
+        <div class="tool-meta"><span class="tool-cost">$0 — native</span><span class="tool-integ">→ PostHog · HubSpot</span><span class="tool-roi">Metric: Email → activation rate; at-risk re-engagement %</span></div>
       </div>
       <div class="tool-card">
         <div class="tool-name">Churnkey</div>
@@ -2633,18 +2633,18 @@ tr:last-child td{border-bottom:none}
       <div class="tool-card">
         <div class="tool-name">Delighted</div>
         <div class="tool-desc">NPS + CSAT at key moments. Detractor flag in HubSpot triggers CSM outreach 30–60 days earlier than health score alone. Cheap, high-signal.</div>
-        <div class="tool-meta"><span class="tool-cost">$8k / yr</span><span class="tool-integ">→ HubSpot</span><span class="tool-roi">Metric: NPS trend; detractor → churn correlation</span></div>
+        <div class="tool-meta"><span class="tool-cost">$0 — already owned</span><span class="tool-integ">→ HubSpot</span><span class="tool-roi">Metric: NPS trend; detractor → churn correlation</span></div>
       </div>
       <div class="tool-card">
         <div class="tool-name">Metabase</div>
         <div class="tool-desc">BI layer. GRR waterfall, cohort curves, health distributions, CSM book performance. Revenue Analyst's primary tool — the P&amp;L story lives here.</div>
-        <div class="tool-meta"><span class="tool-cost">$6k / yr</span><span class="tool-integ">→ All tools above</span><span class="tool-roi">Table stakes — enables measurement of everything else</span></div>
+        <div class="tool-meta"><span class="tool-cost">$0 — already owned</span><span class="tool-integ">→ All tools above</span><span class="tool-roi">Table stakes — enables measurement of everything else</span></div>
       </div>
     </div>
   </div>
 <div class="eval-strip">
-  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Integrated stack creates multiplicative value: RudderStack &#8594; HubSpot &#8594; Customer.io = signal-to-response in &lt;24h, worth 3&#8211;4&#215; each tool in isolation. Tools chosen for integration readiness first, feature set second. $183k/yr works only if integration is complete.</span></div>
-  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">5.6x realistic Year-1 tooling ROI &#8212; build &amp; integration (~$120k one-time) and ramp loaded in (10.9x steady-state once amortised). The data flow is the product &#8212; not any individual tool. Trade-off against every tool: (1) integration complexity, (2) India team ramp time, (3) build vs buy cost. Conservative ROI excludes expansion/NRR benefit.</span></div>
+  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Integrated stack creates multiplicative value: PostHog &#8594; HubSpot &#8594; native workflows = signal-to-response in &lt;24h, worth 3&#8211;4&#215; each tool in isolation. Tools chosen for integration readiness first, feature set second &#8212; and 4 of 8 are already owned or native, so the integration surface is small.</span></div>
+  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">12.7x realistic Year-1 tooling ROI &#8212; build &amp; integration (~$55k one-time) and ramp loaded in (23x steady-state once amortised). The data flow is the product &#8212; not any individual tool. Trade-off against every tool: (1) integration complexity, (2) India team ramp time, (3) build vs buy cost. Conservative ROI excludes expansion/NRR benefit.</span></div>
 </div>
 </div>
 </div>
@@ -2653,21 +2653,21 @@ tr:last-child td{border-bottom:none}
 <div class="slide" id="s6">
 <div class="slide-header">
   <h1>Month-by-Month Implementation Roadmap</h1>
-  <span class="sub">RudderStack is the critical path · Userpilot closes the activation gap from day 1</span>
+  <span class="sub">Lean stack is floor-ready — 4 tools already owned · only PostHog needs engineering (1–2 wk) · Userpilot closes the activation gap from day 1</span>
 </div>
 <div class="slide-body">
   <div class="phase">
     <div class="phase-hdr">
       <div class="pbadge pre">PRE-LAUNCH</div>
       <div class="phase-title">Tooling must be ready before CS team goes live</div>
-      <div class="phase-date">Weeks −8 to 0</div>
+      <div class="phase-date">Weeks −6 to 0</div>
     </div>
     <div class="phase-items">
-      <div class="pi critical"><strong>Critical · Week −8</strong>RudderStack kickoff — engineering engaged. 4–8 week implementation. Health scoring is blind without this.</div>
+      <div class="pi key"><strong>Key · Week −4</strong>PostHog deploy — lightweight, 1–2 weeks; the only engineering dependency in the stack. Pipes product-usage events into HubSpot health scoring.</div>
       <div class="pi critical"><strong>Critical · Week −6</strong>Intercom Fin live — trains on existing KB in 2–3 weeks. 20,000 tail accounts generate support volume from day 1; Fin routes to support team, not digital specialists.</div>
       <div class="pi key"><strong>Key · Week −6</strong>Userpilot live — deploys in 1–7 days. Replaces Pendo entirely for year 1. In-app onboarding flows active from day 1 with no activation gap.</div>
-      <div class="pi normal"><strong>Week −6</strong>HubSpot Service + Operations Hub configured — workflows, playbooks &amp; health-scoring properties built. CRM-data health scores active — will upgrade to product-data when RudderStack is live.</div>
-      <div class="pi normal"><strong>Week −4</strong>Delighted NPS live. Stripe Smart Retries confirmed active. CS team begins onboarding.</div>
+      <div class="pi normal"><strong>Week −6</strong>HubSpot Service + Operations Hub (already owned) configured — workflows, playbooks, native lifecycle email &amp; health-scoring properties built. CRM-data health scores active — upgrade to product-data when PostHog is live.</div>
+      <div class="pi normal"><strong>Week −4</strong>Delighted NPS (already owned) live. Stripe Smart Retries confirmed active. CS team begins onboarding.</div>
     </div>
     <div class="gap-fixed">Activation gap: eliminated. Userpilot deploys in 1–7 days (vs Pendo's 8–12 weeks) and costs $33k less annually. Intercom Tours acts as a same-day supplement for Tier 3. No bridge needed.</div>
   </div>
@@ -2678,9 +2678,9 @@ tr:last-child td{border-bottom:none}
       <div class="phase-date">Months 1–3</div>
     </div>
     <div class="phase-items">
-      <div class="pi key"><strong>Month 1</strong>RudderStack live — health scores upgrade from CRM-only to product-usage-based. CSMs now have real signals.</div>
-      <div class="pi normal"><strong>Month 2</strong>Userpilot advanced flows built (feature depth, integration prompts). Customer.io behavioural sequences constructed.</div>
-      <div class="pi normal"><strong>Month 3</strong>Customer.io live — at-risk triggers running. Metabase dashboards built. Revenue Analyst runs first 90-day cohort analysis.</div>
+      <div class="pi key"><strong>Weeks 1–2</strong>PostHog live — health scores upgrade from CRM-only to product-usage-based almost immediately. CSMs have real signals from the first weeks, not month 2.</div>
+      <div class="pi normal"><strong>Month 1–2</strong>Userpilot advanced flows built (feature depth, integration prompts). HubSpot native lifecycle workflows constructed — no separate email tool to integrate or train on.</div>
+      <div class="pi normal"><strong>Month 2–3</strong>HubSpot lifecycle workflows live — at-risk triggers running natively. Metabase dashboards built (already owned). Revenue Analyst runs first 90-day cohort analysis.</div>
     </div>
   </div>
   <div class="phase">
@@ -2714,21 +2714,21 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
-<!-- ── S8 · TOOLING ROI ── -->
-<div class="slide" id="s8">
+<!-- ── S8 · TOOLING ROI (LEAN STACK) ── -->
+<div class="slide" id="s8b">
 <div class="slide-header">
-  <h1>Tooling ROI — Base Case (Full Stack)</h1>
-  <span class="sub">Every tool licensed fresh · $183k recurring + ~$120k one-time build · $1.7M Year-1 value · 5.6x realistic Year-1 ROI · 10.9x steady-state</span>
+  <h1>Tooling ROI — Lean Stack</h1>
+  <span class="sub">4 of 8 tools already owned or native to HubSpot · $87k recurring + ~$55k one-time build · $1.8M Year-1 value · 12.7x realistic Year-1 ROI · 23x steady-state</span>
 </div>
 <div class="slide-body">
   <div class="troi-hdr">
-    <div class="troi-stat"><div class="n">$303k</div><div class="l">Year-1 all-in ($183k recurring + ~$120k build)</div></div>
-    <div class="troi-stat"><div class="n" style="color:var(--green2)">$1.7M</div><div class="l">Year-1 CS value (ramp-adjusted)</div></div>
-    <div class="troi-stat"><div class="n" style="color:var(--green2)">5.6x<span style="font-size:13px;color:var(--gray)"> / 10.9x</span></div><div class="l">Realistic Year-1 ROI / steady-state</div></div>
+    <div class="troi-stat"><div class="n">$142k</div><div class="l">Year-1 all-in ($87k recurring + ~$55k build)</div></div>
+    <div class="troi-stat"><div class="n" style="color:var(--green2)">$1.8M</div><div class="l">Year-1 CS value (ramp-adjusted · 3 tools live day 1)</div></div>
+    <div class="troi-stat"><div class="n" style="color:var(--green2)">12.7x<span style="font-size:13px;color:var(--gray)"> / 23x</span></div><div class="l">Realistic Year-1 ROI / steady-state</div></div>
   </div>
   <table>
     <thead>
-      <tr><th>Tool</th><th>Cost</th><th>Churn bucket owned</th><th>ARR at risk</th><th>Recovery</th><th>CS attribution</th><th>CS value</th><th>ROI</th><th>Payback</th></tr>
+      <tr><th>Tool</th><th>Cost</th><th>Churn bucket owned</th><th>ARR at risk</th><th>Recovery</th><th>CS attribution</th><th>CS value</th><th>ROI</th></tr>
     </thead>
     <tbody>
       <tr>
@@ -2736,113 +2736,69 @@ tr:last-child td{border-bottom:none}
         <td>Involuntary / payment failure — 20% of SMB churn</td>
         <td>$3.36M / yr</td><td>33% recovered</td><td>40%</td>
         <td style="color:var(--green2);font-weight:700">$443k</td>
-        <td><strong style="color:var(--green2)">18.5x</strong></td><td>3 weeks</td>
+        <td><strong style="color:var(--green2)">18.5x</strong></td>
       </tr>
       <tr>
         <td><strong>Userpilot</strong></td><td>$15k</td>
         <td>Never activated / 90-day problem — 35% of SMB T1 churn</td>
         <td>$2.33M / yr</td><td>25% saved via activation</td><td>45%</td>
         <td style="color:var(--green2);font-weight:700">$261k</td>
-        <td><strong style="color:var(--green2)">17.4x</strong></td><td>&lt;1 month</td>
+        <td><strong style="color:var(--green2)">17.4x</strong></td>
       </tr>
       <tr>
-        <td><strong>RudderStack + HubSpot Service+Ops Hub</strong></td><td>$64k</td>
+        <td><strong>PostHog + HubSpot Service+Ops Hub</strong> <span style="font-size:10px;color:var(--gray)">(Hub owned)</span></td><td>$18k</td>
         <td>Expectations not met / MM health decline — 35% of MM churn</td>
         <td>$4.55M / yr</td><td>25% saved via early intervention</td><td>60%</td>
         <td style="color:var(--green2);font-weight:700">$683k</td>
-        <td><strong style="color:var(--green2)">10.7x</strong></td><td>1.1 months</td>
+        <td><strong style="color:var(--green2)">38x</strong></td>
       </tr>
       <tr>
-        <td><strong>Intercom Fin</strong></td><td>$30k</td>
-        <td>Tail-account support volume (routes to support team, not CS)</td>
-        <td>—</td>
-        <td>50–70% L1 deflection. Frees <strong>3 digital specialists</strong> from L1 triage only — L2+ (porting, bugs, disputes) still routes to support regardless</td><td>20%</td>
-        <td style="color:var(--green2);font-weight:700">$34k <span style="font-size:10px;color:var(--gray)">(CS retention only)</span></td>
-        <td><strong>1.1x (CS)</strong><br><span style="font-size:10px;color:var(--green2)">5.5x company (support headcount)</span></td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td><strong>Customer.io</strong></td><td>$36k</td>
-        <td>Disengaged / at-risk SMB T1+2 accounts (no login 21+ days)</td>
+        <td><strong>HubSpot lifecycle workflows</strong></td><td style="color:var(--green2);font-weight:700">$0 native</td>
+        <td>Disengaged / at-risk SMB T1+2 (no login 21+ days)</td>
         <td>$6.2M at-risk</td><td>12% of at-risk saved</td><td>40%</td>
         <td style="color:var(--green2);font-weight:700">$298k</td>
-        <td><strong style="color:var(--green2)">8.3x</strong></td><td>1.5 months</td>
+        <td><strong style="color:var(--green2)">native</strong></td>
       </tr>
       <tr>
-        <td><strong>Delighted</strong></td><td>$8k</td>
+        <td><strong>Delighted</strong> <span style="font-size:10px;color:var(--gray)">(owned)</span></td><td style="color:var(--green2);font-weight:700">$0</td>
         <td>MM detractors — signals 30–60 days before cancellation</td>
         <td>$1.3M early-identified</td><td>15% caught early; 25% saved</td><td>55%</td>
         <td style="color:var(--green2);font-weight:700">$269k</td>
-        <td><strong style="color:var(--green2)">33.6x</strong></td><td>&lt;1 month</td>
+        <td><strong style="color:var(--green2)">owned</strong></td>
       </tr>
       <tr>
-        <td><strong>Metabase</strong></td><td>$6k</td>
-        <td colspan="5">Reporting infrastructure — table stakes, enables measurement of all other tools</td>
-        <td>—</td><td>—</td>
+        <td><strong>Intercom Fin</strong></td><td>$30k</td>
+        <td>Tail-account support volume (routes to support, not CS)</td>
+        <td>—</td>
+        <td>50–70% L1 deflection — frees <strong>3 digital specialists</strong>; L2+ still routes to support</td><td>20%</td>
+        <td style="color:var(--green2);font-weight:700">$34k <span style="font-size:10px;color:var(--gray)">(CS only)</span></td>
+        <td><strong>1.1x</strong> <span style="font-size:10px;color:var(--green2)">5.5x co.</span></td>
+      </tr>
+      <tr>
+        <td><strong>Metabase</strong> <span style="font-size:10px;color:var(--gray)">(owned)</span></td><td style="color:var(--green2);font-weight:700">$0</td>
+        <td colspan="5">Reporting infrastructure — table stakes, enables measurement of every other tool</td>
+        <td>—</td>
       </tr>
     </tbody>
     <tfoot>
-      <tr><td><strong>Total (steady-state)</strong></td><td><strong>$183k</strong></td><td colspan="4">—</td><td><strong>$2.0M</strong></td><td><strong>10.9x</strong></td><td><strong>&lt;1 month blended</strong></td></tr>
-    </tfoot>
-  </table>
-  <div style="margin-top:12px;background:#FFF7ED;border:1.5px solid #F59E0B;border-radius:8px;padding:11px 16px;font-size:12px;color:#444">
-    <strong style="color:#92400E">Realistic Year-1 ROI — build &amp; integration loaded in:</strong> the per-tool table above is <strong>steady-state</strong> (each tool live a full year, license-only). The realistic Year-1 view loads two things the headline omits. <strong>(1) Ramp:</strong> tools go live across the year — RudderStack M1 (11 mo), Customer.io M3 (9 mo), Churnkey M4 (8 mo); rest pre-launch — so value is <strong>~$1.7M</strong>, not $2.0M. <strong>(2) One-time build &amp; integration:</strong> RudderStack eng ~$40k · HubSpot Service+Ops Hub build &amp; config ~$25k · predictive model, M7–9 ~$20k · digital-CS tool setup (Userpilot, Customer.io, Churnkey, Fin KB, Delighted, Metabase) ~$35k = <strong>~$120k</strong>. <strong style="color:#92400E">Year-1 all-in:</strong> $1.7M ÷ ($183k recurring + $120k build = $303k) = <strong style="color:var(--green2)">5.6x realistic Year-1 ROI</strong>. Year 2+ the build drops off and tools run full-year → <strong style="color:var(--green2)">10.9x steady-state</strong>. <span style="color:var(--gray)">Build is an estimate — ~$40k is incremental engineering cash; the remainder is CS Ops / analyst time largely absorbed in the $1.51M people cost, so the cash-incremental ROI is higher (~7.6x).</span>
-  </div>
-  <div style="margin-top:10px;background:var(--navy);border-radius:8px;padding:11px 16px;font-size:12px;color:rgba(255,255,255,0.85)">
-    <strong style="color:var(--green)">Intercom Fin framing:</strong> Fin deflects <strong style="color:#fff">L1 tickets only</strong> (setup, FAQ, basic integrations). L2+ tickets — porting, disputes, billing escalations, bugs — still route to the support team regardless. The CS capacity benefit is narrow but meaningful: <strong style="color:#fff">3 digital specialists</strong> are freed from L1 triage, giving them time to run proactive lifecycle programs across 20,000 accounts. Headcount saving of $115–161k / yr accrues to the support team's P&amp;L, not CS — those are two separate budget conversations.
-  </div>
-<div class="eval-strip">
-  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Conservative ROI: zero expansion credit, 70% save rate on at-risk pool only, tail GRR uplift excluded. If expansion and tail improvement are included, ROI approximately doubles. Conservative = defensible under scrutiny. This is the floor, not the ceiling.</span></div>
-  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">$1.97M investment saves $3&#8211;5M ARR in Year 1 (base case). Payback 6.5&#8211;12 months. Tooling ROI is the mechanism, not the goal &#8212; the goal is GRR 70&#8594;78%. Tooling enables that without proportional headcount growth.</span></div>
-</div>
-</div>
-</div>
-
-<!-- ── S8B · TOOLING ROI BEST CASE ── -->
-<div class="slide" id="s8b">
-<div class="slide-header">
-  <h1>Tooling ROI — Best Case (Lean Stack)</h1>
-  <span class="sub">Leverage tools already owned + lighter alternatives · same retention value, roughly half the spend · $142k Year-1 all-in · 12.7x realistic ROI</span>
-</div>
-<div class="slide-body">
-  <div class="troi-hdr">
-    <div class="troi-stat"><div class="n">$142k</div><div class="l">Year-1 all-in ($87k recurring + ~$55k build)</div></div>
-    <div class="troi-stat"><div class="n" style="color:var(--green2)">$1.8M</div><div class="l">Year-1 CS value (faster ramp · 3 tools live day 1)</div></div>
-    <div class="troi-stat"><div class="n" style="color:var(--green2)">12.7x<span style="font-size:13px;color:var(--gray)"> / 23x</span></div><div class="l">Realistic Year-1 ROI / steady-state</div></div>
-  </div>
-  <table style="font-size:12px">
-    <thead>
-      <tr><th style="width:25%">Tool / function</th><th>Base case</th><th>Best case</th><th style="width:38%">Why best case is lower</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>HubSpot Service + Ops Hub <span style="color:var(--gray)">(orchestration)</span></td><td>$24k</td><td style="color:var(--green2);font-weight:700">$0</td><td>Already owned — in the stack today</td></tr>
-      <tr><td><strong>Event pipeline (CDP)</strong></td><td>RudderStack $40k</td><td style="color:var(--green2);font-weight:700">PostHog $18k</td><td>Lighter CDP · ~1–2 wk deploy vs 4–8 · lower license <em>and</em> build</td></tr>
-      <tr><td><strong>Behavioral lifecycle email</strong></td><td>Customer.io $36k</td><td style="color:var(--green2);font-weight:700">HubSpot $0</td><td>Already run on HubSpot — native event-triggered workflows</td></tr>
-      <tr><td>In-app onboarding</td><td>Userpilot $15k</td><td>Userpilot $15k</td><td>Keep — already cheapest in class</td></tr>
-      <tr><td>Dunning / save-flow</td><td>Churnkey $24k</td><td>Churnkey $24k</td><td>Keep — owns the involuntary-churn bucket</td></tr>
-      <tr><td>AI support deflection</td><td>Intercom Fin $30k</td><td>Intercom Fin $30k</td><td>Keep — no like-for-like cheaper option</td></tr>
-      <tr><td>NPS / CSAT</td><td>Delighted $8k</td><td style="color:var(--green2);font-weight:700">$0</td><td>Already owned</td></tr>
-      <tr><td>BI / reporting</td><td>Metabase $6k</td><td style="color:var(--green2);font-weight:700">$0</td><td>Already owned</td></tr>
-    </tbody>
-    <tfoot>
-      <tr><td><strong>Recurring total</strong></td><td><strong>$183k</strong></td><td><strong style="color:var(--green2)">$87k</strong></td><td><strong style="color:var(--green2)">−$96k (−52%)</strong></td></tr>
-      <tr><td><strong>One-time build / integration</strong></td><td><strong>~$120k</strong></td><td><strong style="color:var(--green2)">~$55k</strong></td><td><strong style="color:var(--green2)">−$65k (−54%) · less to build, 3 tools already live</strong></td></tr>
-      <tr><td><strong>Year-1 all-in · realistic ROI</strong></td><td><strong>$303k · 5.6x</strong></td><td><strong style="color:var(--green2)">$142k · 12.7x</strong></td><td><strong>Steady-state 10.9x → 23x</strong></td></tr>
+      <tr><td><strong>Total (steady-state)</strong></td><td><strong style="color:var(--green2)">$87k</strong></td><td colspan="4">—</td><td><strong>$2.0M</strong></td><td><strong style="color:var(--green2)">23x</strong></td></tr>
     </tfoot>
   </table>
 
   <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
     <div style="background:#F0F9FF;border:1.5px solid #0284C7;border-radius:8px;padding:10px 14px;font-size:11px;color:#444;line-height:1.5">
-      <strong style="color:#0C4A6E">RudderStack → PostHog:</strong> open-source-core product analytics + event pipeline. ~$18k/yr vs $40k; deploys in days not weeks (build ~$15k vs ~$40k). Captures the same usage events that feed the health score. <span style="color:var(--gray)">Trade-off: less warehouse-grade routing than a full CDP — fine for CS health scoring; revisit in Year 2 if a true CDP is needed.</span>
+      <strong style="color:#0C4A6E">PostHog instead of a full CDP:</strong> open-source-core product analytics + event pipeline. ~$18k/yr (vs $40k for RudderStack); deploys in <strong>1–2 weeks not 4–8</strong> (build ~$15k vs ~$40k). Captures the same usage events that feed the health score. <span style="color:var(--gray)">Trade-off: less warehouse-grade routing — fine for CS health scoring; revisit only if a true CDP is needed in Year 2.</span>
     </div>
     <div style="background:#F0FDF4;border:1.5px solid #00B27A;border-radius:8px;padding:10px 14px;font-size:11px;color:#444;line-height:1.5">
-      <strong style="color:#065F46">Customer.io → HubSpot workflows:</strong> behavioral, event-triggered lifecycle email sent natively from the HubSpot we already orchestrate on. $0 incremental, nothing new to integrate. <span style="color:var(--gray)">Trade-off: less sophisticated than Customer.io at high-volume segmentation — adequate at this scale; add Customer.io later only if volume demands it.</span>
+      <strong style="color:#065F46">HubSpot workflows instead of Customer.io:</strong> behavioral, event-triggered lifecycle email sent natively from the HubSpot the team already runs on. $0 incremental, nothing new to integrate or train on. <span style="color:var(--gray)">Trade-off: less sophisticated at high-volume segmentation — adequate at this scale; add Customer.io later only if volume demands it.</span>
     </div>
   </div>
-
+  <div style="margin-top:10px;background:#FFF7ED;border:1.5px solid #F59E0B;border-radius:8px;padding:11px 16px;font-size:12px;color:#444">
+    <strong style="color:#92400E">Why this stack is floor-ready, not a wish-list:</strong> 4 of 8 tools are <strong>already owned or native</strong> (HubSpot Service+Ops Hub, HubSpot workflows, Delighted, Metabase) — nothing new to license, integrate or train the team on. Only <strong>PostHog</strong> needs engineering, and it deploys in 1–2 weeks. <strong style="color:#92400E">Year-1 math:</strong> $87k recurring + ~$55k one-time build (PostHog eng ~$15k · HubSpot workflow &amp; health-score config ~$20k · Userpilot / Churnkey / Fin setup ~$20k) = <strong>$142k all-in</strong>. Ramp-adjusted value ~$1.8M (3 owned tools live day 1) ÷ $142k = <strong style="color:var(--green2)">12.7x realistic Year-1 ROI</strong>; Year 2+ the build drops off → <strong style="color:var(--green2)">23x steady-state</strong>.
+  </div>
 <div class="eval-strip">
-  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Best case is not &ldquo;more value&rdquo; &#8212; it is <strong>same retention, lower spend</strong>. ROI rises because the denominator shrinks: 3 tools (HubSpot Service+Ops Hub, Delighted, Metabase) are already owned, and RudderStack + Customer.io are swapped for PostHog + native HubSpot workflows. No heroic GRR assumptions baked in.</span></div>
-  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">Year-1 tooling spend $303k &#8594; $142k (&#8722;53%) for the same retention value &#8212; 5.6x &#8594; 12.7x realistic Year-1 ROI, 23x steady-state. The lean stack is the recommended starting point; the tools dropped here (full CDP, Customer.io) become Year-2 upgrades only if data volume or sophistication justifies the spend.</span></div>
+  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Same retention value as a fully-licensed stack, roughly half the spend — ROI rises because the denominator shrinks, not because GRR assumptions were inflated. 4 tools already owned/native; PostHog + HubSpot workflows replace RudderStack + Customer.io. This is the stack we actually run from Day 1.</span></div>
+  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">$142k Year-1 all-in for the same $1.8M retention value — 12.7x realistic Year-1, 23x steady-state. The tools dropped here (full CDP, Customer.io) become Year-2 upgrades only if data volume or sophistication justifies the spend. Lean now, scale only on evidence.</span></div>
 </div>
 </div>
 </div>
@@ -2925,7 +2881,7 @@ tr:last-child td{border-bottom:none}
         <td><strong style="color:#B45309;font-size:15px">$0.95M</strong><br><span style="font-size:10px;color:var(--gray)">24% of base total</span></td>
         <td><strong style="color:var(--green2)">+8pp → 73%</strong></td>
         <td><strong style="color:var(--green2);font-size:15px">$1.52M</strong><br><span style="font-size:10px;color:var(--gray)">23% of best total</span></td>
-        <td style="font-size:10.5px;color:var(--gray)">Human-assisted pre-90 programme + Customer.io · <strong>highest pp lift</strong> — most controllable-churn headroom + mid attribution.</td>
+        <td style="font-size:10.5px;color:var(--gray)">Human-assisted pre-90 programme + HubSpot · <strong>highest pp lift</strong> — most controllable-churn headroom + mid attribution.</td>
       </tr>
       <tr>
         <td><strong style="color:var(--navy)">SMB Tier 2</strong><br><span style="font-size:10px;color:var(--gray)">Managed digital · 4,000 accounts</span></td>
@@ -2939,7 +2895,7 @@ tr:last-child td{border-bottom:none}
         <td><strong style="color:#B45309;font-size:15px">$0.36M</strong><br><span style="font-size:10px;color:var(--gray)">9% of base total</span></td>
         <td><strong style="color:var(--green2)">+5pp → 69%</strong></td>
         <td><strong style="color:var(--green2);font-size:15px">$0.60M</strong><br><span style="font-size:10px;color:var(--gray)">9% of best total</span></td>
-        <td style="font-size:10.5px;color:var(--gray)"><strong>Pre-90 activation fix</strong> — Userpilot onboarding + Customer.io re-engagement · digital-specialist exception handling.</td>
+        <td style="font-size:10.5px;color:var(--gray)"><strong>Pre-90 activation fix</strong> — Userpilot onboarding + HubSpot re-engagement · digital-specialist exception handling.</td>
       </tr>
       <tr>
         <td><strong style="color:var(--navy)">SMB Tier 3</strong><br><span style="font-size:10px;color:var(--gray)">Tech-touch only · 16,000 accounts</span></td>
@@ -2953,7 +2909,7 @@ tr:last-child td{border-bottom:none}
         <td><strong style="color:#B45309;font-size:15px">$0.51M</strong><br><span style="font-size:10px;color:var(--gray)">13% of base total</span></td>
         <td><strong style="color:var(--green2)">+5pp → 65%</strong></td>
         <td><strong style="color:var(--green2);font-size:15px">$0.85M</strong><br><span style="font-size:10px;color:var(--gray)">13% of best total</span></td>
-        <td style="font-size:10.5px;color:var(--gray)"><strong>Pre-90 activation fix</strong> — Userpilot in-app + Customer.io anomaly sequences + Intercom Fin L1 · fully automated, no human touch.</td>
+        <td style="font-size:10.5px;color:var(--gray)"><strong>Pre-90 activation fix</strong> — Userpilot in-app + HubSpot anomaly sequences + Intercom Fin L1 · fully automated, no human touch.</td>
       </tr>
       <tr class="tfoot">
         <td>Total / Blended</td>
@@ -2976,14 +2932,14 @@ tr:last-child td{border-bottom:none}
       <div class="loop-step-type" style="color:var(--red)">The problem</div>
       <div class="loop-step-name">Pre-90 churn</div>
       <div class="loop-step-desc">SMB tail churns 36%/yr. <strong>43% lands before Day 90</strong> — activation failure, before first value.</div>
-      <div class="loop-step-tool">RudderStack → HubSpot (diagnosis)</div>
+      <div class="loop-step-tool">PostHog → HubSpot (diagnosis)</div>
     </div>
     <div class="loop-arrow">→</div>
     <div class="loop-step" style="border-top:3px solid var(--navy)">
       <div class="loop-step-type" style="color:var(--navy)">The lever</div>
       <div class="loop-step-name">Activation 55% → 80%</div>
-      <div class="loop-step-desc">Userpilot guided activation + Customer.io behavioral sequences + Intercom Fin proactive L1 — fully digital.</div>
-      <div class="loop-step-tool">Userpilot · Customer.io · Fin</div>
+      <div class="loop-step-desc">Userpilot guided activation + HubSpot behavioral sequences + Intercom Fin proactive L1 — fully digital.</div>
+      <div class="loop-step-tool">Userpilot · HubSpot · Fin</div>
     </div>
     <div class="loop-arrow">→</div>
     <div class="loop-step" style="border-top:3px solid var(--green)">
@@ -3055,14 +3011,14 @@ tr:last-child td{border-bottom:none}
   <div class="roi-hl">
     <div class="roi-hl-item"><div class="n">1.51%</div><div class="l">CS people cost as % ARR (bench: 8–10%)</div></div>
     <div class="roi-hl-item"><div class="n">$0</div><div class="l">Expansion / NRR upside counted</div></div>
-    <div class="roi-hl-item"><div class="n">5.6x</div><div class="l">Realistic Year-1 tooling ROI (build-loaded) · 10.9x steady-state</div></div>
+    <div class="roi-hl-item"><div class="n">12.7x</div><div class="l">Realistic Year-1 tooling ROI (build-loaded) · 23x steady-state</div></div>
     <div class="roi-hl-item"><div class="n">70% → 77%</div><div class="l">GRR target · 18-month horizon</div></div>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:11px">
     <div style="background:var(--green-light);border-left:4px solid var(--green);border-radius:7px;padding:10px 13px">
       <div style="font-size:12px;font-weight:700;color:#005C3F;margin-bottom:6px">Levers to pull — Base → Best <span style="font-weight:600;color:var(--green2)">(+$1.44M CS value, 1.02x → 1.88x)</span></div>
       <ul style="margin:0;padding-left:15px;font-size:10.7px;color:#333;line-height:1.5">
-        <li><strong>Tooling live by month 3</strong> (not 6+) — RudderStack + health scoring kill the Year-1 ramp drag</li>
+        <li><strong>Tooling live by month 3</strong> (not 6+) — PostHog + health scoring kill the Year-1 ramp drag</li>
         <li><strong>Pre-90-day onboarding lands</strong> — activation churn 43% → &lt;25% across SMB</li>
         <li><strong>MM coverage fully ramped</strong> — dedicated CSMs deliver +7pp GRR vs +4pp</li>
         <li><strong>Churnkey + AI signals live</strong> — payment recovery 5% → 33%, churn caught 90+ days early</li>
@@ -3182,7 +3138,7 @@ tr:last-child td{border-bottom:none}
         <td><strong style="font-size:9px">Activation tool</strong></td>
         <td><strong style="color:#0A2540">Userpilot (Year 1)</strong></td>
         <td>Pendo's deeper product analytics</td>
-        <td><span style="color:var(--gray)">1–7 day deploy vs 8–12 weeks, $33k cheaper, zero activation gap at launch. Re-evaluate Pendo in Year 2 once RudderStack analytics mature.</span></td>
+        <td><span style="color:var(--gray)">1–7 day deploy vs 8–12 weeks, $33k cheaper, zero activation gap at launch. Re-evaluate Pendo in Year 2 once PostHog analytics mature.</span></td>
       </tr>
       <tr>
         <td><strong style="font-size:9px">ROI stance</strong></td>
@@ -3213,7 +3169,7 @@ tr:last-child td{border-bottom:none}
       <tr>
         <td><strong style="color:var(--green2);font-size:9px">AI can carry the SMB tail</strong></td>
         <td><span style="color:var(--gray)">20,000 small accounts can't be staffed with humans economically.</span></td>
-        <td><span style="color:var(--gray)">Fin + Userpilot + Customer.io run the full detect → resolve → educate loop. <strong>+3–5pp tail GRR for $81k</strong> of tooling.</span></td>
+        <td><span style="color:var(--gray)">Fin + Userpilot + HubSpot run the full detect → resolve → educate loop. <strong>+3–5pp tail GRR for $81k</strong> of tooling.</span></td>
         <td><span style="color:var(--gray);font-size:8px">Deflection rate, digital activation, CSAT</span></td>
       </tr>
       <tr>
@@ -3314,13 +3270,13 @@ tr:last-child td{border-bottom:none}
       <tr>
         <td><strong style="color:var(--navy)">AI model accuracy is low</strong><br><span style="font-size:10px;color:var(--gray)">Health/churn scores misfire</span></td>
         <td><span class="tag tag-amber">High · early</span></td>
-        <td><strong>Phase the intelligence.</strong> Day 1 = rules-based health score on CRM + payment + login data (blunt but reliable). Layer ML only after 6 months of clean RudderStack product events. Human-in-the-loop review of every MM high-risk flag. Require <strong>≥70% precision</strong> before Fin/playbooks auto-fire on T3. Champion/challenger testing. Never auto-fire an irreversible action (discount, downgrade) on a low-confidence score.</td>
+        <td><strong>Phase the intelligence.</strong> Day 1 = rules-based health score on CRM + payment + login data (blunt but reliable). Layer ML only after 6 months of clean PostHog product events. Human-in-the-loop review of every MM high-risk flag. Require <strong>≥70% precision</strong> before Fin/playbooks auto-fire on T3. Champion/challenger testing. Never auto-fire an irreversible action (discount, downgrade) on a low-confidence score.</td>
         <td style="font-size:10.5px">Model precision / recall (weekly); false-positive rate on at-risk flags</td>
       </tr>
       <tr>
         <td><strong style="color:var(--navy)">PLG / in-app motion underperforms</strong><br><span style="font-size:10px;color:var(--gray)">Nudges ignored, adoption flat</span></td>
         <td><span class="tag tag-amber">Med–High</span></td>
-        <td><strong>Test, multi-channel, and gate.</strong> A/B test every Userpilot flow and kill losers. Never depend on one channel — in-app + Customer.io email + Fin proactive run in parallel. A <strong>Day-30 activation gate</strong> escalates any account &lt;70% activated to a human. Set a realistic ramp (activation 55% → 80% over two quarters, not overnight).</td>
+        <td><strong>Test, multi-channel, and gate.</strong> A/B test every Userpilot flow and kill losers. Never depend on one channel — in-app + HubSpot email + Fin proactive run in parallel. A <strong>Day-30 activation gate</strong> escalates any account &lt;70% activated to a human. Set a realistic ramp (activation 55% → 80% over two quarters, not overnight).</td>
         <td style="font-size:10.5px">Flow-completion %, activation-rate trend, nudge → action conversion</td>
       </tr>
       <tr>
@@ -3336,9 +3292,9 @@ tr:last-child td{border-bottom:none}
         <td style="font-size:10.5px">Regrettable attrition %, eNPS, time-to-backfill</td>
       </tr>
       <tr>
-        <td><strong style="color:var(--navy)">Tooling deployment delay</strong><br><span style="font-size:10px;color:var(--gray)">RudderStack = critical path</span></td>
-        <td><span class="tag tag-amber">High</span></td>
-        <td><strong>Start early, sequence, keep a fallback.</strong> RudderStack kicks off <strong>6–8 weeks before</strong> CS launch with a named engineering owner + weekly check-in. Fallback: CRM-only health scores work from Day 1 — degraded, not blind. Userpilot (1–7 day deploy) removes the Pendo activation-gap risk entirely. Phased rollout means no single tool blocks go-live.</td>
+        <td><strong style="color:var(--navy)">Tooling deployment delay</strong><br><span style="font-size:10px;color:var(--gray)">only PostHog needs eng</span></td>
+        <td><span class="tag tag-amber">Med</span></td>
+        <td><strong>Lean stack lowers this risk.</strong> PostHog deploys in <strong>1–2 weeks</strong> with a named engineering owner + weekly check-in — it is the only engineering dependency. Fallback: CRM-only health scores work from Day 1 — degraded, not blind. Userpilot (1–7 day deploy) removes the Pendo activation-gap risk entirely; the other 4 tools are already owned. No single tool blocks go-live.</td>
         <td style="font-size:10.5px">Implementation milestone tracker, data-pipeline uptime</td>
       </tr>
       <tr>
@@ -3411,8 +3367,8 @@ tr:last-child td{border-bottom:none}
           <strong>Speed, detection & scale without headcount.</strong> Predictive models catch churn signals 90+ days early. Agentic automation runs T2+T3 playbooks at zero marginal cost. AI handles what's routine; humans handle what requires judgment.
         </div>
         <div style="background:#FAF5FF;border-left:3px solid #7C3AED;border-radius:0 4px 4px 0;padding:8px;font-size:8.5px;color:#444;line-height:1.6">
-          <b style="color:#4C1D95;display:block;margin-bottom:4px">$183k tooling stack:</b>
-          HubSpot · RudderStack · Userpilot · Customer.io · Intercom Fin · Delighted
+          <b style="color:#4C1D95;display:block;margin-bottom:4px">$87k lean tooling stack:</b>
+          HubSpot · PostHog · Userpilot · Churnkey · Intercom Fin · Delighted
         </div>
       </div>
     </div>
@@ -3511,7 +3467,7 @@ tr:last-child td{border-bottom:none}
       <div style="background:#7C3AED;color:#fff;font-size:9.5px;font-weight:700;padding:5px 10px;letter-spacing:0.4px">DORMANT ACCOUNT REVIVAL</div>
       <div style="padding:8px 10px;background:#FAF5FF">
         <div style="font-size:8.5px;font-weight:700;color:#4C1D95;letter-spacing:0.4px;margin-bottom:4px">THE PROBLEM</div>
-        <div style="background:#EDE9FE;border-left:3px solid #7C3AED;border-radius:0 4px 4px 0;padding:4px 8px;font-size:8px;color:#444;margin-bottom:7px;line-height:1.5">SMB monthly accounts set up the product and <strong>go silent</strong>. No usage = no value = no renewal. Churn arrives without warning because there was no signal to catch. Estimated <strong>XX% of SMB monthly churn is dormant-account churn</strong> — quantify this in Week 1 from RudderStack data.</div>
+        <div style="background:#EDE9FE;border-left:3px solid #7C3AED;border-radius:0 4px 4px 0;padding:4px 8px;font-size:8px;color:#444;margin-bottom:7px;line-height:1.5">SMB monthly accounts set up the product and <strong>go silent</strong>. No usage = no value = no renewal. Churn arrives without warning because there was no signal to catch. Estimated <strong>XX% of SMB monthly churn is dormant-account churn</strong> — quantify this in Week 1 from PostHog data.</div>
 
         <div style="font-size:8.5px;font-weight:700;color:#4C1D95;letter-spacing:0.4px;margin-bottom:4px">DEFINITION OF DORMANT</div>
         <div style="display:flex;flex-direction:column;gap:3px;margin-bottom:7px">
@@ -3521,7 +3477,7 @@ tr:last-child td{border-bottom:none}
 
         <div style="font-size:8.5px;font-weight:700;color:#065F46;letter-spacing:0.4px;margin-bottom:4px">REVIVAL PLAYBOOK (agentic · T2-T3)</div>
         <div style="display:flex;flex-direction:column;gap:4px">
-          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#7C3AED;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D14</span><span>RudderStack detects → HubSpot flags dormant → Customer.io reactivation email auto-fires</span></div>
+          <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#7C3AED;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D14</span><span>PostHog detects → HubSpot flags dormant → HubSpot reactivation email auto-fires</span></div>
           <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#7C3AED;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D21</span><span>Userpilot in-app re-onboarding flow + Intercom Fin: "need help getting started again?" prompt</span></div>
           <div style="display:flex;gap:6px;font-size:8px;color:#444;align-items:flex-start"><span style="background:#EF4444;color:#fff;font-size:7.5px;font-weight:700;padding:1px 5px;border-radius:2px;flex-shrink:0;margin-top:1px">D28</span><span><strong>T1:</strong> CSM personal call. <strong>T2/T3:</strong> AI win-back offer + cancellation deflection flow</span></div>
         </div>
@@ -3627,9 +3583,9 @@ tr:last-child td{border-bottom:none}
       <div class="dual-phase-cell"><div class="dpc-num">1</div><div class="dpc-name detect">DETECT</div></div>
       <div class="ai-cell">
         <div class="cell-actor ai-a">Predictive AI — fully automated, no human triggered this</div>
-        <div class="cell-line"><strong>RudderStack</strong> logs drop over 9 days: HubSpot sync events → 0. Calls/day: 45 → 19 (−58%). Login sessions: −40% across 22 seats.</div>
+        <div class="cell-line"><strong>PostHog</strong> logs drop over 9 days: HubSpot sync events → 0. Calls/day: 45 → 19 (−58%). Login sessions: −40% across 22 seats.</div>
         <div class="cell-line"><strong>HubSpot</strong> re-scores: adoption 82 → 54. Primary driver: integration health = RED (weight 0.45). Churn risk elevated to HIGH. Automated playbook fires. CSM task auto-created: <em>"TechScale — Priority HIGH. Act within 24 hrs."</em></div>
-        <div class="cell-tools"><span class="sc-tool-tag">RudderStack</span><span class="sc-tool-tag">HubSpot health score</span></div>
+        <div class="cell-tools"><span class="sc-tool-tag">PostHog</span><span class="sc-tool-tag">HubSpot health score</span></div>
       </div>
       <div class="human-cell">
         <div class="cell-actor hm-a">CSM — receives signal, does not hunt</div>
@@ -3678,8 +3634,8 @@ tr:last-child td{border-bottom:none}
         <div class="cell-actor ai-a">Gen AI — supports fix live, confirms restoration</div>
         <div class="cell-line">CSM triggers <strong>Userpilot in-app banner</strong> to all 22 seats during call: <em>"HubSpot sync fully restored ✓ — your call logs are back. No manual entry needed."</em></div>
         <div class="cell-line"><strong>HubSpot</strong> detects sync events resume → auto-logs restoration. CSM sees live confirmation on screen during the call.</div>
-        <div class="cell-line"><strong>Customer.io</strong>: "Sync restored" email to all 22 users within 1 hour of re-auth.</div>
-        <div class="cell-tools"><span class="sc-tool-tag">Userpilot</span><span class="sc-tool-tag">HubSpot confirm</span><span class="sc-tool-tag">Customer.io</span></div>
+        <div class="cell-line"><strong>HubSpot</strong>: "Sync restored" email to all 22 users within 1 hour of re-auth.</div>
+        <div class="cell-tools"><span class="sc-tool-tag">Userpilot</span><span class="sc-tool-tag">HubSpot confirm</span><span class="sc-tool-tag">HubSpot</span></div>
       </div>
       <div class="human-cell">
         <div class="cell-actor hm-a">CSM — leads the call, owns the relationship moment</div>
@@ -3694,10 +3650,10 @@ tr:last-child td{border-bottom:none}
       <div class="dual-phase-cell"><div class="dpc-num">5</div><div class="dpc-name recover">RECOVER</div></div>
       <div class="ai-cell">
         <div class="cell-actor ai-a">Predictive AI — monitors recovery, alerts on milestone</div>
-        <div class="cell-line"><strong>RudderStack</strong>: Day 3 → 38 calls/day. Day 7 → 44. Day 14 → 47 (above pre-incident baseline).</div>
+        <div class="cell-line"><strong>PostHog</strong>: Day 3 → 38 calls/day. Day 7 → 44. Day 14 → 47 (above pre-incident baseline).</div>
         <div class="cell-line"><strong>HubSpot</strong> score: 54 → 67 → 79. Auto-alert to CSM: <em>"TechScale recovering — score 79. Integration green. Calls/day +4% above pre-incident."</em></div>
         <div class="cell-line"><strong>Delighted</strong> NPS pulse at recovery milestone: 9/10 from Sarah.</div>
-        <div class="cell-tools"><span class="sc-tool-tag">RudderStack → HubSpot</span><span class="sc-tool-tag">Delighted NPS</span></div>
+        <div class="cell-tools"><span class="sc-tool-tag">PostHog → HubSpot</span><span class="sc-tool-tag">Delighted NPS</span></div>
       </div>
       <div class="human-cell">
         <div class="cell-actor hm-a">CSM — closes loop, converts incident into trust capital</div>
@@ -3765,14 +3721,14 @@ tr:last-child td{border-bottom:none}
       <div class="loop-step-type" style="color:#1D4ED8">Predictive AI</div>
       <div class="loop-step-name">Detect Anomaly</div>
       <div class="loop-step-desc">Usage cliff — 30 calls/day → 0. Pattern matches pre-churn signature.</div>
-      <div class="loop-step-tool">RudderStack → HubSpot</div>
+      <div class="loop-step-tool">PostHog → HubSpot</div>
     </div>
     <div class="loop-arrow">→</div>
     <div class="loop-step">
       <div class="loop-step-type" style="color:#6D28D9">Gen AI</div>
       <div class="loop-step-name">Reach Out</div>
       <div class="loop-step-desc">Personalised email: common causes of this pattern with a fix link.</div>
-      <div class="loop-step-tool">Customer.io</div>
+      <div class="loop-step-tool">HubSpot</div>
     </div>
     <div class="loop-arrow">→</div>
     <div class="loop-step">
@@ -3786,14 +3742,14 @@ tr:last-child td{border-bottom:none}
       <div class="loop-step-type" style="color:#1D4ED8">Predictive AI</div>
       <div class="loop-step-name">Confirm Recovery</div>
       <div class="loop-step-desc">Calls resume. Health score recovers. At-risk flag auto-closed.</div>
-      <div class="loop-step-tool">RudderStack → HubSpot</div>
+      <div class="loop-step-tool">PostHog → HubSpot</div>
     </div>
     <div class="loop-arrow">→</div>
     <div class="loop-step">
       <div class="loop-step-type" style="color:#6D28D9">Gen AI</div>
       <div class="loop-step-name">Educate &amp; Expand</div>
       <div class="loop-step-desc">Follow-up email + in-app Power Dialer guide. Usage grows 40% above pre-incident.</div>
-      <div class="loop-step-tool">Customer.io + Userpilot</div>
+      <div class="loop-step-tool">HubSpot + Userpilot</div>
     </div>
   </div>
 
@@ -3811,20 +3767,20 @@ tr:last-child td{border-bottom:none}
       <tr>
         <td class="sc-day">Days 1–30</td>
         <td><span class="badge badge-ai">Predictive AI</span></td>
-        <td class="sc-action-main">Normal operation. Agents making <strong>30 calls/day</strong> to property leads. RudderStack logs all events. Health score stable at 74. Userpilot fires onboarding checklist on Day 1 — both agents complete it without contacting support.</td>
-        <td><span class="sc-tool-tag">RudderStack · Userpilot</span></td>
+        <td class="sc-action-main">Normal operation. Agents making <strong>30 calls/day</strong> to property leads. PostHog logs all events. Health score stable at 74. Userpilot fires onboarding checklist on Day 1 — both agents complete it without contacting support.</td>
+        <td><span class="sc-tool-tag">PostHog · Userpilot</span></td>
       </tr>
       <tr class="risk-row">
         <td class="sc-day">Day 31</td>
         <td><span class="badge badge-ai">Predictive AI</span></td>
-        <td class="sc-action-main"><strong>Zero calls for 2 days.</strong> RudderStack detects usage cliff. HubSpot health score: 74 → 38. Pattern recognised: "sudden zero usage" — precedes churn in 71% of accounts this size within 30 days. <strong>Automated playbook fires. No human notified yet.</strong></td>
-        <td><span class="sc-tool-tag">RudderStack → HubSpot</span></td>
+        <td class="sc-action-main"><strong>Zero calls for 2 days.</strong> PostHog detects usage cliff. HubSpot health score: 74 → 38. Pattern recognised: "sudden zero usage" — precedes churn in 71% of accounts this size within 30 days. <strong>Automated playbook fires. No human notified yet.</strong></td>
+        <td><span class="sc-tool-tag">PostHog → HubSpot</span></td>
       </tr>
       <tr>
         <td class="sc-day">Day 32</td>
         <td><span class="badge badge-gen">Gen AI</span></td>
-        <td class="sc-action-main">Customer.io sends personalised email to account admin (Sarah): <em>"Hi Sarah, we noticed your team hasn't made calls in 2 days. Common causes: Caller ID not verified · Credit balance low · Browser microphone permission blocked. Check your dashboard — takes 2 minutes to fix."</em> Content generated from account's usage profile, not a generic blast.</td>
-        <td><span class="sc-tool-tag">Customer.io</span></td>
+        <td class="sc-action-main">HubSpot sends personalised email to account admin (Sarah): <em>"Hi Sarah, we noticed your team hasn't made calls in 2 days. Common causes: Caller ID not verified · Credit balance low · Browser microphone permission blocked. Check your dashboard — takes 2 minutes to fix."</em> Content generated from account's usage profile, not a generic blast.</td>
+        <td><span class="sc-tool-tag">HubSpot</span></td>
       </tr>
       <tr>
         <td class="sc-day">Day 34</td>
@@ -3843,14 +3799,14 @@ tr:last-child td{border-bottom:none}
       <tr class="highlight-row">
         <td class="sc-day">Day 34 +20 min</td>
         <td><span class="badge badge-ai">Predictive AI</span></td>
-        <td class="sc-action-main">RudderStack: <strong>8 calls made.</strong> Usage resumes. Fin detects recovery via HubSpot webhook → auto-closes conversation: <em>"Great — you're back in action! Your team just made 8 calls. Anything else I can help with?"</em> Health score recovers to 71. At-risk playbook auto-closed.</td>
-        <td><span class="sc-tool-tag">RudderStack → HubSpot → Fin</span></td>
+        <td class="sc-action-main">PostHog: <strong>8 calls made.</strong> Usage resumes. Fin detects recovery via HubSpot webhook → auto-closes conversation: <em>"Great — you're back in action! Your team just made 8 calls. Anything else I can help with?"</em> Health score recovers to 71. At-risk playbook auto-closed.</td>
+        <td><span class="sc-tool-tag">PostHog → HubSpot → Fin</span></td>
       </tr>
       <tr>
         <td class="sc-day">Day 35</td>
         <td><span class="badge badge-gen">Gen AI</span></td>
-        <td class="sc-action-main">Customer.io sends automated follow-up (triggered by usage recovery event): <em>"Great news Sarah — your team made 8 calls yesterday and you're back on track! Pro tip: switch to Power Dialer and your agents can work through 3× more leads in the same time. Here's a 2-minute setup guide."</em></td>
-        <td><span class="sc-tool-tag">Customer.io</span></td>
+        <td class="sc-action-main">HubSpot sends automated follow-up (triggered by usage recovery event): <em>"Great news Sarah — your team made 8 calls yesterday and you're back on track! Pro tip: switch to Power Dialer and your agents can work through 3× more leads in the same time. Here's a 2-minute setup guide."</em></td>
+        <td><span class="sc-tool-tag">HubSpot</span></td>
       </tr>
       <tr>
         <td class="sc-day">Day 36</td>
@@ -3862,7 +3818,7 @@ tr:last-child td{border-bottom:none}
         <td class="sc-day">Day 40</td>
         <td><span class="badge badge-ai">Predictive AI</span></td>
         <td class="sc-action-main"><strong>42 calls/day — 40% above pre-incident baseline.</strong> Power Dialer active. Health score: 81. HubSpot flags positive signal. Account retained. Engagement higher than before the incident. <strong>Zero human touches across the entire sequence.</strong></td>
-        <td><span class="sc-tool-tag">RudderStack → HubSpot</span></td>
+        <td><span class="sc-tool-tag">PostHog → HubSpot</span></td>
       </tr>
     </tbody>
   </table>
@@ -4032,7 +3988,7 @@ tr:last-child td{border-bottom:none}
             <tr style="background:#fff"><td style="padding:3px 6px;border-top:1px solid #E2E8F0">Nudges fired (playbook)</td><td style="padding:3px 6px;text-align:center;border-top:1px solid #E2E8F0">Daily</td><td style="padding:3px 6px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">100% coverage</td><td style="padding:3px 6px;text-align:center;color:#94A3B8;border-top:1px solid #E2E8F0">—</td></tr>
             <tr style="background:#F5F3FF"><td style="padding:3px 6px;border-top:1px solid #E2E8F0">Nudges interacted</td><td style="padding:3px 6px;text-align:center;border-top:1px solid #E2E8F0">Weekly</td><td style="padding:3px 6px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">≥ 40% rate</td><td style="padding:3px 6px;text-align:center;color:#94A3B8;border-top:1px solid #E2E8F0">—</td></tr>
             <tr style="background:#fff"><td style="padding:3px 6px;border-top:1px solid #E2E8F0">Playbook job-done</td><td style="padding:3px 6px;text-align:center;border-top:1px solid #E2E8F0">Weekly</td><td style="padding:3px 6px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">≥ 70% completed</td><td style="padding:3px 6px;text-align:center;color:#94A3B8;border-top:1px solid #E2E8F0">—</td></tr>
-            <tr style="background:#F5F3FF"><td style="padding:3px 6px;border-top:1px solid #E2E8F0">Emails (Customer.io)</td><td style="padding:3px 6px;text-align:center;border-top:1px solid #E2E8F0">Weekly</td><td style="padding:3px 6px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">≥ 35% open rate</td><td style="padding:3px 6px;text-align:center;color:#94A3B8;border-top:1px solid #E2E8F0">—</td></tr>
+            <tr style="background:#F5F3FF"><td style="padding:3px 6px;border-top:1px solid #E2E8F0">Emails (HubSpot)</td><td style="padding:3px 6px;text-align:center;border-top:1px solid #E2E8F0">Weekly</td><td style="padding:3px 6px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">≥ 35% open rate</td><td style="padding:3px 6px;text-align:center;color:#94A3B8;border-top:1px solid #E2E8F0">—</td></tr>
             <tr style="background:#fff"><td style="padding:3px 6px;border-top:1px solid #E2E8F0">Fin sessions resolved</td><td style="padding:3px 6px;text-align:center;border-top:1px solid #E2E8F0">Weekly</td><td style="padding:3px 6px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">≥ 70% L1 resolve</td><td style="padding:3px 6px;text-align:center;color:#94A3B8;border-top:1px solid #E2E8F0">—</td></tr>
             <tr style="background:#F5F3FF"><td style="padding:3px 6px;border-top:1px solid #E2E8F0">In-app flows completed</td><td style="padding:3px 6px;text-align:center;border-top:1px solid #E2E8F0">Weekly</td><td style="padding:3px 6px;text-align:center;font-weight:700;border-top:1px solid #E2E8F0">≥ 25% completion</td><td style="padding:3px 6px;text-align:center;color:#94A3B8;border-top:1px solid #E2E8F0">—</td></tr>
           </tbody>
@@ -4316,8 +4272,8 @@ tr:last-child td{border-bottom:none}
       <tr><td>CS team size</td><td>43 FTE (India-based)</td></tr>
       <tr><td>CSM salary range</td><td>INR 18-25L base (fully loaded 1.35x = INR 24-34L)</td></tr>
       <tr><td>People cost</td><td>$1.51M / year (INR exchange: 83 = $1)</td></tr>
-      <tr><td>Tooling cost (recurring)</td><td>$183k / year (HubSpot-led; ChurnZero replaced by HubSpot Service + Operations Hub)</td></tr>
-      <tr><td>One-time tooling build / integration (Year 1)</td><td>~$120k &#8212; RudderStack eng (~$40k) · HubSpot Service+Ops Hub build &amp; config (~$25k) · predictive model (~$20k) · digital-CS tool setup (~$35k). ~$40k incremental eng cash; remainder largely absorbed in the $1.51M people cost.</td></tr>
+      <tr><td>Tooling cost (recurring)</td><td>$87k / year — lean stack; 4 of 8 tools already owned or native (HubSpot Service+Ops Hub, HubSpot workflows, Delighted, Metabase). HubSpot-led; ChurnZero replaced by HubSpot Service + Operations Hub.</td></tr>
+      <tr><td>One-time tooling build / integration (Year 1)</td><td>~$55k &#8212; PostHog eng (~$15k) · HubSpot workflow &amp; health-score config (~$20k) · predictive model (~$10k) · digital-CS tool setup (~$10k). ~$15k incremental eng cash; remainder largely absorbed in the $1.51M people cost.</td></tr>
       <tr><td>Total Year 1 CS investment</td><td>$1.68M</td></tr>
       <tr><td>Pre-90-day churn (SMB)</td><td>43% of total SMB churn</td></tr>
       <tr><td>CS attribution &#8212; MM</td><td>55-60% of prevented churn attributable to CS</td></tr>
@@ -4325,8 +4281,8 @@ tr:last-child td{border-bottom:none}
       <tr><td>CS attribution &#8212; SMB T2+3</td><td>18-20%</td></tr>
       <tr><td>Intercom Fin benefit</td><td>L1 deflection only &middot; 3 digital specialists &middot; company-level headcount saving ($115-161k) accrues to support budget, not CS P&amp;L</td></tr>
       <tr><td>Userpilot vs Pendo</td><td>Userpilot: $15k/yr, 1-7 day deploy. Pendo: $48k/yr, 8-12 weeks. Savings: $33k/yr. Pendo to be re-evaluated in Year 2.</td></tr>
-      <tr><td>RudderStack</td><td>Engineering critical path &#8212; must start 6-8 weeks before CS team launch. Health scoring is blind without it.</td></tr>
-      <tr><td>HubSpot Service + Ops Hub</td><td>CS orchestration backbone &#8212; consolidates onto the existing HubSpot. Service + Operations Hub upgrade ($24k/yr) adds health scoring, playbooks &amp; at-risk automation. Replaces ChurnZero &#8212; no second CS platform to license or sync.</td></tr>
+      <tr><td>PostHog</td><td>Lightweight event pipeline &#8212; deploys in 1&#8211;2 weeks; the only engineering dependency. CRM-only health scores work Day 1 (degraded), upgrade to product-data once PostHog is live. ~$18k/yr vs $40k for a full CDP.</td></tr>
+      <tr><td>HubSpot Service + Ops Hub</td><td>CS orchestration backbone &#8212; already owned and running today. The Service + Operations Hub tier the team holds adds health scoring, playbooks, native lifecycle email &amp; at-risk automation ($0 incremental). Replaces ChurnZero &#8212; no second CS platform to license or sync.</td></tr>
       <tr><td>Hysteresis band (account movement)</td><td>&#177;15% ARR buffer to prevent thrashing between segments</td></tr>
       <tr><td>Voluntary vs involuntary churn</td><td>Involuntary (payment failure) 15% of total churn &#8212; addressed via Stripe Smart Retries</td></tr>
     </tbody>
@@ -4338,7 +4294,7 @@ tr:last-child td{border-bottom:none}
 <nav class="nav-bar">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
   <div class="slide-dots" id="dotsContainer"></div>
-  <span class="slide-counter" id="counter">1 / 38</span>
+  <span class="slide-counter" id="counter">1 / 37</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
 </nav>
 
