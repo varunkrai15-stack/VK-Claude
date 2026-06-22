@@ -4326,7 +4326,7 @@ tr:last-child td{border-bottom:none}
 <!-- ── S28 · APPENDIX ── -->
 <div class="slide" id="s18">
 <div class="slide-header">
-  <h1>Appendix &#8212; Key Assumptions</h1>
+  <h1>Appendix</h1>
   <span class="sub">Model assumptions underlying all calculations and projections</span>
 </div>
 <div class="slide-body">
@@ -4367,72 +4367,11 @@ tr:last-child td{border-bottom:none}
 </div>
 </div>
 
-<!-- ── S29 · ASSUMPTIONS (GIVEN vs MAJOR vs MINOR) ── -->
-<div class="slide" id="s29a">
-<div class="slide-header">
-  <h1>Assumptions — What Was Given vs What We Assumed</h1>
-  <span class="sub">Case-study facts are not assumptions · we separate them from our modelling assumptions, split by ROI sensitivity (major vs minor)</span>
-</div>
-<div class="slide-body">
-  <div style="display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:10px">
-
-    <!-- GIVEN -->
-    <div style="border:1.5px solid #0A2540;border-radius:7px;overflow:hidden">
-      <div style="background:#0A2540;color:#fff;font-size:10px;font-weight:700;padding:7px 11px;letter-spacing:0.4px">GIVEN — CASE-STUDY FACTS <span style="font-weight:400;opacity:.7">(fixed, not assumed)</span></div>
-      <div style="padding:9px 11px;background:#F8FAFC;display:flex;flex-direction:column;gap:5px">
-        <div style="font-size:9px;color:#444;line-height:1.5;background:#fff;border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px"><strong style="color:#0A2540">$100M ARR</strong> — total book size</div>
-        <div style="font-size:9px;color:#444;line-height:1.5;background:#fff;border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px"><strong style="color:#0A2540">~25,000 customers</strong> — total account base</div>
-        <div style="font-size:9px;color:#444;line-height:1.5;background:#fff;border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px"><strong style="color:#0A2540">Product: JustCall</strong> (SaaS Labs) — cloud calling / SMS / contact-centre SaaS</div>
-        <div style="font-size:9px;color:#444;line-height:1.5;background:#fff;border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px"><strong style="color:#0A2540">SMB-heavy base</strong>, predominantly <strong style="color:#0A2540">monthly billing</strong> motion</div>
-        <div style="font-size:9px;color:#444;line-height:1.5;background:#fff;border:1px solid #E2E8F0;border-radius:4px;padding:5px 8px"><strong style="color:#0A2540">India-deliverable</strong> CS org context</div>
-        <div style="font-size:8px;color:var(--gray);line-height:1.45;margin-top:2px;font-style:italic">These are inputs to the model — they are not levers we chose, and the appendix's "Key Assumptions" should be read with this distinction.</div>
-      </div>
-    </div>
-
-    <!-- MAJOR -->
-    <div style="border:1.5px solid #D97706;border-radius:7px;overflow:hidden">
-      <div style="background:#D97706;color:#fff;font-size:10px;font-weight:700;padding:7px 11px;letter-spacing:0.4px">MAJOR ASSUMPTIONS <span style="font-weight:400;opacity:.85">(high ROI sensitivity — validate Week 1)</span></div>
-      <div style="padding:9px 11px;background:#FFFBEB;display:flex;flex-direction:column;gap:4px">
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border-left:3px solid #D97706;border-radius:0 4px 4px 0;padding:4px 8px"><strong style="color:#92400E">Baseline GRR ≈ 69%</strong> blended (MM 75 · T1 65 · T2 64 · T3 60) — assumed, not provided</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border-left:3px solid #D97706;border-radius:0 4px 4px 0;padding:4px 8px"><strong style="color:#92400E">ARR split by segment</strong> ($52M MM · $19M T1 · $12M T2 · $17M T3)</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border-left:3px solid #D97706;border-radius:0 4px 4px 0;padding:4px 8px"><strong style="color:#92400E">Pre-90-day churn = 43%</strong> of SMB churn — the core of the onboarding thesis</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border-left:3px solid #D97706;border-radius:0 4px 4px 0;padding:4px 8px"><strong style="color:#92400E">CS attribution</strong> of prevented churn (MM 55–60% · T1 43–45% · T2+3 18–20%)</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border-left:3px solid #D97706;border-radius:0 4px 4px 0;padding:4px 8px"><strong style="color:#92400E">Achievable GRR lift</strong> +4pp base / +7pp best</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border-left:3px solid #D97706;border-radius:0 4px 4px 0;padding:4px 8px"><strong style="color:#92400E">43-FTE structure + India cost base</strong> ($1.51M people cost)</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border-left:3px solid #D97706;border-radius:0 4px 4px 0;padding:4px 8px"><strong style="color:#92400E">Per-tool recovery rates</strong> driving the tooling ROI ($183k base / $87k lean)</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border-left:3px solid #D97706;border-radius:0 4px 4px 0;padding:4px 8px"><strong style="color:#92400E">Delighted (or similar NPS tool) already in the stack</strong>; in the lean case HubSpot Service+Ops Hub &amp; Metabase already owned</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border-left:3px solid #D97706;border-radius:0 4px 4px 0;padding:4px 8px"><strong style="color:#92400E">One-time build/integration ≈ $120k</strong> (base) — an estimate, not a quote</div>
-      </div>
-    </div>
-
-    <!-- MINOR -->
-    <div style="border:1.5px solid #00B27A;border-radius:7px;overflow:hidden">
-      <div style="background:#00B27A;color:#fff;font-size:10px;font-weight:700;padding:7px 11px;letter-spacing:0.4px">MINOR ASSUMPTIONS <span style="font-weight:400;opacity:.85">(low ROI sensitivity)</span></div>
-      <div style="padding:9px 11px;background:#F0FDF4;display:flex;flex-direction:column;gap:4px">
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 8px">INR : USD = <strong>83</strong></div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 8px">Tier-movement <strong>hysteresis ±15%</strong></div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 8px">Dormancy thresholds (0 calls 21d / MAU &lt;10% for 14d)</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 8px">Payment-recovery target <strong>33%</strong> · involuntary churn <strong>~15%</strong></div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 8px">Userpilot vs Pendo (<strong>$33k/yr</strong> saving)</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 8px">Deploy timelines (RudderStack 4–8 wks · PostHog 1–2 wks)</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 8px">Model-precision gate <strong>&gt;65–70%</strong> before automation</div>
-        <div style="font-size:8.7px;color:#444;line-height:1.45;background:#fff;border:1px solid #A7F3D0;border-radius:4px;padding:4px 8px">Tail GRR uplift excluded · expansion / NRR counted as <strong>$0</strong></div>
-      </div>
-    </div>
-
-  </div>
-<div class="eval-strip">
-  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Model sensitivity is concentrated in the <strong>major</strong> assumptions &#8212; baseline GRR, CS attribution, and the pre-90 churn share move the ROI the most. The minor assumptions barely shift the outcome. The given facts ($100M ARR, ~25k accounts, JustCall) are fixed inputs, not choices.</span></div>
-  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">First 30 days validate the major assumptions against real HubSpot + product (RudderStack) data. If they hold within &#177;10%, the thesis holds &#8212; GRR 70&#8594;78% and tooling ROI 5.6x base / 12.7x lean. If baseline GRR or attribution differs materially, the model is re-based before scale spend is committed.</span></div>
-</div>
-</div>
-</div>
-
 <!-- ── NAV ── -->
 <nav class="nav-bar">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
   <div class="slide-dots" id="dotsContainer"></div>
-  <span class="slide-counter" id="counter">1 / 39</span>
+  <span class="slide-counter" id="counter">1 / 38</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
 </nav>
 
