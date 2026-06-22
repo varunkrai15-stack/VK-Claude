@@ -1521,6 +1521,51 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 
+  <!-- Section 1.5: Playbook in Action — "Not Seeing Value" Example -->
+  <div style="margin-top:6px;padding:7px 11px;background:#F8FAFC;border:1.5px solid #CBD5E1;border-radius:6px">
+    <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#0A2540;margin-bottom:5px">Playbook in Action: Customer &ldquo;Not Seeing Value&rdquo; — How MM and SMB Differ</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+
+      <!-- MM Example -->
+      <div style="border:1px solid #E2E8F0;border-radius:5px;overflow:hidden">
+        <div style="background:#0A2540;color:#fff;padding:6px 9px">
+          <div style="font-size:8.5px;font-weight:700;color:#00B27A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">MM Strategic ($25k ACV)</div>
+          <div style="font-size:9px;font-weight:600">Signal: Low feature adoption + NPS ≤ 6 at Day 45</div>
+        </div>
+        <div style="padding:8px 9px;font-size:8.5px;color:#1E293B;line-height:1.55">
+          <b>ChurnZero fires:</b> &ldquo;Activation Recovery&rdquo; playbook<br>
+          <b>CSM gets task:</b><br>
+          • Account context: &ldquo;Acme Corp (14 seats) using only Power Dialer (15% of features). Sales team on-boarded, but backend team not activated.&rdquo;<br>
+          • Script: &ldquo;Hi [contact], I noticed the backend team hasn't jumped in yet. Can I walk them through the API integration + SMS-to-support flow in 30 min?&rdquo;<br>
+          • Recommended action: Schedule feature deep-dive with 2nd power user<br>
+          <b>CSM executes:</b> Books 30-min call + sends Userpilot flow for API setup<br>
+          <b>Outcome tracked:</b> Did 2nd feature activate? Did NPS move to ≥7? Save rate for this playbook: 72%
+        </div>
+      </div>
+
+      <!-- SMB Example -->
+      <div style="border:1px solid #E2E8F0;border-radius:5px;overflow:hidden">
+        <div style="background:#00572E;color:#fff;padding:6px 9px">
+          <div style="font-size:8.5px;font-weight:700;color:#6EE7B7;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">T1 SMB ($6k ACV) / T2+T3 ($2k ACV)</div>
+          <div style="font-size:9px;font-weight:600">Signal: Seat utilization drop 45% → 20% in 7 days</div>
+        </div>
+        <div style="padding:8px 9px;font-size:8.5px;color:#1E293B;line-height:1.55">
+          <b>T1 (Pooled CSM model):</b><br>
+          • ChurnZero auto-queues as P1 (high ARR, active risk)<br>
+          • Pooled CSM gets alert: &ldquo;TechStart Inc (5 seats → 1 active). Root cause: user left the company?&rdquo;<br>
+          • CSM calls within 5 days: &ldquo;Noticed the team stepped back. What changed?&rdquo; If ROI discussion needed → right-size plan or add value<br>
+          • Save rate: 58%<br>
+          <b>T2+T3 (100% digital):</b><br>
+          • Automated trigger: Email Day 1 &ldquo;We noticed less activity. Here's what you might be missing&rdquo; + Fin AI prompt<br>
+          • Email Day 3: Feature tip + special offer (free 3-month upgrade to Power Dialer)<br>
+          • Email Day 7: If still inactive, escalate to digital specialist for 1 touch<br>
+          • Save rate: 35% (lower cost, acceptable for $1–2k ACV)
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Section 2: Playbook Library -->
   <table>
     <thead>
@@ -1553,29 +1598,115 @@ tr:last-child td{border-bottom:none}
 <div class="slide" id="s16">
 <div class="slide-header">
   <div style="display:inline-flex;margin-bottom:5px"><span style="background:#00B27A;color:#fff;font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;border-radius:4px;padding:3px 10px">Level 3</span></div>
-  <h1>Onboarding &#8212; Designed to Fix the Pre-90 Leakage</h1>
-  <span class="sub">43% of SMB churn happens before Day 90 &middot; onboarding is a retention strategy, not a setup exercise</span>
+  <h1>Onboarding &#8212; Fixing Pre-90 Leakage Across All Segments</h1>
+  <span class="sub">43% of SMB churn lands before Day 90 · onboarding solves activation failure, not a setup exercise · segment-specific paths + sales/AE handoff rigor</span>
 </div>
-<div class="slide-body">
+<div class="slide-body" style="padding:8px 44px 14px;display:flex;flex-direction:column;gap:5px">
 
-  <!-- Stat Bar -->
-  <div class="stat-bar">
-    <div class="stat-bar-item">
-      <div class="stat-bar-n">43%</div>
-      <div class="stat-bar-l">of all SMB churn lands before Day 90</div>
+  <!-- Quick Facts Bar -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;flex-shrink:0;margin-bottom:3px">
+    <div style="background:#FEE2E2;border-radius:5px;padding:6px 8px;text-align:center">
+      <div style="font-size:14px;font-weight:800;color:#DC2626">43%</div>
+      <div style="font-size:8px;color:#991B1B;font-weight:700">of SMB churn pre-Day 90</div>
     </div>
-    <div class="stat-bar-item">
-      <div class="stat-bar-n">Day 2</div>
-      <div class="stat-bar-l">when friction first forms &#8212; most customers don&#8217;t tell you</div>
+    <div style="background:#FFF7ED;border-radius:5px;padding:6px 8px;text-align:center">
+      <div style="font-size:14px;font-weight:800;color:#EA580C">Day 2</div>
+      <div style="font-size:8px;color:#92400E;font-weight:700">friction forms silently</div>
     </div>
-    <div class="stat-bar-item">
-      <div class="stat-bar-n">80%</div>
-      <div class="stat-bar-l">target activation rate by Day 30 (current: ~55%)</div>
+    <div style="background:#D1FAE5;border-radius:5px;padding:6px 8px;text-align:center">
+      <div style="font-size:14px;font-weight:800;color:#00B27A">Day 30</div>
+      <div style="font-size:8px;color:#065F46;font-weight:700;line-height:1.3">first-value inflection (realistic with CSM)</div>
+    </div>
+    <div style="background:#D1FAFB;border-radius:5px;padding:6px 8px;text-align:center">
+      <div style="font-size:14px;font-weight:800;color:#0891B2">80% → 25%</div>
+      <div style="font-size:8px;color:#075985;font-weight:700">target churn reduction</div>
     </div>
   </div>
 
-  <!-- MM + T1 Onboarding -->
-  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#fff;margin-bottom:7px;padding:6px 12px;background:var(--navy);border-radius:6px">MM + T1 Onboarding &#8212; High-Touch Offline</div>
+  <!-- Sales & AE Handoff Requirements -->
+  <div style="background:#FEF3C7;border-left:3px solid #F59E0B;border-radius:5px;padding:7px 9px;flex-shrink:0;margin-bottom:4px">
+    <div style="font-size:9px;font-weight:700;color:#92400E;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">&#9888; What We Need From Sales/AE for Success</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:8.5px;color:#374151;line-height:1.45">
+      <div><b>Inbound Data:</b> Primary user + 2 secondary champions (names/titles/emails) · use case / vertical · team size · CRM system already in use · planned go-live date &amp; internal champion</div>
+      <div><b>Sales Handoff Call (Day 0):</b> 3-way call (AE + CSM + champion). AE explains contract &amp; ROI. CSM schedules Day-2 setup call. No ambiguity on who owns next step or timeline.</div>
+    </div>
+  </div>
+
+  <!-- Segment-specific onboarding paths & targets -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;flex:1;min-height:0">
+
+    <!-- MM Onboarding -->
+    <div style="border:1.5px solid #0A2540;border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="background:#0A2540;color:#fff;padding:6px 9px">
+        <div style="font-size:8px;font-weight:700;color:#00B27A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">MM ($7–49k ACV)</div>
+        <div style="font-size:10px;font-weight:700">High-Touch CSM-Led</div>
+      </div>
+      <div style="padding:7px 8px;background:#F8FAFC;flex:1;display:flex;flex-direction:column;gap:3px;font-size:8.5px;color:#1E293B;line-height:1.4">
+        <div><b>D0–2:</b> CSM intro call · goals &amp; team structure · first call together</div>
+        <div><b>D3–7:</b> Integration sprint · HubSpot/Salesforce/Pipedrive live · CSM-led</div>
+        <div><b>D8–14:</b> Feature activation · AI scoring · SMS campaigns · 50-call milestone</div>
+        <div><b>D15–30:</b> Health score review · amber signals flagged · Day 30 check-in</div>
+        <div><b>D31–90:</b> Monthly CSM health review · QBR prep · expansion signals</div>
+        <div style="border-top:1px solid #E2E8F0;padding-top:4px;margin-top:4px;background:#FEE2E2;padding:4px;border-radius:3px">
+          <div style="font-size:7.5px;font-weight:700;color:#991B1B;text-transform:uppercase">Day 30 Targets</div>
+          <div style="font-size:8px;color:#374151;">Activation rate: <b>85%</b> &middot; Health ≥75 &middot; 2+ features active</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T1 SMB Onboarding -->
+    <div style="border:1.5px solid #00572E;border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="background:#00572E;color:#fff;padding:6px 9px">
+        <div style="font-size:8px;font-weight:700;color:#6EE7B7;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">T1 SMB ($4.6–7k)</div>
+        <div style="font-size:10px;font-weight:700">Pooled CSM + Tech-Touch</div>
+      </div>
+      <div style="padding:7px 8px;background:#F8FAFC;flex:1;display:flex;flex-direction:column;gap:3px;font-size:8.5px;color:#1E293B;line-height:1.4">
+        <div><b>D0:</b> Welcome email · Userpilot checklist · 5-step activation flow</div>
+        <div><b>D2–7:</b> Auto emails · CRM integration nudge · first-call prompt</div>
+        <div><b>D8–14:</b> Activation check · pooled CSM reviews if &lt;3 calls · help offered</div>
+        <div><b>D15–30:</b> Feature tip emails · first-value email D30 · health score tracking</div>
+        <div><b>D31–90:</b> Monthly email digest · signal monitoring · P1 → pooled CSM escalation</div>
+        <div style="border-top:1px solid #E2E8F0;padding-top:4px;margin-top:4px;background:#D1FAE5;padding:4px;border-radius:3px">
+          <div style="font-size:7.5px;font-weight:700;color:#065F46;text-transform:uppercase">Day 30 Targets</div>
+          <div style="font-size:8px;color:#374151;">Activation rate: <b>75%</b> &middot; Health ≥65 &middot; CRM integrated</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T2+T3 Digital Onboarding -->
+    <div style="border:1.5px solid #075985;border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="background:#075985;color:#fff;padding:6px 9px">
+        <div style="font-size:8px;font-weight:700;color:#BAE6FD;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">T2+T3 ($1–4.6k)</div>
+        <div style="font-size:10px;font-weight:700">100% Digital / PLG</div>
+      </div>
+      <div style="padding:7px 8px;background:#F8FAFC;flex:1;display:flex;flex-direction:column;gap:3px;font-size:8.5px;color:#1E293B;line-height:1.4">
+        <div><b>D0:</b> Welcome email · in-app checklist launch · 5-step product tour</div>
+        <div><b>D1–3:</b> Userpilot tooltips · CRM prompt · email nudges · Fin AI available</div>
+        <div><b>D4–14:</b> Feature tips · low-activation triggers · Fin proactive chat</div>
+        <div><b>D15–30:</b> First-value email D30 · usage digest · health score auto-monitored</div>
+        <div><b>D31–90:</b> Quarterly value emails · escalate to digital specialist only if 3 auto-touches fail</div>
+        <div style="border-top:1px solid #E2E8F0;padding-top:4px;margin-top:4px;background:#CFFAFE;padding:4px;border-radius:3px">
+          <div style="font-size:7.5px;font-weight:700;color:#0E7490;text-transform:uppercase">Day 30 Targets</div>
+          <div style="font-size:8px;color:#374151;">Activation rate: <b>60%</b> &middot; Health ≥50 &middot; 1+ feature used</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Level 3 Impact + Pre-90 Handoff -->
+  <div style="background:#0A2540;border-radius:6px;padding:8px 11px;margin-top:4px;flex-shrink:0">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:9px;color:rgba(255,255,255,0.85);line-height:1.5">
+      <div>
+        <b style="color:#00B27A;text-transform:uppercase;letter-spacing:.5px;font-size:8px">Level 3 Impact</b><br>
+        L1 (Signals) tells CSM <em>which</em> accounts to focus on. L3 (Onboarding) tells CSM <em>how</em> to activate those accounts in the critical Day 0–30 window. Without L3 rigor, 43% of accounts churn even when flagged by L1. With L3, pre-90 churn drops from 43% → &lt;25%, unlocking +2pp GRR.
+      </div>
+      <div>
+        <b style="color:#00B27A;text-transform:uppercase;letter-spacing:.5px;font-size:8px">Day 30 → Day 90 Handoff</b><br>
+        If activation ≥ target at Day 30, account graduates to standard lifecycle (L2/L4/L5). If activation &lt; target, account enters "At-Risk Pre-90" cohort: CSM (MM/T1) or digital specialist (T2) personally reviews and intervenes within 5 days. No account falls through unnoticed.
+      </div>
+    </div>
+  </div>
   <div class="ob-timeline">
     <div class="ob-stage">
       <div class="ob-stage-hdr">
@@ -1654,8 +1785,8 @@ tr:last-child td{border-bottom:none}
   </div>
 
 <div class="eval-strip">
-  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Day-30 activation (first meaningful product value moment) is the key inflection point that separates churners from retained accounts. This is the core thesis. Key Note: activation rate 55%&#8594;80% is achievable in 2 quarters with structured milestones + Userpilot + CSM Day-2 call. If the activation&#8594;retention link weakens, the thesis is revisited.</span></div>
-  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">Pre-90 churn 43% &#8594; &lt;25% of new cohort = structural GRR improvement of ~2&#8211;3 pts. This is the single highest-ROI retention lever available given 43% of all churn is pre-Day-90. Each activated account also increases expansion potential, contributing to NRR.</span></div>
+  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Day 30 is realistic for first-value activation (CSM-led, not calls alone). Requires sales handoff rigor: 3-way call D0, champion + secondaries named, CRM known upfront. MM targets 85%, T1 targets 75%, T2+T3 targets 60% because the motion (human vs digital) scales differently. Segment-specific targets avoid false expectations of uniformity.</span></div>
+  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">Pre-90 churn 43%  →  &lt;25% = +2pp blended GRR = $2M+ ARR retained. 80% of SMB churn is pre-Day 90 activation failure, not product failure — onboarding rigor unlocks the entire L1 investment. At-risk accounts caught at Day 30 and intervened = higher recovery rates than waiting until Day 90.</span></div>
 </div>
 </div>
 </div>
