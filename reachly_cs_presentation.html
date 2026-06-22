@@ -125,26 +125,33 @@ tr:last-child td{border-bottom:none}
 .gr-text strong{color:var(--green)}
 
 /* ── ROADMAP ── */
-.phase{background:#fff;border-radius:9px;border:1px solid var(--border);overflow:hidden;margin-bottom:10px}
-.phase-hdr{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border)}
+.phase{background:#fff;border-radius:8px;border:1px solid var(--border);overflow:hidden;margin-bottom:6px}
+.phase-hdr{display:flex;align-items:center;gap:10px;padding:5px 14px;border-bottom:1px solid var(--border)}
 .pbadge{padding:3px 10px;border-radius:10px;font-size:11px;font-weight:700;white-space:nowrap}
 .pbadge.pre{background:#FEF3C7;color:#92400E}
 .pbadge.run{background:var(--green-light);color:#005C3F}
 .pbadge.scale{background:#EFF6FF;color:#1E40AF}
 .pbadge.opt{background:#F5F3FF;color:#6D28D9}
-.phase-title{font-size:12.5px;font-weight:700;color:var(--navy)}
-.phase-date{font-size:11.5px;color:var(--gray);margin-left:auto}
-.phase-items{display:flex;gap:9px;padding:10px 16px;flex-wrap:wrap}
-.pi{background:var(--gray-light);border-radius:6px;padding:7px 11px;font-size:11.5px;color:var(--text2);border-left:3px solid transparent;flex:1;min-width:150px}
+.pbadge.validate{background:#16A34A;color:#fff}
+.phase-title{font-size:11px;font-weight:700;color:var(--navy);line-height:1.3}
+.phase-date{font-size:10.5px;color:var(--gray);margin-left:auto;white-space:nowrap;flex-shrink:0}
+.phase-items{display:flex;gap:6px;padding:7px 14px;flex-wrap:wrap}
+.pi{background:var(--gray-light);border-radius:6px;padding:6px 9px;font-size:10px;line-height:1.4;color:var(--text2);border-left:3px solid transparent;flex:1;min-width:160px}
 .pi.critical{border-left-color:var(--red);background:#FEF2F2}
 .pi.key{border-left-color:var(--green);background:var(--green-light)}
 .pi.normal{border-left-color:var(--navy)}
 .pi.good{border-left-color:var(--green);background:#F0FDF4}
-.pi strong{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
+.pi strong{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px}
 .pi.critical strong{color:var(--red)}
 .pi.key strong,.pi.good strong{color:#005C3F}
 .pi.normal strong{color:var(--navy)}
-.gap-fixed{background:#F0FDF4;border-radius:7px;padding:9px 14px;margin:0 16px 12px;font-size:12px;color:#005C3F;border:1px solid #86EFAC;display:flex;align-items:flex-start;gap:7px}
+.gap-fixed{background:#F0FDF4;border-radius:7px;padding:5px 12px;margin:0 14px 7px;font-size:9.5px;line-height:1.4;color:#005C3F;border:1px solid #86EFAC;display:flex;align-items:flex-start;gap:7px}
+/* Roadmap (s6) fits 5 phases + eval-strip on one screen */
+#s6 .slide-body{padding-top:12px;padding-bottom:48px;justify-content:flex-start}
+#s6 .eval-strip{padding-top:6px;margin-top:8px}
+#s6 .eval-item{padding:5px 9px}
+#s6 .eval-txt{font-size:8.5px;line-height:1.35}
+#s6 .eval-lbl{font-size:7px;min-width:74px}
 .gap-fixed::before{content:"✓";width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:1px}
 
 /* ── TOOLING ── */
@@ -2673,7 +2680,7 @@ tr:last-child td{border-bottom:none}
   </div>
   <div class="phase" style="border-left:3px solid #16A34A">
     <div class="phase-hdr">
-      <div class="pbadge" style="background:#16A34A;color:#fff;border-radius:4px;padding:3px 9px;font-size:9px;font-weight:700;letter-spacing:.5px">VALIDATE</div>
+      <div class="pbadge validate">VALIDATE</div>
       <div class="phase-title">Automation gate &mdash; back test &rarr; pilot cohort &rarr; go/no-go before full roll out</div>
       <div class="phase-date">Months 1&ndash;3</div>
     </div>
