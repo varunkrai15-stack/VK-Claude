@@ -3244,7 +3244,7 @@ tr:last-child td{border-bottom:none}
     <div class="stack-tools">
       <div class="tool-card" style="flex:2">
         <div class="tool-name">ChurnZero</div>
-        <div class="tool-desc">Core CS platform. Health scoring, playbook automation, renewal calendars, at-risk alerts, CSM task management. Properly configured with RudderStack data, not just CRM.</div>
+        <div class="tool-desc">Core CS platform. Health scoring, playbook automation, renewal calendars, at-risk alerts, CSM task management. Properly configured with RudderStack data, not just CRM. <strong>Re-adopt, don't abandon:</strong> rather than completing the migration to HubSpot-only, we reconfigure ChurnZero from Day 1. HubSpot stays the system of record — but rebuilding ChurnZero's orchestration (playbooks, health scoring, renewal calendars) natively in HubSpot would take 6+ months and delay GRR impact. Keeping it preserves Day-1 capability.</div>
         <div class="tool-meta"><span class="tool-cost">$30k / yr</span><span class="tool-integ">→ HubSpot · RudderStack · Delighted · Userpilot</span><span class="tool-roi">Metric: GRR improvement; playbook completion rate; at-risk accounts rescued</span></div>
       </div>
     </div>
@@ -3442,7 +3442,10 @@ tr:last-child td{border-bottom:none}
       <tr><td><strong>Total (Userpilot)</strong></td><td><strong>$189k</strong></td><td colspan="4">—</td><td><strong>$2.0M</strong></td><td><strong>10.5x</strong></td><td><strong>&lt;1 month blended</strong></td></tr>
     </tfoot>
   </table>
-  <div style="margin-top:12px;background:var(--navy);border-radius:8px;padding:11px 16px;font-size:12px;color:rgba(255,255,255,0.85)">
+  <div style="margin-top:12px;background:#FFF7ED;border:1.5px solid #F59E0B;border-radius:8px;padding:11px 16px;font-size:12px;color:#444">
+    <strong style="color:#92400E">One-time build / integration cost</strong> (excluded from the $189k recurring above): RudderStack engineering implementation (~$40k · 4–8 wks internal eng) · cross-tool integration &amp; ChurnZero reconfiguration (~$25k) · predictive model build, Months 7–9 (~$20k analyst / DS time) = <strong>~$85k one-time</strong>. <strong style="color:#92400E">Year-1 loaded view:</strong> $189k recurring + $85k one-time = <strong>$274k</strong> → tooling ROI <strong style="color:var(--green2)">7.3x</strong> in Year 1. The <strong>10.5x</strong> headline is the steady-state, license-only return once build cost is amortised.
+  </div>
+  <div style="margin-top:10px;background:var(--navy);border-radius:8px;padding:11px 16px;font-size:12px;color:rgba(255,255,255,0.85)">
     <strong style="color:var(--green)">Intercom Fin framing:</strong> Fin deflects <strong style="color:#fff">L1 tickets only</strong> (setup, FAQ, basic integrations). L2+ tickets — porting, disputes, billing escalations, bugs — still route to the support team regardless. The CS capacity benefit is narrow but meaningful: <strong style="color:#fff">3 digital specialists</strong> are freed from L1 triage, giving them time to run proactive lifecycle programs across 20,000 accounts. Headcount saving of $115–161k / yr accrues to the support team's P&amp;L, not CS — those are two separate budget conversations.
   </div>
 <div class="eval-strip">
