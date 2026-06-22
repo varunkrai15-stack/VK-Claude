@@ -2836,86 +2836,117 @@ tr:last-child td{border-bottom:none}
 
   <!-- L0 -->
   <div class="sc-section-lbl">L0 OKRs — the two outcomes the whole CS org is accountable for (lagging)</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:13px">
-    <div class="card green">
-      <div class="card-label">L0 · North Star</div>
-      <div style="font-size:17px;font-weight:800;color:var(--navy)">GRR — Gross Revenue Retention</div>
-      <div style="font-size:11.5px;color:var(--gray);margin:5px 0 7px">Churn reduction is the outcome. Blended <strong>~69% → ~73% (base) / ~76% (best)</strong>.</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <span class="tag tag-navy">MM 75 → 79%</span>
-        <span class="tag tag-navy">T1 65 → 70%</span>
-        <span class="tag tag-navy">T2–T3 ~62 → 65%</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+    <div class="card green" style="padding:14px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between">
+      <div>
+        <div class="card-label" style="font-size:9.5px">L0 · North Star</div>
+        <div style="font-size:20px;font-weight:800;color:var(--navy);line-height:1.2;margin:6px 0">GRR — Gross Revenue Retention</div>
+        <div style="font-size:12px;color:var(--gray);margin:8px 0">Churn reduction is the outcome. Blended <strong>~69% → ~73% (base) / ~76% (best)</strong>.</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+        <span class="tag tag-navy" style="font-size:8.5px">MM 75→79%</span>
+        <span class="tag tag-navy" style="font-size:8.5px">T1 65→70%</span>
+        <span class="tag tag-navy" style="font-size:8.5px">T2–T3 62→65%</span>
       </div>
     </div>
-    <div class="card green">
-      <div class="card-label">L0 · Growth</div>
-      <div style="font-size:17px;font-weight:800;color:var(--navy)">NRR — Net Revenue Retention</div>
-      <div style="font-size:11.5px;color:var(--gray);margin:5px 0 7px">Retention + expansion. Adoption improvement is the leading driver that powers both L0s.</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap">
-        <span class="tag tag-green">MM 100 → 108%</span>
-        <span class="tag tag-green">T1 ~95 → 100%</span>
-        <span class="tag tag-green">T2–T3 ~90 → 93%</span>
+    <div class="card green" style="padding:14px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between">
+      <div>
+        <div class="card-label" style="font-size:9.5px">L0 · Growth</div>
+        <div style="font-size:20px;font-weight:800;color:var(--navy);line-height:1.2;margin:6px 0">NRR — Net Revenue Retention</div>
+        <div style="font-size:12px;color:var(--gray);margin:8px 0">Retention + expansion. Adoption improvement is the leading driver that powers both L0s.</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+        <span class="tag tag-green" style="font-size:8.5px">MM 100→108%</span>
+        <span class="tag tag-green" style="font-size:8.5px">T1 95→100%</span>
+        <span class="tag tag-green" style="font-size:8.5px">T2–T3 90→93%</span>
       </div>
     </div>
   </div>
 
   <!-- L1 -->
   <div class="sc-section-lbl">L1 metrics — the leading, controllable drivers (what each owner is measured on weekly)</div>
-  <table>
+  <table style="font-size:8.5px">
     <thead>
-      <tr>
-        <th style="width:25%">MM CSM <span style="font-weight:400;text-transform:none">(dedicated)</span></th>
-        <th style="width:25%">SMB T1 CSM <span style="font-weight:400;text-transform:none">(pooled)</span></th>
-        <th>SMB T2–T3 + Agentic AI <span style="font-weight:400;text-transform:none">(digital specialists run the system)</span></th>
+      <tr style="font-size:9px">
+        <th style="width:25%;font-weight:700">MM CSM <span style="font-weight:400;text-transform:none">(dedicated)</span></th>
+        <th style="width:25%;font-weight:700">SMB T1 CSM <span style="font-weight:400;text-transform:none">(pooled)</span></th>
+        <th style="font-weight:700">SMB T2–T3 + Agentic AI <span style="font-weight:400;text-transform:none">(digital specialists run the system)</span></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>Adoption depth</strong> — active sessions / feature breadth per account (≥ target adoption score)</td>
-        <td><strong>Activation rate</strong> — % new accounts activated by Day 30 (target 80%)</td>
-        <td><strong>Deflection rate</strong> — Intercom Fin L1 auto-resolution (target ≥55%)</td>
+        <td><strong>Adoption depth</strong><br><span style="color:var(--gray);font-size:7.8px">active sessions / feature breadth per account (≥ target adoption score)</span></td>
+        <td><strong>Activation rate</strong><br><span style="color:var(--gray);font-size:7.8px">% new accounts activated by Day 30 (target 80%)</span></td>
+        <td><strong>Deflection rate</strong><br><span style="color:var(--gray);font-size:7.8px">Intercom Fin L1 auto-resolution (target ≥55%)</span></td>
       </tr>
       <tr>
-        <td><strong>Book coverage</strong> — % of book with QBR + monthly health touch (target 100%)</td>
-        <td><strong>Pool coverage / SLA</strong> — % of at-risk pool contacted within SLA</td>
-        <td><strong>Digital activation</strong> — % T2–T3 activated by Day 30 via Userpilot (target 80%)</td>
+        <td><strong>Book coverage</strong><br><span style="color:var(--gray);font-size:7.8px">% of book with QBR + monthly health touch (target 100%)</span></td>
+        <td><strong>Pool coverage / SLA</strong><br><span style="color:var(--gray);font-size:7.8px">% of at-risk pool contacted within SLA</span></td>
+        <td><strong>Digital activation</strong><br><span style="color:var(--gray);font-size:7.8px">% T2–T3 activated by Day 30 via Userpilot (target 80%)</span></td>
       </tr>
       <tr>
-        <td><strong>Health movement</strong> — % book green; # at-risk accounts recovered</td>
-        <td><strong>Connectivity</strong> — % accounts with healthy usage (CRM connected, calls live)</td>
-        <td><strong>Nudge → action conversion</strong> — % of Customer.io / Userpilot nudges that drive the target action</td>
+        <td><strong>Health movement</strong><br><span style="color:var(--gray);font-size:7.8px">% book green; # at-risk accounts recovered</span></td>
+        <td><strong>Connectivity</strong><br><span style="color:var(--gray);font-size:7.8px">% accounts with healthy usage (CRM connected, calls live)</span></td>
+        <td><strong>Nudge → action conversion</strong><br><span style="color:var(--gray);font-size:7.8px">% of Customer.io / Userpilot nudges that drive the target action</span></td>
       </tr>
       <tr>
-        <td><strong>Expansion signals actioned</strong> — # qualified / pipeline to AE (SPIFF)</td>
-        <td><strong>Save rate</strong> — % of at-risk accounts retained</td>
-        <td><strong>Auto-resolution rate</strong> — % at-risk recovered with no human touch</td>
+        <td><strong>Expansion signals actioned</strong><br><span style="color:var(--gray);font-size:7.8px"># qualified / pipeline to AE (SPIFF)</span></td>
+        <td><strong>Save rate</strong><br><span style="color:var(--gray);font-size:7.8px">% of at-risk accounts retained</span></td>
+        <td><strong>Auto-resolution rate</strong><br><span style="color:var(--gray);font-size:7.8px">% at-risk recovered with no human touch</span></td>
       </tr>
       <tr>
-        <td><strong>Onboarding</strong> — activation milestone hit by Day 30 (new logos)</td>
-        <td><strong>Adoption trend</strong> — % accounts with rising usage period-over-period</td>
-        <td><strong>Model precision + CSAT</strong> — churn-prediction precision/recall; digital CSAT ≥ 4.2 <span style="font-size:10px;color:var(--gray)">(the AI's own KPIs)</span></td>
+        <td><strong>Onboarding</strong><br><span style="color:var(--gray);font-size:7.8px">activation milestone hit by Day 30 (new logos)</span></td>
+        <td><strong>Adoption trend</strong><br><span style="color:var(--gray);font-size:7.8px">% accounts with rising usage period-over-period</span></td>
+        <td><strong>Model precision + CSAT</strong><br><span style="color:var(--gray);font-size:7.8px">churn-prediction precision/recall; digital CSAT ≥ 4.2 (the AI's own KPIs)</span></td>
       </tr>
     </tbody>
   </table>
 
   <!-- Variable comp -->
-  <div class="sc-section-lbl" style="margin-top:13px">Variable payout — retention-weighted, scaled to control level (CS benchmark: 10–25% of OTE, not sales-style 40–50%)</div>
-  <table>
+  <div class="sc-section-lbl" style="margin-top:14px">Variable payout — retention-weighted, scaled to control level (CS benchmark: 10–25% of OTE, not sales-style 40–50%)</div>
+  <table style="font-size:8.5px">
     <thead>
-      <tr><th style="width:20%">Role</th><th style="width:14%">Base : Variable</th><th>Variable weighting</th><th style="width:24%">Rationale</th></tr>
+      <tr style="font-size:9px">
+        <th style="width:18%;font-weight:700">Role</th>
+        <th style="width:14%;font-weight:700">Base : Variable</th>
+        <th style="font-weight:700">Variable weighting</th>
+        <th style="width:24%;font-weight:700">Rationale</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td><strong>MM CSM</strong></td><td>80 : 20</td><td><span class="tag tag-navy">60% GRR of book</span> <span class="tag tag-green">25% NRR / expansion</span> <span class="tag tag-amber">15% adoption + coverage</span></td><td>Highest expansion motion → meaningful NRR weight; still retention-led.</td></tr>
-      <tr><td><strong>SMB T1 CSM (pooled)</strong></td><td>85 : 15</td><td><span class="tag tag-navy">70% pool retention / save rate</span> <span class="tag tag-green">20% activation rate</span> <span class="tag tag-amber">10% coverage</span></td><td>Volume retention role; activation is the controllable lever that drives GRR.</td></tr>
-      <tr><td><strong>Digital specialists (T2–T3)</strong></td><td>90 : 10</td><td><span class="tag tag-navy">60% tail GRR</span> <span class="tag tag-green">25% deflection + digital activation</span> <span class="tag tag-amber">15% CSAT</span></td><td>Outcome is system performance, not individual heroics → lower variable, paid on the machine working.</td></tr>
+      <tr>
+        <td><strong style="font-size:9px">MM CSM</strong></td>
+        <td style="font-weight:700;color:#0A2540;font-size:9px">80 : 20</td>
+        <td><span class="tag tag-navy" style="font-size:8px">60% GRR</span> <span class="tag tag-green" style="font-size:8px">25% NRR</span> <span class="tag tag-amber" style="font-size:8px">15% adoption</span></td>
+        <td><span style="color:var(--gray)">Highest expansion motion → meaningful NRR weight; still retention-led.</span></td>
+      </tr>
+      <tr>
+        <td><strong style="font-size:9px">SMB T1 CSM (pooled)</strong></td>
+        <td style="font-weight:700;color:#0A2540;font-size:9px">85 : 15</td>
+        <td><span class="tag tag-navy" style="font-size:8px">70% retention</span> <span class="tag tag-green" style="font-size:8px">20% activation</span> <span class="tag tag-amber" style="font-size:8px">10% coverage</span></td>
+        <td><span style="color:var(--gray)">Volume retention role; activation is the controllable lever that drives GRR.</span></td>
+      </tr>
+      <tr>
+        <td><strong style="font-size:9px">Digital specialists (T2–T3)</strong></td>
+        <td style="font-weight:700;color:#0A2540;font-size:9px">90 : 10</td>
+        <td><span class="tag tag-navy" style="font-size:8px">60% tail GRR</span> <span class="tag tag-green" style="font-size:8px">25% deflection</span> <span class="tag tag-amber" style="font-size:8px">15% CSAT</span></td>
+        <td><span style="color:var(--gray)">Outcome is system performance, not individual heroics → lower variable, paid on the machine working.</span></td>
+      </tr>
     </tbody>
   </table>
-  <div style="margin-top:11px;background:var(--green-light);border-left:4px solid var(--green);border-radius:7px;padding:10px 15px;font-size:11.5px;color:#005C3F;line-height:1.5">
-    <strong>Industry alignment:</strong> GRR + NRR are the standard CS L0 North Stars. Best-in-class: MM GRR &gt;90% &amp; NRR &gt;110%; SMB GRR 75–85% &amp; NRR 95–105%. L1 leading indicators — adoption, time-to-value / activation, health score, coverage, CSAT — are the recognised drivers. Agentic AI carries its own L1s (deflection, precision, auto-resolution) so the system is held to a measurable bar, exactly like a human pod.
+  <div style="margin-top:13px;background:var(--green-light);border-left:4px solid var(--green);border-radius:7px;padding:12px 16px;font-size:12px;color:#005C3F;line-height:1.6">
+    <div style="font-weight:700;font-size:13px;margin-bottom:6px">Industry alignment:</div>
+    <div>GRR + NRR are the standard CS L0 North Stars. Best-in-class: MM GRR &gt;90% &amp; NRR &gt;110%; SMB GRR 75–85% &amp; NRR 95–105%. L1 leading indicators — adoption, time-to-value / activation, health score, coverage, CSAT — are the recognised drivers. Agentic AI carries its own L1s (deflection, precision, auto-resolution) so the system is held to a measurable bar, exactly like a human pod.</div>
   </div>
-<div class="eval-strip">
-  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">L1 leading indicators (D30 activation, health score, book coverage %) are controllable by CSMs weekly; L0 outcomes (GRR, NRR) lag by 30&#8211;90 days. Variable comp aligned to L1 controllables drives the right behaviours before outcomes move. AI carries its own L1s so the system is held to the same bar as humans.</span></div>
-  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">L1 improvement &#8594; L0 outcomes. Benchmarks: MM GRR &gt;90% / NRR &gt;110%; SMB GRR 75&#8211;85% / NRR 95&#8211;105%. Reachly 18-month targets are at the achievable end of this range for a monthly-billing, SMB-heavy model &#8212; not aspirational, not sandbagged.</span></div>
+<div class="eval-strip" style="margin-top:12px">
+  <div class="eval-item" style="font-size:9.5px">
+    <span class="eval-lbl" style="font-size:9.5px">Key Note</span>
+    <span class="eval-txt" style="font-size:9px;line-height:1.5">L1 leading indicators (D30 activation, health score, book coverage %) are controllable by CSMs weekly; L0 outcomes (GRR, NRR) lag by 30&#8211;90 days. Variable comp aligned to L1 controllables drives the right behaviours before outcomes move. AI carries its own L1s so the system is held to the same bar as humans.</span>
+  </div>
+  <div class="eval-item" style="font-size:9.5px">
+    <span class="eval-lbl" style="font-size:9.5px">Business&nbsp;Outcome</span>
+    <span class="eval-txt" style="font-size:9px;line-height:1.5">L1 improvement &#8594; L0 outcomes. Benchmarks: MM GRR &gt;90% / NRR &gt;110%; SMB GRR 75&#8211;85% / NRR 95&#8211;105%. Reachly 18-month targets are at the achievable end of this range for a monthly-billing, SMB-heavy model &#8212; not aspirational, not sandbagged.</span>
+  </div>
 </div>
 </div>
 </div>
@@ -3806,34 +3837,95 @@ tr:last-child td{border-bottom:none}
 <div class="slide-header"><h1>Trade-offs &amp; Big Bets</h1><span class="sub">What we deliberately gave up — and where we're placing the chips, with reasoning</span></div>
 <div class="slide-body">
   <div class="sc-section-lbl">Trade-offs we made on purpose</div>
-  <table style="margin-bottom:14px">
+  <table style="margin-bottom:14px;font-size:8.5px">
     <thead>
-      <tr><th style="width:14%">Decision</th><th style="width:20%">We chose</th><th style="width:22%">We traded away</th><th>Why it's the right call</th></tr>
+      <tr style="font-size:9px;font-weight:700">
+        <th style="width:12%">Decision</th>
+        <th style="width:20%">We chose</th>
+        <th style="width:22%">We traded away</th>
+        <th>Why it's the right call</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td><strong>Coverage</strong></td><td>ARR-first concentration</td><td>Human touch on the 16,000-account tail</td><td>Revenue is concentrated — 7% of accounts = 52% of ARR. Bots cover the tail at near-zero marginal cost; humans go where the dollars are.</td></tr>
-      <tr><td><strong>Team size</strong></td><td>Lean 43 FTE</td><td>Slack capacity / white-glove on SMB</td><td>People cost 1.51% of ARR vs 8–10% benchmark. A lean team forces tooling discipline — automation becomes mandatory, not optional.</td></tr>
-      <tr><td><strong>Location</strong></td><td>India-based team</td><td>Full US-hours live coverage</td><td>~¼ the loaded cost — that efficiency funds more heads <em>and</em> the full tooling stack. Partial follow-the-sun + async digital covers the gap.</td></tr>
-      <tr><td><strong>Activation tool</strong></td><td>Userpilot (Year 1)</td><td>Pendo's deeper product analytics</td><td>1–7 day deploy vs 8–12 weeks, $33k cheaper, zero activation gap at launch. Re-evaluate Pendo in Year 2 once RudderStack analytics mature.</td></tr>
-      <tr><td><strong>ROI stance</strong></td><td>Count expansion / NRR as $0</td><td>A rosier headline ROI number</td><td>A conservative, defensible base case survives scrutiny. Expansion is real upside we'll capture — but we don't promise it to justify the investment.</td></tr>
+      <tr>
+        <td><strong style="font-size:9px">Coverage</strong></td>
+        <td><strong style="color:#0A2540">ARR-first concentration</strong></td>
+        <td>Human touch on the 16,000-account tail</td>
+        <td><span style="color:var(--gray)">Revenue is concentrated — 7% of accounts = 52% of ARR. Bots cover the tail at near-zero marginal cost; humans go where the dollars are.</span></td>
+      </tr>
+      <tr>
+        <td><strong style="font-size:9px">Team size</strong></td>
+        <td><strong style="color:#0A2540">Lean 43 FTE</strong></td>
+        <td>Slack capacity / white-glove on SMB</td>
+        <td><span style="color:var(--gray)">People cost 1.51% of ARR vs 8–10% benchmark. A lean team forces tooling discipline — automation becomes mandatory, not optional.</span></td>
+      </tr>
+      <tr>
+        <td><strong style="font-size:9px">Location</strong></td>
+        <td><strong style="color:#0A2540">India-based team</strong></td>
+        <td>Full US-hours live coverage</td>
+        <td><span style="color:var(--gray)">~¼ the loaded cost — that efficiency funds more heads <em>and</em> the full tooling stack. Partial follow-the-sun + async digital covers the gap.</span></td>
+      </tr>
+      <tr>
+        <td><strong style="font-size:9px">Activation tool</strong></td>
+        <td><strong style="color:#0A2540">Userpilot (Year 1)</strong></td>
+        <td>Pendo's deeper product analytics</td>
+        <td><span style="color:var(--gray)">1–7 day deploy vs 8–12 weeks, $33k cheaper, zero activation gap at launch. Re-evaluate Pendo in Year 2 once RudderStack analytics mature.</span></td>
+      </tr>
+      <tr>
+        <td><strong style="font-size:9px">ROI stance</strong></td>
+        <td><strong style="color:#0A2540">Count expansion / NRR as $0</strong></td>
+        <td>A rosier headline ROI number</td>
+        <td><span style="color:var(--gray)">A conservative, defensible base case survives scrutiny. Expansion is real upside we'll capture — but we don't promise it to justify the investment.</span></td>
+      </tr>
     </tbody>
   </table>
 
   <div class="sc-section-lbl">The big bets — and what makes them pay</div>
-  <table>
+  <table style="font-size:8.5px">
     <thead>
-      <tr><th style="width:22%">The bet</th><th style="width:26%">Reasoning</th><th>What makes it pay off</th><th style="width:20%">What we're watching</th></tr>
+      <tr style="font-size:9px;font-weight:700">
+        <th style="width:20%">The bet</th>
+        <th style="width:26%">Reasoning</th>
+        <th>What makes it pay off</th>
+        <th style="width:20%">What we're watching</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td><strong style="color:var(--green2)">Pre-90 onboarding is the #1 churn lever</strong></td><td>43% of SMB churn lands before Day 90 — activation failure, before first value.</td><td>Activation 55% → 80% recovers <strong>$0.87M+ (base)</strong> on the SMB tail and lifts every downstream cohort.</td><td>Activation → retention correlation; pre-90 churn rate</td></tr>
-      <tr><td><strong style="color:var(--green2)">AI can carry the SMB tail</strong></td><td>20,000 small accounts can't be staffed with humans economically.</td><td>Fin + Userpilot + Customer.io run the full detect → resolve → educate loop. <strong>+3–5pp tail GRR for ~$81k</strong> of tooling.</td><td>Deflection rate, digital activation, CSAT</td></tr>
-      <tr><td><strong style="color:var(--green2)">Signal-based proactive beats reactive</strong></td><td>Product behavior predicts churn 90–120 days out — long before a renewal call.</td><td>CSMs act on signal, not the calendar → higher save rate and expansion capture (NRR).</td><td>Signal precision, % of churn caught early</td></tr>
-      <tr><td><strong style="color:var(--green2)">Lean + tooling beats big headcount</strong></td><td>Automation leverages 43 FTE across 25,000 accounts.</td><td>Best-in-class GRR at a <strong>1.51% people-cost ratio</strong> — a structural margin advantage in a low-margin category.</td><td>Book sizes, CSM burnout, attrition</td></tr>
+      <tr>
+        <td><strong style="color:var(--green2);font-size:9px">Pre-90 onboarding is the #1 churn lever</strong></td>
+        <td><span style="color:var(--gray)">43% of SMB churn lands before Day 90 — activation failure, before first value.</span></td>
+        <td><span style="color:var(--gray)">Activation 55% → 80% recovers <strong>$0.87M+ (base)</strong> on the SMB tail and lifts every downstream cohort.</span></td>
+        <td><span style="color:var(--gray);font-size:8px">Activation → retention correlation; pre-90 churn rate</span></td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--green2);font-size:9px">AI can carry the SMB tail</strong></td>
+        <td><span style="color:var(--gray)">20,000 small accounts can't be staffed with humans economically.</span></td>
+        <td><span style="color:var(--gray)">Fin + Userpilot + Customer.io run the full detect → resolve → educate loop. <strong>+3–5pp tail GRR for ~$81k</strong> of tooling.</span></td>
+        <td><span style="color:var(--gray);font-size:8px">Deflection rate, digital activation, CSAT</span></td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--green2);font-size:9px">Signal-based proactive beats reactive</strong></td>
+        <td><span style="color:var(--gray)">Product behavior predicts churn 90–120 days out — long before a renewal call.</span></td>
+        <td><span style="color:var(--gray)">CSMs act on signal, not the calendar → higher save rate and expansion capture (NRR).</span></td>
+        <td><span style="color:var(--gray);font-size:8px">Signal precision, % of churn caught early</span></td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--green2);font-size:9px">Lean + tooling beats big headcount</strong></td>
+        <td><span style="color:var(--gray)">Automation leverages 43 FTE across 25,000 accounts.</span></td>
+        <td><span style="color:var(--gray)">Best-in-class GRR at a <strong>1.51% people-cost ratio</strong> — a structural margin advantage in a low-margin category.</span></td>
+        <td><span style="color:var(--gray);font-size:8px">Book sizes, CSM burnout, attrition</span></td>
+      </tr>
     </tbody>
   </table>
-<div class="eval-strip">
-  <div class="eval-item"><span class="eval-lbl">Key Note</span><span class="eval-txt">Deliberate trade-offs under resource constraints are better than optimising everything sub-optimally. Prioritisation logic: ARR concentration &#8594; human CSM time &#8594; tooling &#8594; automation depth. Lower-priority segments are compensated by AI &#8212; excluded from human coverage, not from the model.</span></div>
-  <div class="eval-item"><span class="eval-lbl">Business&nbsp;Outcome</span><span class="eval-txt">Conservative choices reduce execution risk while achieving base-case GRR. The ROI calculation doesn&#8217;t require the upside to be positive &#8212; it&#8217;s asymmetric: limited downside risk (tooling is reusable), meaningful upside (expansion, tail GRR). Trade-offs enable focus; focus enables GRR improvement.</span></div>
+<div class="eval-strip" style="margin-top:13px">
+  <div class="eval-item" style="font-size:9.5px">
+    <span class="eval-lbl" style="font-size:9.5px">Key Note</span>
+    <span class="eval-txt" style="font-size:9px;line-height:1.5">Deliberate trade-offs under resource constraints are better than optimising everything sub-optimally. Prioritisation logic: ARR concentration &#8594; human CSM time &#8594; tooling &#8594; automation depth. Lower-priority segments are compensated by AI &#8212; excluded from human coverage, not from the model.</span>
+  </div>
+  <div class="eval-item" style="font-size:9.5px">
+    <span class="eval-lbl" style="font-size:9.5px">Business&nbsp;Outcome</span>
+    <span class="eval-txt" style="font-size:9px;line-height:1.5">Conservative choices reduce execution risk while achieving base-case GRR. The ROI calculation doesn&#8217;t require the upside to be positive &#8212; it&#8217;s asymmetric: limited downside risk (tooling is reusable), meaningful upside (expansion, tail GRR). Trade-offs enable focus; focus enables GRR improvement.</span>
+  </div>
 </div>
 </div>
 </div>
