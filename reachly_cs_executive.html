@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reachly · CS Operating Model — Executive Summary</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--navy:#0A2540;--green:#00B27A;--green2:#009966;--ink:#0F172A;--gray:#64748B;--line:#E2E8F0;--bg:#F4F7FA}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#0b1b2b}
+  .slide{position:relative;width:1280px;height:720px;background:var(--bg);overflow:hidden;display:flex;flex-direction:column}
+  /* header */
+  .hd{background:var(--navy);padding:26px 56px 22px;border-bottom:4px solid var(--green);flex-shrink:0}
+  .hd .kick{color:var(--green);font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+  .hd h1{color:#fff;font-size:40px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
+  .bd{flex:1;padding:40px 56px;display:flex;flex-direction:column;justify-content:center;gap:26px}
+  .big{font-size:30px;line-height:1.4;color:var(--ink);font-weight:500}
+  .big b{color:var(--navy);font-weight:800}
+  .grn{color:var(--green2);font-weight:800}
+  /* stat row */
+  .stats{display:flex;gap:26px}
+  .stat{flex:1;background:#fff;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:14px;padding:26px 28px}
+  .stat .n{font-size:58px;font-weight:800;color:var(--navy);line-height:1}
+  .stat .l{font-size:19px;color:var(--gray);margin-top:10px;line-height:1.3;font-weight:600}
+  /* bullet list */
+  ul.b{list-style:none;display:flex;flex-direction:column;gap:20px}
+  ul.b li{display:flex;gap:18px;align-items:flex-start;font-size:25px;line-height:1.35;color:var(--ink)}
+  ul.b li .num{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+  ul.b li b{color:var(--navy);font-weight:800}
+  .note{font-size:19px;color:var(--gray);line-height:1.45}
+  /* full-bleed impact slide */
+  .impact{background:linear-gradient(120deg,#0A2540 0%,#0A2540 46%,#00B27A 46%,#059b6b 100%);color:#fff;justify-content:center;padding:0}
+  .impact .wrap{display:flex;width:100%;height:100%}
+  .impact .L{width:46%;padding:64px 54px;display:flex;flex-direction:column;justify-content:center}
+  .impact .R{width:54%;padding:64px 54px;display:flex;flex-direction:column;justify-content:center}
+  .impact .eyebrow{font-size:17px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:18px}
+  .impact h2{font-size:50px;font-weight:800;line-height:1.08;letter-spacing:-.5px}
+  .impact .sub{font-size:22px;color:rgba(255,255,255,.82);margin-top:18px;line-height:1.4}
+  .impact .R .hl{font-size:30px;font-weight:700;line-height:1.35}
+  .impact .R .hl b{color:#fff;background:rgba(255,255,255,.14);padding:2px 10px;border-radius:6px}
+  /* two-up cards */
+  .cards{display:flex;gap:24px}
+  .card{flex:1;background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 28px}
+  .card h3{font-size:23px;color:var(--navy);font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .card p{font-size:20px;color:var(--ink);line-height:1.4}
+  .card .pill{display:inline-block;background:#ECFDF5;color:var(--green2);font-weight:800;font-size:18px;padding:5px 14px;border-radius:20px;margin-top:14px}
+  .arrow{font-size:34px;color:var(--green);font-weight:800}
+  .foot{padding:16px 56px;background:#fff;border-top:1px solid var(--line);font-size:18px;color:var(--gray);flex-shrink:0;display:flex;justify-content:space-between;align-items:center}
+  .foot b{color:var(--green2)}
+  /* appendix tables */
+  table{width:100%;border-collapse:collapse;font-size:18px}
+  th{background:var(--navy);color:#fff;text-align:left;padding:12px 14px;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+  td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--ink)}
+  tr:nth-child(even) td{background:#fff}tr:nth-child(odd) td{background:#F8FAFC}
+  td .g{color:var(--green2);font-weight:800}
+  .tag{display:inline-block;font-size:14px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--green2);background:#ECFDF5;border:1px solid #A7F3D0;padding:5px 12px;border-radius:20px}
+</style>
+</head>
+<body>
+
+<!-- 1 · TITLE -->
+<div class="slide impact" id="e1">
+  <div class="wrap">
+    <div class="L">
+      <div class="eyebrow">Head of Customer Success</div>
+      <h2>CS Operating<br>Model</h2>
+      <div class="sub"><b style="color:#6EE7B7">Reachly</b> · Business Communications Platform<br><span style="font-size:18px;color:rgba(255,255,255,.6)">Prepared for SaaS Labs · June 2026</span></div>
+    </div>
+    <div class="R">
+      <div class="hl" style="margin-bottom:26px">Retention is re-earned <b>every 30 days.</b><br>Build for that reality.</div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:18px 22px;min-width:150px"><div style="font-size:38px;font-weight:800">$100M</div><div style="font-size:16px;color:rgba(255,255,255,.75)">ARR</div></div>
+        <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:18px 22px;min-width:150px"><div style="font-size:38px;font-weight:800">25,000</div><div style="font-size:16px;color:rgba(255,255,255,.75)">Accounts</div></div>
+        <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:18px 22px;min-width:150px"><div style="font-size:38px;font-weight:800">43 FTE</div><div style="font-size:16px;color:rgba(255,255,255,.75)">1.51% of ARR</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2 · THE CASE -->
+<div class="slide" id="e2">
+  <div class="hd"><div class="kick">The 60-second case</div><h1>What we're building, and why it pays</h1></div>
+  <div class="bd">
+    <div class="big">A <b>lean 43-person</b> CS org that runs on <b>automation, not headcount</b> — humans on the revenue that concentrates, machines on the 20,000-account tail.</div>
+    <div class="stats">
+      <div class="stat"><div class="n">70 → 76%</div><div class="l">Gross revenue retention, 18 months</div></div>
+      <div class="stat"><div class="n">$3.9–6.6M</div><div class="l">ARR retained over the period</div></div>
+      <div class="stat"><div class="n">1.51%</div><div class="l">People cost vs 2–3% benchmark</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3 · THE PROBLEM -->
+<div class="slide" id="e3">
+  <div class="hd"><div class="kick">The problem</div><h1>Monthly contracts mean churn compounds</h1></div>
+  <div class="bd">
+    <div class="big">Every account is re-sold <b>every 30 days</b>. A small monthly leak becomes a large annual one — so retention has to be <b>engineered, not chased at renewal.</b></div>
+    <div class="stats">
+      <div class="stat" style="border-left-color:#EF4444"><div class="n" style="color:#B91C1C">70%</div><div class="l">GRR today — the starting point</div></div>
+      <div class="stat"><div class="n grn">73–76%</div><div class="l">Target in 18 months (+4–7pp)</div></div>
+      <div class="stat"><div class="n">43%</div><div class="l">of SMB churn lands before Day 90</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4 · STRATEGY -->
+<div class="slide impact" id="e4" style="background:linear-gradient(120deg,#0A2540,#123455)">
+  <div class="wrap"><div class="L" style="width:55%">
+    <div class="eyebrow">The operating principle</div>
+    <h2>Humans where the dollars are.<br>Automation everywhere else.</h2>
+  </div><div class="R" style="width:45%">
+    <div style="background:rgba(255,255,255,.12);border-radius:16px;padding:34px 32px">
+      <div style="font-size:74px;font-weight:800;line-height:1">7%</div>
+      <div style="font-size:23px;color:rgba(255,255,255,.85);margin:10px 0 26px">of accounts hold <b style="color:#6EE7B7">52% of ARR</b></div>
+      <div style="font-size:23px;line-height:1.4;color:rgba(255,255,255,.9)">A named CSM only pays back above <b style="color:#fff">~$12k ACV</b>. The 16,000-account tail is run by bots — at near-zero marginal cost.</div>
+    </div>
+  </div></div>
+</div>
+
+<!-- 5 · SEGMENTATION -->
+<div class="slide" id="e5">
+  <div class="hd"><div class="kick">Segmentation &amp; coverage</div><h1>Two teams, account-capped coverage</h1></div>
+  <div class="bd">
+    <div class="cards">
+      <div class="card" style="border-left:6px solid var(--navy)"><h3>🏢 Mid-Market</h3><p>Named CSMs, 1:1 relationships, monthly health reviews. Owns the ARR concentration and expansion.</p><span class="pill">Human-led</span></div>
+      <div class="card" style="border-left:6px solid #0EA5E9"><h3>⚡ SMB · Tier 1–2</h3><p>Pooled CSMs + digital programs. Proactive plays triggered by product signals, not the calendar.</p><span class="pill">Hybrid</span></div>
+      <div class="card" style="border-left:6px solid var(--green)"><h3>🤖 SMB · Tier 3 tail</h3><p>20,000 accounts, fully digital — onboarding, nudges and L1 support run by automation.</p><span class="pill">Automation-led</span></div>
+    </div>
+    <div class="note">ARR-first: coverage intensity follows revenue concentration, not account count.</div>
+  </div>
+</div>
+
+<!-- 6 · TEAM -->
+<div class="slide" id="e6">
+  <div class="hd"><div class="kick">Structure</div><h1>43 FTE — lean by design</h1></div>
+  <div class="bd">
+    <div class="stats">
+      <div class="stat"><div class="n">30</div><div class="l">Front-line CSMs (MM + SMB pooled)</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">Specialists (onboarding, digital, retention)</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Ops Specialists (data, tooling, enablement)</div></div>
+    </div>
+    <div class="big">People cost is <b>1.51% of ARR</b> vs a <b>2–3% benchmark</b> — a structural margin advantage that <span class="grn">funds the tooling</span> and forces automation discipline.</div>
+  </div>
+</div>
+
+<!-- 7 · CHURN FRAMEWORK -->
+<div class="slide" id="e7">
+  <div class="hd"><div class="kick">How we attack churn</div><h1>A 5-level churn-attack framework</h1></div>
+  <div class="bd">
+    <ul class="b">
+      <li><span class="num">1</span><div><b>Predict</b> — a 50-parameter health score flags risk 90–120 days out.</div></li>
+      <li><span class="num">2</span><div><b>Onboard</b> — fix the pre-90 leak; get accounts to first value fast.</div></li>
+      <li><span class="num">3</span><div><b>Engage</b> — signal-triggered retention playbooks, run by humans or bots by tier.</div></li>
+      <li><span class="num">4</span><div><b>Recover</b> — automated dunning &amp; collections on involuntary churn.</div></li>
+      <li><span class="num">5</span><div><b>Expand</b> — surface expansion signals to AEs (NRR upside).</div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 8 · PRE-90 -->
+<div class="slide" id="e8">
+  <div class="hd"><div class="kick">The #1 lever</div><h1>Fix the pre-90 onboarding leak</h1></div>
+  <div class="bd">
+    <div class="big"><b>43% of SMB churn happens before Day 90</b> — activation failure, before the customer ever sees value.</div>
+    <div class="stats">
+      <div class="stat"><div class="n">55 → 80%</div><div class="l">Day-30 activation, over two quarters</div></div>
+      <div class="stat"><div class="n grn">+$0.87M</div><div class="l">ARR retained on the SMB tail (base)</div></div>
+      <div class="stat"><div class="n">D7/14/30</div><div class="l">Milestone gates — every account owned</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 9 · SIGNAL + AUTOMATION -->
+<div class="slide" id="e9">
+  <div class="hd"><div class="kick">Signal-based &amp; automated</div><h1>Act on behaviour, not the calendar</h1></div>
+  <div class="bd">
+    <div class="cards">
+      <div class="card"><h3>📡 The signal engine</h3><p>A weighted health score across <b>50+ product, payment and engagement signals</b> predicts churn intent <b>90–120 days</b> before a renewal call — so CSMs act early, when a save is still possible.</p></div>
+      <div class="card"><h3>🤖 Automation carries the tail</h3><p><b>20,000 small accounts</b> can't be staffed economically. Intercom Fin + Userpilot + HubSpot run the full <b>detect → resolve → educate</b> loop at near-zero marginal cost.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 10 · TOOLING -->
+<div class="slide" id="e10">
+  <div class="hd"><div class="kick">Tooling — lean stack</div><h1>Floor-ready, not a wish-list</h1></div>
+  <div class="bd">
+    <div class="big"><b>8 tools — 4 already owned</b> (HubSpot Service+Ops, workflows, Delighted, Metabase). Only PostHog needs engineering, and it deploys in <b>1–2 weeks.</b></div>
+    <div class="stats">
+      <div class="stat"><div class="n">$142k</div><div class="l">Year-1 all-in ($87k recurring + $55k build)</div></div>
+      <div class="stat"><div class="n grn">12.7x</div><div class="l">Realistic Year-1 tooling ROI</div></div>
+      <div class="stat"><div class="n grn">23x</div><div class="l">Steady-state once build is amortised</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 11 · DE-RISK -->
+<div class="slide" id="e11">
+  <div class="hd"><div class="kick">How we de-risk the automation bet</div><h1>Back-test → Pilot → Roll out</h1></div>
+  <div class="bd">
+    <ul class="b">
+      <li><span class="num" style="background:#15803D">1</span><div><b>Back-test (Wks 1–4)</b> — run AI logic on 6 months of history. Gate: churn-prediction precision ≥65%, payment-recovery ≥70%. <span class="note">No live customer action.</span></div></li>
+      <li><span class="num" style="background:#15803D">2</span><div><b>Pilot (Months 2–3)</b> — supervised 2,000-account cohort, human override on. Gate: CSAT ≥4.0, deflection ≥50%, save-rate ≥ baseline.</div></li>
+      <li><span class="num" style="background:#15803D">3</span><div><b>Roll out (Month 4+)</b> — full 20,000 accounts only after gates pass. Fallback: CRM-rules scoring if a gate fails.</div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 12 · COMMERCIAL ROI -->
+<div class="slide" id="e12">
+  <div class="hd"><div class="kick">The commercial case</div><h1>Conservative, and it still pays</h1></div>
+  <div class="bd">
+    <div class="stats">
+      <div class="stat"><div class="n">$1.68M</div><div class="l">Total CS investment (people + tooling)</div></div>
+      <div class="stat"><div class="n grn">$1.71–3.15M</div><div class="l">GRR retained (base → best)</div></div>
+      <div class="stat"><div class="n grn">1.02 – 1.88x</div><div class="l">Return on CS investment</div></div>
+    </div>
+    <div class="big">The base case counts <b>expansion / NRR as $0</b>. It survives scrutiny because the downside is limited (tooling is reusable) and the upside is real but un-promised.</div>
+  </div>
+</div>
+
+<!-- 13 · UPSIDE -->
+<div class="slide" id="e13">
+  <div class="hd"><div class="kick">Upside the base case excludes</div><h1>Two streams we count as $0 today</h1></div>
+  <div class="bd">
+    <div class="cards">
+      <div class="card" style="border-left:6px solid #6366F1"><h3>① L1 deflection</h3><p>Intercom Fin auto-resolves ~55% of L1 across the 20,000-account tail — avoiding 1.5–3 support FTE.</p><span class="pill" style="background:#EEF2FF;color:#4338CA">~3x company-wide</span></div>
+      <div class="card" style="border-left:6px solid #6366F1"><h3>② CS-sourced lead-gen</h3><p>CS surfaces expansion signals into AE pipeline — conservatively ~$1.0M expansion ARR sourced per year.</p><span class="pill" style="background:#EEF2FF;color:#4338CA">~15x on program cost</span></div>
+    </div>
+    <div class="note">Both are additive to the commercial case above — deliberately excluded so the headline number is defensible.</div>
+  </div>
+</div>
+
+<!-- 14 · TRADE-OFF -->
+<div class="slide" id="e14">
+  <div class="hd"><div class="kick">The one big trade-off</div><h1>ARR-first concentration</h1></div>
+  <div class="bd">
+    <div class="big">We deliberately hand the <b>16,000-account tail to automation, not a CSM.</b> The bet: bots give the tail <span class="grn">some</span> proactive touch at near-zero cost — instead of zero.</div>
+    <div class="cards">
+      <div class="card"><h3>✅ Why it's right</h3><p>A human only pays back above ~$12k ACV. Forcing automation on the tail is what makes the 1.51% cost ratio possible.</p></div>
+      <div class="card"><h3>👀 What we watch</h3><p>Tail GRR, deflection and digital CSAT. If automation under-delivers, this is the assumption we revisit first.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 15 · RISK -->
+<div class="slide" id="e15">
+  <div class="hd"><div class="kick">Risk mitigation</div><h1>Nothing is all-or-nothing</h1></div>
+  <div class="bd">
+    <ul class="b">
+      <li><span class="num" style="background:#B45309">!</span><div><b>AI accuracy</b> → rules-based scoring works Day 1; ML layered only after gates pass.</div></li>
+      <li><span class="num" style="background:#B45309">!</span><div><b>PLG motion underperforms</b> → multi-channel + a Day-30 human escalation gate.</div></li>
+      <li><span class="num" style="background:#B45309">!</span><div><b>Tooling delay</b> → only PostHog needs eng; CRM-only scores keep the floor running.</div></li>
+      <li><span class="num" style="background:#B45309">!</span><div><b>Over-automation hurts CX</b> → CSAT-gated; volume routes back to humans below 4.2.</div></li>
+    </ul>
+    <div class="note">Every risk is met with a leading indicator and a fallback that keeps the business running.</div>
+  </div>
+</div>
+
+<!-- 16 · OUTCOME -->
+<div class="slide impact" id="e16">
+  <div class="wrap"><div class="L" style="width:50%">
+    <div class="eyebrow">The 18-month outcome</div>
+    <h2>+4–7pp GRR,<br>self-funding.</h2>
+    <div class="sub">Lean team · lean stack · automation-first. A model that protects revenue and pays for itself in the first year.</div>
+  </div><div class="R" style="width:50%;gap:18px">
+    <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:20px 24px"><div style="font-size:40px;font-weight:800">70 → 76%</div><div style="font-size:17px;color:rgba(255,255,255,.78)">Gross revenue retention</div></div>
+    <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:20px 24px"><div style="font-size:40px;font-weight:800">$3.9–6.6M</div><div style="font-size:17px;color:rgba(255,255,255,.78)">ARR retained</div></div>
+    <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:20px 24px"><div style="font-size:40px;font-weight:800">6.5–12 mo</div><div style="font-size:17px;color:rgba(255,255,255,.78)">Payback (best → base)</div></div>
+  </div></div>
+</div>
+
+<!-- 17 · APPENDIX DIVIDER -->
+<div class="slide impact" id="e17" style="background:#0A2540">
+  <div class="wrap"><div class="L" style="width:100%;align-items:flex-start">
+    <span class="tag" style="color:#6EE7B7;background:rgba(110,231,183,.12);border-color:rgba(110,231,183,.4)">Appendix</span>
+    <h2 style="margin-top:22px">Reference detail</h2>
+    <div class="sub">Tooling ROI · GRR by segment · KPI framework — the full tables behind the summary.</div>
+  </div></div>
+</div>
+
+<!-- 18 · APPENDIX: TOOLING ROI -->
+<div class="slide" id="e18">
+  <div class="hd"><div class="kick">Appendix · Tooling</div><h1>Lean-stack ROI detail</h1></div>
+  <div class="bd" style="justify-content:flex-start;padding-top:24px">
+    <table>
+      <thead><tr><th>Tool</th><th>Cost / yr</th><th>Owns</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><b>PostHog</b> + HubSpot Service/Ops Hub</td><td>$18k</td><td>Product-usage health score</td><td>1–2 wk deploy</td></tr>
+        <tr><td><b>Userpilot</b></td><td>$15k</td><td>Activation / pre-90 onboarding</td><td>1–7 day deploy</td></tr>
+        <tr><td><b>Churnkey</b></td><td>$24k</td><td>Involuntary churn / dunning</td><td>Month 4</td></tr>
+        <tr><td><b>Intercom Fin</b></td><td>$30k</td><td>L1 deflection on the tail</td><td>Pre-launch</td></tr>
+        <tr><td>HubSpot workflows · Delighted · Metabase</td><td><span class="g">$0 owned</span></td><td>Lifecycle · NPS · BI</td><td>Already in place</td></tr>
+        <tr><td><b>Total recurring</b></td><td><b>$87k</b> + $55k build</td><td><b>Year-1 all-in $142k</b></td><td><span class="g">12.7x Y1 · 23x steady</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 19 · APPENDIX: GRR BY SEGMENT -->
+<div class="slide" id="e19">
+  <div class="hd"><div class="kick">Appendix · Retention</div><h1>GRR impact by segment</h1></div>
+  <div class="bd" style="justify-content:flex-start;padding-top:24px">
+    <table>
+      <thead><tr><th>Segment</th><th>Today</th><th>Target</th><th>Lever</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mid-Market</b></td><td>~82%</td><td class="g">+4pp</td><td>Named CSM · signal-based saves · expansion</td></tr>
+        <tr><td><b>SMB Tier 1</b></td><td>~72%</td><td class="g">+5pp</td><td>Process · playbooks · pre-90 onboarding</td></tr>
+        <tr><td><b>SMB Tier 2–3</b></td><td>~68%</td><td class="g">+5pp</td><td>Automation · Fin · Userpilot · dunning</td></tr>
+        <tr><td><b>Blended</b></td><td>70%</td><td class="g">73–76%</td><td>+4–7pp · $3.9–6.6M ARR retained (18 mo)</td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top:18px">Segment figures are directional; the blended target is the committed number.</div>
+  </div>
+</div>
+
+<!-- 20 · APPENDIX: KPIs -->
+<div class="slide" id="e20">
+  <div class="hd"><div class="kick">Appendix · KPIs &amp; OKRs</div><h1>How we measure it</h1></div>
+  <div class="bd" style="justify-content:flex-start;padding-top:24px">
+    <table>
+      <thead><tr><th>Metric</th><th>What it tells us</th><th>Target</th></tr></thead>
+      <tbody>
+        <tr><td><b>GRR</b></td><td>Core retention — the headline outcome</td><td class="g">73–76%</td></tr>
+        <tr><td><b>NRR</b></td><td>Retention + expansion (upside)</td><td>&gt;100% (best)</td></tr>
+        <tr><td><b>Day-30 activation</b></td><td>Pre-90 onboarding health</td><td class="g">55 → 80%</td></tr>
+        <tr><td><b>L1 deflection</b></td><td>Automation carrying the tail</td><td class="g">≥50%</td></tr>
+        <tr><td><b>Digital CSAT</b></td><td>Automation isn't hurting CX</td><td>≥4.2</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
